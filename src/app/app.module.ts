@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,9 @@ import { InsumosComponent } from './pages/productos-y-servicios/insumos/insumos.
 import { AccesoriosComponent } from './pages/productos-y-servicios/accesorios/accesorios.component';
 import { MaquinasComponent } from './pages/productos-y-servicios/maquinas/maquinas.component';
 import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.component';
+import { DataService } from './utils/data.service';
+
+
 
 @NgModule({
   declarations: [
@@ -36,9 +40,10 @@ import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

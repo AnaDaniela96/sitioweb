@@ -124,3 +124,19 @@ h1 {
     border: none !important;
     /* Quita el borde */
 }
+
+.botellas-torani {
+    max-width: 100px !important;
+    max-height: 280px !important;
+}
+.botella-salsa{
+    max-width: 150px !important;
+    max-height: 300px !important;
+}
+
+.img-product-container{
+    max-width: 300px !important;
+    max-height: 300px !important;
+    min-width: 250px !important;
+    min-height: 250px !important;
+}
