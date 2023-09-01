@@ -15,6 +15,7 @@ import { CafeComponent } from './pages/productos-y-servicios/cafe/cafe.component
 import { InsumosComponent } from './pages/productos-y-servicios/insumos/insumos.component';
 import { AccesoriosComponent } from './pages/productos-y-servicios/accesorios/accesorios.component';
 import { MaquinasComponent } from './pages/productos-y-servicios/maquinas/maquinas.component';
+import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MaquinasComponent } from './pages/productos-y-servicios/maquinas/maquin
     CafeComponent,
     InsumosComponent,
     AccesoriosComponent,
-    MaquinasComponent
+    MaquinasComponent,
+    ArteLatteComponent
   ],
   imports: [
     BrowserModule,

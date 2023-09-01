@@ -1,0 +1,126 @@
+h1 {
+    color: #222;
+    font-weight: 900;
+}
+
+.img-recetario {
+    width: 250px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-recetario {
+    transition: transform 0.3s ease;
+}
+
+.btn-recetario:hover {
+    transform: scale(1.1);
+    /* Hace que la imagen sea un poco más grande al pasar el cursor */
+}
+
+.link-no-style {
+    color: inherit;
+    /* Heredar el color del botón (por defecto es negro para el botón claro) */
+    text-decoration: none;
+    /* Sin subrayado */
+}
+
+.link-no-style:hover {
+    text-decoration: none;
+    /* Sin subrayado al pasar el cursor por encima */
+    color: inherit;
+    /* Heredar el color del botón al pasar el cursor por encima */
+}
+
+.image-circle {
+    border-radius: 50%;
+    /* Hace que sea un círculo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 150px;
+}
+
+.image-circle:hover {
+    transform: scale(1.1);
+    /* Hace que la imagen sea un poco más grande al pasar el cursor */
+}
+
+.container-videos,
+.container-marcas {
+    position: relative;
+}
+
+.container-videos .slider {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 2px;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.container-marcas .slider {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 200px;
+}
+
+.container-videos .slider iframe,
+.container-marcas .slider iframe {
+    margin: 5px;
+}
+
+.container-videos .control,
+.container-marcas .control {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    padding: 10px;
+}
+
+.controlPrev {
+    position: absolute;
+    left: -6%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+.controlNext {
+    right: -2%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+.controlPrev:focus,
+.controlPrev:hover {
+    filter: brightness(120%);
+}
+
+.controlNext:focus,
+.controlNext:hover {
+    filter: brightness(120%);
+}
+
+.card-receta {
+    padding: 2px;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    background-color: #f6bd60;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.control {
+    background-color: transparent !important;
+    /* Quita el fondo */
+    border: none !important;
+    /* Quita el borde */
+}

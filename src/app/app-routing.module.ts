@@ -11,6 +11,7 @@ import { CafeComponent } from './pages/productos-y-servicios/cafe/cafe.component
 import { InsumosComponent } from './pages/productos-y-servicios/insumos/insumos.component';
 import { AccesoriosComponent } from './pages/productos-y-servicios/accesorios/accesorios.component';
 import { MaquinasComponent } from './pages/productos-y-servicios/maquinas/maquinas.component';
+import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,14 +24,16 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent },
+  {
+    path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent},
+  { path: 'taller-de-arte-latte-nivel-basico', component: ArteLatteComponent},  
   {
     path: 'productos-y-servicios', component: ProductosYServiciosComponent,
     children: [
       { path: 'cafe-de-especialidad', component: CafeComponent },
       { path: 'insumos-para-cafeterias', component: InsumosComponent },
       { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
-      { path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent},
+      { path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent },
     ]
   },
 ];
