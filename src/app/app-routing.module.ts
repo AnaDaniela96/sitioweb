@@ -12,6 +12,16 @@ import { InsumosComponent } from './pages/productos-y-servicios/insumos/insumos.
 import { AccesoriosComponent } from './pages/productos-y-servicios/accesorios/accesorios.component';
 import { MaquinasComponent } from './pages/productos-y-servicios/maquinas/maquinas.component';
 import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.component';
+import { FormacionEmprendedoresComponent } from './pages/capacitacion/formacion-emprendedores/formacion-emprendedores.component';
+import { CafeVerdeComponent } from './pages/capacitacion/cafe-verde/cafe-verde.component';
+import { ColdBrewComponent } from './pages/capacitacion/cold-brew/cold-brew.component';
+import { ExperienciaSensorialComponent } from './pages/capacitacion/experiencia-sensorial/experiencia-sensorial.component';
+import { MixologiaMocteleriaComponent } from './pages/capacitacion/mixologia-mocteleria/mixologia-mocteleria.component';
+import { TostadoComponent } from './pages/capacitacion/tostado/tostado.component';
+import { FormacionParaBaristasComponent } from './pages/capacitacion/formacion-para-baristas/formacion-para-baristas.component';
+import { CatacionComponent } from './pages/capacitacion/catacion/catacion.component';
+import { BubleTeaIcedCoffeeComponent } from './pages/capacitacion/bubble-tea-iced-coffee/bubble-tea-iced-coffee.component';
+import { BrewBarComponent } from './pages/capacitacion/brew-bar/brew-bar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,9 +34,18 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent},
-  { path: 'taller-de-arte-latte-nivel-basico', component: ArteLatteComponent},  
+  { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent},
+  { path: 'taller-de-arte-latte-nivel-basico', component: ArteLatteComponent}, 
+  { path: 'emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria', component: FormacionEmprendedoresComponent }, 
+  { path: 'taller-defectos-de-cafe-verde', component: CafeVerdeComponent },
+  { path: 'taller-de-cold-brew', component: ColdBrewComponent },
+  { path: 'taller-experiencia-sensorial', component: ExperienciaSensorialComponent },
+  { path: 'taller-de-mixologia-con-cafe-sin-alcohol', component: MixologiaMocteleriaComponent },
+  { path: 'taller-basico-de-tostado-de-cafe', component: TostadoComponent },
+  { path: 'taller-basico-para-baristas', component: FormacionParaBaristasComponent },
+  { path: 'taller-de-catacion-de-cafes-mexicanos', component: CatacionComponent },
+  { path: 'taller-de-bubble-tea-&-iced-coffee', component: BubleTeaIcedCoffeeComponent },
+  { path: 'taller-de-brew-bar', component: BrewBarComponent },
   {
     path: 'productos-y-servicios', component: ProductosYServiciosComponent,
     children: [
