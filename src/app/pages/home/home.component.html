@@ -8,9 +8,9 @@
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../../../assets/3.png" class="d-block w-100" alt="...">
+            <img src="https://cafeetrusca.com/img/slide.jpg" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
             <img src="../../../assets/1.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
@@ -20,7 +20,7 @@
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
-    </button>
+    </button> -->
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
@@ -34,15 +34,25 @@
             <img class="image" src="https://cafeetrusca.com/img/nosotros/FOTO-ETRUSCA1.webp" alt="Imagen">
         </div>
         <div class="col-md-6 order-md-1 right-side">
-            <h2 class="title">¡Conócenos!</h2>
+            <h2 class="title" style="font-size: 2.1875rem; font-weight: 700;">¡Conócenos!</h2>
             <p class="subTitle">Más que una empresa somos una historia</p>
-            <button class="btn btn-warning my-4">Iniciar experiencia</button>
+            <button class="btn btn-warning my-4" routerLink="/quienes-somos">Iniciar experiencia</button>
         </div>
     </div>
 </div>
 
+<section class="my-5" style="width: 100%;">
+    <div class="d-flex justify-content-center align items center" style="background-color: #edede9; padding: 40px;">
+        <p class="text-center" style="font-size: 25px;">Somos Café Etrusca, <b>una empresa mexicana con más de 25 años</b> de experiencia en
+            suministros para bebidas.
+            Nos destacamos en la <b>industria del café</b> de alta calidad, trabajando exclusivamente con productos
+            líderes,
+            accesorios de vanguardia y <b>capacitación especializada</b> en todo México.</p>
+    </div>
+</section>
+
 <div class="container my-4">
-    <br>
+    <br><br>
     <h2 class="title text-center" style="font-size: 2.1875rem; font-weight: 700;">Conoce nuestra marcas</h2>
     <div class="d-flex flex-column">
         <div class="row mt-4">
@@ -50,7 +60,7 @@
                 <div class="d-flex flex-column align-items-center">
                     <div class="circle"><img src="https://cafeetrusca.com/img/nosotros/barista.webp" class="img-fluid">
                     </div>
-                    <p class="text-justify p-4">
+                    <p class="p-4" style="text-align: justify;">
                         Por su <b>fuerte impacto social y directo</b> en la calidad de vida de las familias
                         productoras, se convierte en el <b>proyecto
                             primordial de Etrusca.</b> Trabajamos en campo junto a los productores, quienes se
@@ -69,7 +79,7 @@
                     <div class="circle"> <img src="https://cafeetrusca.com/Ecommerce/Brand/2048x2048px_ChillOut.png"
                             class="img-fluid">
                     </div>
-                    <p class="text-justify p-4">
+                    <p class="text-justify p-4" style="text-align: justify;">
                         <b>ChillOut</b>, la destacada marca mexicana de <b>insumos para cafetería</b>, se esfuerza
                         cada día por brindar a sus clientes experiencias excepcionales. Comprometidos con la calidad,
                         nuestros productos sobresalen por su excelencia y la inigualable relación
@@ -79,7 +89,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4" style="text-align: justify;">
                 <div class="d-flex flex-column align-items-center">
                     <div class="circle"><img src="https://cafeetrusca.com/img/nosotros/fenice.webp" class="img-fluid">
                     </div>
@@ -105,83 +115,83 @@
 
 <div class="row" style="height: 1cm;"></div>
 
-<div class="jumbotron jumbotron-fluid my-4">
-    <div class="container">
-        <a class="lead" style="font-weight: bold;">Descubre nuestros logros al hacer clic</a>
+<div class="container d-flex flex-wrap justify-content-center align-items-center" style="height: 350px; background-image: url(../../../assets/fondo.png); background-repeat: no-repeat; width: 100%; position: relative;">
+    <!-- Capa semitransparente para crear contraste  -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); height: 300px;"></div>
+    
+    <div style="text-align: center; position: relative; z-index: 1; width: auto; padding: 2%;">
+        <a class="lead" style="font-weight: 800; color: #FFFFFF; font-size: 35px; text-decoration: none;">Descubre nuestros logros al hacer clic</a>
     </div>
 </div>
 
-<div class="row" style="height: 1cm;"></div>
+<div class="row" style="height: 1cm; color: transparent;"></div>
 
-<section class="mtb-5">
-    <div class="container">
-        <form class="col s12" name="newletter" method="POST">
-            <div class="row margin-auto">
-                <div class="col s12 w-50">
-                    <h3><b class="black-text">Suscríbete<span class="grey-text"> a nuestro newsletter</span></b></h3>
-                    <p class="fs-10 poppins m-0 margin-auto poppins_light" style="line-height: 1.2;">Noticias, eventos,
-                        novedades, lanzamientos, promociones y más</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field ml-0 col m4 s12 white grey_background w-30 my-2"
-                    style="margin-right: 1%;padding: 0.3rem .5rem;border: 2px solid #ededed;box-shadow: 2px 2px 3px 0 #dfdfdf;">
-                    <input id="last_name" type="text" class="validate" style="border: none;" placeholder="Nombre"
-                        required>
-                </div>
-                <div class="input-field ml-0 col m6 s12 white grey_background my-2"
-                    style="padding: 0.3rem .5rem;border: 2px solid #ededed;box-shadow: 2px 2px 3px 0 #dfdfdf;">
-                    <input id="email" type="email" class="validate" style="border: none;" placeholder="e-mail" required>
-                </div>
-                <div class="col m2 offset-s2 s10">
-                    <button class="btn btn-warning my-2" type="submit" name="action" id="action">Enviar</button>
-                </div>
-            </div>
-            <input name="__RequestVerificationToken" type="hidden"
-                value="CfDJ8LTklaN8LdlJu0oHMR0351XD9NywGqjoPelN5BazYPkATNpHwPBoLi6GYGrsgKE59NwozysYvjWnxicM5l4b7_mZjW2F_TcPdxtvCAa9v5qnWivlBzQ7KJkXD5RO14H_MvKaLrgI0wIO5vWs3IguxRQ" />
-        </form>
+<div class="container">
+    <div class="my-2">
+        <h3 class="text-center" style="font-size: 2.1875rem; font-weight: 700;">Explora los artículos de nuestro blog</h3>
+        <p class="text-center">La voz de nuestros docentes y expertos en café</p>
     </div>
-</section>
+    <div class="d-flex flex-wrap justify-content-around my-2">
+        <div class="card" style="width: 18rem;">
+            <img src="../../../assets/PRUEBAS/bubble iced coffe.webp" class="card-img-top" alt="...">
+            <div class="card-body" style="background-color: white;">
+                <h5 class="card-title">Trufa de chocolate</h5>
+                <p class="card-text">1 julio 2023 | 3 min. lectura</p>
+            </div>
+            <div class="icon d-flex align-items-center justify-content-center"></div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="../../../assets/PRUEBAS/arte-latte.webp" class="card-img-top" alt="...">
+            <div class="card-body" style="background-color: white;">
+                <h5 class="card-title">Trufa de chocolate</h5>
+                <p class="card-text">1 julio 2023 | 3 min. lectura</p>
+            </div>
+            <div class="icon d-flex align-items-center justify-content-center"></div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="../../../assets/PRUEBAS/baristas.png" class="card-img-top" alt="...">
+            <div class="card-body" style="background-color: white;">
+                <h5 class="card-title">Trufa de chocolate</h5>
+                <p class="card-text">1 julio 2023 | 3 min. lectura</p>
+            </div>
+            <div class="icon d-flex align-items-center justify-content-center"></div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="../../../assets/PRUEBAS/brewbar.webp" class="card-img-top" alt="...">
+            <div class="card-body" style="background-color: white;">
+                <h5 class="card-title">Trufa de chocolate</h5>
+                <p class="card-text">1 julio 2023 | 3 min. lectura</p>
+            </div>
+            <div class="icon d-flex align-items-center justify-content-center"></div>
+        </div>
+    </div>
+</div>
 
 <div class="row" style="height: 2cm;"></div>
 
-<div class="container">
-    <div>
-        <h3 class="text-center">Explora los artículos de nuestro blog</h3>
-        <p class="text-center">La voz de nuestros docentes y expertos en café</p>
-    </div>
-    <div class="d-flex flex-wrap justify-content-around">
-        <div class="card" style="width: 18rem;">
-            <img src="../../../assets/chess-dummy.jpg" class="card-img-top" alt="...">
-            <div class="card-body" style="background-color: white;">
-                <h5 class="card-title">Trufa de chocolate</h5>
-                <p class="card-text">1 julio 2023 | 3 min. lectura</p>
+<section class="mtb-5" style="background-image: linear-gradient(-20deg, #23c3ff 50%, #039be5 50%); height: auto; padding: 2%;">
+    <div class="container">
+        <form class="col s12" name="newletter" method="POST">
+            <div class="row">
+                <div class="col s12">
+                    <h3><b class="black-text">Suscríbete<span class="grey-text"> a nuestro newsletter</span></b></h3>
+                    <p class="fs-10 poppins m-0" style="line-height: 1.2;">Noticias, eventos, novedades, lanzamientos, promociones y más</p>
+                </div>
             </div>
-            <div class="icon d-flex align-items-center justify-content-center"><img id="icon-share" src="../../../assets/shareicon.png"></div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="../../../assets/chess-dummy.jpg" class="card-img-top" alt="...">
-            <div class="card-body" style="background-color: white;">
-                <h5 class="card-title">Trufa de chocolate</h5>
-                <p class="card-text">1 julio 2023 | 3 min. lectura</p>
+            <div class="row">
+                <div class="input-field col s12 m4 my-2">
+                    <input id="last_name" type="text" class="validate" style="border: 2px solid #ededed; box-shadow: 2px 2px 3px 0 #dfdfdf; border-radius: 10px; padding: 3%; width: 300px;" placeholder="Nombre" required>
+                </div>
+                <div class="input-field col s12 m6 my-2">
+                    <input id="email" type="email" class="validate" style="border: 2px solid #ededed; box-shadow: 2px 2px 3px 0 #dfdfdf; border-radius: 10px; padding: 3%; width: 300px;" placeholder="e-mail" required>
+                </div>
+                <div class="col s12 m2">
+                    <button class="btn btn-warning my-2" type="submit" name="action" id="action">Enviar</button>
+                </div>
             </div>
-            <div class="icon d-flex align-items-center justify-content-center"><img id="icon-share" src="../../../assets/shareicon.png"></div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="../../../assets/chess-dummy.jpg" class="card-img-top" alt="...">
-            <div class="card-body" style="background-color: white;">
-                <h5 class="card-title">Trufa de chocolate</h5>
-                <p class="card-text">1 julio 2023 | 3 min. lectura</p>
-            </div>
-            <div class="icon d-flex align-items-center justify-content-center"><img id="icon-share" src="../../../assets/shareicon.png"></div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="../../../assets/chess-dummy.jpg" class="card-img-top" alt="...">
-            <div class="card-body" style="background-color: white;">
-                <h5 class="card-title">Trufa de chocolate</h5>
-                <p class="card-text">1 julio 2023 | 3 min. lectura</p>
-            </div>
-            <div class="icon d-flex align-items-center justify-content-center"><img id="icon-share" src="../../../assets/shareicon.png"></div>
-        </div>
-    </div>
-</div>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8LTklaN8LdlJu0oHMR0351XD9NywGqjoPelN5BazYPkATNpHwPBoLi6GYGrsgKE59NwozysYvjWnxicM5l4b7_mZjW2F_TcPdxtvCAa9v5qnWivlBzQ7KJkXD5RO14H_MvKaLrgI0wIO5vWs3IguxRQ" />
+        </form>
+    </div>   
+</section>
+
+<div class="row" style="height: 2cm;"></div>
