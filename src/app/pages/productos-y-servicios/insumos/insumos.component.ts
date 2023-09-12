@@ -11,6 +11,11 @@ export class InsumosComponent implements OnInit {
   insumosArray: any[] = [];
   extractedUrls: any;
 
+  //Array filtrado
+
+  //Jarabes
+  jarabesTorani: any [] = [];
+
   constructor(
     private dataService: DataService,
     private sanitizer: DomSanitizer,
@@ -20,7 +25,12 @@ export class InsumosComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
-      console.log('Información de insumosArray', this.insumosArray);
+      //console.log('Información de insumosArray', this.insumosArray);
+
+      // Filtra los Jarabes Torani Clásicos que cumplan la condición y crea un nuevo array.
+      this.jarabesTorani = this.insumosArray.filter(insumo =>
+        this.contienePalabrasToraniClasicoJarabe(insumo.name)
+      );
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
@@ -50,6 +60,17 @@ export class InsumosComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
+  //Mostrar Jarabes
+  contienePalabrasChillOutJarabe(nombre: string): boolean {
+    const palabrasClave = ['JARABE', 'AGAVE', 'CHILLOUT'];
+    return palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
+  }
 
+  contienePalabrasToraniClasicoJarabe(nombre: string): boolean {
+    const palabrasClave = ['TORANI', 'CLASICO', 'JARABE'];
+    const cumpleCondicion = palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
 
 }
