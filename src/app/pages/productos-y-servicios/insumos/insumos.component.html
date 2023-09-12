@@ -5,11 +5,13 @@
         </div>
         <h4 style="text-align: center;">Filtrar por Categoría</h4>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                [(ngModel)]="mostrarJarabes" unchecked>
             <label class="form-check-label" for="flexSwitchCheckDefault">Jarabes</label>
         </div>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+            [(ngModel)]="mostrarSalsas" unchecked>
             <label class="form-check-label" for="flexSwitchCheckDefault">Salsas</label>
         </div>
         <div class="form-check form-switch">
@@ -32,44 +34,6 @@
             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
             <label class="form-check-label" for="flexSwitchCheckDefault">Polvos</label>
         </div>
-
-        <h4 class="my-4" style="text-align: center;">Filtrar por sabores</h4>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Durazno</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Fresa</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Lima</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Almendra</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Sandía</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Chocolate blanco</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Mango</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Limón</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Café</label>
-        </div>
     </aside>
 
     <main class="col-lg-10 p-4">
@@ -89,17 +53,23 @@
             </div>
         </div> -->
 
-        <!-- Cards de categoría Jarabes-->
-        <div class="">
-            <div id="Jarabes-Presentación">
-                <h2 style="text-align: center; font-size: 2.1875rem; font-weight: 700; color: #55C1C4;">Jarabes</h2>
-                <p style="text-align: justify;">Son <b style="color:#55C1C4;">líquidos con mezclas</b> concentradas <b
-                        style="color:#55C1C4;">de azúcar</b> y otros elementos, algunos de ellos con extractos de agave azul
-                    las cuales <b style="color:#55C1C4;">cambian la consistencia, sabor y aroma de la bebida</b> a la que se
-                    le agregan. En la rama coctelera el uso de los jarabes se ha popularizado a tal punto que la mixología
-                    los considera un elemento importante para sus creaciones.</p>
+        <!-- Categoría Jarabes-->
+        <div id="todos-los-jarabes" *ngIf="mostrarJarabes">
+            <div id="Jarabes-Presentación" class="container">
+                <h2 style="text-align: center; font-size: 2.1875rem; font-weight: 700; color: #55C1C4;">¡Descubre los
+                    Jarabes!</h2>
+                <p style="text-align: justify;">Los <span style="color:#55C1C4; font-weight: bold;">Jarabes</span> son
+                    <span style="color:#55C1C4; font-weight: bold;">líquidos concentrados</span> de azúcar y otros
+                    elementos, a veces
+                    incluso con extractos de agave azul. Estos <span
+                        style="color:#55C1C4; font-weight: bold;">transforman la
+                        consistencia, sabor y aroma de tus bebidas</span> favoritas. En el mundo de la mixología, los
+                    jarabes son
+                    considerados un elemento esencial para crear las mejores creaciones.
+                </p>
             </div>
-    
+
+
             <!--Cards para ChillOut Jarabes-->
             <!-- <div class="row my-5" id="jarabesChillOut">
                 <div class="row my-5">
@@ -111,43 +81,53 @@
                         que funciona <b style="color: #FBCE00;">como endulzante </b>para todo tipo de bebidas, tanto frías
                         como calientes. Puede inclusive, utilizarse para la elaboración de postres.</p>
                 </div>
-        
-                <!--Cards para chillout Jarabes-->
-                <!-- <div style="max-height: 400px; overflow-y: auto;">
-                    <div class="row">
-                        <div class="col-md-4 mb-4" *ngFor="let insumo of insumosArray">
-                            <div class="card" style="width: 18rem;" *ngIf="contienePalabrasChillOutJarabe(insumo.name)">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ insumo.keySap }}</h5>
-                                    <p class="card-text">{{ insumo.description }}</p>
-                                    <a href="#" class="btn btn-primary">Ver más</a>
+
+                 <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of jarabesChillOut"
+                                style="height: 500px !important; width: 250px !important;">
+                                <div class="card">
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="Imagen del insumo" id="botellas">
+                                    <div class="card-body">
+                                        <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="#" style="color: black;"> Ver más
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                            <!-- Icono de flecha hacia la derecha 
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> --> 
-            
+            </div> -->
+
             <!--Cards para marca Torani-->
-            <div class="div">
+            <div class="my-5">
                 <div class="d-flex flex-wrap justify-content-around">
                     <div class="contenedor-logos my-3">
                         <img src="../../../../assets/LogosMarcas/Jarabes/Torani-Logo.webp">
                     </div>
-    
+
                     <p class style="text-align: justify;"><b style="color: #FBCE00;">Diversidad</b>
-                        en líneas de producto para cumpliar las necesidades de los clientes, es la <b style="color: #FBCE00;">marca líder </b> en jarabes <b style="color: #FBCE00;">en el mundo,</b>, cuenta con 
-                        <b style="color: #FBCE00;">4 líneas diferentes.</b></p>
+                        en líneas de producto para cumpliar las necesidades de los clientes, es la <b
+                            style="color: #FBCE00;">marca líder </b> en jarabes <b style="color: #FBCE00;">en el
+                            mundo,</b>, cuenta con
+                        <b style="color: #FBCE00;">4 líneas diferentes.</b>
+                    </p>
                 </div>
-        
+
                 <!--Cards para Jarabes Torani-->
                 <div class="row my-5" id="jarabesToraniClasico">
                     <div class="d-flex flex-column justify-content-center">
                         <h2>Clásico</h2>
                         <p>Endulzado con azúcar de caña.</p>
                     </div>
-        
+
                     <div class="scroll-horizontal-container my-5">
                         <div class="row">
                             <div *ngFor="let insumo of jarabesToraniClasico"
@@ -171,12 +151,13 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <!--Cards para Torani Puremade-->
                 <div class="row my-4" id="jarabesToraniPuremade">
                     <div class="d-flex flex-column justify-content-center">
                         <h2>Puremade</h2>
-                        <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente Modificados (OMG).</p>
+                        <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente
+                            Modificados (OMG).</p>
                     </div>
                     <div class="scroll-horizontal-container my-5">
                         <div class="row">
@@ -202,11 +183,12 @@
                     </div>
                 </div>
 
-                 <!--Cards para Torani Zugar free-->
-                 <div class="row my-4" id="jarabesToraniZugarFree>">
+                <!--Cards para Torani Zugar free-->
+                <div class="row my-4" id="jarabesToraniZugarFree>">
                     <div class="d-flex flex-column justify-content-center">
                         <h2>Puremade Zero Sugar</h2>
-                        <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente Modificados (OMG).</p>
+                        <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente
+                            Modificados (OMG).</p>
                     </div>
                     <div class="scroll-horizontal-container my-5">
                         <div class="row">
@@ -262,6 +244,91 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!--Categoría Salsas-->
+        <div id="todas-las-salsas" *ngIf="mostrarSalsas">
+            <div id="Salsas-Presentación" class="container">
+                <h2 style="text-align: center; font-size: 2.1875rem; font-weight: 700; color: #7ACE7C;">Explora Nuestras
+                    Salsas</h2>
+                <p style="text-align: justify;">Las <span style="color:#7ACE7C; font-weight: bold;">Salsas</span> son el
+                    <span style="color:#7ACE7C; font-weight: bold;">complemento perfecto</span> para tus bebidas. Son
+                    una mezcla
+                    de ingredientes que crean una
+                    <span style="color:#7ACE7C; font-weight: bold;">consistencia semi-líquida ideal para decorar,
+                        realzar sabores,
+                        endulzar, aromatizar o dar cuerpo</span> a tus bebidas, ya sean frías o calientes.
+                </p>
+            </div>
+
+            <!--Cards para ChillOut Salsas-->
+            <div class="row my-5" id="jarabesChillOut">
+                <div class="row my-5">
+                    <div class="col-lg-3 contenedor-logos" style=" background-color: #7ACE7C;">
+                        <img src="../../../../assets/LogosMarcas/Jarabes/Chillout_logos-fruit.png">
+                    </div>
+
+                    <p class="col-lg-9" style="text-align: justify;">El <b style="color: #7ACE7C;">chamoy de
+                            ChillOut</b>,
+                        esta pensado para los paladares mexicanos, sin embargo, se adapta muy bien a todos los gustos.
+                        Un complemento para dar ese toque de sabor en tus bebidas.</p>
+                </div>
+
+                <div class="row">
+                    <div style="height: 500px !important; width: 250px !important;">
+                        <div class="card">
+                            <img class="card-img-top" [src]="sanitizeUrl(salsasChillOut[0].urlArticleFirst)"
+                                alt="Imagen del insumo">
+                            <div class="card-body">
+                                <h5 class="card-title my-2" style="font-weight: 700;">{{ salsasChillOut[0].keySap }}</h5>
+                                <p class="card-text"> {{ salsasChillOut[0].name }}</p>
+                                <p class="d-none card-text">{{ salsasChillOut[0].description }}</p>
+                            </div>
+                            <div class="card-footer justify-content-right">
+                                <a routerLink="#" style="color: black;"> Ver más
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    <!-- Icono de flecha hacia la derecha -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             
+            <!--Cards para Torani Salsas-->
+            <div class="d-flex flex-wrap justify-content-around">
+                <div class="contenedor-logos my-3">
+                    <img src="../../../../assets/LogosMarcas/Jarabes/Torani-Logo.webp">
+                </div>
+
+                <p class style="text-align: justify;">Llega para decorar tus bebidas y dar un<b style="color: #FBCE00;">
+                        toque extra de dulzura </b>
+                    cuenta con una<b style="color: #FBCE00;"> línea endulzada con Splenda </b> y su línea puremade, sin
+                    conservadores, colorantes, ni saobres artificiales y libre de Organismos Genéticamente Modificados.
+                </p>
+            </div>
+
+            <div class="scroll-horizontal-container my-5">
+                <div class="row">
+                    <div *ngFor="let insumo of salsasTorani" style="height: 500px !important; width: 250px !important;">
+                        <div class="card">
+                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                alt="Imagen del insumo">
+                            <div class="card-body">
+                                <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                <p class="card-text"> {{ insumo.name }}</p>
+                                <p class="d-none card-text">{{ insumo.description }}</p>
+                            </div>
+                            <div class="card-footer justify-content-right">
+                                <a routerLink="#" style="color: black;"> Ver más
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    <!-- Icono de flecha hacia la derecha -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>

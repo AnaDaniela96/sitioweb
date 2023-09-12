@@ -11,13 +11,21 @@ export class InsumosComponent implements OnInit {
   insumosArray: any[] = [];
   extractedUrls: any;
 
-  //Array filtrado
+  //Manipulación de filtros por categoría
+  mostrarJarabes: boolean = false; 
+  mostrarSalsas: boolean = false;
 
   //Jarabes
+  jarabesChillOut: any [] = [];
   jarabesToraniClasico: any [] = [];
   jarabesPuremadeTorani: any [] = [];
   jarabesZeroSugar: any[] = [];
   jarabesSugarFree: any[] = [];
+
+  //Salsas
+  salsasTorani: any [] = [];
+  salsasChillOut: any [] = [];
+
 
   constructor(
     private dataService: DataService,
@@ -29,6 +37,12 @@ export class InsumosComponent implements OnInit {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
       console.log('Información de insumosArray', this.insumosArray);
+
+      //Filtra los Jarabes Chillout y crea un nuevo array.
+      this.jarabesChillOut = this.insumosArray.filter(insumo =>
+        this.contienePalabrasChillOutJarabe(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
 
       //Filtra los Jarabes Clásico Torani y crea un nuevo array.
       this.jarabesToraniClasico = this.insumosArray.filter(insumo =>
@@ -54,7 +68,19 @@ export class InsumosComponent implements OnInit {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      console.log(this.jarabesSugarFree);
+      //Filtra las salsas Torani y crea un nuevo array.
+      this.salsasTorani = this.insumosArray.filter(insumo =>
+        this.contienePalabrasToraniSalsa(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+      
+      //Filtra las salsas ChillOut y crea un nuevo array.
+      this.salsasChillOut = this.insumosArray.filter(insumo =>
+        this.contienePalabrasChillOutSalsa(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+      
+      console.log(this.salsasChillOut);
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
@@ -141,5 +167,29 @@ contienePalabrasToraniSugarFree(nombre: string): boolean {
   return cumpleCondicion;
 }
 
+contienePalabrasToraniSalsa(nombre: string): boolean {
+  const palabrasClave = ['TORANI', 'SALSA'];
+  
+  // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  const nombreEnMayusculas = nombre.toUpperCase();
+  
+  // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+  
+  //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  return cumpleCondicion;
+}
 
+contienePalabrasChillOutSalsa(nombre: string): boolean {
+  const palabrasClave = ['CHILLOUT', 'CHAMOY'];
+  
+  // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  const nombreEnMayusculas = nombre.toUpperCase();
+  
+  // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+  
+  //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  return cumpleCondicion;
+}
 }
