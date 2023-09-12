@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,19 @@ import { InsumosComponent } from './pages/productos-y-servicios/insumos/insumos.
 import { AccesoriosComponent } from './pages/productos-y-servicios/accesorios/accesorios.component';
 import { MaquinasComponent } from './pages/productos-y-servicios/maquinas/maquinas.component';
 import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.component';
+import { DataService } from './utils/data.service';
+import { FormacionEmprendedoresComponent } from './pages/capacitacion/formacion-emprendedores/formacion-emprendedores.component';
+import { CafeVerdeComponent } from './pages/capacitacion/cafe-verde/cafe-verde.component';
+import { ColdBrewComponent } from './pages/capacitacion/cold-brew/cold-brew.component';
+import { ExperienciaSensorialComponent } from './pages/capacitacion/experiencia-sensorial/experiencia-sensorial.component';
+import { MixologiaMocteleriaComponent } from './pages/capacitacion/mixologia-mocteleria/mixologia-mocteleria.component';
+import { TostadoComponent } from './pages/capacitacion/tostado/tostado.component';
+import { FormacionParaBaristasComponent } from './pages/capacitacion/formacion-para-baristas/formacion-para-baristas.component';
+import { CatacionComponent } from './pages/capacitacion/catacion/catacion.component';
+import { BubleTeaIcedCoffeeComponent } from './pages/capacitacion/bubble-tea-iced-coffee/bubble-tea-iced-coffee.component';
+import { BrewBarComponent } from './pages/capacitacion/brew-bar/brew-bar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,13 +46,24 @@ import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.c
     InsumosComponent,
     AccesoriosComponent,
     MaquinasComponent,
-    ArteLatteComponent
+    ArteLatteComponent,
+    FormacionEmprendedoresComponent,
+    CafeVerdeComponent,
+    ColdBrewComponent,
+    ExperienciaSensorialComponent,
+    MixologiaMocteleriaComponent,
+    TostadoComponent,
+    FormacionParaBaristasComponent,
+    CatacionComponent,
+    BubleTeaIcedCoffeeComponent,
+    BrewBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

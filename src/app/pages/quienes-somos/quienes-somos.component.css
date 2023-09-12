@@ -1,0 +1,19 @@
+/* Estilo para cada elemento de la cuadrícula */
+.grid-item {
+    width: calc(33.33% - 20px); /* Ancho de cada elemento (ajusta según el número de columnas deseadas) */
+    margin-bottom: 20px; /* Espacio entre elementos */
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    height: 250px; /* Altura fija para mantener una cuadrícula uniforme (ajusta según tus necesidades) */
+}
+
+/* Ejemplo de fondos de imágenes para cada elemento */
+.grid-item:nth-child(odd) {
+    background-image: url('../../../assets/PRUEBAS/brewbar.webp'
+    );
+}
+
+.grid-item:nth-child(even) {
+    background-image: url('../../..//assets/PRUEBAS/coldbrew.webp');
+}

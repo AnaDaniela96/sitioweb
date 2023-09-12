@@ -3,443 +3,71 @@
         <div class="card-body text-center my-4">
             <button class="btn btn-outline-primary" type="submit">Limpiar filtros</button>
         </div>
+        <!--Filtrado por tipo de Café-->
+        <div class="my-2">
+            <h4 style="text-align: center;">Tipos de café</h4>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Café de Especialidad</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Café Premium</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Café Verde</label>
+            </div>
+        </div><br>
         <!--Filtrado por región-->
         <div class="my-2">
             <h4 style="text-align: center;">Filtrar por Región</h4>
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
                 <label class="form-check-label" for="flexSwitchCheckDefault">Veracruz</label>
             </div>
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
                 <label class="form-check-label" for="flexSwitchCheckDefault">Puebla</label>
             </div>
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
                 <label class="form-check-label" for="flexSwitchCheckDefault">Hidalgo</label>
             </div>
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
                 <label class="form-check-label" for="flexSwitchCheckDefault">Chiapas</label>
             </div>
-        </div>
+        </div><br>
         <!--Filtrado por proceso-->
         <div class="my-2">
             <h4 style="text-align: center;">Filtrar por proceso</h4>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Lavado</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Añejado en barrica</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Honey</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Macerados</label>
-        </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Lavado</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Añejado en barrica</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Honey</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Macerados</label>
+            </div>
         </div>
 
     </aside>
     <main class="col-lg-9 p-4">
-        <!-- Contenido principal aquí -->
-        <!-- <div class="col-md-10">
-            <h5 class="mt-4">Nuestras marcas aliadas:</h5>
-            <div class="container-marcas">
-                <button class="control controlPrev" id="controlPrevMarcas">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <div class="slider" id="imageContainer">
-                    <!-- Las imágenes se mostrarán aquí 
-                </div>
-
-                <button class="control controlNext" id="controlNextMarcas">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-        </div> -->
-        <h1>Café de especialidad</h1>
-        <p>Contenido principal de la página...</p>
-        <div class="row" id="sortable">
-
-            <div class="col-md-4" draggable="true">
-                <div class="card  border-0">
-                    <!-- Hacer el iframe responsive -->
-                    <div class="embed-responsive embed-responsive-16by9 card-img-top text-center">
-                        <iframe class="embed-responsive-item" src="https://cafeetrusca.com/360/mca_001.html"
-                            frameborder="0" data-autorotate="true"></iframe>
-
-                    </div>
-                    <div class="card-body text-center">
-                        <button class="btn btn-warning">Comprar ahora</button>
-                        <table class="responsive-table white-text table-eq">
-                            <tr>
-                                <th scope="row">
-                                    <img src='https://cafeetrusca.com/img/maquinas/RENEKA-LOGO-WHITE.svg' alt='RENEKA'
-                                        title='RENEKA' class='responsive-img logo-maq-peq logo-maq-peq-re' />
-                                </th>
-                                <th>VIVA</th>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-bolt"></i> 110 V</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-coffee"></i> Aroma Perfect</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-cogs"></i> Multicoffe sistem</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-tachometer-alt"></i> Pre-infusión en ciclos
-                                    cortos de 1 y 2 tazas</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-water"></i> Sistema de seguridad contra falta
-                                    de agua</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-robot"></i> Automática</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-teapot"></i> Lanceta de vapor</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-fire"></i> Salidas de agua caliente</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-plug"></i> Disponible también con 2 grupos a
-                                    220v</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" draggable="true">
-                <div class="card  border-0">
-                    <!-- Hacer el iframe responsive -->
-                    <div class="embed-responsive embed-responsive-16by9 card-img-top text-center">
-                        <iframe class="embed-responsive-item" src="https://cafeetrusca.com/360/mca_049.html"
-                            frameborder="0" data-autorotate="true"></iframe>
-                    </div>
-                    <div class="card-body text-center">
-                        <button class="btn btn-warning">Comprar ahora</button>
-                        <table class="responsive-table  white-text table-eq">
-
-                            <tr>
-
-                                <th scope="row">
-                                    <img src='https://cafeetrusca.com/img/maquinas/RENEKA-LOGO-WHITE.svg' alt='RENEKA'
-                                        title='RENEKA' class='responsive-img logo-maq-peq logo-maq-peq-re' />
-                                </th>
-
-                                <th class="title-basic-2">VIVA BASIC 2</th>
-
-
-                            </tr>
-
-                            <tr>
-
-
-
-                                <td colspan='2'><i class="fas fa-bolt"></i> 110 V</td>
-
-
-                            </tr>
-
-                            <tr>
-
-
-                                <td colspan='2'><i class="fas fa-coffee"></i> Aroma Perfect</td>
-
-
-                            </tr>
-
-                            <tr>
-
-
-                                <td colspan='2'><i class="fas fa-cogs"></i> Multicoffe sistem</td>
-
-                            </tr>
-                            <tr>
-
-
-                                <td colspan='2'><i class="fas fa-tachometer-alt"></i> Pre-infusión en ciclos
-                                    cortos de 1 y 2 tazas</td>
-
-                            </tr>
-                            <tr>
-
-
-
-                                <td colspan='2'><i class="fas fa-water"></i> Sistema de seguridad contra falta
-                                    de agua</td>
-
-                            </tr>
-                            <tr>
-
-
-                                <td colspan='2'><i class="fas fa-robot"></i> Automática</td>
-
-                            </tr>
-                            <tr>
-
-
-                                <td colspan='2'><i class="fas fa-fire"></i> Lanceta de vapor</td>
-
-                            </tr>
-                            <tr>
-
-
-                            <tr>
-
-
-                                <td colspan='2'>Salidas de agua caliente</td>
-
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" draggable="true">
-                <div class="card  border-0">
-                    <!-- Hacer el iframe responsive -->
-                    <div class="embed-responsive embed-responsive-16by9 card-img-top text-center">
-                        <iframe class="embed-responsive-item" src="https://cafeetrusca.com/360/mca_003.html"
-                            frameborder="0" data-autorotate="true"></iframe>
-                    </div>
-                    <div class="card-body text-center">
-                        <button class="btn btn-warning">Comprar ahora</button>
-                        <table class="responsive-table white-text table-eq">
-                            <tr>
-                                <th scope="row">
-                                    <img src='https://cafeetrusca.com/img/maquinas/RENEKA-LOGO-WHITE.svg' alt='RENEKA'
-                                        title='RENEKA' class='responsive-img logo-maq-peq logo-maq-peq-re' />
-                                </th>
-                                <th>VIVA</th>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-bolt"></i> 110 V</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-coffee"></i> Aroma Perfect</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-cogs"></i> Multicoffe sistem</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-tachometer-alt"></i> Pre-infusión en ciclos
-                                    cortos de 1 y 2 tazas</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-water"></i> Sistema de seguridad contra falta
-                                    de agua</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-robot"></i> Automática</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-teapot"></i>Lanceta de vapor</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-fire"></i> Salidas de agua caliente</td>
-                            </tr>
-
-                            <tr>
-                                <td colspan='2'><i class="fas fa-plug"></i> Disponible también con 2 grupos a
-                                    220v</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
+        <h1>Café de especialidad Barista Champ</h1>
+        <div class="container">
+            <p>Es un café que ha estado a la altura de los estándares de calidad en cada parte del proceso y que ha
+                mantenido su calidad desde que es recogido de la planta, por el productor, hasta la preparación final.
+                De acuerdo con la SCA (Specialty Coffee Association), lo define en su estado verde, como café libre de
+                defectos primarios, sin quakers, con el mínimo de 5 defectos totales y con una puntuación por encima de
+                los 80 puntos de acuerdo con los protocolos de catación para ser considerado como especial.</p>
         </div>
     </main>
-
-    <!-- Agrega el enlace al archivo JavaScript de Bootstrap (bundle) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-    <!--Petición API de marcas y scroll horizontal para visualizar-->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#sortable").sortable();
-        });
-    </script>
-    <script>
-        // Realizar la petición a la API utilizando fetch
-        fetch('https://lista-de-precios.cafeetrusca.com/api/v1/venta/marcas/0%27')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('La petición no fue exitosa');
-                }
-                return response.json();
-            })
-            .then(data => {
-                const filteredData = data.map(item => {
-                    // Concatenar el elemento "image" con la URL base si no es igual a "/img/pd.png"
-                    const imageUrl = item.image === "/img/pd.png" ? item.image : "https://cafeetrusca.com" + item.image;
-
-                    // Verificar si "image" es igual a "/img/pd.png"
-                    if (item.image === "/img/pd.png") {
-                        // Si es igual, guardar solo el "name"
-                        return { name: item.name };
-                    } else {
-                        // Si no es igual, guardar "name" e "image" concatenado con la URL base
-                        return { name: item.name, image: imageUrl };
-                    }
-                });
-
-                console.log(filteredData);
-                // Aquí puedes hacer lo que desees con el "filteredData", por ejemplo, almacenarlo en una variable, mostrarlo en la página, etc.
-                // Obtenemos el contenedor donde queremos mostrar las imágenes
-                const imageContainer = document.getElementById('imageContainer');
-
-                // Iteramos sobre el array "filteredData"
-                filteredData.forEach((element) => {
-                    //Verifico sí el emento tiene la propiedad "imageUrl"
-                    if (element.image) {
-                        // Creamos un elemento de imagen
-                        const imageElement = document.createElement('iframe');
-                        imageElement.classList = 'image-circle';
-                        imageElement.style.backgroundImage = `url(${element.image})`;
-                        imageElement.style.backgroundSize = 'cover'; // Puedes ajustar el tamaño según lo necesites
-                        // imageElement.style.width = '500'; // Ejemplo de ancho
-                        // imageElement.style.height = '300'; // Ejemplo de alto
-                        imageElement.setAttribute('alt', element.name);
-                        imageElement.setAttribute('title', element.name);
-                        // Agregamos el elemento de imagen al contenedor
-                        imageContainer.appendChild(imageElement);
-                    }
-                });
-            })
-            .catch(error => {
-                console.error('Error en la petición:', error);
-            });
-
-        const prevMarcas = document.querySelector('#controlPrevMarcas');
-        const nextMarcas = document.querySelector('#controlNextMarcas');
-        const slideMarcas = document.getElementById('imageContainer')
-
-        prevMarcas.addEventListener('click', () => {
-            slideMarcas.scrollLeft -= 300
-        })
-
-        nextMarcas.addEventListener('click', () => {
-            slideMarcas.scrollLeft += 300
-        })
-
-    </script>
-    <!--Petición API de recetas y manejo de eventos para las mismas-->
-    <script>
-        // Función para hacer la petición API con fetch
-        async function fetchAPI() {
-            const url = 'https://cafeetrusca.com/api/blog?PageNumber=1&PageSize=9&Category=1&keyword=t&_=1689810772631';
-
-            try {
-                const response = await fetch(url);
-                const responseData = await response.json();
-
-                // Verifica si la propiedad 'data' es un arreglo válido
-                if (Array.isArray(responseData.data)) {
-                    const data = responseData.data;
-
-                    // Crea un nuevo arreglo para almacenar los datos de cada receta
-                    const recetasArray = data.map(item => {
-                        // Concatenar el elemento "image" con la URL base si no es igual a "/img/pd.png"
-                        const imageUrl = item.imageMin === "/img/pd.png" ? item.imageMin : "https://cafeetrusca.com" + item.imageMin;
-                        // Modificar el título quitando las etiquetas <h1> y convirtiéndolo a <h3>
-                        const modifiedTitle = item.title.replace(/<\/?h1[^>]*>/g, '<h3>');
-
-                        // Devuelve un objeto con las propiedades de la receta, incluyendo la imagen concatenada
-                        return {
-                            title: modifiedTitle,
-                            keys: item.postMeta.keys,
-                            time: item.time,
-                            image: item.image,
-                            // imageMin: item.imageMin,
-                            imageMin: imageUrl // Nueva propiedad con la imagen concatenada
-                        };
-                    });
-
-
-                    console.log(recetasArray[0])
-                    // Obtén el contenedor donde agregaremos las tarjetas
-                    const recetasContainer = document.getElementById('recetas-container');
-
-                    // Ahora tienes todos los datos de las recetas en el nuevo arreglo recetasArray
-                    // Puedes usar un forEach para generar tarjetas para cada receta
-                    recetasArray.forEach(receta => {
-                        // Crea un nuevo elemento div para la tarjeta
-                        const cardReceta = document.createElement('div');
-                        cardReceta.classList.add('card-receta');
-
-                        // Crea un nuevo elemento h4 para el título de la receta
-                        const titleReceta = document.createElement('div');
-                        titleReceta.innerHTML = receta.title;
-                        titleReceta.id = 'title-receta'; // Establece el ID con el título para usarlo como selector CSS
-                        cardReceta.appendChild(titleReceta);
-
-                        // Crea un nuevo elemento p para mostrar el tiempo de la receta
-                        const tiempoReceta = document.createElement('p');
-                        tiempoReceta.textContent = `Tiempo: ${receta.time} minutos`;
-                        cardReceta.appendChild(tiempoReceta);
-
-                        // Establece el fondo de la tarjeta con la imagenMin de la receta
-                        cardReceta.style.backgroundImage = `url(${receta.imageMin})`;
-
-                        // Agrega la tarjeta al contenedor de recetas
-                        recetasContainer.appendChild(cardReceta);
-                    });
-
-                } else {
-                    console.error('La propiedad "data" de la respuesta de la API no es un arreglo válido:', responseData.data);
-                }
-
-            } catch (error) {
-                console.error('Error al hacer la petición API:', error);
-            }
-        }
-
-        // Llama a la función para hacer la petición API cuando quieras obtener los datos
-        fetchAPI();
-
-    </script>
-    <!--Scroll Horizontal de videos-->
-    <script>
-        const prev = document.querySelector('#controlPrevVideos');
-        const next = document.querySelector('#controlNextVideos');
-        const slider = document.getElementById('videoContainer')
-
-        prev.addEventListener('click', () => {
-            slider.scrollLeft -= 300
-        })
-
-        next.addEventListener('click', () => {
-            slider.scrollLeft += 300
-        })
-    </script>
