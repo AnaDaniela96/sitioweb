@@ -1,37 +1,79 @@
+/* Estilo para vista de insumos */
 
-#botellas {
-    max-width: 80px !important;
-    max-height: 280px !important;
-}
-
+/* Nombre de la marca y presentación de la marca*/
 .contenedor-logos {
     border-radius: 0px 0px 180px 180px;
-    width: 300px;
+    width: 330px;
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
 
 }
+
 .contenedor-logos img {
-    max-width: 100%; /* Para que la imagen no exceda el tamaño del div */
-    max-height: 100%; /* Para que la imagen no exceda el tamaño del div */
+    max-width: 100%;
+    /* Para que la imagen no exceda el tamaño del div */
+    max-height: 100%;
+    /* Para que la imagen no exceda el tamaño del div */
 }
 
+
+/* Carrusel horizontal */
 .scroll-horizontal-container {
-    max-height: 0vh;
+    max-height: 550px;
     overflow-x: auto;
-    white-space: nowrap; /* Evita que los elementos se rompan en varias líneas */
-  }
-  
-  .scroll-horizontal-container .row {
-    display: inline-flex; /* Mostrar elementos en una fila horizontal */
-    flex-wrap: nowrap; /* Evitar el salto de línea de los elementos */
-    gap: 3px; /* Espacio entre elementos */
-  }
-  
-  /* .scroll-horizontal-container .card {
-    flex: 0 0 auto; /* Evitar que las tarjetas crezcan para llenar el espacio 
-  } */
-  
+    white-space: nowrap;
+    /* Evita que los elementos se rompan en varias líneas */
+}
+
+.scroll-horizontal-container .row {
+    display: inline-flex;
+    /* Mostrar elementos en una fila horizontal */
+    flex-wrap: nowrap;
+    /* Evitar el salto de línea de los elementos */
+    gap: 5px;
+    /* Espacio entre elementos */
+}
+
+.scroll-horizontal-container .card {
+    flex: 0 0 auto;
+    /* Evitar que las tarjetas crezcan para llenar el espacio */
+}
+
+
+/* Cards donde se muestran los productos */
+.card {
+    width: 250px !important;
+    height: 500px; /* Deja que la altura se ajuste al contenido */
+    display: flex; /* Establece la tarjeta como un contenedor flexible */
+    flex-direction: column; /* Establece la dirección de flexión como columna */
+    align-items: center; /* Centra verticalmente el contenido en la tarjeta */
+    padding-top: 5px; /* Agrega espacio en la parte superior de la tarjeta */
+    border: none;
+}
+
+.card-body {
+    max-height: 150px; /* Establece una altura máxima para el cuerpo de la tarjeta */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    white-space: normal; /* Permite el salto de línea del texto */
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita el texto a dos líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.card-footer{
+    background-color: white;
+    border: none;
+}
+
+/* Características de imagen en producto */
+#botellas{
+    max-height: 260px !important;
+    max-width: 75px !important;
+}

@@ -14,7 +14,10 @@ export class InsumosComponent implements OnInit {
   //Array filtrado
 
   //Jarabes
-  jarabesTorani: any [] = [];
+  jarabesToraniClasico: any [] = [];
+  jarabesPuremadeTorani: any [] = [];
+  jarabesZeroSugar: any[] = [];
+  jarabesSugarFree: any[] = [];
 
   constructor(
     private dataService: DataService,
@@ -25,16 +28,38 @@ export class InsumosComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
-      //console.log('Información de insumosArray', this.insumosArray);
+      console.log('Información de insumosArray', this.insumosArray);
 
-      // Filtra los Jarabes Torani Clásicos que cumplan la condición y crea un nuevo array.
-      this.jarabesTorani = this.insumosArray.filter(insumo =>
-        this.contienePalabrasToraniClasicoJarabe(insumo.name)
+      //Filtra los Jarabes Clásico Torani y crea un nuevo array.
+      this.jarabesToraniClasico = this.insumosArray.filter(insumo =>
+        this.contienePalabrasToraniClasicoJarabe(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
+
+      //Filtra los Jarabes Puremade Torani y crea un nuevo array.
+      this.jarabesPuremadeTorani = this.insumosArray.filter(insumo =>
+        this.contienePalabrasToraniPuramadeJarabe(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+       //Filtra los Jarabes Zugar free y crea un nuevo array.
+       this.jarabesZeroSugar = this.insumosArray.filter(insumo =>
+        this.contienePalabrasToraniZeroSugar(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+       //Filtra los Jarabes Zero Sugar y crea un nuevo array.
+       this.jarabesSugarFree = this.insumosArray.filter(insumo =>
+        this.contienePalabrasToraniSugarFree(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      console.log(this.jarabesSugarFree);
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
     })
+
   }
 
   //Limpia las url de las imagenes del insumo
@@ -60,7 +85,7 @@ export class InsumosComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
-  //Mostrar Jarabes
+  //Mostrar Jarabes 
   contienePalabrasChillOutJarabe(nombre: string): boolean {
     const palabrasClave = ['JARABE', 'AGAVE', 'CHILLOUT'];
     return palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
@@ -72,5 +97,49 @@ export class InsumosComponent implements OnInit {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
   }
+
+  contienePalabrasToraniPuramadeJarabe(nombre: string): boolean {
+    const palabrasClave = ['TORANI', 'PUREMADE', 'JARABE'];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['ZERO', 'SUGAR'];
+    
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+    
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+        && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+    
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+}
+
+contienePalabrasToraniZeroSugar(nombre: string): boolean {
+  const palabrasClave = ['TORANI', 'ZERO', 'SUGAR', 'JARABE'];
+  
+  // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  const nombreEnMayusculas = nombre.toUpperCase();
+  
+  // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+  
+  //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  return cumpleCondicion;
+}
+
+contienePalabrasToraniSugarFree(nombre: string): boolean {
+  const palabrasClave = ['TORANI', 'FREE', 'SUGAR', 'JARABE'];
+  
+  // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  const nombreEnMayusculas = nombre.toUpperCase();
+  
+  // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+  
+  //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  return cumpleCondicion;
+}
+
 
 }
