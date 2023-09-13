@@ -8,23 +8,14 @@ import * as L from 'leaflet';
 })
 export class DondeEncontrarnosComponent {
   private map: any;
-  ngOnInit() {
-    this.initMap();
-    this.addCustomMarker();
-  }
-  private initMap() {
-    this.map = L.map('map').setView([26.8748005, -109.5415344], 5);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.map);
-  }
-  private addCustomMarker() {
-    // Configurar el icono personalizado
-    const customIcon = L.icon({
-      iconUrl: 'https://cafeetrusca.com/img/LOCATION-ETRUSCA.svg',
-      iconSize: [42, 42]
-    });
+  private unicaSucursalMarker : any;
+  private ciudadSelect: any;
+  private sucursalSelect : any;
+ 
+  private sucursales: any[] = []; // Define the sucursales array at the class level
 
-    // Coordenadas donde deseas colocar el marcador
-    const sucursales = [
+  ngOnInit() {
+    this.sucursales = [
       {
         lat: 19.4923666,
         lng: -99.1578552,
@@ -160,10 +151,170 @@ export class DondeEncontrarnosComponent {
       }
         // Agrega más sucursales aquí...
       ];
-    
-    // Agregar el marcador al mapa con el icono personalizado
-    sucursales.forEach((sucursal) => {
-      L.marker([sucursal.lat, sucursal.lng], { icon: customIcon }).addTo(this.map);
-    }); 
+    this.initMap();
+    this.changeSucursal();
+    this.addCustomMarker();
+   
+  }
+  private initMap() {
+    this.map = L.map('map').setView([26.8748005, -109.5415344], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.map);
+  }
+  private addCustomMarker() {
+    // Configurar el icono personalizado
+   // Crear los iconos personalizados
+   const customIcon = L.icon({
+      iconUrl: 'https://cafeetrusca.com/img/LOCATION-ETRUSCA.svg',
+      iconSize: [42, 42], // Cambia el tamaño del ícono si es necesario
+    });
+
+    const markerIconUrl = 'https://cafeetrusca.com/img/LOCATION-ETRUSCA.svg'; // Reemplaza con la URL de la imagen del marcador
+    const markerIcon = L.icon({
+      iconUrl: markerIconUrl,
+      iconSize: [42, 42], // Cambia el tamaño del ícono del marcador si es necesario
+    });
+
+    // Agregar marcadores para cada sucursal con ambos íconos personalizados
+    this.sucursales.forEach((sucursal) => {
+      const popupContent =
+        '<b>' + sucursal.nombre + '</b><br>' + sucursal.direccion + '<br>' + sucursal.horarios;
+
+      const marker = L.marker([sucursal.lat, sucursal.lng], { icon: customIcon }).addTo(this.map);
+      marker.bindPopup(popupContent);
+
+      const logoMarker = L.marker([sucursal.lat, sucursal.lng], { icon: markerIcon, zIndexOffset: -1 }).addTo(this.map);
+
+      // Si solo hay una sucursal, guardamos la referencia al marcador de esa sucursal
+      if (this.sucursales.length === 1) {
+        this.unicaSucursalMarker = marker;
+      }
+    });
+  }
+
+  private changeSucursal() {
+    this.sucursalSelect = document.getElementById('sucursalSelect');
+    this.ciudadSelect = document.getElementById('ciudadSelect');
+
+    this.ciudadSelect.addEventListener('change', () => {
+      const selectedCiudad = this.ciudadSelect.value;
+
+      const sucursalesFiltradas = this.sucursales.filter((sucursal) => {
+        return sucursal.ciudad === selectedCiudad;
+      });
+
+      const sucursalesOptions = sucursalesFiltradas.map((sucursal) => {
+        return `<option value="${sucursal.nombre}">${sucursal.nombre}</option>`;
+      });
+      this.sucursalSelect.addEventListener('change', () => {
+        const selectedSucursal = this.sucursalSelect.value; // Obtener la sucursal seleccionada
+      
+        // Filtrar las sucursales según la sucursal seleccionada
+        const sucursalSeleccionada = this.sucursales.find((sucursal) => {
+          return sucursal.nombre === selectedSucursal;
+        });
+      
+        // Si encontramos la sucursal seleccionada en el arreglo de sucursales
+        if (sucursalSeleccionada) {
+          // Obtenemos las coordenadas de la sucursal seleccionada
+          const latitud = sucursalSeleccionada.lat;
+          const longitud = sucursalSeleccionada.lng;
+      
+          // Centramos la vista del mapa en las coordenadas de la sucursal seleccionada
+          this.map.setView([latitud, longitud], 15); // Puedes ajustar el nivel de zoom (último parámetro) según tus necesidades
+  
+          // You can call your actualizarInformacionSucursal function here if you have defined it.
+          // actualizarInformacionSucursal(sucursalSeleccionada);
+        }
+      });
+      this.sucursalSelect.innerHTML = sucursalesOptions.join('');
+
+      const ciudadesCoordenadas: { [key: string]: [number, number] } = {
+        'Ciudad de México': [19.4326, -99.1332],
+        //'Zapopan': [20.6769, -103.3482],
+        'Guadalajara': [20.6597, -103.3496],
+        'Monterrey': [25.6866, -100.3161],
+        'Puebla': [19.0414, -98.2063],
+        'Querétaro': [20.5881, -100.3880],
+        'Tijuana': [32.5149, -117.0382],
+        'León': [21.1606, -101.7116],
+        'Toluca': [19.2826, -99.6557],
+      };
+
+      const coordenadas = ciudadesCoordenadas[selectedCiudad];
+      console.log(selectedCiudad);
+      console.log(coordenadas);
+
+      if (coordenadas) {
+        this.map.setView(coordenadas, 12);
+        // Actualiza la información de la sucursal
+        this.actualizarInformacionSucursal(sucursalesFiltradas[0]);
+      } else {
+        this.map.setView([26.8748005, -109.5415344], 5);
+        const sucursalesFiltradasDefault = this.sucursales.filter((sucursal) => {
+          return sucursal.nombre === 'Café Etrusca CEDIS Vallejo';
+        });
+        // Actualiza la información de la sucursal predeterminada
+        this.actualizarInformacionSucursal(sucursalesFiltradasDefault[0]);
+      }
+
+      if (sucursalesFiltradas.length === 1) {
+        const unicaSucursal = sucursalesFiltradas[0];
+        const latitud = unicaSucursal.lat;
+        const longitud = unicaSucursal.lng;
+        this.actualizarInformacionSucursal(unicaSucursal);
+        this.map.setView([latitud, longitud], 15);
+        // Abre el globo (popup) automáticamente para esa sucursal si solo hay una
+        if (unicaSucursal.length === 1 && this.unicaSucursalMarker) {
+          this.unicaSucursalMarker.openPopup();
+        }
+      }
+    });
+  }
+  private actualizarInformacionSucursal(sucursal: any) {
+    try {
+      console.log(sucursal);
+      // Aquí puedes realizar la lógica para actualizar la información de la sucursal
+      // Por ejemplo, puedes cambiar el horario, dirección, teléfono, etc., según la selección
+  
+      // Ejemplo: Actualizar el horario
+      const horarios = document.querySelector('.horario');
+      if (horarios) {
+        horarios.textContent = sucursal.horarios;
+      }
+  
+      // Ejemplo: Actualizar la dirección
+      const direccion = document.querySelector('.direccion');
+      if (direccion) {
+        direccion.textContent = sucursal.direccion;
+      }
+  
+      // Selecciona el elemento con la clase "email" utilizando querySelector
+      const email = document.querySelector('.email');
+      if (email) {
+        // Limpia el contenido del elemento padre
+        email.innerHTML = '';
+        // Crea un enlace (<a>) con el correo electrónico y asigna su href
+        const emailEnlace = document.createElement('a');
+        emailEnlace.href = 'mailto:' + sucursal.email;
+        emailEnlace.textContent = sucursal.email;
+        // Agrega el enlace al elemento con la clase "email"
+        email.appendChild(emailEnlace);
+      }
+  
+      // Selecciona el elemento con la clase "telefono" utilizando querySelector
+      const telefono = document.querySelector('.telefono');
+      if (telefono) {
+        // Limpia el contenido del elemento padre
+        telefono.innerHTML = '';
+        // Crea un enlace (<a>) con el número de teléfono y asigna su href
+        const telefonoEnlace = document.createElement('a');
+        telefonoEnlace.href = 'tel:' + sucursal.telefono;
+        telefonoEnlace.textContent = sucursal.telefono;
+        // Agrega el enlace al elemento con la clase "telefono"
+        telefono.appendChild(telefonoEnlace);
+      }
+    } catch (error) {
+      console.error('Error al actualizar información de la sucursal:', error);
+    }
   }
 }
