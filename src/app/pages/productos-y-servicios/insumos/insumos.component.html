@@ -15,7 +15,8 @@
             <label class="form-check-label" for="flexSwitchCheckDefault">Salsas</label>
         </div>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" 
+                [(ngModel)]="mostrarPuresYConcentrados" unchecked>
             <label class="form-check-label" for="flexSwitchCheckDefault">Purés y concentrados</label>
         </div>
         <div class="form-check form-switch">
@@ -74,7 +75,7 @@
             <!-- <div class="row my-5" id="jarabesChillOut">
                 <div class="row my-5">
                     <div class="col-lg-3 contenedor-logos" style=" background-color: #55C1C4;">
-                        <img src="../../../../assets/LogosMarcas/Jarabes/Chillout_logos-09.png">
+                        <img src="../../../../assets/Insumos/Chillout_logos-09.png">
                     </div>
         
                     <p class="col-lg-9" style="text-align: justify;">Es un <b style="color: #FBCE00;">producto líquido</b>,
@@ -110,7 +111,7 @@
             <div class="my-5">
                 <div class="d-flex flex-wrap justify-content-around">
                     <div class="contenedor-logos my-3">
-                        <img src="../../../../assets/LogosMarcas/Jarabes/Torani-Logo.webp">
+                        <img src="../../../../assets/Insumos/Torani-Logo.webp">
                     </div>
 
                     <p class style="text-align: justify;"><b style="color: #FBCE00;">Diversidad</b>
@@ -265,7 +266,7 @@
             <div class="row my-5" id="jarabesChillOut">
                 <div class="row my-5">
                     <div class="col-lg-3 contenedor-logos" style=" background-color: #7ACE7C;">
-                        <img src="../../../../assets/LogosMarcas/Jarabes/Chillout_logos-fruit.png">
+                        <img src="../../../../assets/Insumos/Chillout_logos-fruit.png">
                     </div>
 
                     <p class="col-lg-9" style="text-align: justify;">El <b style="color: #7ACE7C;">chamoy de
@@ -300,7 +301,7 @@
             <!--Cards para Torani Salsas-->
             <div class="d-flex flex-wrap justify-content-around">
                 <div class="contenedor-logos my-3">
-                    <img src="../../../../assets/LogosMarcas/Jarabes/Torani-Logo.webp">
+                    <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp">
                 </div>
 
                 <p class style="text-align: justify;">Llega para decorar tus bebidas y dar un<b style="color: #FBCE00;">
@@ -334,7 +335,7 @@
         </div>
 
         <!--Categoría Pures y concentrados -->
-        <div id="todos-los-pures-y-concentrados">
+        <div id="todos-los-pures-y-concentrados" *ngIf="mostrarPuresYConcentrados">
             <div id="todos-los-pures-y-concentrados-presentacion" class="container">
                 <h2 style="text-align: center; font-size: 2.1875rem; font-weight: 700; color: #F3625E;">Purés y
                     concentrados</h2>
@@ -350,7 +351,7 @@
             <div class="row my-5" id="chillOutFruitPuresConcentrados">
                 <div class="row my-5">
                     <div class="col-lg-3 contenedor-logos" style="background-color: #F3625E;">
-                        <img src="../../../../assets/LogosMarcas/Jarabes/Chillout_logos-fruit.png"
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png"
                             alt="Logos de Jarabes">
                     </div>
                     <div class="col-lg-9">
@@ -392,7 +393,7 @@
             <div class="row my-5" id="chillOutJamPuresConcentrados">
                 <div class="row my-5">
                     <div class="col-lg-3 contenedor-logos" style="background-color: #8D84BE;">
-                        <img src="../../../../assets/LogosMarcas/Jarabes/Chillout_logos-JAM.png" alt="Logos de Jarabes">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-JAM.png" alt="Logos de Jarabes">
                     </div>
                     <div class="col-lg-9">
                         <p style="text-align: justify; font-size: 1.125rem;">
@@ -430,26 +431,97 @@
                 </div>
             </div>
 
-            <!--Cards para Torani Real Smoothie-->
-            <div class="row my-5" id="chillOutJamPuresConcentrados">
+            <!--Cards para Torani Purées y concentrados-->
+            <div class="row my-5" id="toraniPuresConcentrados">
                 <div class="row my-5">
                     <div class="col-lg-3 contenedor-logos">
-                        <img src="../../../../assets/LogosMarcas/Jarabes/Torani-Logo.webp" alt="Logos de Jarabes">
-                    </div>
-                    <div class="col-lg-9">
-                        <p style="text-align: justify; font-size: 1.125rem;">
-                            Preparado de frutas con una<span style="color: #8D84BE; font-weight: bold;">consistencia parecida a la mermelada,</span>
-                            sin concervadores, colorantes ni sabores artificiales.
-                        </p>
+                        <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logos de Jarabes">
                     </div>
                 </div>
 
+                <!-- Torani Real Smoothie-->
+                <h3>Real Smoothie Mix</h3>
+                <div class="col-lg-9">
+                    <p style="text-align: justify; font-size: 1.125rem;">
+                        Preparado de frutas con una <span style="color: #8D84BE; font-weight: bold;">consistencia
+                            parecida a la mermelada,</span>
+                        sin concervadores, colorantes ni sabores artificiales.
+                    </p>
+                </div>
                 <div class="scroll-horizontal-container my-5">
                     <div class="row">
                         <div *ngFor="let insumo of pureToraniRealSmoothieMix"
                             style="height: 500px !important; width: 250px !important;">
                             <div class="card">
                                 <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" id="botella"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Torani Purée Blend-->
+                <h3>Pureé Blend</h3>
+                <div class="col-lg-9">
+                    <p style="text-align: justify; font-size: 1.125rem;">
+                        <span style="color: #8D84BE; font-weight: bold;">Mezcla de fruta fresca cocida al vapor y
+                            colada.</span>
+                        Con textura espesa y homogéna, perfecto para frappés, coctéles o bebidas con café.
+                    </p>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of pureToraniPureeBlend"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" id="botella"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cards para TEAZONE Concentrados-->
+            <div class="row my-5" id="toraniPuresConcentrados">
+                <div class="row my-5">
+                    <div class="col-lg-3 contenedor-logos">
+                        <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp" alt="Logos de Concentrados">
+                    </div>
+                    <div class="col-lg-9">
+                        <p style="text-align: justify; font-size: 1.125rem;">
+                            Para preparar <span style="color: #8D84BE; font-weight: bold;">smoothies, jugos, tés saborizados, yogur congelado, raspados coctéles y repostería. </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of concentradoTeaZone"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" 
                                     alt="Imagen del insumo">
                                 <div class="card-body">
                                     <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>

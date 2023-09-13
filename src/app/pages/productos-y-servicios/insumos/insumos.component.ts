@@ -14,6 +14,7 @@ export class InsumosComponent implements OnInit {
   //Manipulación de filtros por categoría
   mostrarJarabes: boolean = false;
   mostrarSalsas: boolean = false;
+  mostrarPuresYConcentrados: boolean = false;
 
   //Jarabes
   jarabesChillOut: any[] = [];
@@ -30,7 +31,9 @@ export class InsumosComponent implements OnInit {
   chillOutFruitConcentrados: any[] = [];
   chillOutJamConcentrados: any[] = [];
   pureToraniRealSmoothieMix: any[] = [];
- 
+  pureToraniPureeBlend: any[] = [];
+  concentradoTeaZone: any[] = [];
+
 
   constructor(
     private dataService: DataService,
@@ -103,7 +106,19 @@ export class InsumosComponent implements OnInit {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      console.log(this.pureToraniRealSmoothieMix);
+      // Filtra los pures Torani Puree Blend y crea un nuevo array
+      this.pureToraniPureeBlend = this.insumosArray.filter(insumo =>
+        this.contienePalabrasToraniPureeBlendConcentrado(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra los pures Torani Puree Blend y crea un nuevo array
+      this.concentradoTeaZone = this.insumosArray.filter(insumo =>
+        this.contienePalabrasTeaZonePures(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      console.log(this.concentradoTeaZone);
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
@@ -262,6 +277,36 @@ export class InsumosComponent implements OnInit {
     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
     const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
       && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasToraniPureeBlendConcentrado(nombre: string): boolean {
+    const palabrasClave = ['TORANI', 'PURE', 'BLEND'];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['SMOOTHIE', 'JARABE'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasTeaZonePures(nombre: string): boolean {
+    const palabrasClave = ['TEA', 'ZONE', 'CONCENTRADO'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
 
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
