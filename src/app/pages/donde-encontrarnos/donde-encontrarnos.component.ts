@@ -164,6 +164,6 @@ export class DondeEncontrarnosComponent {
     // Agregar el marcador al mapa con el icono personalizado
     sucursales.forEach((sucursal) => {
       L.marker([sucursal.lat, sucursal.lng], { icon: customIcon }).addTo(this.map);
-    });
+    }); 
   }
 }
