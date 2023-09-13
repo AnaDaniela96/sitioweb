@@ -15,6 +15,10 @@ export class InsumosComponent implements OnInit {
   mostrarJarabes: boolean = false;
   mostrarSalsas: boolean = false;
   mostrarPuresYConcentrados: boolean = false;
+  mostrarMoleculares: boolean = false;
+  mostrarTisanas: boolean = false;
+  mostrarTes: boolean = false;
+  mostrarPolvos: boolean = false;
 
   //Jarabes
   jarabesChillOut: any[] = [];
@@ -33,6 +37,17 @@ export class InsumosComponent implements OnInit {
   pureToraniRealSmoothieMix: any[] = [];
   pureToraniPureeBlend: any[] = [];
   concentradoTeaZone: any[] = [];
+
+  //Moleculares
+  chillOutPearls: any[] = [];
+  teaZonePerlas: any [] = [];
+  chillOutJelly: any [] = [];
+  teaZoneJelly: any [] = [];
+  chillOutTapioca: any [] = [];
+  teaZoneTapioca: any [] = [];
+
+  //Tes y Tisanas
+  tisanasFrutalesCafeEtrusca: any[] = [];
 
 
   constructor(
@@ -106,19 +121,61 @@ export class InsumosComponent implements OnInit {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      // Filtra los pures Torani Puree Blend y crea un nuevo array
+      // Filtra los pures Torani Puree Blend y crea un nuevo array.
       this.pureToraniPureeBlend = this.insumosArray.filter(insumo =>
         this.contienePalabrasToraniPureeBlendConcentrado(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      // Filtra los pures Torani Puree Blend y crea un nuevo array
+      // Filtra los concentrados TeaZone y crea un nuevo array
       this.concentradoTeaZone = this.insumosArray.filter(insumo =>
         this.contienePalabrasTeaZonePures(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      console.log(this.concentradoTeaZone);
+      // Filtra los chillOut Pearls y crea un nuevo array
+      this.chillOutPearls = this.insumosArray.filter(insumo =>
+        this.contienePalabrasChillOutPearls(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra los TeaZone Perlas crea un nuevo array
+      this.teaZonePerlas = this.insumosArray.filter(insumo =>
+        this.contienePalabrasTeaZonePerlas(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra los Jellys ChillOut y crea un nuevo array
+      this.chillOutJelly = this.insumosArray.filter(insumo =>
+        this.contienePalabrasChillOutJelly(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra los Jellys Tea Zone y crea un nuevo array
+      this.teaZoneJelly = this.insumosArray.filter(insumo =>
+        this.contienePalabrasTeaZoneJelly(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra las Tapiocas Chillout y crea un nuevo array
+      this.chillOutTapioca = this.insumosArray.filter(insumo =>
+        this.contienePalabrasChillOutTapioca(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra las Tapiocas Chillout y crea un nuevo array
+      this.teaZoneTapioca = this.insumosArray.filter(insumo =>
+        this.contienePalabrasTeaZoneTapioca(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra las Tisanas y tes Café Etrusca y crea un nuevo array
+      this.tisanasFrutalesCafeEtrusca = this.insumosArray.filter(insumo =>
+        this.contienePalabrasTisanaFrutalesCafeEtrusca(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      console.log(this.tisanasFrutalesCafeEtrusca);
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
@@ -307,6 +364,125 @@ export class InsumosComponent implements OnInit {
 
     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
     const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasChillOutPearls(nombre: string): boolean {
+    const palabrasClave = ['CHILLOUT', 'PEARL',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['JAM', 'JARABE', 'TAPIOCA'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasTeaZonePerlas(nombre: string): boolean {
+    const palabrasClave = ['TEA', 'ZONE', 'PERLAS'];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['CONCENTRADO', 'TAPIOCA',];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasChillOutJelly(nombre: string): boolean {
+    const palabrasClave = ['CHILLOUT', 'JELLY'];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['CONCENTRADO', 'TAPIOCA', 'JARABE'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasTeaZoneJelly(nombre: string): boolean {
+    const palabrasClave = ['TEA', 'ZONE', 'JELLY'];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['PERLAS', 'CONCENTRADO',];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasChillOutTapioca(nombre: string): boolean {
+    const palabrasClave = ['TAPIOCA',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['JELLY', 'TEA', 'ZONE'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasTeaZoneTapioca(nombre: string): boolean {
+    const palabrasClave = ['TAPIOCA', 'ZONE', 'TEA',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['CHILOUT', 'CHILLOUT',];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasTisanaFrutalesCafeEtrusca(nombre: string): boolean {
+    const palabrasClave = ['TISANA', 'FRUTAL'];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['EUROTÉ', 'STASH',];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
 
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;

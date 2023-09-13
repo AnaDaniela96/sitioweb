@@ -1,43 +1,59 @@
 <div class="row">
-    <aside class="col-lg-2 bg-light p-4">
-        <div class="card-body text-center my-4">
-            <button class="btn btn-outline-primary" type="submit">Limpiar filtros</button>
-        </div>
-        <h4 style="text-align: center;">Filtrar por Categoría</h4>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                [(ngModel)]="mostrarJarabes" unchecked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Jarabes</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                [(ngModel)]="mostrarSalsas" unchecked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Salsas</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" 
-                [(ngModel)]="mostrarPuresYConcentrados" unchecked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Purés y concentrados</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Moleculares</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Tes</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Tisanas</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Polvos</label>
-        </div>
+    <aside class="col-lg-2 p-4 align-self-stretch">
+        <h4 class="text-center mb-3">Filtrar por Categoría</h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="jarabesCheckbox" [(ngModel)]="mostrarJarabes">
+                    <label class="form-check-label" for="jarabesCheckbox">Jarabes</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="salsasCheckbox" [(ngModel)]="mostrarSalsas">
+                    <label class="form-check-label" for="salsasCheckbox">Salsas</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="puresCheckbox"
+                        [(ngModel)]="mostrarPuresYConcentrados">
+                    <label class="form-check-label" for="puresCheckbox">Purés y concentrados</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="molecularesCheckbox"
+                        [(ngModel)]="mostrarMoleculares">
+                    <label class="form-check-label" for="molecularesCheckbox">Moleculares</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="tesCheckbox" [(ngModel)]="mostrarTes">
+                    <label class="form-check-label" for="tesCheckbox">Tés</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="tisanasCheckbox" [(ngModel)]="mostrarTisanas">
+                    <label class="form-check-label" for="tisanasCheckbox">Tisanas</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="polvosCheckbox" [(ngModel)]="mostrarPolvos">
+                    <label class="form-check-label" for="polvosCheckbox">Polvos</label>
+                </div>
+            </li>
+        </ul>
+        <!-- <div class="card-body text-center my-4">
+    <button class="btn btn-outline-primary" type="submit">Limpiar filtros</button>
+  </div> -->
     </aside>
 
-    <main class="col-lg-10 p-4">
+
+    <main class="col-lg-10 p-3 align-self-start">
 
         <!--Cards para todos los insumos-->
         <!-- <div class="col-md-3 col-sm-6" *ngFor="let insumo of insumosArray" id="todosLosInsumos">
@@ -57,77 +73,110 @@
         <!-- Categoría Jarabes-->
         <div id="todos-los-jarabes" *ngIf="mostrarJarabes">
             <div id="Jarabes-Presentación" class="container">
-                <h2 style="text-align: center; font-size: 2.1875rem; font-weight: 700; color: #55C1C4;">¡Descubre los
-                    Jarabes!</h2>
-                <p style="text-align: justify;">Los <span style="color:#55C1C4; font-weight: bold;">Jarabes</span> son
-                    <span style="color:#55C1C4; font-weight: bold;">líquidos concentrados</span> de azúcar y otros
-                    elementos, a veces
-                    incluso con extractos de agave azul. Estos <span
-                        style="color:#55C1C4; font-weight: bold;">transforman la
-                        consistencia, sabor y aroma de tus bebidas</span> favoritas. En el mundo de la mixología, los
-                    jarabes son
-                    considerados un elemento esencial para crear las mejores creaciones.
+                <div class="d-flex align-items-center">
+                    <img src="https://cafeetrusca.com/img/logos/41%20Jarabes.webp"
+                        style="max-width: 4rem; max-height: 6rem;" alt="Icono de Jarabes">
+                    <h2 class="text-center mb-0 mr-3" style="font-size: 4vw; font-weight: 700;">Jarabes
+                    </h2>
+                </div>
+
+                <p style="text-align: justify;">Los <span style="font-weight: bold;">Jarabes</span> son
+                    líquidos con soluciones concentradas <span style="font-weight: bold;">de azúcar</span> y otros
+                    elementos (como zumos, licores o
+                    extractivas), los cuales <span style="font-weight: bold;">cambian la consistencia, sabor y aroma de
+                        la bebida</span> a la que se le agregan.
+                    En la rama coctelera el uso de los jarabes se ha popularizado a tal punto que la mixología los
+                    considera un elemento imprescindible para sus creaciones.
                 </p>
-            </div>
+            </div><br>
 
 
             <!--Cards para ChillOut Jarabes-->
-            <!-- <div class="row my-5" id="jarabesChillOut">
-                <div class="row my-5">
-                    <div class="col-lg-3 contenedor-logos" style=" background-color: #55C1C4;">
-                        <img src="../../../../assets/Insumos/Chillout_logos-09.png">
+            <!-- <div class="container" id="jarabesChillOut">
+                <div class="d-flex flex-wrap align-items-center justify-content-around">
+                    <div class="contenedor-logos" style=" background-color: #55C1C4;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-09.png">
                     </div>
-        
-                    <p class="col-lg-9" style="text-align: justify;">Es un <b style="color: #FBCE00;">producto líquido</b>,
-                        que funciona <b style="color: #FBCE00;">como endulzante </b>para todo tipo de bebidas, tanto frías
-                        como calientes. Puede inclusive, utilizarse para la elaboración de postres.</p>
                 </div>
 
-                 <div class="scroll-horizontal-container my-5">
-                        <div class="row">
-                            <div *ngFor="let insumo of jarabesChillOut"
-                                style="height: 500px !important; width: 250px !important;">
-                                <div class="card">
-                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                        alt="Imagen del insumo" id="botellas">
-                                    <div class="card-body">
-                                        <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                        <p class="card-text"> {{ insumo.name }}</p>
-                                        <p class="d-none card-text">{{ insumo.description }}</p>
-                                    </div>
-                                    <div class="card-footer justify-content-right">
-                                        <a routerLink="#" style="color: black;"> Ver más
-                                            <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            <!-- Icono de flecha hacia la derecha 
-                                        </a>
-                                    </div>
+                <div class="container my-2" style="justify-content: center;">
+                    <p class="col-lg-9" style="text-align: justify;">Es un <b>producto
+                        líquido</b>,
+                    que funciona <span style="font-weight: bold;">como endulzante </span>para todo tipo de bebidas, tanto
+                    frías como calientes. Puede inclusive, utilizarse para la elaboración de postres.</p>
+                </div>
+
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of jarabesChillOut"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo" id="botellas">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha 
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </div> -->
 
             <!--Cards para marca Torani-->
-            <div class="my-5">
-                <div class="d-flex flex-wrap justify-content-around">
+            <div class="my-3">
+                <div class="container d-flex flex-wrap justify-content-around align-items-center">
                     <div class="contenedor-logos my-3">
-                        <img src="../../../../assets/Insumos/Torani-Logo.webp">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logo de Torani">
                     </div>
 
-                    <p class style="text-align: justify;"><b style="color: #FBCE00;">Diversidad</b>
-                        en líneas de producto para cumpliar las necesidades de los clientes, es la <b
-                            style="color: #FBCE00;">marca líder </b> en jarabes <b style="color: #FBCE00;">en el
-                            mundo,</b>, cuenta con
-                        <b style="color: #FBCE00;">4 líneas diferentes.</b>
+                    <p class="p-3"
+                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                        <span style="font-weight: bold;">Diversidad</span> en líneas de producto para cumplir las
+                        necesidades de los clientes, es la <span style="font-weight: bold;">marca líder</span> en
+                        jarabes <span style="font-weight: bold;">en el mundo</span>, cuenta con <span
+                            style="font-weight: bold;">4 líneas diferentes.</span>
                     </p>
                 </div>
 
+
                 <!--Cards para Jarabes Torani-->
-                <div class="row my-5" id="jarabesToraniClasico">
-                    <div class="d-flex flex-column justify-content-center">
-                        <h2>Clásico</h2>
+                <div class="container" id="jarabesToraniClasico">
+                    <div class="d-flex flex-column justify-content-center my-2">
+                        <h2 style="font-size: 1.575rem; font-weight: 700;">Clásico</h2>
                         <p>Endulzado con azúcar de caña.</p>
                     </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    <span style="font-weight: bold;">67 sabores disponibles</span>
+                                </p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
+                                </p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    Rinde aprox. 25 bebidas de 480 ml.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="scroll-horizontal-container my-5">
                         <div class="row">
@@ -154,12 +203,36 @@
                 </div>
 
                 <!--Cards para Torani Puremade-->
-                <div class="row my-4" id="jarabesToraniPuremade">
+                <div class="container" id="jarabesToraniPuremade">
                     <div class="d-flex flex-column justify-content-center">
-                        <h2>Puremade</h2>
+                        <h2 style="font-size: 1.575rem; font-weight: 700;">Puremade</h2>
                         <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente
                             Modificados (OMG).</p>
                     </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    <span style="font-weight: bold;">3 sabores disponibles</span>
+                                </p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
+                                </p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    Rinde aprox. 25 bebidas de 480 ml.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="scroll-horizontal-container my-5">
                         <div class="row">
                             <div *ngFor="let insumo of jarabesPuremadeTorani"
@@ -185,12 +258,36 @@
                 </div>
 
                 <!--Cards para Torani Zugar free-->
-                <div class="row my-4" id="jarabesToraniZugarFree>">
+                <div class="container" id="jarabesToraniZugarFree>">
                     <div class="d-flex flex-column justify-content-center">
-                        <h2>Puremade Zero Sugar</h2>
+                        <h2 style="font-size: 1.575rem; font-weight: 700;">Puremade Zero Sugar</h2>
                         <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente
                             Modificados (OMG).</p>
                     </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    <span style="font-weight: bold;">32 sabores disponibles</span>
+                                </p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
+                                </p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    Rinde aprox. 25 bebidas de 480 ml.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="scroll-horizontal-container my-5">
                         <div class="row">
                             <div *ngFor="let insumo of jarabesZeroSugar"
@@ -216,11 +313,35 @@
                 </div>
 
                 <!--Cards para Torani Sugar Free-->
-                <div class="row my-4" id="jarabesToraniZugarFree>">
+                <div class="container" id="jarabesToraniZugarFree>">
                     <div class="d-flex flex-column justify-content-center">
-                        <h2>Puremade Sugar Free</h2>
+                        <h2 style="font-size: 1.575rem; font-weight: 700;">Puremade Sugar Free</h2>
                         <p>Endulzado con splenda.</p>
                     </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    <span style="font-weight: bold;">32 sabores disponibles</span>
+                                </p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
+                                </p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="p-3 text-center"
+                                    style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                    Rinde aprox. 25 bebidas de 480 ml.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="scroll-horizontal-container my-5">
                         <div class="row">
                             <div *ngFor="let insumo of jarabesSugarFree"
@@ -250,15 +371,18 @@
         <!--Categoría Salsas-->
         <div id="todas-las-salsas" *ngIf="mostrarSalsas">
             <div id="Salsas-Presentación" class="container">
-                <h2 style="text-align: center; font-size: 2.1875rem; font-weight: 700; color: #7ACE7C;">Explora Nuestras
-                    Salsas</h2>
-                <p style="text-align: justify;">Las <span style="color:#7ACE7C; font-weight: bold;">Salsas</span> son el
-                    <span style="color:#7ACE7C; font-weight: bold;">complemento perfecto</span> para tus bebidas. Son
-                    una mezcla
-                    de ingredientes que crean una
-                    <span style="color:#7ACE7C; font-weight: bold;">consistencia semi-líquida ideal para decorar,
-                        realzar sabores,
-                        endulzar, aromatizar o dar cuerpo</span> a tus bebidas, ya sean frías o calientes.
+                <div class="d-flex align-items-center">
+                    <img src="https://cafeetrusca.com/img/logos/42%20salsas.webp"
+                        style="max-width: 6rem; max-height: 6rem;" alt="Icono de Jarabes">
+                    <h2 class="text-center mb-0 mr-3" style="font-size: 4vw; font-weight: 700;">Salsas
+                    </h2>
+                </div>
+
+                <p style="text-align: justify;">Las <span style="font-weight: bold;">Salsas</span> son el
+                    <span style="font-weight: bold;">complemento perfecto</span> para tus bebidas. Son
+                    una mezcla de ingredientes que crean una
+                    <span style="font-weight: bold;">consistencia semi-líquida ideal para decorar,
+                    realzar sabores, endulzar, aromatizar o dar cuerpo</span> a tus bebidas, ya sean frías o calientes.
                 </p>
             </div>
 
@@ -266,7 +390,7 @@
             <div class="row my-5" id="jarabesChillOut">
                 <div class="row my-5">
                     <div class="col-lg-3 contenedor-logos" style=" background-color: #7ACE7C;">
-                        <img src="../../../../assets/Insumos/Chillout_logos-fruit.png">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png">
                     </div>
 
                     <p class="col-lg-9" style="text-align: justify;">El <b style="color: #7ACE7C;">chamoy de
@@ -512,7 +636,8 @@
                     </div>
                     <div class="col-lg-9">
                         <p style="text-align: justify; font-size: 1.125rem;">
-                            Para preparar <span style="color: #8D84BE; font-weight: bold;">smoothies, jugos, tés saborizados, yogur congelado, raspados coctéles y repostería. </span>
+                            Para preparar <span style="color: #8D84BE; font-weight: bold;">smoothies, jugos, tés
+                                saborizados, yogur congelado, raspados coctéles y repostería. </span>
                         </p>
                     </div>
                 </div>
@@ -521,7 +646,7 @@
                         <div *ngFor="let insumo of concentradoTeaZone"
                             style="height: 500px !important; width: 250px !important;">
                             <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" 
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
                                     alt="Imagen del insumo">
                                 <div class="card-body">
                                     <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
@@ -539,5 +664,289 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Categoría Moleculares-->
+        <div id="todos-los-moleculares" *ngIf="mostrarMoleculares">
+            <div id="Moleculares-Presentación" class="container">
+                <h2 style="text-align: center; font-size: 2.1875rem; font-weight: 700; color: #70BDDD;">Moleculares</h2>
+                <p style="text-align: justify;">Una combinación entre <span style="color:#70BDDD; font-weight: bold;">
+                        líquido
+                        y sólido,</span>
+                    usálas como base y/o topping, también para complementar tus bebidas y obtener una <span
+                        style="color:#70BDDD; font-weight: bold;"> doble textura.</span>Tenemos
+                    vaias opciones con diferentes sabores y colores para crear combinaciones, dando como resultado <span
+                        style="color:#70BDDD; font-weight: bold;"> bebidas con sabor y un toque visual diferente.</span>
+                </p>
+            </div>
+
+            <!--Cards para ChillOut Pearls-->
+            <div class="row my-5" id="pearlsChillOut">
+                <div class="row my-5">
+                    <div class="col-lg-3 contenedor-logos" style=" background-color: #70BDDD;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-pearls.png">
+                    </div>
+
+                    <p class="col-lg-9" style="text-align: justify;"><b style="color: #70BDDD;">Perlas con
+                            una cubierta gelatinosa y relleno líquido</b> diferentes sabores. Decoración para bebidas
+                        como sodas, frappés, smoothies y postres.</p>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of chillOutPearls"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cards para Tea Zone Perlas-->
+            <div class="row my-5" id="perlasTeaZone">
+                <div class="row my-5">
+                    <div class="col-lg-3 contenedor-logos">
+                        <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp">
+                    </div>
+
+                    <p class="col-lg-9" style="text-align: justify;"><b style="color: #70BDDD;">Esferas con cubierta
+                            gelatinosa y relleno líquido.</b>Ideales para sodas italianas, frappés y smoothies.</p>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of teaZonePerlas"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cards para Jelly Chillout-->
+            <div class="row my-5" id="jellyChillOut">
+                <div class="row my-5">
+                    <div class="col-lg-3 contenedor-logos" style=" background-color: #F29CB9;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-JELLY.png">
+                    </div>
+
+                    <p class="col-lg-9" style="text-align: justify;"><b style="color: #70BDDD;">Agregan sabor, dulzura,
+                            colorantes
+                            y textura a las bebidas.</b>Se pueden utulizar con tés, tisanas o decoración de smoothies.
+                        Útil para dar un
+                        toque diferente a las bebidas clásicas de cafetería.</p>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of chillOutJelly"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cards para Jalea/Jelly TeaZone-->
+            <div class="row my-5" id="perlasTeaZone">
+                <div class="row my-5">
+                    <div class="col-lg-3 contenedor-logos">
+                        <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp">
+                    </div>
+
+                    <p class="col-lg-9" style="text-align: justify;"><b style="color: #70BDDD;">Agregan sabor, dulzura,
+                            color y textura a las bebidas. </b>Se pueden utilizar con tés, tisanas o decoración de
+                        smoothies. Útil para dar un toque diferente a la bebidas clásicas de cafetería.</p>
+                </div>
+
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of teaZoneJelly"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards para Tapioca ChillOut-->
+            <div class="row my-5" id="tapiocaChillOut">
+                <div class="row my-5">
+                    <div class="col-lg-3 contenedor-logos" style=" background-color: #F29CB9;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-02.png">
+                    </div>
+
+                    <p class="col-lg-9" style="text-align: justify;"><b style="color: #70BDDD;">Esferas de fécula de
+                            tapioca </b>de fácil
+                        cocción y manejo; una vez cocidas adquieren una textura gelatinosa, se pueden saborizar con
+                        azúcar o jarabes. Empacadas al vació para inhibir el desarrollo de bacterias.
+                        Un complemento para quienes disfrutan las dobles texturas en las bebidas.</p>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of chillOutTapioca"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cards para Tea Zone Tapioca-->
+            <div class="row my-5" id="perlasTeaZone">
+                <div class="row my-5">
+                    <div class="col-lg-3 contenedor-logos">
+                        <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp">
+                    </div>
+
+                    <p class="col-lg-9" style="text-align: justify;"><b style="color: #70BDDD;">Esferas de fécula de
+                            tapioca.</b>
+                        Deja volar tu imaginación y crea combinaciones con las perlas de tapioca en tus bebidas, se
+                        pueden <b>combinar con sabores frutales
+                            y también con café y té.
+                        </b></p>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of teaZoneTapioca"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Categoría Tés y Tisanas-->
+        <div id="todos-los-tes-y-tisanas" *ngIf="mostrarTisanas">
+            <div id="tesYTisanas-Presentación" class="container">
+                <h2 style="text-align: center; font-size: 2.1875rem; font-weight: 700; color: #70BDDD;">Tes y tisanas
+                </h2>
+                <p style="text-align: justify;">Las tisanas frutales tiene una base de <span
+                        style="color:#70BDDD; font-weight: bold;">
+                        manzana y jamaica, </span> que se combina con diferentes frutos como <span
+                        style="color:#70BDDD; font-weight: bold;"> moras, plátano, arándano, maracuyá, limón, entre
+                        otros.</span>
+                </p>
+            </div>
+
+            <!-- Cards para tisanas Café Etrusca-->
+            <div class="row my-5" id="tisanasCafeEtrusca">
+                <!-- <div class="row my-5">
+                <div class="col-lg-3 contenedor-logos" style=" background-color: #F29CB9;">
+                    <img src="">
+                </div>
+
+                <p class="col-lg-9" style="text-align: justify;"><b style="color: #70BDDD;">Agregan sabor, dulzura,
+                        colorantes
+                        y textura a las bebidas.</b>Se pueden utulizar con tés, tisanas o decoración de smoothies.
+                    Útil para dar un
+                    toque diferente a las bebidas clásicas de cafetería.</p>
+            </div> -->
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of tisanasFrutalesCafeEtrusca"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
