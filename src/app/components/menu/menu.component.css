@@ -29,3 +29,26 @@
     a{
         font-weight: bold;
     }
+
+
+    .calabaza  {
+        background-color: #f87705 !important;
+        transition: background-color 500ms,color 500ms;
+    }
+
+    /* Estilos para el menú fijo */
+.fixed-menu {
+    position: fixed;
+    height: 137px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ajusta según sea necesario */
+     /* Establece scroll-behavior para suavizar el desplazamiento */
+    scroll-behavior: smooth;
+    /* Añade una transición para un efecto de suavidad al cambio */
+    transition: background-color 0.3s ease; /* Puedes ajustar la duración y la propiedad según tus preferencias */
+
+  }
+  
+ 
