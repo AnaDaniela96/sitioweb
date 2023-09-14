@@ -382,31 +382,55 @@
                     <span style="font-weight: bold;">complemento perfecto</span> para tus bebidas. Son
                     una mezcla de ingredientes que crean una
                     <span style="font-weight: bold;">consistencia semi-líquida ideal para decorar,
-                    realzar sabores, endulzar, aromatizar o dar cuerpo</span> a tus bebidas, ya sean frías o calientes.
+                        realzar sabores, endulzar, aromatizar o dar cuerpo</span> a tus bebidas, ya sean frías o
+                    calientes.
                 </p>
             </div>
 
             <!--Cards para ChillOut Salsas-->
-            <div class="container" id="jarabesChillOut">
-                <div class="row my-5">
+            <div class="container my-5" id="jarabesChillOut">
+                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos" style=" background-color: #7ACE7C;">
                         <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png">
                     </div>
 
-                    <p class="col-lg-9" style="text-align: justify;">El <b style="color: #7ACE7C;">chamoy de
-                            ChillOut</b>,
-                        esta pensado para los paladares mexicanos, sin embargo, se adapta muy bien a todos los gustos.
-                        Un complemento para dar ese toque de sabor en tus bebidas.</p>
+                    <p class="p-3"
+                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                        El <span style="font-weight: bold;"> chamoy de ChillOut </span>esta pensado para los paladares
+                        mexicanos, sin embargo, se adapta muy bien a
+                        todos los gustos. Un complemento para dar ese toque de sabor en tus bebidas.
+                    </p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                <span style="font-weight: bold;">Única presentación</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                Botella de 1 Litro
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                Rinde aprox. 25 bebidas de 480 ml.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">
-                    <div style="height: 500px !important; width: 250px !important;">
-                        <div class="card">
-                            <img class="card-img-top" [src]="sanitizeUrl(salsasChillOut[0].urlArticleFirst)"
-                                alt="Imagen del insumo">
+                    <div style="height: 700px !important; width: 550px !important; display: flex; justify-content: center; align-items: center;">
+                        <div class="card" style="height: 700px !important; width: 550px !important;">
+                            <img class="card-img-top" [src]="sanitizeUrl(salsasChillOut[0].urlArticleFirst)" alt="Imagen del insumo" style="margin: 0 auto;">
                             <div class="card-body">
-                                <h5 class="card-title my-2" style="font-weight: 700;">{{ salsasChillOut[0].keySap }}
-                                </h5>
+                                <h5 class="card-title my-2" style="font-weight: 700;">{{ salsasChillOut[0].keySap }}</h5>
                                 <p class="card-text"> {{ salsasChillOut[0].name }}</p>
                                 <p class="d-none card-text">{{ salsasChillOut[0].description }}</p>
                             </div>
@@ -418,7 +442,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>                
             </div>
 
 
