@@ -33,3 +33,36 @@ a {
     background-color: #f87705 !important;
 }
 
+
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+.btn-whatsapp{
+
+position: fixed;
+bottom: 20px; /* Ajusta la distancia desde la parte inferior según tus preferencias */
+left: 20px; /* Ajusta la distancia desde la izquierda según tus preferencias */
+z-index: 999; /* Ajusta el índice z para asegurarte de que esté por encima de otros elementos */
+
+}
+
+.btn-whatsapp {
+    background-color: #f87705;
+    border-color: #f87705;
+}
