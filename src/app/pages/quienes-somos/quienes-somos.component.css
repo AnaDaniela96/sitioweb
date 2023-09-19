@@ -17,3 +17,7 @@
 .grid-item:nth-child(even) {
     background-image: url('../../..//assets/PRUEBAS/coldbrew.webp');
 }
+
+.personaennube{
+    margin-left: 45vw;
+}
