@@ -56,6 +56,7 @@ export class InsumosComponent implements OnInit {
   polvosChillOutMix: any [] = [];
   polvosChillOutJustFruit: any [] = [];
   polvosChillOutActive: any [] = [];
+  polvosDavidRio: any [] = [];
 
   constructor(
     private dataService: DataService,
@@ -218,7 +219,13 @@ export class InsumosComponent implements OnInit {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      console.log(this.polvosChillOutActive);
+      // Filtra los David Río y crea un nuevo array
+      this. polvosDavidRio = this.insumosArray.filter(insumo =>
+        this.contienePalabrasDavidRio(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      console.log(this.polvosDavidRio);
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
@@ -631,6 +638,25 @@ export class InsumosComponent implements OnInit {
 
     // Palabras a excluir
     const palabrasExcluidas = ['MIX', 'JAM', 'TAPIOCA'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+
+     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  }
+
+  contienePalabrasDavidRio(nombre: string): boolean {
+    const palabrasClave = ['DAVID', 'RIO',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['SUPER', 'BLENDS', 'TAPIOCA'];
 
     // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
     const nombreEnMayusculas = nombre.toUpperCase();

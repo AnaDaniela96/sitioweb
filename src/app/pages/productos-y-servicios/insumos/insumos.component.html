@@ -1581,7 +1581,7 @@
                 </div>
             </div>
 
-            <!--Chill Out Active-->
+            <!--Cards para Chill Out Active-->
             <div class="container">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos" style="background-color: #BBC244;">
@@ -1620,6 +1620,66 @@
                 <div class="scroll-horizontal-container my-5">
                     <div class="row">
                         <div *ngFor="let insumo of polvosChillOutActive"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cards para David Río-->
+            <div class="container">
+                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                    <div class="col-lg-3 contenedor-logos">
+                        <img src="../../../../assets/LogosMarcas/Insumos/david-rio.png">
+                    </div>
+
+                    <p class="p-3"
+                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                       Chai, David Río elaborado con<span style="font-weight: bold;">té, hierbas y especias</span> de diferentes variedades. Tiene como objetivo el apoyar organizaciones que procuran el bienstar de <span
+                            style="font-weight: bold;">animales en peligro de extinsión</span>
+                    </p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                <span style="font-weight: bold;">10 sabores</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                Presentación de 1.814 kg, 1520 kg, 398 g, 456 g y 337 g
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                Marca líder mundial en Chai.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of polvosDavidRio"
                             style="height: 500px !important; width: 250px !important;">
                             <div class="card">
                                 <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
