@@ -21,14 +21,13 @@ import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.c
 import { DataService } from './utils/data.service';
 import { FormacionEmprendedoresComponent } from './pages/capacitacion/formacion-emprendedores/formacion-emprendedores.component';
 import { CafeVerdeComponent } from './pages/capacitacion/cafe-verde/cafe-verde.component';
-import { ColdBrewComponent } from './pages/capacitacion/cold-brew/cold-brew.component';
 import { ExperienciaSensorialComponent } from './pages/capacitacion/experiencia-sensorial/experiencia-sensorial.component';
 import { MixologiaMocteleriaComponent } from './pages/capacitacion/mixologia-mocteleria/mixologia-mocteleria.component';
 import { TostadoComponent } from './pages/capacitacion/tostado/tostado.component';
 import { FormacionParaBaristasComponent } from './pages/capacitacion/formacion-para-baristas/formacion-para-baristas.component';
 import { CatacionComponent } from './pages/capacitacion/catacion/catacion.component';
 import { BubleTeaIcedCoffeeComponent } from './pages/capacitacion/bubble-tea-iced-coffee/bubble-tea-iced-coffee.component';
-import { BrewBarComponent } from './pages/capacitacion/brew-bar/brew-bar.component';
+import { BrewBarComponent } from './pages/capacitacion/brew-bar-coldBrew/brew-bar.component';
 import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-encontrarnos.component';
 
 
@@ -51,7 +50,6 @@ import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-enc
     ArteLatteComponent,
     FormacionEmprendedoresComponent,
     CafeVerdeComponent,
-    ColdBrewComponent,
     ExperienciaSensorialComponent,
     MixologiaMocteleriaComponent,
     TostadoComponent,
