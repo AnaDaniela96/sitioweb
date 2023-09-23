@@ -1,0 +1,46 @@
+.recommendations-list {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.recommendations-list li {
+    margin-bottom: 8px;
+}
+
+.recommendations-list ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+/* Opcional: Cambiar el color de los enlaces dentro de la lista */
+.recommendations-list a {
+    color: #007bff; /* Cambia el color a tu preferencia */
+    text-decoration: none;
+}
+
+/* Opcional: Estilo para los enlaces visitados */
+.recommendations-list a:visited {
+    color: #9900cc; /* Cambia el color a tu preferencia */
+}
+
+/* Opcional: Estilo para los enlaces al pasar el mouse */
+.recommendations-list a:hover {
+    text-decoration: underline;
+}
+.contact-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #007bff; /* Cambia el color a tu preferencia */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}

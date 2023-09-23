@@ -27,6 +27,7 @@ import { FormacionParaBaristasComponent } from './pages/capacitacion/formacion-p
 import { BubleTeaIcedCoffeeComponent } from './pages/capacitacion/bubble-tea-iced-coffee/bubble-tea-iced-coffee.component';
 import { BrewBarComponent } from './pages/capacitacion/brew-bar-coldBrew/brew-bar.component';
 import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-encontrarnos.component';
+import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacion/politicas-cursos-talleres/politicas-cursos-talleres.component';
 
 
 
@@ -53,7 +54,8 @@ import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-enc
     FormacionParaBaristasComponent,
     BubleTeaIcedCoffeeComponent,
     BrewBarComponent,
-    DondeEncontrarnosComponent
+    DondeEncontrarnosComponent,
+    PoliticasCursosTalleresComponent
   ],
   imports: [
     BrowserModule,
