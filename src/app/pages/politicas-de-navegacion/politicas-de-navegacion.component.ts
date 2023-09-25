@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PoliticasDeNavegacionComponent  implements OnInit {
   politicasExternas = false;
+  avisoDePrivacidad = false;
 
   constructor(private router: Router) {}
 
@@ -18,6 +19,14 @@ export class PoliticasDeNavegacionComponent  implements OnInit {
   onPoliticasChange() {
     if (this.politicasExternas) {
       this.router.navigate(['/politicas-de-navegacion/politicas-externas-cursos-talleres']);
+    } else {
+      this.router.navigate(['/politicas-de-navegacion']);
+    }
+  }
+
+  onAvisoPrivacidadChange() {
+    if (this.avisoDePrivacidad) {
+      this.router.navigate(['politicas-de-navegacion/aviso-de-privacidad']);
     } else {
       this.router.navigate(['/politicas-de-navegacion']);
     }
