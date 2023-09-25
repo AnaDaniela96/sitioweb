@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class PoliticasDeNavegacionComponent  implements OnInit {
   politicasExternas = false;
   avisoDePrivacidad = false;
+  terminosYCondiciones = false;
 
   constructor(private router: Router) {}
 
@@ -27,6 +28,14 @@ export class PoliticasDeNavegacionComponent  implements OnInit {
   onAvisoPrivacidadChange() {
     if (this.avisoDePrivacidad) {
       this.router.navigate(['politicas-de-navegacion/aviso-de-privacidad']);
+    } else {
+      this.router.navigate(['/politicas-de-navegacion']);
+    }
+  }
+
+  onTerminosYCondicionesChange(){
+    if (this.terminosYCondiciones) {
+      this.router.navigate(['politicas-de-navegacion/terminos-y-condiciones']);
     } else {
       this.router.navigate(['/politicas-de-navegacion']);
     }

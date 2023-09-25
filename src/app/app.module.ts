@@ -28,6 +28,7 @@ import { BubleTeaIcedCoffeeComponent } from './pages/capacitacion/bubble-tea-ice
 import { BrewBarComponent } from './pages/capacitacion/brew-bar-coldBrew/brew-bar.component';
 import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-encontrarnos.component';
 import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacion/politicas-cursos-talleres/politicas-cursos-talleres.component';
+import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/terminos-y-condiciones/terminos-y-condiciones.component';
 
 
 
@@ -55,7 +56,8 @@ import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacio
     BubleTeaIcedCoffeeComponent,
     BrewBarComponent,
     DondeEncontrarnosComponent,
-    PoliticasCursosTalleresComponent
+    PoliticasCursosTalleresComponent,
+    TerminosYCondicionesComponent
   ],
   imports: [
     BrowserModule,

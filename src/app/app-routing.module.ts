@@ -21,6 +21,7 @@ import { BubleTeaIcedCoffeeComponent } from './pages/capacitacion/bubble-tea-ice
 import { BrewBarComponent } from './pages/capacitacion/brew-bar-coldBrew/brew-bar.component';
 import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-encontrarnos.component';
 import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacion/politicas-cursos-talleres/politicas-cursos-talleres.component';
+import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/terminos-y-condiciones/terminos-y-condiciones.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
     path: 'politicas-de-navegacion', component: PoliticasDeNavegacionComponent,
     children: [
       { path: 'aviso-de-privacidad', component: AvisoDePrivacidadComponent },
-      { path: 'politicas-externas-cursos-talleres', component: PoliticasCursosTalleresComponent}
+      { path: 'politicas-externas-cursos-talleres', component: PoliticasCursosTalleresComponent},
+      { path: 'terminos-y-condiciones', component: TerminosYCondicionesComponent},
     ]
   },
   { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent},
