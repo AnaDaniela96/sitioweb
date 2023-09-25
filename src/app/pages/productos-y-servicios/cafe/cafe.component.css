@@ -1,0 +1,83 @@
+/* Nombre de la marca y presentación de la marca*/
+.contenedor-logos {
+    width: 400px;
+    height: auto;
+}
+
+.contenedor-logos img {
+    max-width: 100%;
+    /* Para que la imagen no exceda el tamaño del div */
+    max-height: 100%;
+    /* Para que la imagen no exceda el tamaño del div */
+}
+
+/* Carrusel horizontal */
+.scroll-horizontal-container {
+    max-height: 550px;
+    overflow-x: auto;
+    white-space: nowrap;
+    /* Evita que los elementos se rompan en varias líneas */
+}
+
+.scroll-horizontal-container .row {
+    display: inline-flex;
+    /* Mostrar elementos en una fila horizontal */
+    flex-wrap: nowrap;
+    /* Evitar el salto de línea de los elementos */
+    gap: 5px;
+    /* Espacio entre elementos */
+}
+
+.scroll-horizontal-container .card {
+    flex: 0 0 auto;
+    /* Evitar que las tarjetas crezcan para llenar el espacio */
+}
+
+*::-webkit-scrollbar-track,#ticket_body::-webkit-scrollbar-track,body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar,#ticket_body::-webkit-scrollbar,body::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb,#ticket_body::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #343a40;
+}
+
+/* Cards donde se muestran los productos */
+.card {
+    width: 250px !important;
+    height: 500px; /* Deja que la altura se ajuste al contenido */
+    display: flex; /* Establece la tarjeta como un contenedor flexible */
+    flex-direction: column; /* Establece la dirección de flexión como columna */
+    align-items: center; /* Centra verticalmente el contenido en la tarjeta */
+    padding-top: 5px; /* Agrega espacio en la parte superior de la tarjeta */
+    border: none;
+}
+
+.card-body {
+    max-height: 150px; /* Establece una altura máxima para el cuerpo de la tarjeta */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    white-space: normal; /* Permite el salto de línea del texto */
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita el texto a dos líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.card-footer{
+    background-color: white;
+    border: none;
+}

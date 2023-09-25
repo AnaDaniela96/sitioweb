@@ -1,73 +1,234 @@
 <div class="row">
-    <aside class="col-lg-3 bg-light p-4">
-        <div class="card-body text-center my-4">
-            <button class="btn btn-outline-primary" type="submit">Limpiar filtros</button>
-        </div>
-        <!--Filtrado por tipo de Café-->
-        <div class="my-2">
-            <h4 style="text-align: center;">Tipos de café</h4>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Café de Especialidad</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Café Premium</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Café Verde</label>
-            </div>
-        </div><br>
-        <!--Filtrado por región-->
-        <div class="my-2">
-            <h4 style="text-align: center;">Filtrar por Región</h4>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Veracruz</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Puebla</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Hidalgo</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Chiapas</label>
-            </div>
-        </div><br>
-        <!--Filtrado por proceso-->
-        <div class="my-2">
-            <h4 style="text-align: center;">Filtrar por proceso</h4>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Lavado</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Añejado en barrica</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Honey</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" unchecked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Macerados</label>
-            </div>
-        </div>
-
+    <aside class="col-lg-2 p-4 align-self-stretch">
+        <h4 class="text-center mb-3">Filtrar por Categoría</h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="jarabesCheckbox">
+                    <label class="form-check-label" for="jarabesCheckbox">Barista Champ</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="jarabesCheckbox">
+                    <label class="form-check-label" for="jarabesCheckbox">Café premium</label>
+                </div>
+            </li>
+        </ul>
     </aside>
-    <main class="col-lg-9 p-4">
-        <h1>Café de especialidad Barista Champ</h1>
-        <div class="container">
-            <p>Es un café que ha estado a la altura de los estándares de calidad en cada parte del proceso y que ha
-                mantenido su calidad desde que es recogido de la planta, por el productor, hasta la preparación final.
-                De acuerdo con la SCA (Specialty Coffee Association), lo define en su estado verde, como café libre de
-                defectos primarios, sin quakers, con el mínimo de 5 defectos totales y con una puntuación por encima de
-                los 80 puntos de acuerdo con los protocolos de catación para ser considerado como especial.</p>
-        </div>
+
+    <main class="col-lg-10 p-3 align-self-start">
+        <section class="container">
+            <h1>Café de Especialidad</h1>
+            <!-- <div class="contenedor-logos">
+                <img src="../../../../assets/LogosMarcas/baristaChamp.webp" alt="Logo de Barista Champ">
+            </div> -->
+        </section>
+
+        <article class="container">
+            <h2>Calidad Inigualable</h2>
+            <p>Nuestro café cumple con los más altos estándares de calidad en la industria de los cafés de
+                especialidad. Garantizamos una trazabilidad completa, desde la cosecha de la cereza hasta la meticulosa
+                preparación, supervisando cuidadosamente cada etapa del proceso.</p>
+        </article>
+
+        <!-- Proceso de Lavado -->
+        <section class="container" id="contenedor-procesoDeLavado">
+            <h3>Proceso <strong>Lavado</strong></h3>
+            <p><strong>Recolección:</strong> Selección de las cerezas en su punto óptimo de maduración.
+                <strong>Despulpado:</strong> Manual o mecánico. <strong>Fermentación:</strong> Por 24 horas o más,
+                degradación de azúcares. <strong>Lavado:</strong> Con agua limpia. <strong>Secado:</strong> Al sol o por
+                medios mecánicos.</p>
+
+            <div>
+                <h4>Región Veracruz</h4>
+               <div class="d-flex align-items-center justify-content-center">
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-001_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Vista hermosa</h5>
+                                    <p class="card-text">CES-001 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-002_2.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Naranjales</h5>
+                                    <p class="card-text">CES-002 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-004_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Espinal Garnica</h5>
+                                    <p class="card-text">CES-004 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-005_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Barranca Grande</h5>
+                                    <p class="card-text">CES-005 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-006_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Palo Blanco</h5>
+                                    <p class="card-text">CES-006 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-007_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Úrsulo Galván</h5>
+                                    <p class="card-text">CES-007 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-008_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Vequia</h5>
+                                    <p class="card-text">CES-008 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-013_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Elena</h5>
+                                    <p class="card-text">CES-013 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-015_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Espinal</h5>
+                                    <p class="card-text">CES-015 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-028_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Lagunilla</h5>
+                                    <p class="card-text">CES-028 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-029_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Mesa del Espinal</h5>
+                                    <p class="card-text">CES-029 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ" src="../../../../assets/cafe-barista-champ/CES-040_01.webp">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">Finca Vaquería</h5>
+                                    <p class="card-text">CES-040 </p>
+                                    <p class="card-text">250 gr.</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </section>
     </main>
+</div>
+<div class="row" style="height: 2cm;"></div>
