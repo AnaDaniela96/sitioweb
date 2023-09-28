@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/utils/data.service';
+import { DataService } from '../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -67,7 +67,7 @@ export class InsumosComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
-      console.log('Información de insumosArray', this.insumosArray);
+      //console.log('Información de insumosArray', this.insumosArray);
 
       //Filtra los Jarabes Chillout y crea un nuevo array.
       this.jarabesChillOut = this.insumosArray.filter(insumo =>

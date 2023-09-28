@@ -61,8 +61,7 @@
             </li>
             <li class="list-group-item">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="vasosCheckbox"
-                        [(ngModel)]="categorias.vasos">
+                    <input class="form-check-input" type="checkbox" id="vasosCheckbox" [(ngModel)]="categorias.vasos">
                     <label class="form-check-label" for="vasosCheckbox">Vasos</label>
                 </div>
             </li>
@@ -98,7 +97,8 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="elementosAuxiliaresCheckbox"
                                 [(ngModel)]="subcategorias.cafeteria.elementosAuxiliares">
-                            <label class="form-check-label" for="elementosAuxiliaresCheckbox">Elementos Auxiliares</label>
+                            <label class="form-check-label" for="elementosAuxiliaresCheckbox">Elementos
+                                Auxiliares</label>
                         </div>
                     </li>
                 </ul>
@@ -120,12 +120,15 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="complementosMetodosExtraccionCheckbox"
                                 [(ngModel)]="subcategorias.metodosExtraccion.complementosMetodos">
-                            <label class="form-check-label" for="complementosMetodosExtraccionCheckbox">Complementos para Métodos</label>
+                            <label class="form-check-label" for="complementosMetodosExtraccionCheckbox">Complementos
+                                para Métodos</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="jarrasServidorasMetodosExtraccionCheckbox"
+                            <input class="form-check-input" type="checkbox"
+                                id="jarrasServidorasMetodosExtraccionCheckbox"
                                 [(ngModel)]="subcategorias.metodosExtraccion.jarrasServidoras">
-                            <label class="form-check-label" for="jarrasServidorasMetodosExtraccionCheckbox">Jarras Servidoras</label>
+                            <label class="form-check-label" for="jarrasServidorasMetodosExtraccionCheckbox">Jarras
+                                Servidoras</label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="limpiezaMetodosCheckbox"
@@ -149,3 +152,35 @@
             </li>
         </ul>
     </aside>
+
+    <main class="col-lg-10 p-3 align-self-start">
+        <!--Cards para todos los accesorios-->
+
+        <!--Cards para Accesorios-->
+        <div id="todos-los-drippers">
+            <div class="scroll-horizontal-container my-5">
+                <div class="row">
+                    <div *ngFor="let accesorio of drippers" style="height: 500px !important; width: 250px !important;">
+                        <div class="card">
+                            <img class="card-img-top" [src]="sanitizeUrl(accesorio.urlArticleFirst)"
+                                alt="Imagen del insumo" id="botellas">
+                            <div class="card-body">
+                                <h5 class="card-title my-2" style="font-weight: 700;">{{ accesorio.keySap }}</h5>
+                                <p class="card-text"> {{ accesorio.name }}</p>
+                                <p class="d-none card-text">{{ accesorio.description }}</p>
+                            </div>
+                            <div class="card-footer justify-content-right">
+                                <a routerLink="#" style="color: black;"> Ver más
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    <!-- Icono de flecha hacia la derecha -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</div>

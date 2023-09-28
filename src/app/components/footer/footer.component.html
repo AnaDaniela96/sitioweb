@@ -1,57 +1,57 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-6">
-            <div class="d-flex flex-row justify-content-around">
-                <div class="d-flex flex-column">
+        <div class="col-lg-6 col-md-12">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 mb-3">
                     <h4>Nosotros</h4>
-                    <a routerLink="/quienes-somos">¿Quiénes somos?</a>
-                    <a routerLink="/donde-encontranos">¿Dónde encontrarnos?</a>
-                    <a routerLink="/sostenibilidad">Sostenibilidad</a>
+                    <a routerLink="/quienes-somos">¿Quiénes somos?</a><br>
+                    <a routerLink="/donde-encontranos">¿Dónde encontrarnos?</a><br>
+                    <a routerLink="/sostenibilidad">Sostenibilidad</a><br>
                     <br>
-                    <a routerLink="/blog">Blog</a>
-                    <a routerLink="http://wwww.hola.com">Preguntas frecuentes</a>
+                    <a routerLink="/blog">Blog</a><br>
+                    <a routerLink="http://wwww.hola.com">Preguntas frecuentes</a><br>
                 </div>
-                <div class="d-flex flex-column">
+                <div class="col-md-6 col-sm-6 mb-3">
                     <h4>Para tu negocio</h4>
-                    <a routerLink="/productos-y-servicios/maquinaria-y-equipo-para-cafeterias">Maquinaria</a>
-                    <a routerLink="/productos-y-servicios/insumos-para-cafeterias">Insumos</a>
-                    <a routerLink="/productos-y-servicios/accesorios-para-poner-una-cafeteria">Accesorios</a>
+                    <a routerLink="/productos-y-servicios/maquinaria-y-equipo-para-cafeterias">Maquinaria</a><br>
+                    <a routerLink="/productos-y-servicios/insumos-para-cafeterias">Insumos</a><br>
+                    <a routerLink="/productos-y-servicios/accesorios-para-poner-una-cafeteria">Accesorios</a><br>
                     <br>
-                    <a routerLink="#">Nuestras marcas</a>
-                    <a routerLink="#">Recetas</a>
+                    <a routerLink="#">Nuestras marcas</a><br>
+                    <a routerLink="#">Recetas</a><br>
                 </div>
-                <div class="d-flex flex-column">
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
                     <h4>Nuestros cursos</h4>
-                    <a routerLink="#">¿Qué puedes aprender?</a>
+                    <a routerLink="#">¿Qué puedes aprender?</a><br>
                     <a routerLink="#">Calendarios</a><br>
-                    <button type="button" class="btn btn-warning">Auto facturación</button>
+                    <!-- <button type="button" class="btn btn-warning">Auto facturación</button> -->
                 </div>
             </div>
         </div>
-        <div class="col-6 d-fex flex-column">
-            <!-- <h4>Notas y actualizaciones</h4>
-            <p>
-                Regístrate para recibir información de promociones, nuevos productos y otras noticias.
-            </p>
+        <div class="col-lg-6 col-md-12 mt-lg-0 mt-3">
+            <h4>Notas y actualizaciones</h4>
+            <p>Regístrate para recibir información de promociones, nuevos productos y otras noticias.</p>
             <div class="row">
-                <div class="col-5 ">
-                    <input class="my-2" type="text" placeholder="Introduce tu dirección de correo">
+                <div class="col-md-8 col-sm-12 mb-2">
+                    <input class="form-control" type="text" placeholder="Introduce tu dirección de correo">
                 </div>
-                <div class="col-4">
-                    <button class="my-4 btn btn-warning" type="button">Registrarse</button>
+                <div class="col-md-4 col-sm-12 mb-2">
+                    <button class="btn btn-warning btn-block" type="button">Registrarse</button>
                 </div>
-                <div class="col-3"></div>
-            </div> -->
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="d-flex flex-column justify-content-center align-items-center"
-            id="contenedor-terminos-y-condiciones">
-            <h5 class="mt-3">Aviso de privacidad Términos y condiciones</h5>
-            <h6 onclick="">Todos los derechos reservados 2023 Copyright Café Etrusca</h6>
+    <div class="row mt-3">
+        <div class="col-md-12 text-center">
+            <h5><a style="text-decoration: none;" routerLink="/politicas-de-navegacion/aviso-de-privacidad">Aviso de privacidad</a></h5>
+        </div>
+        <div class="col-md-12 text-center">
+            <h5><a style="text-decoration: none;" routerLink="/politicas-de-navegacion/terminos-y-condiciones"> Términos y condiciones</a></h5>
+        </div>
+        <div class="col-md-12 text-center">
+            <h6>Todos los derechos reservados 2023 Copyright Café Etrusca</h6>
         </div>
     </div>
 </div>
-<button class="btn btn-success btn-whatsapp" (click)="openWhatsApp()">
-    <i class="fab fa-whatsapp"></i> ¡Chatea por WhatsApp!
-</button>
