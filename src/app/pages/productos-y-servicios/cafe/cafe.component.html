@@ -1,36 +1,65 @@
 <div class="row">
-    <aside class="col-lg-2 p-4 align-self-stretch">
-        <h4 class="text-center mb-3">Filtrar por Categoría</h4>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="jarabesCheckbox">
-                    <label class="form-check-label" for="jarabesCheckbox">Barista Champ</label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="jarabesCheckbox">
-                    <label class="form-check-label" for="jarabesCheckbox">Café premium</label>
-                </div>
-            </li>
-        </ul>
-    </aside>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Barista Champ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Café Premium</a>
+        </li>
+    </ul>
 
-    <main class="col-lg-10 p-3 align-self-start">
-        <section class="container">
-            <h1>Café de Especialidad</h1>
-            <!-- <div class="contenedor-logos">
-                <img src="../../../../assets/LogosMarcas/baristaChamp.webp" alt="Logo de Barista Champ">
-            </div> -->
+    <main class=" col-lg-12 align-self-start" id="cafe-especialidad-barista-champ">
+        <section class="d-flex flex-column align-items-center my-4 p-4" style="width: 100%;">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../../../../assets/LogosMarcas/baristaChamp.webp" alt="Logo de Barista Champ"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <article class="container">
+        <!--Presentación del café-->
+        <article class="d-flex flex-column align-items-center justify-content-center article-content">
+            <h1 class="text-center"><strong>Cafés de Especialidad</strong></h1><br>
+            <p class="text-center"><strong>COMPROMISO Y SINERGIA</strong></p>
+            <p class="text-center">PARA DESARROLLAR CAFÉS DE CALIDAD</p>
+        </article>
+
+        <img src="../../../../assets/cafe-barista-champ/coffee-bean-berry-ripening-on-coffee-farm-.webp"
+            class="img-fluid my-4" alt="...">
+
+
+        <article class="containers my-4">
             <h2>Calidad Inigualable</h2>
             <p>Nuestro café cumple con los más altos estándares de calidad en la industria de los cafés de
                 especialidad. Garantizamos una trazabilidad completa, desde la cosecha de la cereza hasta la meticulosa
                 preparación, supervisando cuidadosamente cada etapa del proceso.</p>
         </article>
+
+        <div class="container-imagen-text my-4" style="max-height: 900px; overflow: hidden;">
+            <div class="row flex-column flex-md-row">
+                <div class="col-md-6 order-md-2 left-side image-container">
+                    <img class="image img-fluid zoomable"
+                        src="../../../../assets/cafe-barista-champ/CATALOGO_BARISTA CHAMP 2023-min-01.png" alt="Imagen"
+                        style="max-height: 100%; object-fit: contain;">
+                </div>
+                <div class="col-md-6 order-md-1 right-side text-center align-items-center" style="max-height: 100%;">
+                    <h3 >Más que una empresa, somos una
+                        historia</h3>
+                    <p>Conoce el material que cuidadosamente hemos preparado para
+                        hablar de nuestro café</p>
+                    <button class="btn btn-warning mt-4">Barista Champ</button>
+                </div>
+            </div><br>
+        </div>
+
+        <div class="row" style="height: 1cm;"></div>
+
+        <div class="container my-5 p-4">
+            <h3>Acutalmente estos son nuestros cafés, están dividios por proceso y región:</h3>
+        </div><br>
 
         <!-- Proceso de Lavado -->
         <section class="container" id="contenedor-procesoDeLavado">
@@ -57,9 +86,9 @@
                                         <p class="card-text">250 gr.</p>
                                     </div>
                                     <div class="card-footer justify-content-right">
-                                        <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <a href="" style="color: black;"> Comprar ahora
                                         <i class="fas fa-arrow-right" style="color: black;"></i>
-                                    </a> -->
+                                    </a>
                                     </div>
                                 </div>
                             </div>
@@ -73,9 +102,9 @@
                                         <p class="card-text">250 gr.</p>
                                     </div>
                                     <div class="card-footer justify-content-right">
-                                        <!-- <a routerLink="#" style="color: black;"> Ver más
+                                        <a href="https://cafeetruscamx.myvtex.com/barista-champ%C2%AE-naranjales-bolsa--250g/p"  target="_blank" style="color: black;"> Comprar ahora
                                         <i class="fas fa-arrow-right" style="color: black;"></i>
-                                    </a> -->
+                                    </a>
                                     </div>
                                 </div>
                             </div>
@@ -252,8 +281,8 @@
                         <div class="row">
                             <div style="height: 500px !important; width: 250px !important;">
                                 <div class="card">
-                                    <!-- <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ"
-                                        src="../../../../assets/cafe-barista-champ/"> -->
+                                    <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ"
+                                        src="../../../../assets/cafe-barista-champ/CES-002_2.webp">
                                     <div class="card-body">
                                         <h5 class="card-title my-2" style="font-weight: 700;">Finca Cueva</h5>
                                         <p class="card-text">CES-010 </p>
@@ -284,8 +313,8 @@
                             </div>
                             <div style="height: 500px !important; width: 250px !important;">
                                 <div class="card">
-                                    <!-- <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ"
-                                        src="../../../../assets/cafe-barista-champ/CES-009_01.webp"> -->
+                                    <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ"
+                                        src="../../../../assets/cafe-barista-champ/CES-007_01.webp  ">
                                     <div class="card-body">
                                         <h5 class="card-title my-2" style="font-weight: 700;">Finca Jonocotal</h5>
                                         <p class="card-text">CES-049 </p>
@@ -335,8 +364,8 @@
                     <div class="row">
                         <div style="height: 500px !important; width: 250px !important;">
                             <div class="card">
-                                <!-- <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ"
-                                    src="../../../../assets/cafe-barista-champ/"> -->
+                                <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ"
+                                    src="../../../../assets/cafe-barista-champ/CES-050_01.webp">
                                 <div class="card-body">
                                     <h5 class="card-title my-2" style="font-weight: 700;">Finca La Chiripa</h5>
                                     <p class="card-text">CES-044 </p>
@@ -459,8 +488,8 @@
                             </div>
                             <div style="height: 500px !important; width: 250px !important;">
                                 <div class="card">
-                                    <!-- <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ"
-                                        src="../../../../assets/cafe-barista-champ/"> -->
+                                    <img class="card-img-top" alt="Imagen del insumo" id="cafe-barista-champ"
+                                        src="../../../../assets/cafe-barista-champ/CES-006_01.webp">
                                     <div class="card-body">
                                         <h5 class="card-title my-2" style="font-weight: 700;">Finca Barranca Grande
                                             Honey</h5>
@@ -507,7 +536,7 @@
 
         <!--Proceso Macerados -->
         <section class="container" id="contenedor-procesoHoney">
-            <h3>Proceso <strong>Honey</strong></h3><br>
+            <h3>Proceso <strong>Macerados</strong></h3><br>
 
             <!--Región Veracruz-->
             <div>
@@ -552,12 +581,12 @@
                     </div>
                 </div>
             </div>
-
         </section>
+
 
         <!--Proceso Natural -->
         <section class="container" id="contenedor-procesoHoney">
-            <h3>Proceso <strong>Honey</strong></h3><br>
+            <h3>Proceso <strong>Natural</strong></h3><br>
 
             <!--Región Veracruz-->
             <div>
@@ -583,10 +612,24 @@
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <!-- <main class="col-lg-10 p-3 align-self-start" id="cafe-premium">
+        <section class="container">
+            <h1>Café de Especialidad</h1>
+            <div class="container d-flex flex-wrap justify-content-around align-items-center">
+                <div class="contenedor-logos" style="width: 650px !important; height: auto;">
+                    <img src="../../../../assets/cafe-barista-champ/CPM-001_02.webp" alt="Logo de Barista Champ">
+                </div>
+                <p class="p-3"
+                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                    Nuestro café clasificado premium destaca por contener aroma, dulzor, acidez, cuerpo y sabor,
+                    equilibrado, limpio, con un sabor distinitivo en taza y que se adapta a la preparación y exigencia
+                    de nuestros clientes.</p>
+            </div>
 
         </section>
-
-
-    </main>
+    </main> -->
 </div>
 <div class="row" style="height: 2cm;"></div>
