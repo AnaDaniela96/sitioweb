@@ -11,8 +11,25 @@ html{
 :root {
     --yellow-etrusca: #fcb700;
     --fontsize-text: 1.5rem;
-    
+    --heading-color: hsl(0, 0%, 7%);
+    --date-text-color: hsl(0, 0%, 51%);
+    --previous-price-text-color: hsl(0, 98%, 44%);
+    --current-price-text-color: hsla(0, 0%, 0%, 0.822);
+    --liked-heart-icon-color: hsl(0, 98%, 44%);
+    --heart-icon-color: whitesmoke;
+    --pricing-font-weight: 800;
+    --title-font-weight: 800;
+    --date-font-weight: 550;
+
+    /* Cards colors */
+    --card-main-color : whitesmoke;
+    --card-1-secondary-color: rgb(192, 82, 82);
+    --card-2-secondary-color: rgb(67,53,27);
+    --card-3-secondary-color: rgb(178,180,179);
+    --card-4-secondary-color: rgb(96,109,117);
 }
+
+
 
 /* Botones e inputs 
 button {
