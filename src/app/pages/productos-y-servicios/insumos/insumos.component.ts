@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { DataService } from '../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -8,11 +8,34 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./insumos.component.css']
 })
 export class InsumosComponent implements OnInit {
+
+  constructor(
+    private dataService: DataService,
+    private sanitizer: DomSanitizer,
+    private elementRef: ElementRef,
+  ) { }
+
+
+  toggleIcon() {
+    const chevronIcon = this.elementRef.nativeElement.querySelector('.chevronIcon');
+    if (chevronIcon.classList.contains('fa-chevron-down')) {
+      chevronIcon.classList.remove('fa-chevron-down');
+      chevronIcon.classList.add('fa-chevron-right');
+    } else {
+      chevronIcon.classList.remove('fa-chevron-right');
+      chevronIcon.classList.add('fa-chevron-down');
+    }
+  }
+
+
   insumosArray: any[] = [];
   extractedUrls: any;
 
   //Manipulación de filtros por categoría
-  mostrarJarabes: boolean = false;
+  showJarabes: boolean = false;
+  showJarabesTorani: boolean = false;
+  showJarabesChillOut: boolean = false;
+
   mostrarSalsas: boolean = false;
   mostrarPuresYConcentrados: boolean = false;
   mostrarMoleculares: boolean = false;
@@ -40,34 +63,36 @@ export class InsumosComponent implements OnInit {
 
   //Moleculares
   chillOutPearls: any[] = [];
-  teaZonePerlas: any [] = [];
-  chillOutJelly: any [] = [];
-  teaZoneJelly: any [] = [];
-  chillOutTapioca: any [] = [];
-  teaZoneTapioca: any [] = [];
+  teaZonePerlas: any[] = [];
+  chillOutJelly: any[] = [];
+  teaZoneJelly: any[] = [];
+  chillOutTapioca: any[] = [];
+  teaZoneTapioca: any[] = [];
 
   //Tes y Tisanas
   tisanasFrutalesCafeEtrusca: any[] = [];
-  tisanasFrutalesEuroTe: any [] = [];
-  teEurote: any [] = [];
-  teStash: any [] = [];
+  tisanasFrutalesEuroTe: any[] = [];
+  teEurote: any[] = [];
+  teStash: any[] = [];
 
   //Polvos
-  polvosChillOutMix: any [] = [];
-  polvosChillOutJustFruit: any [] = [];
-  polvosChillOutActive: any [] = [];
-  polvosDavidRio: any [] = [];
+  polvosChillOutMix: any[] = [];
+  polvosChillOutJustFruit: any[] = [];
+  polvosChillOutActive: any[] = [];
+  polvosDavidRio: any[] = [];
 
-  constructor(
-    private dataService: DataService,
-    private sanitizer: DomSanitizer,
+  //Manipulación de menú
+  toggleShowAllJarabes() {
+    this.showJarabes = !this.showJarabes; // Invertir el valor
+    this.showJarabesChillOut = !this.showJarabesChillOut;
+    this.showJarabesTorani = !this.showJarabesTorani;
+  }
 
-  ) { }
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
-      //console.log('Información de insumosArray', this.insumosArray);
+      console.log('Información de insumosArray', this.insumosArray);
 
       //Filtra los Jarabes Chillout y crea un nuevo array.
       this.jarabesChillOut = this.insumosArray.filter(insumo =>
@@ -189,14 +214,14 @@ export class InsumosComponent implements OnInit {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-       // Filtra los Tes EuroTe y crea un nuevo array
-       this.teEurote = this.insumosArray.filter(insumo =>
+      // Filtra los Tes EuroTe y crea un nuevo array
+      this.teEurote = this.insumosArray.filter(insumo =>
         this.contienePalabrasTeEuroTe(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-       // Filtra los Te Stash y crea un nuevo array
-       this.teStash = this.insumosArray.filter(insumo =>
+      // Filtra los Te Stash y crea un nuevo array
+      this.teStash = this.insumosArray.filter(insumo =>
         this.contienePalabrasTeStash(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
@@ -208,19 +233,19 @@ export class InsumosComponent implements OnInit {
       );
 
       // Filtra los ChillOut Mix y crea un nuevo array
-      this. polvosChillOutJustFruit = this.insumosArray.filter(insumo =>
+      this.polvosChillOutJustFruit = this.insumosArray.filter(insumo =>
         this.contienePalabrasChillOutJustFruit(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
       // Filtra los ChillOut Active y crea un nuevo array
-      this. polvosChillOutActive = this.insumosArray.filter(insumo =>
+      this.polvosChillOutActive = this.insumosArray.filter(insumo =>
         this.contienePalabrasChillOutActive(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
       // Filtra los David Río y crea un nuevo array
-      this. polvosDavidRio = this.insumosArray.filter(insumo =>
+      this.polvosDavidRio = this.insumosArray.filter(insumo =>
         this.contienePalabrasDavidRio(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
@@ -554,7 +579,7 @@ export class InsumosComponent implements OnInit {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
 
-     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
   }
 
   contienePalabrasTeEuroTe(nombre: string): boolean {
@@ -573,7 +598,7 @@ export class InsumosComponent implements OnInit {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
 
-     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
   }
 
   contienePalabrasTeStash(nombre: string): boolean {
@@ -592,7 +617,7 @@ export class InsumosComponent implements OnInit {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
 
-     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
   }
 
   contienePalabrasChillOutMix(nombre: string): boolean {
@@ -611,7 +636,7 @@ export class InsumosComponent implements OnInit {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
 
-     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
   }
 
   contienePalabrasChillOutJustFruit(nombre: string): boolean {
@@ -630,7 +655,7 @@ export class InsumosComponent implements OnInit {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
 
-     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
   }
 
   contienePalabrasChillOutActive(nombre: string): boolean {
@@ -649,7 +674,7 @@ export class InsumosComponent implements OnInit {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
 
-     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
   }
 
   contienePalabrasDavidRio(nombre: string): boolean {
@@ -668,6 +693,6 @@ export class InsumosComponent implements OnInit {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
 
-     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
   }
 }
