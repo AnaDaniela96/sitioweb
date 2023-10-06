@@ -27,6 +27,8 @@ import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/sa
 import { PuresYConcentradosComponent } from './pages/productos-y-servicios/insumos/pures-y-concentrados/pures-y-concentrados.component';
 import { MolecularesComponent } from './pages/productos-y-servicios/insumos/moleculares/moleculares.component';
 import { TesComponent } from './pages/productos-y-servicios/insumos/tes/tes.component';
+import { TisanasComponent } from './pages/productos-y-servicios/insumos/tisanas/tisanas.component';
+import { PolvosComponent } from './pages/productos-y-servicios/insumos/polvos/polvos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -61,6 +63,9 @@ const routes: Routes = [
           { path: 'pures-y-concentrados', component: PuresYConcentradosComponent },
           { path: 'moleculares', component: MolecularesComponent},
           { path: 'tes', component: TesComponent},
+          { path: 'tisanas', component: TisanasComponent},
+          { path: 'tisanas', component: TisanasComponent},
+          { path: 'polvos', component: PolvosComponent},
         ]
       },
       { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },

@@ -34,6 +34,8 @@ import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/sa
 import { PuresYConcentradosComponent } from './pages/productos-y-servicios/insumos/pures-y-concentrados/pures-y-concentrados.component';
 import { MolecularesComponent } from './pages/productos-y-servicios/insumos/moleculares/moleculares.component';
 import { TesComponent } from './pages/productos-y-servicios/insumos/tes/tes.component';
+import { TisanasComponent } from './pages/productos-y-servicios/insumos/tisanas/tisanas.component';
+import { PolvosComponent } from './pages/productos-y-servicios/insumos/polvos/polvos.component';
 
 
 
@@ -67,7 +69,9 @@ import { TesComponent } from './pages/productos-y-servicios/insumos/tes/tes.comp
     SalsasComponent,
     PuresYConcentradosComponent,
     MolecularesComponent,
-    TesComponent
+    TesComponent,
+    TisanasComponent,
+    PolvosComponent
   ],
   imports: [
     BrowserModule,
