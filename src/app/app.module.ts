@@ -32,6 +32,7 @@ import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/t
 import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/jarabes.component';
 import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/salsas.component';
 import { PuresYConcentradosComponent } from './pages/productos-y-servicios/insumos/pures-y-concentrados/pures-y-concentrados.component';
+import { MolecularesComponent } from './pages/productos-y-servicios/insumos/moleculares/moleculares.component';
 
 
 
@@ -63,7 +64,8 @@ import { PuresYConcentradosComponent } from './pages/productos-y-servicios/insum
     TerminosYCondicionesComponent,
     JarabesComponent,
     SalsasComponent,
-    PuresYConcentradosComponent
+    PuresYConcentradosComponent,
+    MolecularesComponent
   ],
   imports: [
     BrowserModule,
