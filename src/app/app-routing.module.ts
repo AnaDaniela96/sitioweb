@@ -26,6 +26,7 @@ import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/
 import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/salsas.component';
 import { PuresYConcentradosComponent } from './pages/productos-y-servicios/insumos/pures-y-concentrados/pures-y-concentrados.component';
 import { MolecularesComponent } from './pages/productos-y-servicios/insumos/moleculares/moleculares.component';
+import { TesComponent } from './pages/productos-y-servicios/insumos/tes/tes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -59,6 +60,7 @@ const routes: Routes = [
           { path: 'salsas', component: SalsasComponent },
           { path: 'pures-y-concentrados', component: PuresYConcentradosComponent },
           { path: 'moleculares', component: MolecularesComponent},
+          { path: 'tes', component: TesComponent},
         ]
       },
       { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },

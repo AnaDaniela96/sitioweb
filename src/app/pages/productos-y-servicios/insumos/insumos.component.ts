@@ -73,11 +73,11 @@ export class InsumosComponent implements OnInit {
   // chillOutTapioca: any[] = [];
   // teaZoneTapioca: any[] = [];
 
-  //Tes y Tisanas
+  // //Tes y Tisanas
   tisanasFrutalesCafeEtrusca: any[] = [];
   tisanasFrutalesEuroTe: any[] = [];
-  teEurote: any[] = [];
-  teStash: any[] = [];
+  // teEurote: any[] = [];
+  // teStash: any[] = [];
 
   //Polvos
   polvosChillOutMix: any[] = [];
@@ -224,17 +224,17 @@ export class InsumosComponent implements OnInit {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      // Filtra los Tes EuroTe y crea un nuevo array
-      this.teEurote = this.insumosArray.filter(insumo =>
-        this.contienePalabrasTeEuroTe(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // // Filtra los Tes EuroTe y crea un nuevo array
+      // this.teEurote = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasTeEuroTe(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
-      // Filtra los Te Stash y crea un nuevo array
-      this.teStash = this.insumosArray.filter(insumo =>
-        this.contienePalabrasTeStash(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // // Filtra los Te Stash y crea un nuevo array
+      // this.teStash = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasTeStash(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
       // Filtra los ChillOut Mix y crea un nuevo array
       this.polvosChillOutMix = this.insumosArray.filter(insumo =>
@@ -592,43 +592,43 @@ export class InsumosComponent implements OnInit {
     // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
   }
 
-  contienePalabrasTeEuroTe(nombre: string): boolean {
-    const palabrasClave = ['TE', 'EUROTÉ'];
+  // contienePalabrasTeEuroTe(nombre: string): boolean {
+  //   const palabrasClave = ['TE', 'EUROTÉ'];
 
-    // Palabras a excluir
-    const palabrasExcluidas = ['TISANA', 'STASH',];
+  //   // Palabras a excluir
+  //   const palabrasExcluidas = ['TISANA', 'STASH',];
 
-    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
-    const nombreEnMayusculas = nombre.toUpperCase();
+  //   // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  //   const nombreEnMayusculas = nombre.toUpperCase();
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
-      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  //   const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+  //     && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
 
-    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
-    return cumpleCondicion;
+  //   //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  //   return cumpleCondicion;
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-  }
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  // }
 
-  contienePalabrasTeStash(nombre: string): boolean {
-    const palabrasClave = ['STASH', 'PREMIUM'];
+  // contienePalabrasTeStash(nombre: string): boolean {
+  //   const palabrasClave = ['STASH', 'PREMIUM'];
 
-    // Palabras a excluir
-    const palabrasExcluidas = ['TISANA', 'EUROTE', 'DESCAFEINADO'];
+  //   // Palabras a excluir
+  //   const palabrasExcluidas = ['TISANA', 'EUROTE', 'DESCAFEINADO'];
 
-    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
-    const nombreEnMayusculas = nombre.toUpperCase();
+  //   // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  //   const nombreEnMayusculas = nombre.toUpperCase();
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
-      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  //   const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+  //     && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
 
-    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
-    return cumpleCondicion;
+  //   //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  //   return cumpleCondicion;
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-  }
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  // }
 
   contienePalabrasChillOutMix(nombre: string): boolean {
     const palabrasClave = ['CHILLOUT', 'MIX'];
