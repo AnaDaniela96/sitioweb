@@ -29,6 +29,7 @@ import { BrewBarComponent } from './pages/capacitacion/brew-bar-coldBrew/brew-ba
 import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-encontrarnos.component';
 import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacion/politicas-cursos-talleres/politicas-cursos-talleres.component';
 import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/terminos-y-condiciones/terminos-y-condiciones.component';
+import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/jarabes.component';
 
 
 
@@ -57,7 +58,8 @@ import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/t
     BrewBarComponent,
     DondeEncontrarnosComponent,
     PoliticasCursosTalleresComponent,
-    TerminosYCondicionesComponent
+    TerminosYCondicionesComponent,
+    JarabesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="row">
-    <aside class="bd-sidebar">
+    <aside class="bd-sidebar"> <!--menu Insumos-->
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
                 <a routerLink="" class="d-none navbar-brand fw-bold"><strong>Filtros</strong></a>
@@ -16,37 +16,11 @@
                     <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                         <ul class="navbar-nav fs-5 justify-content-evenly">
                             <li class="nav-item p-3 py-md-1">
-                                <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jarabes"
-                                    aria-expanded="true" (click)="toggleShowAllJarabes()">
-                                    Jarabes
-                                    <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
-                                </button>
-
-                                <div class="collapse" id="Jarabes">
-                                    <ul class="list-unstyled fw-normal pb-1 small">
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox"
-                                                    id="mostrarJarabesChillOutCheckbox"
-                                                    [(ngModel)]="showJarabesChillOut">
-                                                <label class="form-check-label"
-                                                    for="mostrarJarabesChillOutCheckbox">ChillOut Jarabes</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox"
-                                                    id="mostrarJarabesToraniCheckbox" [(ngModel)]="showJarabesTorani">
-                                                <label class="form-check-label"
-                                                    for="mostrarJarabesToraniCheckbox">Torani</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link" routerLink="/productos-y-servicios/insumos-para-cafeterias/jarabes" style="text-decoration: none; font-size: 1rem; font-weight: 700; color: black;" >Jarabes</a>
                             </li>
                             <li class="nav-item p-3 py-md-1">
                                 <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#Salsas"
-                                    aria-expanded="true" (click)="toggleIcon()">
+                                    aria-expanded="true" (click)="toggleShowAllSalsas()">
                                     Salsas
                                     <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
                                 </button>
@@ -56,7 +30,7 @@
                                         <li>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="salsasCheckbox"
-                                                    [(ngModel)]="mostrarSalsas">
+                                                    [(ngModel)]="showSalsaChillOut">
                                                 <label class="form-check-label" for="salsasCheckbox">ChillOut
                                                     Fruit</label>
                                             </div>
@@ -64,7 +38,7 @@
                                         <li>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="salsasCheckbox"
-                                                    [(ngModel)]="mostrarSalsas">
+                                                    [(ngModel)]="showSalsasTorani">
                                                 <label class="form-check-label" for="salsasCheckbox">Torani</label>
                                             </div>
                                         </li>
@@ -316,8 +290,9 @@
         </nav>
     </aside>
 
+    <router-outlet></router-outlet>
 
-    <main class="col-lg-10 p-3 align-self-start">
+    <main class="col-lg-12 p-3 align-self-start"> <!--Todos los insumos-->
         <!--Cards para todos los insumos-->
         <!-- <div class="container" *ngFor="let insumo of insumosArray" id="todosLosInsumos">
             <div class="d-flex flex-wrap">
@@ -453,12 +428,13 @@
                                         <div class="card-header d flex align-self-end"
                                             style="background-color: #E91D74;">
                                             <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"><i
+                                                style="color: white;" target="_blank"
+                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
                                                     class="fas fa-shopping-cart"></i></a>
                                         </div>
 
                                         <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                            alt="Imagen del insumo" id="botellas">
+                                            alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas">
                                         <div class="card-body">
                                             <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
                                             <p>
@@ -467,7 +443,8 @@
                                             <p></p>
                                         </div>
                                         <div class="card-footer justify-content-right">
-                                            <a routerLink="/contacto" style="color: black;"> Encuentra tu sucursal
+                                            <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                                sucursal
                                                 <i class="fas fa-arrow-right" style="color: black;"></i>
                                             </a><br>
                                         </div>
@@ -520,12 +497,14 @@
                                         <div class="card-header d flex align-self-end"
                                             style="background-color: #E91D74;">
                                             <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                                title="Comprar en e-commerce el producto {{insumo.name}}"
                                                 style="color: white;" target="_blank"><i
                                                     class="fas fa-shopping-cart"></i></a>
                                         </div>
 
                                         <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                            alt="Imagen del insumo" id="botellas">
+                                            alt="Imagen del insumo" id="botellas" alt="{{insumo.name}}"
+                                            title="{{insumo.name}}">
                                         <div class="card-body">
                                             <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
                                             <p>
@@ -534,7 +513,8 @@
                                             <p></p>
                                         </div>
                                         <div class="card-footer justify-content-right">
-                                            <a routerLink="/contacto" style="color: black;"> Encuentra tu sucursal
+                                            <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                                sucursal
                                                 <i class="fas fa-arrow-right" style="color: black;"></i>
                                             </a><br>
                                         </div>
@@ -589,12 +569,14 @@
                                         <div class="card-header d flex align-self-end"
                                             style="background-color: #E91D74;">
                                             <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                                title="Comprar en e-commerce el producto {{insumo.name}}"
                                                 style="color: white;" target="_blank"><i
                                                     class="fas fa-shopping-cart"></i></a>
                                         </div>
 
                                         <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                            alt="Imagen del insumo" id="botellas">
+                                            alt="Imagen del insumo" id="botellas" alt="{{insumo.name}}"
+                                            title="{{insumo.name}}">
                                         <div class="card-body">
                                             <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
                                             <p>
@@ -603,7 +585,8 @@
                                             <p></p>
                                         </div>
                                         <div class="card-footer justify-content-right">
-                                            <a routerLink="/contacto" style="color: black;"> Encuentra tu sucursal
+                                            <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                                sucursal
                                                 <i class="fas fa-arrow-right" style="color: black;"></i>
                                             </a><br>
                                         </div>
@@ -655,12 +638,14 @@
                                         <div class="card-header d flex align-self-end"
                                             style="background-color: #E91D74;">
                                             <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                                title="Comprar en e-commerce el producto {{insumo.name}}"
                                                 style="color: white;" target="_blank"><i
                                                     class="fas fa-shopping-cart"></i></a>
                                         </div>
 
                                         <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                            alt="Imagen del insumo" id="botellas">
+                                            alt="Imagen del insumo" id="botellas" alt="{{insumo.name}}"
+                                            title="{{insumo.name}}">
                                         <div class="card-body">
                                             <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
                                             <p>
@@ -669,7 +654,8 @@
                                             <p></p>
                                         </div>
                                         <div class="card-footer justify-content-right">
-                                            <a routerLink="/contacto" style="color: black;"> Encuentra tu sucursal
+                                            <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                                sucursal
                                                 <i class="fas fa-arrow-right" style="color: black;"></i>
                                             </a><br>
                                         </div>
@@ -683,131 +669,164 @@
         </div>
     </main>
 
-
-
-    <!--Categoría Salsas-->
-    <div id="todas-las-salsas" *ngIf="mostrarSalsas">
-        <div id="Salsas-presentacion" class="container">
-            <div class="d-flex align-items-center">
-                <img src="https://cafeetrusca.com/img/logos/42%20salsas.webp" style="max-width: 6rem; max-height: 6rem;"
-                    alt="Icono de Jarabes">
-                <h2 class="text-center mb-0 mr-3" style="font-size: 4vw; font-weight: 700;">Salsas
-                </h2>
-            </div>
-
-            <p style="text-align: justify;">Las <span style="font-weight: bold;">Salsas</span> son el
-                <span style="font-weight: bold;">complemento perfecto</span> para tus bebidas. Son
-                una mezcla de ingredientes que crean una
-                <span style="font-weight: bold;">consistencia semi-líquida ideal para decorar,
-                    realzar sabores, endulzar, aromatizar o dar cuerpo</span> a tus bebidas, ya sean frías o
-                calientes.
-            </p>
-        </div>
-
-        <!--Cards para ChillOut Salsas-->
-        <div class="container my-5" id="jarabesChillOut">
-            <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                <div class="col-lg-3 contenedor-logos" style=" background-color: #7ACE7C;">
-                    <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png">
-                </div>
-
-                <p class="p-3"
-                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                    El <span style="font-weight: bold;"> chamoy de ChillOut </span>esta pensado para los paladares
-                    mexicanos, sin embargo, se adapta muy bien a
-                    todos los gustos. Un complemento para dar ese toque de sabor en tus bebidas.
-                </p>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                            <span style="font-weight: bold;">Única presentación</span>
-                        </p>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                            Botella de 1 Litro
-                        </p>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                            Rinde aprox. 25 bebidas de 480 ml.
-                        </p>
-                    </div>
+    <main class="col-lg-12 p-3 align-self-start"> <!--Categoría Salsas-->
+        <div id="todas-las-salsas" *ngIf="showSalsas">
+            <div id="salsas-presentacion" class="container">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="../../../../assets/icons/salsas.webp" alt="Icono de Salsas"
+                        style="height: 150px; width: auto;">
+                    <h2 class="text-center mb-0 mr-3" style="font-weight: 700; font-size: 60px;">Salsas</h2>
                 </div>
             </div>
 
-            <div class="d-flex flex-wrap justify-content-center">
-                <div
-                    style="height: 700px !important; width: 550px !important; display: flex; justify-content: center; align-items: center;">
-                    <div class="card" style="height: 700px !important; width: 550px !important;">
-                        <img class="card-img-top" [src]="sanitizeUrl(salsasChillOut[0].urlArticleFirst)"
-                            alt="Imagen del insumo" style="margin: 0 auto;">
-                        <div class="card-body">
-                            <h5 class="card-title my-2" style="font-weight: 700;">{{ salsasChillOut[0].keySap }}
-                            </h5>
-                            <p class="card-text"> {{ salsasChillOut[0].name }}</p>
-                            <p class="d-none card-text">{{ salsasChillOut[0].description }}</p>
+            <div class="row" style="height: 1cm;"></div>
+
+            <!--Cards para ChillOut Salsas-->
+            <div class="container my-5" id="jarabesChillOut" *ngIf="showSalsaChillOut">
+                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                    <div class="col-lg-3 contenedor-logos" style=" background-color: #7ACE7C;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png">
+                    </div>
+
+                    <p class="p-3"
+                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                        El <span style="font-weight: bold;"> chamoy de ChillOut </span>esta pensado para los paladares
+                        mexicanos, sin embargo, se adapta muy bien a
+                        todos los gustos. Un complemento para dar ese toque de sabor en tus bebidas.
+                    </p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                <span style="font-weight: bold;">Única presentación</span>
+                            </p>
                         </div>
-                        <div class="card-footer justify-content-right">
-                            <a routerLink="#" style="color: black;"> Ver más
-                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                <!-- Icono de flecha hacia la derecha -->
-                            </a>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                Botella de 1 Litro
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                Rinde aprox. 25 bebidas de 480 ml.
+                            </p>
                         </div>
                     </div>
                 </div>
+
+                <div class="container d-flex flex-column justify-content-center">
+                    <div class="card-header d-flex align-self-end" style="background-color: #E91D74;">
+                        <a href="https://cafeetruscamx.myvtex.com/chillout-fruit-chamoy-botella-1-l/p"
+                            style="color: white;" target="_blank"
+                            title="Comprar en e-commerce el producto {{salsasChillOut[0].urlArticleFirst.name}}"><i
+                                class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title my-2" id="font-keySap">{{ salsasChillOut[0].keySap }}</p>
+                        <p class="card-text"> {{ salsasChillOut[0].name }}</p>
+                        <p class="d-none card-text">{{ salsasChillOut[0].description }}</p>
+                    </div>
+                    <div class="card-footer justify-content-right">
+                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu sucursal
+                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                        </a>
+                    </div>
+                    <div style="text-align: center; position: relative;">
+                        <!-- <div style="width: 100%; max-width: 20em; height: 20em; background-color: #94d2c7; border-radius: 50%; display: inline-block; position: absolute; top: 20%; left: 60%; transform: translate(-50%, -50%);">
+                        </div>
+                        <div style="width: 100%; max-width: 25em; height: 25em; background-color: #f2fd59; border-radius: 50%; display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        </div> -->
+                        <img class="img-fluid" [src]="sanitizeUrl(salsasChillOut[0].urlArticleFirst)"
+                            alt="{{ salsasChillOut[0].name }}" title="{{ salsasChillOut[0].name }}"
+                            style="margin: 0 auto; position: relative; z-index: 1;">
+                        <!-- <div style="width: 100%; max-width: 14em; height: 14em; background-color: #f3bff0; border-radius: 50%; display: inline-block; position: absolute; left: 20%; top: 70%; transform: translate(0, -50%);">
+                        </div> -->
+                    </div>
+                </div>
             </div>
-        </div>
 
+            <div class="row" style="height: 1cm;"></div>
 
-        <!--Cards para Torani Salsas-->
-        <div class="container">
-            <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                <div class="col-lg-3 contenedor-logos">
-                    <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp">
+            <!--Cards para Torani Salsas-->
+            <div class="container" *ngIf="showSalsasTorani">
+                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                    <div class="col-lg-3 contenedor-logos">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp">
+                    </div>
+
+                    <p class="p-3"
+                        style="text-align: justify;  background-color: #EBFFFE; border-left: 4px solid #A8DFF3; width: 600px; height: auto;">
+                        Llega para decorar tus bebidas y dar un <span style="font-weight: bold;">toque extra de dulzura
+                        </span>cuenta con una
+                        <span style="font-weight: bold;"> línea endulzada con Splenda </span> y su línea puremade, sin
+                        conservadores, colorantes, ni saobres artificiales y libre de Organismos Genéticamente
+                        Modificados.
+                    </p>
                 </div>
 
-                <p class="p-3"
-                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                    Llega para decorar tus bebidas y dar un <span style="font-weight: bold;">toque extra de dulzura
-                    </span>cuenta con una
-                    <span style="font-weight: bold;"> línea endulzada con Splenda </span> y su línea puremade, sin
-                    conservadores, colorantes, ni saobres artificiales y libre de Organismos Genéticamente
-                    Modificados.
-                </p>
-            </div>
-            <div class="scroll-horizontal-container my-5">
-                <div class="row">
-                    <div *ngFor="let insumo of salsasTorani" style="height: 500px !important; width: 250px !important;">
-                        <div class="card">
-                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                alt="Imagen del insumo">
-                            <div class="card-body">
-                                <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                <p class="card-text"> {{ insumo.name }}</p>
-                                <p class="d-none card-text">{{ insumo.description }}</p>
+                <div class="container" style="height: 650px;">
+                    <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of salsasTorani"
+                                style="height: 550px !important; width: 250px !important;">
+                                <div class="card" style="height: 500px !important;">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                            style="color: white;" target="_blank"
+                                            title="Comprar en e-commerce el producto {{insumo.name}}"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                    </div>
+
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                    <div class="card-body">
+                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                        <p>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                            sucursal
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        </a><br>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-footer justify-content-right">
-                                <a routerLink="#" style="color: black;"> Ver más
-                                    <i class="fas fa-arrow-right" style="color: black;"></i>
-                                    <!-- Icono de flecha hacia la derecha -->
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
+    </main>
 
-    </div>
+    <main class="col-lg-12 p-3 align-items-start"><!--Categoría Pures y concentrados -->
+        <div id="todos-los-pures-y-concentrados">
+            <div id="jarabes-presentacion" class="container">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="../../../../assets/icons/puresyConcentrados.webp" alt="Icono de Púres y concentrados"
+                        style="height: 150px; width: auto;">
+                    <h2 class="text-center mb-0 mr-3" style="font-weight: 700; font-size: 60px;">Púres y Concentrados
+                    </h2>
+                </div>
+            </div>
 
-    <!--Categoría Pures y concentrados -->
+            <div class="container d-flex flex-wrap align-items-center justify-content-center my-2">
+                <h4 class="">Explora las diferentes <span style="font-weight: bold;">Mezcla de frutas</span> y
+                    preparaciones
+                    con alta concentración en sabor: </h4>
+            </div>
+        </div>
+    </main>
+
     <div id="todos-los-pures-y-concentrados" *ngIf="mostrarPuresYConcentrados">
 
         <div id="todos-los-pures-y-concentrados-presentacion" class="container">

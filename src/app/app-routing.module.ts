@@ -22,6 +22,7 @@ import { BrewBarComponent } from './pages/capacitacion/brew-bar-coldBrew/brew-ba
 import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-encontrarnos.component';
 import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacion/politicas-cursos-talleres/politicas-cursos-talleres.component';
 import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/terminos-y-condiciones/terminos-y-condiciones.component';
+import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/jarabes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,13 +31,13 @@ const routes: Routes = [
     path: 'politicas-de-navegacion', component: PoliticasDeNavegacionComponent,
     children: [
       { path: 'aviso-de-privacidad', component: AvisoDePrivacidadComponent },
-      { path: 'politicas-externas-cursos-talleres', component: PoliticasCursosTalleresComponent},
-      { path: 'terminos-y-condiciones', component: TerminosYCondicionesComponent},
+      { path: 'politicas-externas-cursos-talleres', component: PoliticasCursosTalleresComponent },
+      { path: 'terminos-y-condiciones', component: TerminosYCondicionesComponent },
     ]
   },
-  { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent},
-  { path: 'taller-de-arte-latte-nivel-basico', component: ArteLatteComponent}, 
-  { path: 'emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria', component: FormacionEmprendedoresComponent }, 
+  { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent },
+  { path: 'taller-de-arte-latte-nivel-basico', component: ArteLatteComponent },
+  { path: 'emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria', component: FormacionEmprendedoresComponent },
   { path: 'taller-experiencia-sensorial', component: ExperienciaSensorialComponent },
   { path: 'taller-de-mixologia-con-cafe-sin-alcohol', component: MixologiaMocteleriaComponent },
   { path: 'taller-basico-de-tostado-de-cafe', component: TostadoComponent },
@@ -47,12 +48,18 @@ const routes: Routes = [
     path: 'productos-y-servicios', component: ProductosYServiciosComponent,
     children: [
       { path: 'cafe-de-especialidad', component: CafeComponent },
-      { path: 'insumos-para-cafeterias', component: InsumosComponent },
+      {
+        path: 'insumos-para-cafeterias', component: InsumosComponent,
+
+        children: [
+          { path: 'jarabes', component: JarabesComponent },
+        ]
+      },
       { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
       { path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent },
     ]
   },
-  { path: 'donde-encontranos', component: DondeEncontrarnosComponent},
+  { path: 'donde-encontranos', component: DondeEncontrarnosComponent },
 ];
 
 @NgModule({

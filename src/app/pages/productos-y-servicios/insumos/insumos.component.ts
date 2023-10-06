@@ -36,7 +36,10 @@ export class InsumosComponent implements OnInit {
   showJarabesTorani: boolean = false;
   showJarabesChillOut: boolean = false;
 
-  mostrarSalsas: boolean = false;
+  showSalsas: boolean = false;
+  showSalsaChillOut: boolean = false;
+  showSalsasTorani: boolean = false;
+
   mostrarPuresYConcentrados: boolean = false;
   mostrarMoleculares: boolean = false;
   mostrarTisanas: boolean = false;
@@ -53,6 +56,7 @@ export class InsumosComponent implements OnInit {
   //Salsas
   salsasTorani: any[] = [];
   salsasChillOut: any[] = [];
+  
 
   //Purés y concentrados
   chillOutFruitConcentrados: any[] = [];
@@ -88,6 +92,12 @@ export class InsumosComponent implements OnInit {
     this.showJarabesTorani = !this.showJarabesTorani;
   }
 
+  //Manipulación de menú
+  toggleShowAllSalsas() {
+    this.showSalsas = !this.showSalsas; // Invertir el valor
+    this.showSalsaChillOut  = !this.showSalsaChillOut;
+    this.showSalsasTorani = !this.showSalsasTorani;
+  }
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
