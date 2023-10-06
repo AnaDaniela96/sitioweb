@@ -31,6 +31,7 @@ import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacio
 import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/terminos-y-condiciones/terminos-y-condiciones.component';
 import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/jarabes.component';
 import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/salsas.component';
+import { PuresYConcentradosComponent } from './pages/productos-y-servicios/insumos/pures-y-concentrados/pures-y-concentrados.component';
 
 
 
@@ -61,7 +62,8 @@ import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/sa
     PoliticasCursosTalleresComponent,
     TerminosYCondicionesComponent,
     JarabesComponent,
-    SalsasComponent
+    SalsasComponent,
+    PuresYConcentradosComponent
   ],
   imports: [
     BrowserModule,

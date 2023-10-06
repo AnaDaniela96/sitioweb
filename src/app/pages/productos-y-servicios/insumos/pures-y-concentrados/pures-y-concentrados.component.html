@@ -1,0 +1,357 @@
+<div class="row">
+    <main class="col-lg-12 p-3 align-items-start" id="todos-los-pures-y-concentrados">
+        <!--Categoría Pures y concentrados -->
+        <div id="todos-los-pures-y-concentrados">
+            <div id="jarabes-presentacion" class="container">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="../../../../assets/icons/puresyConcentrados.webp" alt="Icono de Púres y concentrados"
+                        style="height: 150px; width: auto;">
+                    <h2 class="text-center mb-0 mr-3" style="font-weight: 700; font-size: 60px;">Púres y Concentrados
+                    </h2>
+                </div>
+            </div>
+
+            <div class="container d-flex flex-wrap align-items-center justify-content-center my-2">
+                <h4 class="">Explora las diferentes <span style="font-weight: bold;">Mezcla de frutas</span> y
+                    preparaciones
+                    con alta concentración en sabor: </h4>
+            </div>
+        </div>
+
+        <!-- Cards para Chillout Fruit-->
+        <div class="container my-5" id="chillOutFruitPuresConcentrados">
+            <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                <div class="col-lg-3 contenedor-logos" style=" background-color: #F3625E;">
+                    <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png">
+                </div>
+
+                <p class="p-3"
+                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                    Disfruta de nuestra <span style="font-weight: bold;">amplia variedad de
+                        jarabes concentrados</span> diseñados para bebidas frías, frappés, smoothies y, en
+                    algunos casos, bebidas calientes.
+                    Ofrecemos sabores que van desde los clásicos hasta opciones innovadoras para sorprender a
+                    tus clientes en tu cafetería.
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            <span style="font-weight: bold;">Única presentación</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            Botella de 1 Litro
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            Rinde aprox. 25 bebidas de 480 ml.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-horizontal-container my-5">
+                <div class="row">
+                    <div *ngFor="let insumo of chillOutFruitConcentrados"
+                        style="height: 500px !important; width: 250px !important;">
+                        <div class="card">
+                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                alt="Imagen del insumo">
+                            <div class="card-body">
+                                <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                <p class="card-text"> {{ insumo.name }}</p>
+                                <p class="d-none card-text">{{ insumo.description }}</p>
+                            </div>
+                            <div class="card-footer justify-content-right">
+                                <a routerLink="#" style="color: black;"> Ver más
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    <!-- Icono de flecha hacia la derecha -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+        </div>
+
+
+        <!-- Cards para Chillout Fruit-->
+        <div class="container my-5" id="chillOutFruitPuresConcentrados">
+            <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                <div class="col-lg-3 contenedor-logos" style=" background-color: #F3625E;">
+                    <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png">
+                </div>
+
+                <p class="p-3"
+                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                    Disfruta de nuestra <span style="font-weight: bold;">amplia variedad de
+                        jarabes concentrados</span> diseñados para bebidas frías, frappés, smoothies y, en
+                    algunos casos, bebidas calientes.
+                    Ofrecemos sabores que van desde los clásicos hasta opciones innovadoras para sorprender a
+                    tus clientes en tu cafetería.
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            <span style="font-weight: bold;">Única presentación</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            Botella de 1 Litro
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            Rinde aprox. 25 bebidas de 480 ml.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-horizontal-container my-5">
+                <div class="row">
+                    <div *ngFor="let insumo of chillOutFruitConcentrados"
+                        style="height: 500px !important; width: 250px !important;">
+                        <div class="card">
+                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                alt="Imagen del insumo">
+                            <div class="card-body">
+                                <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                <p class="card-text"> {{ insumo.name }}</p>
+                                <p class="d-none card-text">{{ insumo.description }}</p>
+                            </div>
+                            <div class="card-footer justify-content-right">
+                                <a routerLink="#" style="color: black;"> Ver más
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    <!-- Icono de flecha hacia la derecha -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+        </div> -->
+
+        <!-- Cards para ChillOut Jam-->
+        <div class="container my-5" id="chillOutFruitPuresConcentrados">
+            <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                <div class="col-lg-3 contenedor-logos" style=" background-color: #8D84BE;">
+                    <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png"
+                        alt="Logos de ChillOutFruit">
+                </div>
+
+                <p class="p-3"
+                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                    <span style="font-weight: bold;">Combinación entre la fruta y su
+                        jugo,</span> ya que en conjunto proporcionan una <span style="font-weight: bold;">textura
+                        parecida a la mermelada.</span>Además incluye trozos de fruta que aportan doble sensación en
+                    el paladar y sabor más
+                    intenso. Ideal para frappés, postres, smoothies, licuados o como decoración.
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            <span style="font-weight: bold;">Única presentación</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            Botella de 1 Litro
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            Rinde aprox. 25 bebidas de 480 ml.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of chillOutJamConcentrados"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+        </div>
+
+        <!--Cards para Torani Purées y concentrados-->
+        <div class="container my-5" id="toraniPuresConcentrados">
+            <div class="container d-flex flex-wrap justify-content-around align-items-right my-4">
+                <div class="col-lg-3 contenedor-logos">
+                    <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logos de Torani">
+                </div><br>
+            </div>
+
+            <!-- Torani Real Smoothie-->
+            <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                <h3>Real Smoothie Mix</h3>
+                <p class="p-3"
+                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                    Preparado de frutas con una <span style="font-weight: bold;">consistencia
+                        parecida a la mermelada,</span>
+                    sin concervadores, colorantes ni sabores artificiales.
+                </p>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of pureToraniRealSmoothieMix"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" id="botella"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Torani Purée Blend-->
+            <div class="container d-flex flex-wrap justify-content-around align-items-start my-4"
+                id="toraniPuresConcentrados">
+                <h3>Pureé Blend</h3>
+                <p class="p-3"
+                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                    <span style="font-weight: bold;">Mezcla de fruta fresca cocida al vapor y colada.</span>
+                    Con textura espesa y homogéna, perfecto para frappés, coctéles o bebidas con café.
+                </p>
+            </div>
+
+
+            <div class="scroll-horizontal-container my-5">
+                <div class="row">
+                    <div *ngFor="let insumo of pureToraniPureeBlend"
+                        style="height: 500px !important; width: 250px !important;">
+                        <div class="card">
+                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" id="botella"
+                                alt="Imagen del insumo">
+                            <div class="card-body">
+                                <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                <p class="card-text"> {{ insumo.name }}</p>
+                                <p class="d-none card-text">{{ insumo.description }}</p>
+                            </div>
+                            <div class="card-footer justify-content-right">
+                                <a routerLink="#" style="color: black;"> Ver más
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    <!-- Icono de flecha hacia la derecha -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Cards para TEAZONE Concentrados-->
+        <div class="container d-flex flex-wrap justify-content-around align-items-right my-4" id="teaZoneConcentrados">
+            <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                <div class="col-lg-3 contenedor-logos">
+                    <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp">
+                </div>
+
+                <p class="p-3"
+                    style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                    Con ingredientes de fruta natural, ideal para preparar smoothies, jugos, tes saborizados, yogur
+                    congelado, raspados, coctéles y repostería.
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            <span style="font-weight: bold;">15 sabores disponibles</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            Presentación botella de 1.92 litros.
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p class="p-3 text-center"
+                            style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                            Rinde 64 bebidas de 480 ml.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-flex flex-wrap justify-content-center">
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of concentradoTeaZone"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
