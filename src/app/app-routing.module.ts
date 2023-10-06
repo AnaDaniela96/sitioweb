@@ -23,6 +23,7 @@ import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-enc
 import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacion/politicas-cursos-talleres/politicas-cursos-talleres.component';
 import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/terminos-y-condiciones/terminos-y-condiciones.component';
 import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/jarabes.component';
+import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/salsas.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -53,6 +54,7 @@ const routes: Routes = [
 
         children: [
           { path: 'jarabes', component: JarabesComponent },
+          { path: 'salsas', component: SalsasComponent },
         ]
       },
       { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },

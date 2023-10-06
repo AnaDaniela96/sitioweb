@@ -46,16 +46,16 @@ export class InsumosComponent implements OnInit {
   mostrarTes: boolean = false;
   mostrarPolvos: boolean = false;
 
-  //Jarabes
-  jarabesChillOut: any[] = [];
-  jarabesToraniClasico: any[] = [];
-  jarabesPuremadeTorani: any[] = [];
-  jarabesZeroSugar: any[] = [];
-  jarabesSugarFree: any[] = [];
+  // //Jarabes
+  // jarabesChillOut: any[] = [];
+  // jarabesToraniClasico: any[] = [];
+  // jarabesPuremadeTorani: any[] = [];
+  // jarabesZeroSugar: any[] = [];
+  // jarabesSugarFree: any[] = [];
 
-  //Salsas
-  salsasTorani: any[] = [];
-  salsasChillOut: any[] = [];
+  // //Salsas
+  // salsasTorani: any[] = [];
+  // salsasChillOut: any[] = [];
   
 
   //Purés y concentrados
@@ -104,47 +104,47 @@ export class InsumosComponent implements OnInit {
       this.insumosArray = insumosArray;
       console.log('Información de insumosArray', this.insumosArray);
 
-      //Filtra los Jarabes Chillout y crea un nuevo array.
-      this.jarabesChillOut = this.insumosArray.filter(insumo =>
-        this.contienePalabrasChillOutJarabe(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // //Filtra los Jarabes Chillout y crea un nuevo array.
+      // this.jarabesChillOut = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasChillOutJarabe(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
-      //Filtra los Jarabes Clásico Torani y crea un nuevo array.
-      this.jarabesToraniClasico = this.insumosArray.filter(insumo =>
-        this.contienePalabrasToraniClasicoJarabe(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // //Filtra los Jarabes Clásico Torani y crea un nuevo array.
+      // this.jarabesToraniClasico = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasToraniClasicoJarabe(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
-      //Filtra los Jarabes Puremade Torani y crea un nuevo array.
-      this.jarabesPuremadeTorani = this.insumosArray.filter(insumo =>
-        this.contienePalabrasToraniPuramadeJarabe(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // //Filtra los Jarabes Puremade Torani y crea un nuevo array.
+      // this.jarabesPuremadeTorani = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasToraniPuramadeJarabe(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
-      //Filtra los Jarabes Zugar free y crea un nuevo array.
-      this.jarabesZeroSugar = this.insumosArray.filter(insumo =>
-        this.contienePalabrasToraniZeroSugar(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // //Filtra los Jarabes Zugar free y crea un nuevo array.
+      // this.jarabesZeroSugar = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasToraniZeroSugar(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
-      //Filtra los Jarabes Zero Sugar y crea un nuevo array.
-      this.jarabesSugarFree = this.insumosArray.filter(insumo =>
-        this.contienePalabrasToraniSugarFree(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // //Filtra los Jarabes Zero Sugar y crea un nuevo array.
+      // this.jarabesSugarFree = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasToraniSugarFree(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
-      //Filtra las salsas Torani y crea un nuevo array.
-      this.salsasTorani = this.insumosArray.filter(insumo =>
-        this.contienePalabrasToraniSalsa(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // //Filtra las salsas Torani y crea un nuevo array.
+      // this.salsasTorani = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasToraniSalsa(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
-      //Filtra las salsas ChillOut y crea un nuevo array.
-      this.salsasChillOut = this.insumosArray.filter(insumo =>
-        this.contienePalabrasChillOutSalsa(insumo.name) &&
-        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
+      // //Filtra las salsas ChillOut y crea un nuevo array.
+      // this.salsasChillOut = this.insumosArray.filter(insumo =>
+      //   this.contienePalabrasChillOutSalsa(insumo.name) &&
+      //   insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      // );
 
       //Filtra los concentrados ChillOut Fruit y crea un nuevo array.
       this.chillOutFruitConcentrados = this.insumosArray.filter(insumo =>
@@ -291,87 +291,87 @@ export class InsumosComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
-  //Mostrar Jarabes 
-  contienePalabrasChillOutJarabe(nombre: string): boolean {
-    const palabrasClave = ['JARABE', 'AGAVE', 'CHILLOUT'];
-    return palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
-  }
+  // //Mostrar Jarabes 
+  // contienePalabrasChillOutJarabe(nombre: string): boolean {
+  //   const palabrasClave = ['JARABE', 'AGAVE', 'CHILLOUT'];
+  //   return palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
+  // }
 
-  contienePalabrasToraniClasicoJarabe(nombre: string): boolean {
-    const palabrasClave = ['TORANI', 'CLASICO', 'JARABE'];
-    const cumpleCondicion = palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
-    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
-    return cumpleCondicion;
-  }
+  // contienePalabrasToraniClasicoJarabe(nombre: string): boolean {
+  //   const palabrasClave = ['TORANI', 'CLASICO', 'JARABE'];
+  //   const cumpleCondicion = palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
+  //   //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  //   return cumpleCondicion;
+  // }
 
-  contienePalabrasToraniPuramadeJarabe(nombre: string): boolean {
-    const palabrasClave = ['TORANI', 'PUREMADE', 'JARABE'];
+  // contienePalabrasToraniPuramadeJarabe(nombre: string): boolean {
+  //   const palabrasClave = ['TORANI', 'PUREMADE', 'JARABE'];
 
-    // Palabras a excluir
-    const palabrasExcluidas = ['ZERO', 'SUGAR'];
+  //   // Palabras a excluir
+  //   const palabrasExcluidas = ['ZERO', 'SUGAR'];
 
-    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
-    const nombreEnMayusculas = nombre.toUpperCase();
+  //   // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  //   const nombreEnMayusculas = nombre.toUpperCase();
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
-      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  //   const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+  //     && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
 
-    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
-    return cumpleCondicion;
-  }
+  //   //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  //   return cumpleCondicion;
+  // }
 
-  contienePalabrasToraniZeroSugar(nombre: string): boolean {
-    const palabrasClave = ['TORANI', 'ZERO', 'SUGAR', 'JARABE'];
+  // contienePalabrasToraniZeroSugar(nombre: string): boolean {
+  //   const palabrasClave = ['TORANI', 'ZERO', 'SUGAR', 'JARABE'];
 
-    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
-    const nombreEnMayusculas = nombre.toUpperCase();
+  //   // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  //   const nombreEnMayusculas = nombre.toUpperCase();
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  //   const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
 
-    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
-    return cumpleCondicion;
-  }
+  //   //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  //   return cumpleCondicion;
+  // }
 
-  contienePalabrasToraniSugarFree(nombre: string): boolean {
-    const palabrasClave = ['TORANI', 'FREE', 'SUGAR', 'JARABE'];
+  // contienePalabrasToraniSugarFree(nombre: string): boolean {
+  //   const palabrasClave = ['TORANI', 'FREE', 'SUGAR', 'JARABE'];
 
-    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
-    const nombreEnMayusculas = nombre.toUpperCase();
+  //   // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  //   const nombreEnMayusculas = nombre.toUpperCase();
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  //   const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
 
-    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
-    return cumpleCondicion;
-  }
+  //   //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  //   return cumpleCondicion;
+  // }
 
-  contienePalabrasToraniSalsa(nombre: string): boolean {
-    const palabrasClave = ['TORANI', 'SALSA'];
+  // contienePalabrasToraniSalsa(nombre: string): boolean {
+  //   const palabrasClave = ['TORANI', 'SALSA'];
 
-    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
-    const nombreEnMayusculas = nombre.toUpperCase();
+  //   // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  //   const nombreEnMayusculas = nombre.toUpperCase();
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  //   const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
 
-    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
-    return cumpleCondicion;
-  }
+  //   //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  //   return cumpleCondicion;
+  // }
 
-  contienePalabrasChillOutSalsa(nombre: string): boolean {
-    const palabrasClave = ['CHILLOUT', 'CHAMOY'];
+  // contienePalabrasChillOutSalsa(nombre: string): boolean {
+  //   const palabrasClave = ['CHILLOUT', 'CHAMOY'];
 
-    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
-    const nombreEnMayusculas = nombre.toUpperCase();
+  //   // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+  //   const nombreEnMayusculas = nombre.toUpperCase();
 
-    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
-    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+  //   // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  //   const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
 
-    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
-    return cumpleCondicion;
-  }
+  //   //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+  //   return cumpleCondicion;
+  // }
 
   contienePalabrasChillOutFruit(nombre: string): boolean {
     const palabrasClave = ['CHILLOUT', 'FRUIT', 'CONCENTRADO'];

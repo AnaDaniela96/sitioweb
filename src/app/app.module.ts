@@ -30,6 +30,7 @@ import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-enc
 import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacion/politicas-cursos-talleres/politicas-cursos-talleres.component';
 import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/terminos-y-condiciones/terminos-y-condiciones.component';
 import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/jarabes.component';
+import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/salsas.component';
 
 
 
@@ -59,7 +60,8 @@ import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/
     DondeEncontrarnosComponent,
     PoliticasCursosTalleresComponent,
     TerminosYCondicionesComponent,
-    JarabesComponent
+    JarabesComponent,
+    SalsasComponent
   ],
   imports: [
     BrowserModule,
