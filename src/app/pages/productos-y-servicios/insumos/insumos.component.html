@@ -64,7 +64,7 @@
                                         <li>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="salsasCheckbox"
-                                                [(ngModel)]="showSalsasTorani">
+                                                    [(ngModel)]="showSalsasTorani">
                                                 <label class="form-check-label" for="salsasCheckbox">Torani</label>
                                             </div>
                                         </li>
@@ -74,7 +74,7 @@
                             </li>
                             <li class="nav-item p-3 py-md-1">
                                 <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#PuresConcentrados"
-                                    aria-expanded="true" (click)="toggleIcon()">
+                                    aria-expanded="true">
                                     Purés y Concentrados
                                     <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
                                 </button>
@@ -117,7 +117,7 @@
                             </li>
                             <li class="nav-item p-3 py-md-1">
                                 <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#moleculares"
-                                    aria-expanded="true" (click)="toggleIcon()">
+                                    aria-expanded="true">
                                     Moleculares
                                     <i #chevronIcon class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
                                 </button>
@@ -161,7 +161,7 @@
                             </li>
                             <li class="nav-item p-3 py-md-1">
                                 <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#tes"
-                                    aria-expanded="true" (click)="toggleIcon()">
+                                    aria-expanded="true">
                                     Tés
                                     <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
                                 </button>
@@ -195,7 +195,7 @@
                             </li>
                             <li class="nav-item p-3 py-md-1">
                                 <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#tisanas"
-                                    aria-expanded="true" (click)="toggleIcon()">
+                                    aria-expanded="true">
                                     Tisanas
                                     <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
                                 </button>
@@ -224,7 +224,7 @@
                             </li>
                             <li class="nav-item p-3 py-md-1">
                                 <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#polvos"
-                                    aria-expanded="true" (click)="toggleIcon()">
+                                    aria-expanded="true">
                                     Polvos
                                     <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
                                 </button>
@@ -318,20 +318,118 @@
 
     <router-outlet></router-outlet>
 
-    <main class="col-lg-12 p-3 align-self-start"> <!--Todos los insumos-->
-        <!--Cards para todos los insumos-->
-        <!-- <div class="container" *ngFor="let insumo of insumosArray" id="todosLosInsumos">
-            <div class="d-flex flex-wrap">
-                <div class="card mb-3 img-product-container d-flex justify-content-center align-items-center">
-                    <img [src]="sanitizeUrl(insumo.urlArticleFirst)" class="img-fluid" [ngClass]="{
-                    'botellas-torani': insumo.keySap && insumo.keySap.startsWith('IJA'),
-                    'botella-salsa': insumo.category && insumo.category.startsWith('PUR')
-                  }">
+    <main class="col-lg-12 p-3 align-self-start">
+        <div class="container">
+            <!-- <div class="text-right">
+                <button (click)="mostrarCuadricula = !mostrarCuadricula" class="btn btn-warning btn-block">
+                    {{ mostrarCuadricula ? 'Cambiar a Vista de Lista' : 'Cambiar a Vista de Cuadrícula' }}
+                </button>
+            </div> -->
+
+            <div class="container text-center">
+                <!-- Paginación con botones Anterior y Siguiente -->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <button class="page-link" (click)="paginaAnterior()">Anterior</button>
+                        </li>
+                        <li class="page-item">
+                            <button class="page-link" (click)="paginaSiguiente()">Siguiente</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="row">
+                    <!-- Vista de lista -->
+                    <div *ngFor="let insumo of elementosPagina" id="todosLosInsumos"
+                        style="height: 650px !important; width: 250px !important;"
+                        class="container d-flex flex-wrap justify-content-around">
+                        <div class="card">
+                            <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce" style="color: white;"
+                                    target="_blank" title="Comprar en e-commerce el producto {{insumo.name}}"><i
+                                        class="fas fa-shopping-cart"></i></a>
+                            </div>
+
+                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" alt="{{insumo.name}}"
+                                title="{{insumo.name}}" [ngClass]="{
+                                    'botellas-torani': insumo.keySap && insumo.keySap.startsWith('IJA'),
+                                    'botella-salsa': insumo.category && insumo.category.startsWith('PUR')
+                                  }">
+                            <div class="card-body">
+                                <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                <p>
+                                <p class="card-text"> {{ insumo.name }}</p>
+                                <p class="d-none card-text">{{ insumo.description }}</p>
+                                <p></p>
+                            </div>
+                            <div class="card-footer justify-content-right">
+                                <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                    sucursal
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                </a><br>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="container text-center">
+                        <p>Total de elementos: {{ elementosVisibles }} de {{ insumosArray.length }}</p>
+                    </div>
+
+
+
+
+
+
+
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{ insumo.keySap }}</h5>
-                    <p class="card-text">{{ insumo.name }}</p>
-                    <p class="card-text">{{ insumo.brand }}</p>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="col-lg-12 p-3 align-self-start"> <!--Todos los insumos-->
+        <!-- <div class="row">
+            <div *ngFor="let insumo of insumosArray" id="todosLosInsumos"
+                style="height: 650px !important; width: 250px !important;"
+                class="container d-flex flex-wrap justify-content-around">
+                <div class="card">
+                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce" style="color: white;"
+                            target="_blank" title="Comprar en e-commerce el producto {{insumo.name}}"><i
+                                class="fas fa-shopping-cart"></i></a>
+                    </div>
+
+                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" alt="{{insumo.name}}"
+                        title="{{insumo.name}}" [ngClass]="{
+                            'botellas-torani': insumo.keySap && insumo.keySap.startsWith('IJA'),
+                            'botella-salsa': insumo.category && insumo.category.startsWith('PUR')
+                          }">
+                    <div class="card-body">
+                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                        <p>
+                        <p class="card-text"> {{ insumo.name }}</p>
+                        <p class="d-none card-text">{{ insumo.description }}</p>
+                        <p></p>
+                    </div>
+                    <div class="card-footer justify-content-right">
+                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                            sucursal
+                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                        </a><br>
+                    </div>
                 </div>
             </div>
         </div> -->

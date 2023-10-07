@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { DataService } from '../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -7,7 +7,8 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   templateUrl: './insumos.component.html',
   styleUrls: ['./insumos.component.css']
 })
-export class InsumosComponent implements OnInit {
+export class InsumosComponent implements AfterViewInit {
+  
 
   constructor(
     private dataService: DataService,
@@ -15,23 +16,55 @@ export class InsumosComponent implements OnInit {
     private elementRef: ElementRef,
   ) { }
 
+  insumosArray: any[] = [];
+  extractedUrls: any;
+  mostrarCuadricula: boolean = false;
+  elementosVisibles: number = 0;
+  // Nuevas propiedades para paginación
+  paginaActual: number = 1; // Página actual
+  tamañoPagina: number = 10; // Tamaño de página
 
-  toggleIcon() {
-    const chevronIcon = this.elementRef.nativeElement.querySelector('.chevronIcon');
-    if (chevronIcon.classList.contains('fa-chevron-down')) {
-      chevronIcon.classList.remove('fa-chevron-down');
-      chevronIcon.classList.add('fa-chevron-right');
-    } else {
-      chevronIcon.classList.remove('fa-chevron-right');
-      chevronIcon.classList.add('fa-chevron-down');
+  // Obtener las tarjetas (cards) de la vista
+  @ViewChildren('tarjeta')
+  tarjetas!: QueryList<any>;
+
+  ngAfterViewInit() {
+    // Contar elementos visibles
+    this.elementosVisibles = this.tarjetas.length;
+  }
+
+  // Obtener los elementos a mostrar en la página actual
+  get elementosPagina() {
+    const inicio = (this.paginaActual - 1) * this.tamañoPagina;
+    const fin = inicio + this.tamañoPagina;
+    return this.insumosArray.slice(inicio, fin);
+  }
+
+  // Obtener un arreglo de números que representan las páginas disponibles
+  get paginas() {
+    const totalPaginas = Math.ceil(this.insumosArray.length / this.tamañoPagina);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+  // Cambia a la página anterior
+  paginaAnterior() {
+    if (this.paginaActual > 1) {
+      this.paginaActual--;
     }
   }
 
+  // Cambia a la página siguiente
+  paginaSiguiente() {
+    if (this.paginaActual < this.paginas.length) {
+      this.paginaActual++;
+    }
+  }
 
-  insumosArray: any[] = [];
-  extractedUrls: any;
+  // Cambia a una página específica
+  cambiarPagina(pagina: number) {
+    this.paginaActual = pagina;
+  }
 
-  //Manipulación de filtros por categoría
+  //Manipulación de filtros por categoría empieza menu que aun no termino xd //
   showJarabes: boolean = false;
   showJarabesTorani: boolean = false;
   showJarabesChillOut: boolean = false;
@@ -46,7 +79,7 @@ export class InsumosComponent implements OnInit {
   mostrarTes: boolean = false;
   mostrarPolvos: boolean = false;
 
- 
+
   //Manipulación de menú
   toggleShowAllJarabes() {
     this.showJarabes = !this.showJarabes; // Invertir el valor
@@ -57,9 +90,12 @@ export class InsumosComponent implements OnInit {
   //Manipulación de menú
   toggleShowAllSalsas() {
     this.showSalsas = !this.showSalsas; // Invertir el valor
-    this.showSalsaChillOut  = !this.showSalsaChillOut;
+    this.showSalsaChillOut = !this.showSalsaChillOut;
     this.showSalsasTorani = !this.showSalsasTorani;
   }
+
+  //Termina la parte de menu que aun no temrino yo jaja//
+
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {

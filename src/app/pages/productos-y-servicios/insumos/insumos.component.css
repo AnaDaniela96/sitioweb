@@ -134,7 +134,7 @@ nav, .offcanvas {
 }
 
 /* Características de imagen en producto */
-#botellas{
+.botellas-torani, .botella-salsa{
     max-height: 360px !important;
     max-width: 105px !important;
 }
