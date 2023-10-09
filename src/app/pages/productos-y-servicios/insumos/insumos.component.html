@@ -15,299 +15,13 @@
                     </div>
                     <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                         <ul class="navbar-nav fs-5 justify-content-evenly">
-                            <li class="nav-item p-3 py-md-1">
-                                <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#Jarabes"
-                                    aria-expanded="true" (click)="toggleShowAllJarabes()">
-                                    Jarabes
-                                    <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
-                                </button>
-
-                                <div class="collapse" id="Jarabes">
-                                    <ul class="list-unstyled fw-normal pb-1 small">
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox"
-                                                    id="mostrarJarabesChillOutCheckbox"
-                                                    [(ngModel)]="showJarabesChillOut">
-                                                <label class="form-check-label"
-                                                    for="mostrarJarabesChillOutCheckbox">ChillOut Jarabes</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox"
-                                                    id="mostrarJarabesToraniCheckbox" [(ngModel)]="showJarabesTorani">
-                                                <label class="form-check-label"
-                                                    for="mostrarJarabesToraniCheckbox">Torani</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item p-3 py-md-1">
-                                <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#Salsas"
-                                    aria-expanded="true" (click)="toggleShowAllSalsas()">
-                                    Salsas
-                                    <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
-                                </button>
-
-                                <div class="collapse" id="Salsas">
-                                    <ul class="list-unstyled fw-normal pb-1 small">
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="salsasCheckbox"
-                                                    [(ngModel)]="showSalsaChillOut">
-                                                <label class="form-check-label" for="salsasCheckbox">ChillOut
-                                                    Fruit</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="salsasCheckbox"
-                                                    [(ngModel)]="showSalsasTorani">
-                                                <label class="form-check-label" for="salsasCheckbox">Torani</label>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item p-3 py-md-1">
-                                <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#PuresConcentrados"
-                                    aria-expanded="true">
-                                    Purés y Concentrados
-                                    <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
-                                </button>
-
-                                <div class="collapse" id="PuresConcentrados">
-                                    <ul class="list-unstyled fw-normal pb-1 small">
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="puresCheckbox"
-                                                    [(ngModel)]="mostrarPuresYConcentrados">
-                                                <label class="form-check-label" for="puresCheckbox">ChillOut
-                                                    Fruit</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="puresCheckbox"
-                                                    [(ngModel)]="mostrarPuresYConcentrados">
-                                                <label class="form-check-label" for="puresCheckbox">ChillOut Jam</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="puresCheckbox"
-                                                    [(ngModel)]="mostrarPuresYConcentrados">
-                                                <label class="form-check-label" for="puresCheckbox">Torani </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="puresCheckbox"
-                                                    [(ngModel)]="mostrarPuresYConcentrados">
-                                                <label class="form-check-label" for="puresCheckbox">Tea Zone</label>
-                                            </div>
-                                        </li>
-
-
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item p-3 py-md-1">
-                                <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#moleculares"
-                                    aria-expanded="true">
-                                    Moleculares
-                                    <i #chevronIcon class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
-                                </button>
-
-                                <div class="collapse" id="moleculares">
-                                    <ul class="list-unstyled fw-normal pb-1 small">
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="molecularesCheckbox"
-                                                    [(ngModel)]="mostrarMoleculares">
-                                                <label class="form-check-label" for="molecularesCheckbox">ChillOut
-                                                    Pearls</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="molecularesCheckbox"
-                                                    [(ngModel)]="mostrarMoleculares">
-                                                <label class="form-check-label" for="molecularesCheckbox">ChillOut
-                                                    Jelly</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="molecularesCheckbox"
-                                                    [(ngModel)]="mostrarMoleculares">
-                                                <label class="form-check-label" for="molecularesCheckbox">Tea
-                                                    Zone</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="molecularesCheckbox"
-                                                    [(ngModel)]="mostrarMoleculares">
-                                                <label class="form-check-label" for="molecularesCheckbox">ChillOut
-                                                    Tapioca</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item p-3 py-md-1">
-                                <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#tes"
-                                    aria-expanded="true">
-                                    Tés
-                                    <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
-                                </button>
-
-                                <div class="collapse" id="tes">
-                                    <ul class="list-unstyled fw-normal pb-1 small">
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="tesCheckbox"
-                                                    [(ngModel)]="mostrarTes">
-                                                <label class="form-check-label" for="tesCheckbox">EURO TE</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="tesCheckbox"
-                                                    [(ngModel)]="mostrarTes">
-                                                <label class="form-check-label" for="tesCheckbox">AIYA</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="tesCheckbox"
-                                                    [(ngModel)]="mostrarTes">
-                                                <label class="form-check-label" for="tesCheckbox">STASH</label>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item p-3 py-md-1">
-                                <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#tisanas"
-                                    aria-expanded="true">
-                                    Tisanas
-                                    <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
-                                </button>
-
-                                <div class="collapse" id="tisanas">
-                                    <ul class="list-unstyled fw-normal pb-1 small">
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="tesCheckbox"
-                                                    [(ngModel)]="mostrarTisanas">
-                                                <label class="form-check-label" for="tesCheckbox">Tisanas
-                                                    etrusca</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="tesCheckbox"
-                                                    [(ngModel)]="mostrarTisanas">
-                                                <label class="form-check-label" for="tesCheckbox">Tisanas EURO
-                                                    TE</label>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item p-3 py-md-1">
-                                <button class="nav-link" data-bs-toggle="collapse" data-bs-target="#polvos"
-                                    aria-expanded="true">
-                                    Polvos
-                                    <i id="chevronIcon" class="fas fa-chevron-down"></i> <!-- Icono de FontAwesome -->
-                                </button>
-
-                                <div class="collapse" id="polvos">
-                                    <ul class="list-unstyled fw-normal pb-1 small">
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">ChillOut
-                                                    Mix</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">ChillOut Just
-                                                    Fruit</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">ChillOut
-                                                    Active</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">David Río</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">Super
-                                                    Blends</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">Tea Zone</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">AIYA</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">MOCAFE</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">Cool Capp</label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="polvosCheckbox"
-                                                    [(ngModel)]="mostrarPolvos">
-                                                <label class="form-check-label" for="polvosCheckbox">Cappuccine</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/jarabes" class="nav-link">Jarabes</a></li>
+                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/salsas" class="nav-link">Salsas</a></li>
+                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/pures-y-concentrados" class="nav-link">Purés y Concentrados</a></li>
+                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/moleculares" class="nav-link">Moleculares</a></li>
+                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/tes" class="nav-link">Tes</a></li>
+                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/tisanas" class="nav-link">Tisanas</a></li>
+                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/polvos" class="nav-link">Polvos</a></li>
                         </ul>
                     </div>
                 </section>
@@ -318,13 +32,8 @@
 
     <router-outlet></router-outlet>
 
-    <main class="col-lg-12 p-3 align-self-start">
+    <main class="col-lg-12 p-3 align-self-start" id="divTodosLosInsumos">
         <div class="container">
-            <!-- <div class="text-right">
-                <button (click)="mostrarCuadricula = !mostrarCuadricula" class="btn btn-warning btn-block">
-                    {{ mostrarCuadricula ? 'Cambiar a Vista de Lista' : 'Cambiar a Vista de Cuadrícula' }}
-                </button>
-            </div> -->
 
             <div class="container text-center">
                 <!-- Paginación con botones Anterior y Siguiente -->
@@ -341,7 +50,7 @@
 
                 <div class="row">
                     <!-- Vista de lista -->
-                    <div *ngFor="let insumo of elementosPagina" id="todosLosInsumos"
+                    <div *ngFor="let insumo of elementosPagina"
                         style="height: 650px !important; width: 250px !important;"
                         class="container d-flex flex-wrap justify-content-around">
                         <div class="card">
@@ -378,61 +87,9 @@
                         <p>Total de elementos: {{ elementosVisibles }} de {{ insumosArray.length }}</p>
                     </div>
 
-
-
-
-
-
-
                 </div>
             </div>
         </div>
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
-    <main class="col-lg-12 p-3 align-self-start"> <!--Todos los insumos-->
-        <!-- <div class="row">
-            <div *ngFor="let insumo of insumosArray" id="todosLosInsumos"
-                style="height: 650px !important; width: 250px !important;"
-                class="container d-flex flex-wrap justify-content-around">
-                <div class="card">
-                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
-                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce" style="color: white;"
-                            target="_blank" title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                class="fas fa-shopping-cart"></i></a>
-                    </div>
-
-                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" alt="{{insumo.name}}"
-                        title="{{insumo.name}}" [ngClass]="{
-                            'botellas-torani': insumo.keySap && insumo.keySap.startsWith('IJA'),
-                            'botella-salsa': insumo.category && insumo.category.startsWith('PUR')
-                          }">
-                    <div class="card-body">
-                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                        <p>
-                        <p class="card-text"> {{ insumo.name }}</p>
-                        <p class="d-none card-text">{{ insumo.description }}</p>
-                        <p></p>
-                    </div>
-                    <div class="card-footer justify-content-right">
-                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
-                            sucursal
-                            <i class="fas fa-arrow-right" style="color: black;"></i>
-                        </a><br>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </main>
 
     <div class="row" style="height: 1cm;"></div>

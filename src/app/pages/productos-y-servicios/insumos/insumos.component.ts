@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -8,12 +9,13 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./insumos.component.css']
 })
 export class InsumosComponent implements AfterViewInit {
-  
+
 
   constructor(
     private dataService: DataService,
     private sanitizer: DomSanitizer,
     private elementRef: ElementRef,
+    private router: Router,
   ) { }
 
   insumosArray: any[] = [];
@@ -100,6 +102,7 @@ export class InsumosComponent implements AfterViewInit {
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
+      this.actualizarClaseDelDiv();
       console.log('Información de insumosArray', this.insumosArray);
 
     }).catch((error: any) => {
@@ -131,4 +134,22 @@ export class InsumosComponent implements AfterViewInit {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
+  //Iniciar con el div de todos los insumos
+
+  actualizarClaseDelDiv() {
+    // Obtiene la ruta actual
+    const rutaActual = this.router.url;
+    // Selecciona el div que quieres modificar por su ID o como sea adecuado
+    const divAActualizar = document.getElementById('divTodosLosInsumos');
+
+    // Comprueba si la ruta coincide con la ruta deseada
+    if (rutaActual === '/productos-y-servicios/insumos-para-cafeterias') {
+      // Si coincide, quita la clase "d-none"
+      divAActualizar?.classList.remove('d-none');
+    } else {
+      // Si no coincide, agrega la clase "d-none"
+      divAActualizar?.classList.add('d-none');
+    }
+
+  }
 }
