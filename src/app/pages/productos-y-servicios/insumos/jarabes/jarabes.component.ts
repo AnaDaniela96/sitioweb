@@ -17,13 +17,16 @@ export class JarabesComponent {
   insumosArray: any[] = [];
   extractedUrls: any;
 
-
   //Jarabes
   jarabesChillOut: any[] = [];
   jarabesToraniClasico: any[] = [];
   jarabesPuremadeTorani: any[] = [];
   jarabesZeroSugar: any[] = [];
   jarabesSugarFree: any[] = [];
+
+  //Menu
+  hidesJarabesChillOut: boolean = true;
+  hidesJarabesTorani: boolean = true;
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {

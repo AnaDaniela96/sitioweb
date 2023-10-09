@@ -1,66 +1,91 @@
-<main class="col-lg-12 p-3 align-self-start"> <!-- Categoría Jarabes-->
-    <div id="todos-los-jarabes">
-        <div id="jarabes-presentacion" class="container">
-            <div class="d-flex align-items-center justify-content-center">
-                <img src="../../../../assets/icons/Jarabes.webp" alt="Icono de Jarabes"
-                    style="height: 150px; width: auto;">
-                <h2 class="text-center mb-0 mr-3" style="font-weight: 700; font-size: 60px;">Jarabes
-                </h2>
-            </div>
-        </div><br>
+<div class="row">
+    <aside class="col-lg-2 align-self-stretch">
+        <br>
+        <h5 class="text-center mb-3">Filtrar por Línea</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="jarabesChillOutCheckbox"
+                        [(ngModel)]="hidesJarabesTorani">
+                    <label class="form-check-label" for="jarabesChillOutCheckbox"> Jarabes ChillOut </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="jarabesToraniCheckbox"
+                        [(ngModel)]="hidesJarabesChillOut">
+                    <label class="form-check-label" for="jarabesToraniCheckbox"> Jarabes Torani </label>
+                </div>
+            </li>
+        </ul>
+    </aside>
 
-        <div class="container d-flex flex-wrap align-items-center justify-content-center my-2">
-            <h4 class="">Explora las diferentes líneas de Jarabes que tenemos:</h4>
+    <main class="col-lg-10 p-3 align-self-start"> <!-- Categoría Jarabes-->
+        <div class="container">
+            <div id="jarabes-presentacion" class="container">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="../../../../assets/icons/Jarabes.webp" alt="Icono de Jarabes"
+                        style="height: 150px; width: auto;">
+                    <h1 class="text-center mb-0 mr-3" style="font-weight: 700; font-size: 60px;">Jarabes
+                    </h1>
+                </div>
+            </div><br>
+
+            <div class="container d-flex flex-wrap align-items-center justify-content-center my-2">
+                <h4 class="">Explora las diferentes líneas de Jarabes que tenemos:</h4>
+            </div>
         </div>
 
         <!--Cards para ChillOut Jarabes-->
-        <div class="container" id="jarabesChillOut">
+        <div class="container" *ngIf="hidesJarabesTorani">
             <div class="d-flex flex-wrap align-items-center justify-content-around">
                 <div class="contenedor-logos" style=" background-color: #55C1C4;">
                     <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-09.png">
+                    <h2 class="d-none">Jarabes ChillOut</h2>
                 </div>
             </div>
 
             <!-- <div class="container my-2" style="">
-                <p class="col-lg-9" style="text-align: justify;">Es un <b>producto
-                        líquido</b>,
-                    que funciona <span style="font-weight: bold;">como endulzante </span>para todo tipo de bebidas,
-                    tanto
-                    frías como calientes. Puede inclusive, utilizarse para la elaboración de postres.</p>
-            </div> -->
+                    <p class="col-lg-9" style="text-align: justify;">Es un <b>producto
+                            líquido</b>,
+                        que funciona <span style="font-weight: bold;">como endulzante </span>para todo tipo de bebidas,
+                        tanto
+                        frías como calientes. Puede inclusive, utilizarse para la elaboración de postres.</p>
+                </div> -->
 
             <div class="scroll-horizontal-container my-5">
                 <!-- <div class="row">
-                    <div *ngFor="let insumo of jarabesChillOut"
-                        style="height: 500px !important; width: 250px !important;">
-                        <div class="card">
-                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                alt="Imagen del insumo" id="botellas">
-                            <div class="card-body">
-                                <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                <p class="card-text"> {{ insumo.name }}</p>
-                                <p class="d-none card-text">{{ insumo.description }}</p>
-                            </div>
-                            <div class="card-footer justify-content-right">
-                                <a routerLink="#" style="color: black;"> Ver más
-                                    <i class="fas fa-arrow-right" style="color: black;"></i>
-                                    <!-- Icono de flecha hacia la derecha 
-                                </a>
+                        <div *ngFor="let insumo of jarabesChillOut"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo" id="botellas">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha 
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div> -->
+                    </div> -->
             </div>
         </div>
 
         <div class="row" style="height: 1cm;"></div>
 
         <!--Línea Torani-->
-        <div class="my-4" >
+        <div class="my-4" *ngIf="hidesJarabesChillOut">
             <!--Icono y presentación marca torani-->
             <div class="container d-flex flex-wrap justify-content-between align-items-center">
                 <div class="contenedor-logos my-3">
                     <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logo de Torani">
+                    <h2 class="d-none">Jarabes Torani</h2>
                 </div>
 
                 <div class="container"
@@ -111,8 +136,7 @@
                             <div *ngFor="let insumo of jarabesToraniClasico"
                                 style="height: 650px !important; width: 250px !important;">
                                 <div class="card">
-                                    <div class="card-header d flex align-self-end"
-                                        style="background-color: #E91D74;">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
                                         <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
                                             style="color: white;" target="_blank"
                                             title="Comprar en e-commerce el producto {{insumo.name}}"><i
@@ -180,8 +204,7 @@
                             <div *ngFor="let insumo of jarabesPuremadeTorani"
                                 style="height: 650px !important; width: 250px !important;">
                                 <div class="card">
-                                    <div class="card-header d flex align-self-end"
-                                        style="background-color: #E91D74;">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
                                         <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
                                             title="Comprar en e-commerce el producto {{insumo.name}}"
                                             style="color: white;" target="_blank"><i
@@ -252,8 +275,7 @@
                             <div *ngFor="let insumo of jarabesZeroSugar"
                                 style="height: 650px !important; width: 250px !important;">
                                 <div class="card">
-                                    <div class="card-header d flex align-self-end"
-                                        style="background-color: #E91D74;">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
                                         <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
                                             title="Comprar en e-commerce el producto {{insumo.name}}"
                                             style="color: white;" target="_blank"><i
@@ -321,8 +343,7 @@
                             <div *ngFor="let insumo of jarabesSugarFree"
                                 style="height: 650px !important; width: 250px !important;">
                                 <div class="card">
-                                    <div class="card-header d flex align-self-end"
-                                        style="background-color: #E91D74;">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
                                         <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
                                             title="Comprar en e-commerce el producto {{insumo.name}}"
                                             style="color: white;" target="_blank"><i
@@ -352,5 +373,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</main>
+
+    </main>
+
+</div>

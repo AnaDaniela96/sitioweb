@@ -22,9 +22,9 @@ export class InsumosComponent implements AfterViewInit {
   extractedUrls: any;
   mostrarCuadricula: boolean = false;
   elementosVisibles: number = 0;
-  // Nuevas propiedades para paginación
   paginaActual: number = 1; // Página actual
-  tamañoPagina: number = 10; // Tamaño de página
+  tamañoPagina: number = 15; // Tamaño de página
+  showTodosLosInsumos: boolean = true;
 
   // Obtener las tarjetas (cards) de la vista
   @ViewChildren('tarjeta')
@@ -66,43 +66,16 @@ export class InsumosComponent implements AfterViewInit {
     this.paginaActual = pagina;
   }
 
-  //Manipulación de filtros por categoría empieza menu que aun no termino xd //
-  showJarabes: boolean = false;
-  showJarabesTorani: boolean = false;
-  showJarabesChillOut: boolean = false;
-
-  showSalsas: boolean = false;
-  showSalsaChillOut: boolean = false;
-  showSalsasTorani: boolean = false;
-
-  mostrarPuresYConcentrados: boolean = false;
-  mostrarMoleculares: boolean = false;
-  mostrarTisanas: boolean = false;
-  mostrarTes: boolean = false;
-  mostrarPolvos: boolean = false;
-
-
   //Manipulación de menú
-  toggleShowAllJarabes() {
-    this.showJarabes = !this.showJarabes; // Invertir el valor
-    this.showJarabesChillOut = !this.showJarabesChillOut;
-    this.showJarabesTorani = !this.showJarabesTorani;
+  toggleShowInsumos() {
+    this.showTodosLosInsumos = !this.showTodosLosInsumos; // Invertir el valor
   }
-
-  //Manipulación de menú
-  toggleShowAllSalsas() {
-    this.showSalsas = !this.showSalsas; // Invertir el valor
-    this.showSalsaChillOut = !this.showSalsaChillOut;
-    this.showSalsasTorani = !this.showSalsasTorani;
-  }
-
-  //Termina la parte de menu que aun no temrino yo jaja//
 
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
-      this.insumosArray = insumosArray;
       this.actualizarClaseDelDiv();
+      this.insumosArray = insumosArray;
       console.log('Información de insumosArray', this.insumosArray);
 
     }).catch((error: any) => {

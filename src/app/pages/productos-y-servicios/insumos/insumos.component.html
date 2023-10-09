@@ -15,13 +15,27 @@
                     </div>
                     <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                         <ul class="navbar-nav fs-5 justify-content-evenly">
-                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/jarabes" class="nav-link">Jarabes</a></li>
-                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/salsas" class="nav-link">Salsas</a></li>
-                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/pures-y-concentrados" class="nav-link">Purés y Concentrados</a></li>
-                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/moleculares" class="nav-link">Moleculares</a></li>
-                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/tes" class="nav-link">Tes</a></li>
-                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/tisanas" class="nav-link">Tisanas</a></li>
-                            <li class="nav-item p-3 py-md-1"><a routerLink="/productos-y-servicios/insumos-para-cafeterias/polvos" class="nav-link">Polvos</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/jarabes" class="nav-link"
+                                    (click)="toggleShowInsumos()">Jarabes</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/salsas"
+                                    class="nav-link">Salsas</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/pures-y-concentrados"
+                                    class="nav-link">Purés y Concentrados</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/moleculares"
+                                    class="nav-link">Moleculares</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/tes"
+                                    class="nav-link">Tes</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/tisanas"
+                                    class="nav-link">Tisanas</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/polvos"
+                                    class="nav-link">Polvos</a></li>
                         </ul>
                     </div>
                 </section>
@@ -38,20 +52,21 @@
             <div class="container text-center">
                 <!-- Paginación con botones Anterior y Siguiente -->
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination">
+                    <ul class="pagination justify-content-between">
                         <li class="page-item">
-                            <button class="page-link" (click)="paginaAnterior()">Anterior</button>
+                            <button class="page-link btn btn-outline-warning" (click)="paginaAnterior()">Anterior</button>
                         </li>
                         <li class="page-item">
-                            <button class="page-link" (click)="paginaSiguiente()">Siguiente</button>
+                            <button class="page-link btn btn-outline-warning" (click)="paginaSiguiente()">Siguiente</button>
                         </li>
                     </ul>
                 </nav>
 
+                <!-- <div class="row" *ngIf="showTodosLosInsumos"> -->
                 <div class="row">
                     <!-- Vista de lista -->
                     <div *ngFor="let insumo of elementosPagina"
-                        style="height: 650px !important; width: 250px !important;"
+                        style="height: 420px !important; width: 250px !important;"
                         class="container d-flex flex-wrap justify-content-around">
                         <div class="card">
                             <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
@@ -63,17 +78,17 @@
                             <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)" alt="{{insumo.name}}"
                                 title="{{insumo.name}}" [ngClass]="{
                                     'botellas-torani': insumo.keySap && insumo.keySap.startsWith('IJA'),
-                                    'botella-salsa': insumo.category && insumo.category.startsWith('PUR')
+                                    'botella-salsa': insumo.category && insumo.keySap.startsWith('PUR'),
                                   }">
                             <div class="card-body">
                                 <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
                                 <p>
-                                <p class="card-text"> {{ insumo.name }}</p>
+                                <h3 class="card-text" style="font-size: 13px;"> {{ insumo.name }}</h3>
                                 <p class="d-none card-text">{{ insumo.description }}</p>
                                 <p></p>
                             </div>
                             <div class="card-footer justify-content-right">
-                                <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                <a routerLink="/donde-encontranos" style="color: black; font-size: 12px;"> Encuentra tu
                                     sucursal
                                     <i class="fas fa-arrow-right" style="color: black;"></i>
                                 </a><br>
@@ -88,6 +103,18 @@
                     </div>
 
                 </div>
+
+                <!-- Paginación con botones Anterior y Siguiente -->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-between">
+                        <li class="page-item">
+                            <button class="page-link btn btn-outline-warning" (click)="paginaAnterior()">Anterior</button>
+                        </li>
+                        <li class="page-item">
+                            <button class="page-link btn btn-outline-warning" (click)="paginaSiguiente()">Siguiente</button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </main>
