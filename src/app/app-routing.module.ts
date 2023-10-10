@@ -29,6 +29,7 @@ import { MolecularesComponent } from './pages/productos-y-servicios/insumos/mole
 import { TesComponent } from './pages/productos-y-servicios/insumos/tes/tes.component';
 import { TisanasComponent } from './pages/productos-y-servicios/insumos/tisanas/tisanas.component';
 import { PolvosComponent } from './pages/productos-y-servicios/insumos/polvos/polvos.component';
+import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -73,6 +74,7 @@ const routes: Routes = [
     ]
   },
   { path: 'donde-encontranos', component: DondeEncontrarnosComponent },
+  { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent},
 ];
 
 @NgModule({
