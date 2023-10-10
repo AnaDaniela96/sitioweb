@@ -20,6 +20,10 @@ export class SalsasComponent {
   //Salsas
   salsasTorani: any[] = [];
   salsasChillOut: any[] = [];
+
+  //Menu
+  hidesSalsasChillOut: boolean = true;
+  hidesSalsasTorani: boolean = true;
   
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
