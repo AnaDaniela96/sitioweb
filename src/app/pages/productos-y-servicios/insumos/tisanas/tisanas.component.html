@@ -1,5 +1,25 @@
 <div class="row">
-    <main class="col-lg-12 p-3 align-items-center">
+    <aside class="col-lg-2 align-self-stretch">
+        <br>
+        <h5 class="text-center mb-3">Filtrar por Línea</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="tisanasCafeEtruscaCheckbox">
+                    <label class="form-check-label" for="tisanasCafeEtruscaCheckbox"> Tisanas Café Etrusca </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="tisanasEuroTeCheckbox">
+                    <label class="form-check-label" for="tisanasEuroTeCheckbox"> Euro Te </label>
+                </div>
+            </li>
+        </ul>
+        <br>
+    </aside>
+
+    <main class="col-lg-9 p-3 align-items-center">
 
         <!--Categoría Tisanas-->
         <div class="container" id="todas-las-tisanas">
@@ -47,23 +67,35 @@
                     </div>
                 </div>
 
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of tisanasFrutalesCafeEtrusca"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
-                                    </a>
+                <div style="height: 700px;">
+                    <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of tisanasFrutalesCafeEtrusca"
+                                style="height: 650px !important; width: 250px !important;">
+                                <div class="card">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                            title="Comprar en e-commerce el producto {{insumo.name}}"
+                                            style="color: white;" target="_blank"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                    </div>
+
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="Imagen del insumo" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                    <div class="card-body">
+                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                        <p>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                            sucursal
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        </a><br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -107,23 +139,35 @@
                     </div>
                 </div>
 
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of tisanasFrutalesEuroTe"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
-                                    </a>
+                <div style="height: 700px;">
+                    <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of tisanasFrutalesEuroTe"
+                                style="height: 650px !important; width: 250px !important;">
+                                <div class="card">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                            title="Comprar en e-commerce el producto {{insumo.name}}"
+                                            style="color: white;" target="_blank"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                    </div>
+
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="Imagen del insumo" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                    <div class="card-body">
+                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                        <p>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                            sucursal
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        </a><br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
