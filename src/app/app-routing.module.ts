@@ -30,6 +30,7 @@ import { TesComponent } from './pages/productos-y-servicios/insumos/tes/tes.comp
 import { TisanasComponent } from './pages/productos-y-servicios/insumos/tisanas/tisanas.component';
 import { PolvosComponent } from './pages/productos-y-servicios/insumos/polvos/polvos.component';
 import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
+import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos/molinos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -62,19 +63,25 @@ const routes: Routes = [
           { path: 'jarabes', component: JarabesComponent },
           { path: 'salsas', component: SalsasComponent },
           { path: 'pures-y-concentrados', component: PuresYConcentradosComponent },
-          { path: 'moleculares', component: MolecularesComponent},
-          { path: 'tes', component: TesComponent},
-          { path: 'tisanas', component: TisanasComponent},
-          { path: 'tisanas', component: TisanasComponent},
-          { path: 'polvos', component: PolvosComponent},
+          { path: 'moleculares', component: MolecularesComponent },
+          { path: 'tes', component: TesComponent },
+          { path: 'tisanas', component: TisanasComponent },
+          { path: 'tisanas', component: TisanasComponent },
+          { path: 'polvos', component: PolvosComponent },
         ]
       },
       { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
-      { path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent },
+      {
+        path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent,
+
+        children: [
+          { path: 'molinos', component: MolinosComponent },
+        ]
+      },
     ]
   },
   { path: 'donde-encontranos', component: DondeEncontrarnosComponent },
-  { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent},
+  { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
 ];
 
 @NgModule({

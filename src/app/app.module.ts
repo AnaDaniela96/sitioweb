@@ -37,6 +37,7 @@ import { TesComponent } from './pages/productos-y-servicios/insumos/tes/tes.comp
 import { TisanasComponent } from './pages/productos-y-servicios/insumos/tisanas/tisanas.component';
 import { PolvosComponent } from './pages/productos-y-servicios/insumos/polvos/polvos.component';
 import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
+import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos/molinos.component';
 
 
 
@@ -73,7 +74,8 @@ import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/pregu
     TesComponent,
     TisanasComponent,
     PolvosComponent,
-    PreguntasFrecuentesComponent
+    PreguntasFrecuentesComponent,
+    MolinosComponent
   ],
   imports: [
     BrowserModule,

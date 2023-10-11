@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container p-3 align-self-start">
+            <h1 class="" style="text-align: justify;">Conoce los molinos que tenemos en Café Etrusca</h1>
+        </div>
+    </div>
+
+
+    <main class="col-lg-12 p-3 align-self-start">
+
+        <div class="container text-center">
+            <!-- Paginación con botones Anterior y Siguiente -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-between">
+                    <li class="page-item">
+                        <button class="page-link btn btn-outline-warning" (click)="paginaAnterior()">Anterior</button>
+                    </li>
+                    <li class="page-item">
+                        <button class="page-link btn btn-outline-warning" (click)="paginaSiguiente()">Siguiente</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="row">
+                <div *ngFor="let maquina of molinos" style="height: 420px !important; width: 250px !important;"
+                    class="container d-flex flex-wrap justify-content-around">
+                    <div class="card">
+                        <div class="card-header d flex align-self-end" style="background-color: #039be5;">
+                            <a *ngIf="maquina.urlECommerce" [href]="maquina.urlECommerce" style="color: white;"
+                                target="_blank" title="Comprar en e-commerce el producto {{maquina.name}}"><i
+                                    class="fas fa-shopping-cart"></i></a>
+                        </div>
+
+                        <img class="card-img-top" [src]="sanitizeUrl(maquina.urlArticleFirst)" alt="{{maquina.name}}"
+                            title="{{maquina.name}}">
+                        <div class="card-body">
+                            <p class="card-title" id="font-keySap"> {{ maquina.keySap }}
+                            <p>
+                            <h3 class="card-text" style="font-size: 13px;"> {{ maquina.name }}</h3>
+                            <p class="d-none card-text">{{ maquina.description }}</p>
+                            <p></p>
+                        </div>
+                        <div class="card-footer justify-content-right">
+                            <a routerLink="/donde-encontranos" style="color: black; font-size: 12px;"> Encuentra tu
+                                sucursal
+                                <i class="fas fa-arrow-right" style="color: black;"></i>
+                            </a><br>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Paginación con botones Anterior y Siguiente -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-between">
+                    <li class="page-item">
+                        <button class="page-link btn btn-outline-warning" (click)="paginaAnterior()">Anterior</button>
+                    </li>
+                    <li class="page-item">
+                        <button class="page-link btn btn-outline-warning" (click)="paginaSiguiente()">Siguiente</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+</div>

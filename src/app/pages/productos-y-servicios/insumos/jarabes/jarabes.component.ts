@@ -61,8 +61,9 @@ export class JarabesComponent {
         this.contienePalabrasToraniSugarFree(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
-    }
-    )
+    }).catch((error: any) => {
+      console.error('Error al obtener datos de insumo', error);
+    })
   }
 
   //Limpia las url de las imagenes del insumo
