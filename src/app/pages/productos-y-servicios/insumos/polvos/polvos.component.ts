@@ -23,6 +23,12 @@ export class PolvosComponent {
    polvosChillOutJustFruit: any[] = [];
    polvosChillOutActive: any[] = [];
    polvosDavidRio: any[] = [];
+   polvosSuperBlends: any[] = [];
+   polvosTeaZone: any[] = [];
+   polvosAiya:  any[] = [];
+   polvosDonGustavo:  any[] = [];
+   polvosMocafe:  any[] = [];
+   polvosCoolCap:  any[] = [];
 
    ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
@@ -53,7 +59,37 @@ export class PolvosComponent {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      console.log(this.polvosDavidRio);
+      // Filtra los Super Blends crea un nuevo array
+      this.polvosSuperBlends = this.insumosArray.filter(insumo =>
+        this.contienePalabrasSuperBlends(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra los Aiya crea un nuevo array
+      this.polvosAiya = this.insumosArray.filter(insumo =>
+        this.contienePalabrasAiya(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra los Don Gustavo crea un nuevo array
+      this.polvosDonGustavo = this.insumosArray.filter(insumo =>
+        this.contienePalabrasDonGustavo(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+       // Filtra los Mocafe crea un nuevo array
+       this.polvosMocafe = this.insumosArray.filter(insumo =>
+        this.contienePalabrasMocafe(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+       // Filtra los Mocafe crea un nuevo array
+       this.polvosCoolCap = this.insumosArray.filter(insumo =>
+        this.contienePalabrasCoolCapp(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      console.log(this.polvosDonGustavo,);
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
@@ -145,6 +181,101 @@ export class PolvosComponent {
 
     // Palabras a excluir
     const palabrasExcluidas = ['SUPER', 'BLENDS', 'TAPIOCA'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  }
+
+  contienePalabrasSuperBlends(nombre: string): boolean {
+    const palabrasClave = ['SUPER', 'BLENDS',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['CHILLOUT', 'DAVID', 'TAPIOCA'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  }
+
+  contienePalabrasAiya(nombre: string): boolean {
+    const palabrasClave = ['AIYA',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['CHILLOUT', 'DAVID', 'TAPIOCA'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  }
+
+  contienePalabrasDonGustavo(nombre: string): boolean {
+    const palabrasClave = ['DON', 'GUSTAVO',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['CHILLOUT', 'DAVID', 'TAPIOCA'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  }
+
+  contienePalabrasMocafe(nombre: string): boolean {
+    const palabrasClave = ['MOCAFE',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['CHILLOUT', 'DAVID', 'TAPIOCA'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+  }
+
+  contienePalabrasCoolCapp(nombre: string): boolean {
+    const palabrasClave = ['COOL', 'CAPP',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['CHILLOUT', 'DAVID', 'TAPIOCA'];
 
     // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
     const nombreEnMayusculas = nombre.toUpperCase();
