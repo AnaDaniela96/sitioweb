@@ -22,7 +22,7 @@ export class MolinosComponent {
   mostrarCuadricula: boolean = false;
   elementosVisibles: number = 0;
   paginaActual: number = 1; // Página actual
-  tamañoPagina: number = 15; // Tamaño de página
+  tamañoPagina: number = 5; // Tamaño de página
 
    // Obtener las tarjetas (cards) de la vista
    @ViewChildren('tarjeta')
