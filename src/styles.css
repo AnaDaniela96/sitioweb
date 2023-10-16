@@ -29,6 +29,9 @@ html{
     --card-4-secondary-color: rgb(96,109,117);
 }
 
+.title {
+    font-weight: 800;
+}
 
 
 /* Botones e inputs 
