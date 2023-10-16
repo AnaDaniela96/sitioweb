@@ -31,6 +31,8 @@ import { TisanasComponent } from './pages/productos-y-servicios/insumos/tisanas/
 import { PolvosComponent } from './pages/productos-y-servicios/insumos/polvos/polvos.component';
 import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
 import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos/molinos.component';
+import { LayoutProductoComponent } from './pages/productos-y-servicios/insumos/layout-producto/layout-producto.component';
+import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licuadoras/licuadoras.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -76,12 +78,16 @@ const routes: Routes = [
 
         children: [
           { path: 'molinos', component: MolinosComponent },
+          { path: 'licuadoras', component: LicuadorasComponent },
         ]
       },
     ]
   },
   { path: 'donde-encontranos', component: DondeEncontrarnosComponent },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
+
+  //Rutas dinámicas:
+  { path: ':keySap', component: LayoutProductoComponent },
 ];
 
 @NgModule({

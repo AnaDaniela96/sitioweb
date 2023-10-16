@@ -38,6 +38,8 @@ import { TisanasComponent } from './pages/productos-y-servicios/insumos/tisanas/
 import { PolvosComponent } from './pages/productos-y-servicios/insumos/polvos/polvos.component';
 import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
 import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos/molinos.component';
+import { LayoutProductoComponent } from './pages/productos-y-servicios/insumos/layout-producto/layout-producto.component';
+import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licuadoras/licuadoras.component';
 
 
 
@@ -75,7 +77,9 @@ import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos
     TisanasComponent,
     PolvosComponent,
     PreguntasFrecuentesComponent,
-    MolinosComponent
+    MolinosComponent,
+    LayoutProductoComponent,
+    LicuadorasComponent
   ],
   imports: [
     BrowserModule,

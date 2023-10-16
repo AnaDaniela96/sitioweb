@@ -7,6 +7,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   templateUrl: './molinos.component.html',
   styleUrls: ['./molinos.component.css']
 })
+
 export class MolinosComponent {
 
   constructor(
@@ -81,7 +82,7 @@ export class MolinosComponent {
     })
   }
 
-  //Limpia las url de las imagenes del insumo
+  //Limpia las url de las imagenes del producto
   extractUrlsFromString(input: string): void {
     const cleanedInput = input
       .replace(/\[|\]|'/g, ''); // Elimina '[' ']' y comillas simples
