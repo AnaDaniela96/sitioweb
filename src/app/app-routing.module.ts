@@ -33,6 +33,7 @@ import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/pregu
 import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos/molinos.component';
 import { LayoutProductoComponent } from './pages/productos-y-servicios/insumos/layout-producto/layout-producto.component';
 import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licuadoras/licuadoras.component';
+import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafeteras/cafeteras.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -79,6 +80,7 @@ const routes: Routes = [
         children: [
           { path: 'molinos', component: MolinosComponent },
           { path: 'licuadoras', component: LicuadorasComponent },
+          { path: 'maquinas-cafe', component: CafeterasComponent },
         ]
       },
     ]

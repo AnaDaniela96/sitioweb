@@ -3,12 +3,12 @@ import { DataService } from 'src/app/utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-licuadoras',
-  templateUrl: './licuadoras.component.html',
-  styleUrls: ['./licuadoras.component.css']
+  selector: 'app-cafeteras',
+  templateUrl: './cafeteras.component.html',
+  styleUrls: ['./cafeteras.component.css']
 })
+export class CafeterasComponent {
 
-export class LicuadorasComponent {
   constructor(
     private dataService: DataService,
     private sanitizer: DomSanitizer,
@@ -17,7 +17,7 @@ export class LicuadorasComponent {
   maquinasArray: any[] = [];
   extractedUrls: any;
 
-  licuadoras: any [] = [];
+  cafeteras: any[] = [];
 
   ngOnInit(): void {
     this.dataService.getMaquinaria().then((maquinasArray: any[]) => {
@@ -25,18 +25,20 @@ export class LicuadorasComponent {
       //console.log(this.maquinasArray);
 
       //Filtrar las licuadoras
-      this.licuadoras = this.maquinasArray.filter(maquina =>
-        this.contienePalabraLicuadora(maquina.name) &&
+      this.cafeteras = this.maquinasArray.filter(maquina =>
+        this.contienePalabraCafetera(maquina.name) &&
         maquina.urlArticleFirst && maquina.urlArticleFirst.trim() !== ''
       );
+
+      console.log(this.cafeteras);
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
     })
   }
 
-   //Limpia las url de las imagenes del producto
-   extractUrlsFromString(input: string): void {
+  //Limpia las url de las imagenes del producto
+  extractUrlsFromString(input: string): void {
     const cleanedInput = input
       .replace(/\[|\]|'/g, ''); // Elimina '[' ']' y comillas simples
 
@@ -58,12 +60,11 @@ export class LicuadorasComponent {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
-  contienePalabraLicuadora(nombre: string): boolean {
-    const palabrasClave = ['LICUADORA'];
+  contienePalabraCafetera(nombre: string): boolean {
+    const palabrasClave = ['CAFETERA'];
     const cumpleCondicion = palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
     console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
   }
-
 
 }

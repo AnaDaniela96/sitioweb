@@ -40,6 +40,7 @@ import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/pregu
 import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos/molinos.component';
 import { LayoutProductoComponent } from './pages/productos-y-servicios/insumos/layout-producto/layout-producto.component';
 import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licuadoras/licuadoras.component';
+import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafeteras/cafeteras.component';
 
 
 
@@ -79,7 +80,8 @@ import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licu
     PreguntasFrecuentesComponent,
     MolinosComponent,
     LayoutProductoComponent,
-    LicuadorasComponent
+    LicuadorasComponent,
+    CafeterasComponent
   ],
   imports: [
     BrowserModule,
