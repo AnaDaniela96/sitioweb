@@ -1,5 +1,5 @@
 import { Component, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Event, NavigationStart } from '@angular/router';
 import { DataService } from '../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -21,10 +21,10 @@ export class InsumosComponent implements AfterViewInit {
   insumosArray: any[] = [];
   extractedUrls: any;
   mostrarCuadricula: boolean = false;
-  elementosVisibles: number = 0;
+  elementosVisibles: string = '0';
   paginaActual: number = 1; // Página actual
-  tamañoPagina: number = 15; // Tamaño de página
-  showTodosLosInsumos: boolean = true;
+  tamañoPagina: number = 10; // Tamaño de página
+  menuVisible: boolean = true;
 
   // Obtener las tarjetas (cards) de la vista
   @ViewChildren('tarjeta')
@@ -32,8 +32,14 @@ export class InsumosComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     // Contar elementos visibles
-    this.elementosVisibles = this.tarjetas.length;
+    this.actualizarElementosVisibles();
   }
+
+  actualizarElementosVisibles() {
+  const inicio = (this.paginaActual - 1) * this.tamañoPagina + 1;
+  const fin = Math.min(this.paginaActual * this.tamañoPagina, this.insumosArray.length);
+  this.elementosVisibles = `${inicio} - ${fin} de ${this.insumosArray.length}`;
+}
 
   // Obtener los elementos a mostrar en la página actual
   get elementosPagina() {
@@ -47,10 +53,12 @@ export class InsumosComponent implements AfterViewInit {
     const totalPaginas = Math.ceil(this.insumosArray.length / this.tamañoPagina);
     return Array(totalPaginas).fill(0).map((_, index) => index + 1);
   }
+
   // Cambia a la página anterior
   paginaAnterior() {
     if (this.paginaActual > 1) {
       this.paginaActual--;
+      this.actualizarElementosVisibles();
     }
   }
 
@@ -58,30 +66,39 @@ export class InsumosComponent implements AfterViewInit {
   paginaSiguiente() {
     if (this.paginaActual < this.paginas.length) {
       this.paginaActual++;
+      this.actualizarElementosVisibles();
     }
   }
 
   // Cambia a una página específica
   cambiarPagina(pagina: number) {
     this.paginaActual = pagina;
-  }
-
-  //Manipulación de menú
-  toggleShowInsumos() {
-    this.showTodosLosInsumos = !this.showTodosLosInsumos; // Invertir el valor
+    this.actualizarElementosVisibles();
   }
 
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
-      this.actualizarClaseDelDiv();
       this.insumosArray = insumosArray;
-      console.log('Información de insumosArray', this.insumosArray);
-
+      //console.log('Información de insumosArray', this.insumosArray);
+      // Escuchar eventos de cambio de ruta
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
     })
 
+    // Escuchar eventos de cambio de ruta
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+        // Verificar si se está navegando a una de las rutas hijas
+        if (event.url.includes('/productos-y-servicios/insumos-para-cafeterias/')) {
+          // Ocultar el menú
+          this.menuVisible = false;
+        } else {
+          // Mostrar el menú
+          this.menuVisible = true;
+        }
+      }
+    });
   }
 
   //Limpia las url de las imagenes del insumo
@@ -107,22 +124,4 @@ export class InsumosComponent implements AfterViewInit {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
-  //Iniciar con el div de todos los insumos
-
-  actualizarClaseDelDiv() {
-    // Obtiene la ruta actual
-    const rutaActual = this.router.url;
-    // Selecciona el div que quieres modificar por su ID o como sea adecuado
-    const divAActualizar = document.getElementById('divTodosLosInsumos');
-
-    // Comprueba si la ruta coincide con la ruta deseada
-    if (rutaActual === '/productos-y-servicios/insumos-para-cafeterias') {
-      // Si coincide, quita la clase "d-none"
-      divAActualizar?.classList.remove('d-none');
-    } else {
-      // Si no coincide, agrega la clase "d-none"
-      divAActualizar?.classList.add('d-none');
-    }
-
-  }
 }

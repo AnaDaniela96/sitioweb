@@ -1,20 +1,47 @@
-/* Estilo para el submenú */
-ul.submenu {
-    list-style: none;
-    padding: 0; /* Elimina el espacio interior (padding) */
-  }
-  
-  /* Estilo para los elementos del submenú */
-  ul.submenu li {
-    margin: 0; /* Elimina el margen en los elementos */
-    padding: 10px 0; /* Espaciado vertical entre elementos */
-    border-bottom: 1px solid #ccc; /* Línea divisoria entre elementos (opcional) */
-  }
-  
-  /* Estilo para los elementos del submenú cuando se pasan por encima */
-  ul.submenu li:hover {
-    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el cursor */
+/* Cards donde se muestran los productos */
+.card {
+  width: 400px !important;
+  height: 400px; /* Deja que la altura se ajuste al contenido */
+  display: flex; /* Establece la tarjeta como un contenedor flexible */
+  flex-direction: column; /* Establece la dirección de flexión como columna */
+  align-items: center; /* Centra verticalmente el contenido en la tarjeta */
+  transition: transform 0.2s ease-in-out;
+}
+
+.card img{
+  transform-origin: bottom;
+  transform: translateY(7.5%);
+  transition: transform 0.3s ease-in-out
+}
+
+.card img:hover{
+  transform: translate(0, -10px);
+}
+
+.card-body {
+  max-height: 150px; /* Establece una altura máxima para el cuerpo de la tarjeta */
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  white-space: normal; /* Permite el salto de línea del texto */
+}
+
+#font-keySap{
+      font-size: 0.8rem;
+      font-weight: var(--card-4-secondary-color);
+      color: var(--card-4-secondary-color);
+      text-align: left;
   }
 
- 
-  
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limita el texto a dos líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  text-align: left;
+  font-weight: var(--title-font-weight);
+  color: var(--heading-color);
+}
+
+.card-footer{
+  background-color: white;
+  border: none;
+}

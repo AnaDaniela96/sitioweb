@@ -16,8 +16,8 @@
                     <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                         <ul class="navbar-nav fs-5 justify-content-evenly">
                             <li class="nav-item p-3 py-md-1"><a
-                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/jarabes" class="nav-link"
-                                    (click)="toggleShowInsumos()">Jarabes</a></li>
+                                    routerLink="/productos-y-servicios/insumos-para-cafeterias/jarabes"
+                                    class="nav-link">Jarabes</a></li>
                             <li class="nav-item p-3 py-md-1"><a
                                     routerLink="/productos-y-servicios/insumos-para-cafeterias/salsas"
                                     class="nav-link">Salsas</a></li>
@@ -46,7 +46,7 @@
 
     <router-outlet></router-outlet>
 
-    <main class="col-lg-12 p-3 align-self-start" id="divTodosLosInsumos">
+    <main class="col-lg-12 p-3 align-self-start" *ngIf="menuVisible">
         <div class="container">
 
             <div class="container text-center">
@@ -54,10 +54,12 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-between">
                         <li class="page-item">
-                            <button class="page-link btn btn-outline-warning" (click)="paginaAnterior()">Anterior</button>
+                            <button class="page-link btn btn-outline-warning"
+                                (click)="paginaAnterior()">Anterior</button>
                         </li>
                         <li class="page-item">
-                            <button class="page-link btn btn-outline-warning" (click)="paginaSiguiente()">Siguiente</button>
+                            <button class="page-link btn btn-outline-warning"
+                                (click)="paginaSiguiente()">Siguiente</button>
                         </li>
                     </ul>
                 </nav>
@@ -99,7 +101,7 @@
                     </div>
 
                     <div class="container text-center">
-                        <p>Total de elementos: {{ elementosVisibles }} de {{ insumosArray.length }}</p>
+                        <p>Total de elementos: {{ elementosVisibles }} </p>
                     </div>
 
                 </div>
@@ -108,10 +110,12 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-between">
                         <li class="page-item">
-                            <button class="page-link btn btn-outline-warning" (click)="paginaAnterior()">Anterior</button>
+                            <button class="page-link btn btn-outline-warning"
+                                (click)="paginaAnterior()">Anterior</button>
                         </li>
                         <li class="page-item">
-                            <button class="page-link btn btn-outline-warning" (click)="paginaSiguiente()">Siguiente</button>
+                            <button class="page-link btn btn-outline-warning"
+                                (click)="paginaSiguiente()">Siguiente</button>
                         </li>
                     </ul>
                 </nav>

@@ -89,7 +89,7 @@ export class PolvosComponent {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      console.log(this.polvosDonGustavo,);
+      console.log(this.polvosSuperBlends,);
 
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
@@ -199,7 +199,7 @@ export class PolvosComponent {
     const palabrasClave = ['SUPER', 'BLENDS',];
 
     // Palabras a excluir
-    const palabrasExcluidas = ['CHILLOUT', 'DAVID', 'TAPIOCA'];
+    const palabrasExcluidas = ['CHILLOUT', 'TAPIOCA'];
 
     // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
     const nombreEnMayusculas = nombre.toUpperCase();
