@@ -30,6 +30,17 @@ export class PolvosComponent {
    polvosMocafe:  any[] = [];
    polvosCoolCap:  any[] = [];
 
+  hidesChillOutMix : boolean = true;
+  hidesChillOutJustFruit : boolean = true;
+  hidesChillOutActive : boolean = true;
+  hidesDavidRio : boolean = true;
+  hidesSuperBlends : boolean = true;
+  hidesTeaZone: boolean = false;
+  hidesAiya : boolean = false;
+  hidesDonGustavo : boolean = false;   
+  hidesMocafe : boolean = false;
+  hidesCoolCap : boolean = false;
+
    ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;

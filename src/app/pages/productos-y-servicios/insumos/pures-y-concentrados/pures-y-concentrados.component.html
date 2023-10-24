@@ -4,27 +4,32 @@
         <h5 class="text-center mb-3">Filtrar por Línea</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="puresConcentradosChillOutFruitCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="puresConcentradosChillOutFruitCheckbox"
+                        [(ngModel)]="hideschillOutFruit">
                     <label class="form-check-label" for="puresConcentradosChillOutFruitCheckbox">ChillOut Fruit </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="puresConcentradosChillOutJamCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="puresConcentradosChillOutJamCheckbox"
+                        [(ngModel)]="hideschillOutJam">
                     <label class="form-check-label" for="puresConcentradosChillOutJamCheckbox"> ChillOut Jam </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="puresConcentradosToraniCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="puresConcentradosToraniCheckbox"
+                        [(ngModel)]="hidesToraniRealSmoothieMix">
                     <label class="form-check-label" for="puresConcentradosToraniCheckbox"> Torani</label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="puresConcentradosTeaZoneCheckbox">
-                    <label class="form-check-label" for="puresConcentradosTeaZoneCheckbox"> Tea Zone Púres y Concentrados </label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="puresConcentradosTeaZoneCheckbox"
+                    [(ngModel)]="hidesTeaZone">
+                    <label class="form-check-label" for="puresConcentradosTeaZoneCheckbox"> Tea Zone Púres y
+                        Concentrados </label>
                 </div>
             </li>
         </ul>
@@ -50,7 +55,7 @@
         </div>
 
         <!-- Cards para Chillout Fruit-->
-        <div class="container my-5" id="chillOutFruitPuresConcentrados">
+        <div class="container my-5" id="chillOutFruitPuresConcentrados" *ngIf="hideschillOutFruit">
             <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                 <div class="col-lg-3 contenedor-logos" style=" background-color: #F3625E;">
                     <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png"
@@ -70,20 +75,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #FFEFE0; border-left: 4px solid #FED0A6;">
+                        <p class="p-3 text-center" style="background-color: #FFEFE0; border-left: 4px solid #FED0A6;">
                             <span style="font-weight: bold;">Única presentación</span>
                         </p>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #FFEFE0; border-left: 4px solid #FED0A6;">
+                        <p class="p-3 text-center" style="background-color: #FFEFE0; border-left: 4px solid #FED0A6;">
                             Botella de 1 Litro
                         </p>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #FFEFE0; border-left: 4px solid #FED0A6; ">
+                        <p class="p-3 text-center" style="background-color: #FFEFE0; border-left: 4px solid #FED0A6; ">
                             Rinde aprox. 25 bebidas de 480 ml.
                         </p>
                     </div>
@@ -127,7 +129,7 @@
         <div class="row" style="height: 2cm;"></div>
 
         <!-- Cards para ChillOut Jam-->
-        <div class="container my-5" id="chillOutFruitPuresConcentrados">
+        <div class="container my-5" id="chillOutFruitPuresConcentrados" *ngIf="hideschillOutJam">
             <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                 <div class="col-lg-3 contenedor-logos" style=" background-color: #8D84BE;">
                     <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-JAM.png" alt="Logo de ChillOutJam">
@@ -146,20 +148,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #EBFFFE; border-left: 4px solid #A8DFF3;">
+                        <p class="p-3 text-center" style="background-color: #EBFFFE; border-left: 4px solid #A8DFF3;">
                             <span style="font-weight: bold;">Única presentación</span>
                         </p>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #EBFFFE; border-left: 4px solid #A8DFF3;">
+                        <p class="p-3 text-center" style="background-color: #EBFFFE; border-left: 4px solid #A8DFF3;">
                             Botella de 1 Litro
                         </p>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #EBFFFE; border-left: 4px solid #A8DFF3;">
+                        <p class="p-3 text-center" style="background-color: #EBFFFE; border-left: 4px solid #A8DFF3;">
                             Rinde aprox. 25 bebidas de 480 ml.
                         </p>
                     </div>
@@ -201,7 +200,7 @@
         <div class="row" style="height: 1cm;"></div>
 
         <!--Cards para Torani Purées y concentrados-->
-        <div class="container my-5" id="toraniPuresConcentrados">
+        <div class="container my-5" id="toraniPuresConcentrados" *ngIf="hidesToraniRealSmoothieMix">
             <div class="container d-flex flex-wrap justify-content-around align-items-right my-4">
                 <div class="col-lg-3 contenedor-logos">
                     <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logos de Torani">
@@ -307,7 +306,7 @@
         <div class="row" style="height: 1cm;"></div>
 
         <!--Cards para TEAZONE Concentrados-->
-        <div class="container d-flex flex-wrap justify-content-around align-items-right my-4" id="teaZoneConcentrados">
+        <div class="container d-flex flex-wrap justify-content-around align-items-right my-4" id="teaZoneConcentrados" *ngIf="hidesTeaZone">
             <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                 <div class="col-lg-3 contenedor-logos">
                     <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp">
@@ -323,20 +322,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #EAFEF2; border-left: 4px solid #A7DEB0;">
+                        <p class="p-3 text-center" style="background-color: #EAFEF2; border-left: 4px solid #A7DEB0;">
                             <span style="font-weight: bold;">15 sabores disponibles</span>
                         </p>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #EAFEF2; border-left: 4px solid #A7DEB0;">
+                        <p class="p-3 text-center" style="background-color: #EAFEF2; border-left: 4px solid #A7DEB0;">
                             Presentación botella de 1.92 litros.
                         </p>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #EAFEF2; border-left: 4px solid #A7DEB0;">
+                        <p class="p-3 text-center" style="background-color: #EAFEF2; border-left: 4px solid #A7DEB0;">
                             Rinde 64 bebidas de 480 ml.
                         </p>
                     </div>

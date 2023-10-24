@@ -4,62 +4,65 @@
         <h5 class="text-center mb-3">Filtrar por Línea</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosChillOtMixCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosChillOtMixCheckbox"
+                    [(ngModel)]="hidesChillOutMix">
                     <label class="form-check-label" for="polvosChillOtMixCheckbox"> ChillOut Mix </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosChillOutJustFruitCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosChillOutJustFruitCheckbox"
+                    [(ngModel)]="hidesChillOutJustFruit">
                     <label class="form-check-label" for="polvosChillOutJustFruitCheckbox"> ChillOut JustFruit </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosChillOutActiveCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosChillOutActiveCheckbox"
+                    [(ngModel)]="hidesChillOutActive">
                     <label class="form-check-label" for="polvosChillOutActiveCheckbox"> ChillOut Active </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosDavidRioCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosDavidRioCheckbox"
+                    [(ngModel)]="hidesDavidRio">
                     <label class="form-check-label" for="polvosDavidRioCheckbox"> David Río </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosSuperBlendsCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosSuperBlendsCheckbox"
+                    [(ngModel)]="hidesSuperBlends">
                     <label class="form-check-label" for="polvoSuperBlendsCheckbox"> Super Blend </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosTeaZoneCheckbox">
-                    <label class="form-check-label" for="polvosTeaZoneCheckbox"> Tea Zone </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosAiyaCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosAiyaCheckbox"
+                    [(ngModel)]="hidesAiya">
                     <label class="form-check-label" for="polvosAiyaCheckbox"> Aiya </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosDonGustavoCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosDonGustavoCheckbox"
+                    [(ngModel)]="hidesDonGustavo">
                     <label class="form-check-label" for="polvosDonGustavoCheckbox"> Don Gustavo </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosMocafeCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosMocafeCheckbox"
+                    [(ngModel)]="hidesMocafe">
                     <label class="form-check-label" for="polvosMocafeCheckbox"> Mocafe </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="polvosCoolCapCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="polvosCoolCapCheckbox"
+                    [(ngModel)]="hidesCoolCap">
                     <label class="form-check-label" for="polvosCoolCapCheckbox"> Cool Caps </label>
                 </div>
             </li>
@@ -88,7 +91,7 @@
             </div><br>
 
             <!--Cards para ChillOut Mix-->
-            <div class="container my-5" id="mixChillOut">
+            <div class="container my-5" id="mixChillOut" *ngIf="hidesChillOutMix">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos" style="background-color: #F184C8;">
                         <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logo-mix.png">
@@ -157,10 +160,10 @@
             </div>
 
             <!--Chill Out Just Fruit-->
-            <div class="container">
+            <div class="container my-5" id="chillOutJustFruit" *ngIf="hidesChillOutJustFruit">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos" style="background-color: #A941A0;">
-                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logo-mix.png">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png">
                     </div>
 
                     <p class="p-3"
@@ -217,7 +220,7 @@
             </div>
 
             <!--Cards para Chill Out Active-->
-            <div class="container">
+            <div class="container my-5" id="chillOutActive" *ngIf="hidesChillOutActive">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos" style="background-color: #BBC244;">
                         <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-active.png">
@@ -277,7 +280,7 @@
             </div>
 
             <!--Cards para David Río-->
-            <div class="container">
+            <div class="container my-5" id="davidRio" *ngIf="hidesDavidRio">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos">
                         <img src="../../../../assets/LogosMarcas/Insumos/david-rio.png">
@@ -337,8 +340,69 @@
                 </div>
             </div>
 
+            <!--Cards para SuperBlends-->
+            <div class="container my-5" id="superBlends" *ngIf="hidesSuperBlends">
+                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
+                    <div class="col-lg-3 contenedor-logos">
+                        <img src="../../../../assets/LogosMarcas/Insumos/david-rio.png">
+                    </div>
+
+                    <p class="p-3"
+                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                        Chai, David Río elaborado con<span style="font-weight: bold;">té, hierbas y especias</span> de
+                        diferentes variedades. Tiene como objetivo el apoyar organizaciones que procuran el bienstar de
+                        <span style="font-weight: bold;">animales en peligro de extinsión</span>
+                    </p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                <span style="font-weight: bold;">10 sabores</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                Presentación de 1.814 kg, 1520 kg, 398 g, 456 g y 337 g
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                Marca líder mundial en Chai.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of polvosSuperBlends"
+                            style="height: 500px !important; width: 250px !important;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="Imagen del insumo">
+                                <div class="card-body">
+                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a routerLink="#" style="color: black;"> Ver más
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        <!-- Icono de flecha hacia la derecha -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
              <!--Cards para Aiya-->
-             <div class="container">
+             <div class="container my-5" id="aiya" *ngIf="hidesAiya">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos">
                         <img src="">
@@ -398,8 +462,8 @@
                 </div>
             </div>
 
-            <!--Cards para Mocaffe-->
-            <div class="container">
+            <!--Cards para Don Gustavo -->
+            <div class="container my-5" id="donGustavo" *ngIf="hidesDonGustavo">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos">
                         <img src="">
@@ -459,8 +523,8 @@
                 </div>
             </div>
 
-              <!--Cards para Don Gustavo-->
-              <div class="container">
+              <!--Cards para Mocafe-->
+              <div class="container my-5" id="mocafe" *ngIf="hidesMocafe">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos">
                         <img src="">
@@ -520,8 +584,8 @@
                 </div>
             </div>
 
-            <!--Cards para Don Gustavo-->
-            <div class="container">
+            <!--Cards para CoolCap-->
+            <div class="container my-5" id="coolcap" *ngIf="hidesCoolCap">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                     <div class="col-lg-3 contenedor-logos">
                         <img src="">
@@ -583,26 +647,3 @@
         </div>
     </main>
 
-    <div class="scroll-horizontal-container my-5">
-        <div class="row">
-            <div *ngFor="let insumo of polvosSuperBlends"
-                style="height: 500px !important; width: 250px !important;">
-                <div class="card">
-                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                        alt="Imagen del insumo">
-                    <div class="card-body">
-                        <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                        <p class="card-text"> {{ insumo.name }}</p>
-                        <p class="d-none card-text">{{ insumo.description }}</p>
-                    </div>
-                    <div class="card-footer justify-content-right">
-                        <a routerLink="#" style="color: black;"> Ver más
-                            <i class="fas fa-arrow-right" style="color: black;"></i>
-                            <!-- Icono de flecha hacia la derecha -->
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

@@ -25,6 +25,14 @@ export class MolecularesComponent {
   chillOutTapioca: any[] = [];
   teaZoneTapioca: any[] = [];
 
+  //Menu
+hideChillOutPearls: boolean = true;
+hidesTeaZonePerlas: boolean = false;
+hidesChillOutJelly: boolean = true;
+hidesTeaZoneJelly: boolean = false;
+hidesChillOutTapioca: boolean = true;
+hidesTeaZoneTapioca: boolean = false;
+
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;

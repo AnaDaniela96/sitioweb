@@ -4,14 +4,16 @@
         <h5 class="text-center mb-3">Filtrar por Línea</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="tisanasCafeEtruscaCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="tisanasCafeEtruscaCheckbox"
+                    [(ngModel)]="hidesTisanasCafeEtrusca">
                     <label class="form-check-label" for="tisanasCafeEtruscaCheckbox"> Tisanas Café Etrusca </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="tisanasEuroTeCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="tisanasEuroTeCheckbox"
+                    [(ngModel)]="tisanasFrutalesEuroTe">
                     <label class="form-check-label" for="tisanasEuroTeCheckbox"> Euro Te </label>
                 </div>
             </li>
@@ -22,7 +24,7 @@
     <main class="col-lg-9 p-3 align-items-center">
 
         <!--Categoría Tisanas-->
-        <div class="container" id="todas-las-tisanas">
+        <div class="container" id="todas-las-tisanas" >
             <div id="tesYTisanas-presentacion" class="container">
                 <div class="d-flex align-items-center">
                     <img src="../../../../assets/icons/Tisanas.webp" style="max-width: 4rem; max-height: 6rem;"
@@ -38,7 +40,7 @@
             </div><br>
 
             <!-- Cards para tisanas Café Etrusca-->
-            <div class="container" id="tisanasCafeEtrusca">
+            <div class="container" id="tisanasCafeEtrusca" *ngIf="hidesTisanasCafeEtrusca">
                 <div class="d-flex flex-column justify-content-center">
                     <h2 style="font-size: 1.575rem; font-weight: 700;">Tisanas Café Etrusca</h2>
                     <p>Las tisanas herbales en esencia son flores y / o hierbas. </p>
@@ -104,7 +106,7 @@
             </div>
 
             <!--Cards para tisanas EuroTe-->
-            <div class="container" id="tisanasEurote">
+            <div class="container" id="tisanasEurote" *ngIf="tisanasFrutalesEuroTe">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center">
                     <div class="contenedor-logos my-3">
                         <img src="../../../../assets/icons/euro-te.svg" alt="Logo de Torani">

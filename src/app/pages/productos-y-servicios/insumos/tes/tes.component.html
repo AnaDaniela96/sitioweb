@@ -4,14 +4,16 @@
         <h5 class="text-center mb-3">Filtrar por Línea</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="teEuroteCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="teEuroteCheckbox"
+                    [(ngModel)]="hidesTeEurote">
                     <label class="form-check-label" for="teEuroteCheckbox"> Euro Te </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="teStashCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="teStashCheckbox"
+                    [(ngModel)]="hidesTeStash">
                     <label class="form-check-label" for="teStashCheckbox"> Stash </label>
                 </div>
             </li>
@@ -37,7 +39,7 @@
             </div><br>
 
             <!--Cards euroTe-->
-            <div class="container">
+            <div class="container" *ngIf="hidesTeEurote">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center">
                     <div class="contenedor-logos my-3">
                         <img src="../../../../assets/icons/euro-te.svg" alt="Logo de Torani">
@@ -112,7 +114,7 @@
             </div>
 
             <!--Cards Stash-->
-            <div class="container">
+            <div class="container" *ngIf="hidesTeStash">
                 <div class="container d-flex flex-wrap justify-content-around align-items-center">
                     <div class="contenedor-logos my-3">
                         <img src="../../../../assets/icons/stash.svg" alt="Logo de Torani">

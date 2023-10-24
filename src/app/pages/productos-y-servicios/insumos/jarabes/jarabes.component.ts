@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
+
 @Component({
   selector: 'app-jarabes',
   templateUrl: './jarabes.component.html',

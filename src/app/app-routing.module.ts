@@ -34,6 +34,10 @@ import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos
 import { LayoutProductoComponent } from './pages/productos-y-servicios/insumos/layout-producto/layout-producto.component';
 import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licuadoras/licuadoras.component';
 import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafeteras/cafeteras.component';
+import { CafePremiumComponent } from './pages/productos-y-servicios/cafe/cafe-premium/cafe-premium.component';
+import { CafeVerdeComponent } from './pages/productos-y-servicios/cafe/cafe-verde/cafe-verde.component';
+import { BaristaChampComponent } from './pages/productos-y-servicios/cafe/barista-champ/barista-champ.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -58,7 +62,14 @@ const routes: Routes = [
   {
     path: 'productos-y-servicios', component: ProductosYServiciosComponent,
     children: [
-      { path: 'cafe-de-especialidad', component: CafeComponent },
+      { path: 'cafe-de-especialidad', component: CafeComponent, 
+        
+        children: [
+          {path: 'cafe-premium', component: CafePremiumComponent},
+          {path: 'cafe-verde', component: CafeVerdeComponent},
+          {path: 'barista-champ', component: BaristaChampComponent}
+        ]
+      },
       {
         path: 'insumos-para-cafeterias', component: InsumosComponent,
 

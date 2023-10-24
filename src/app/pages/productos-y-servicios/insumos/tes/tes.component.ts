@@ -21,6 +21,10 @@ export class TesComponent {
   teEurote: any[] = [];
   teStash: any[] = [];
 
+  //Menu
+  hidesTeEurote: boolean = true;
+  hidesTeStash: boolean = true;
+
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;

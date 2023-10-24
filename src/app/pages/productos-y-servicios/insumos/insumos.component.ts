@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { Router, Event, NavigationStart } from '@angular/router';
 import { DataService } from '../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
@@ -14,7 +14,6 @@ export class InsumosComponent implements AfterViewInit {
   constructor(
     private dataService: DataService,
     private sanitizer: DomSanitizer,
-    private elementRef: ElementRef,
     private router: Router,
   ) { }
 

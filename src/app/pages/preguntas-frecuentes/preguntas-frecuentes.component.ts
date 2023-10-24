@@ -24,7 +24,15 @@ export class PreguntasFrecuentesComponent {
       answer: 'Respuesta 2: Se usa para llenar espacios en diseños, para maquetación en presentaciones visuales y gráficas.'
     },
     {
-      question: '',
+      question: '¿Cómo puedo hacer la devolución de un producto que adquirí en e-commerce?',
+      answer: 'Respuesta 2: Se usa para llenar espacios en diseños, para maquetación en presentaciones visuales y gráficas.'
+    },
+    {
+      question: '¿Cómo puedo generar una factura y cuál es el periodo para la realización después de mi compra?',
+      answer: 'Respuesta 2: Se usa para llenar espacios en diseños, para maquetación en presentaciones visuales y gráficas.'
+    },
+    {
+      question: '¿Cómo se que curso tomar?',
       answer: 'Respuesta 2: Se usa para llenar espacios en diseños, para maquetación en presentaciones visuales y gráficas.'
     },
   ];

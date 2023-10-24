@@ -4,27 +4,45 @@
         <h5 class="text-center mb-3">Filtrar por Línea</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="ChillOutPearlCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="ChillOutPearlCheckbox"
+                        [(ngModel)]="hideChillOutPearls">
                     <label class="form-check-label" for="ChillOutPearlCheckbox"> ChillOut Pearls</label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="ChillOutJellyCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="ChillOutJellyCheckbox"
+                        [(ngModel)]="hidesChillOutJelly">
                     <label class="form-check-label" for="ChillOutJellyCheckbox"> ChillOut Jelly </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="ChillOutTapiocaCheckbox">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="ChillOutTapiocaCheckbox"
+                        [(ngModel)]="hidesChillOutTapioca">
                     <label class="form-check-labelf" for="ChillOutTapiocaCheckbox"> ChillOut Tapioca </label>
                 </div>
             </li>
             <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="TeaZoneCheckbox">
-                    <label class="form-check-label" for="TeaZoneCheckbox"> Tea Zone</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="TeaZonePerlasCheckbox"
+                        [(ngModel)]="hidesTeaZonePerlas">
+                    <label class="form-check-label" for="TeaZonePerlasCheckbox"> Tea Zone Perlas</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="TeaZoneJellyCheckbox"
+                        [(ngModel)]="hidesTeaZoneJelly">
+                    <label class="form-check-label" for="TeaZoneJellyCheckbox"> Tea Zone Jelly</label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="TeaZoneTapiocaCheckbox"
+                        [(ngModel)]="hidesTeaZoneTapioca">
+                    <label class="form-check-label" for="TeaZoneTapiocaCheckbox"> Tea Zone Tapioca</label>
                 </div>
             </li>
         </ul>
@@ -53,7 +71,7 @@
 
 
         <!--Cards para ChillOut Pearls-->
-        <div class="container my-5" id="pearlsChillOut">
+        <div class="container my-5" id="pearlsChillOut" *ngIf="hideChillOutPearls">
             <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                 <div class="col-lg-3 contenedor-logos" style="background-color: #70BDDD;">
                     <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-pearls.png">
@@ -120,12 +138,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="height: 2cm;"></div>
         </div>
 
-        <div class="row" style="height: 2cm;"></div>
-
-         <!--Cards para Jelly Chillout-->
-         <div class="container my-5" id="jellyChillOut">
+        <!--Cards para Jelly Chillout-->
+        <div class="container my-5" id="jellyChillOut" *ngIf="hidesChillOutJelly">
             <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                 <div class="col-lg-3 contenedor-logos" style=" background-color: #F29CB9;">
                     <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-JELLY.png">
@@ -142,20 +159,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                        <p class="p-3 text-center" style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
                             <span style="font-weight: bold;">10 sabores disponibles</span>
                         </p>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                        <p class="p-3 text-center" style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
                             Presentación botella de 3.4 kg.
                         </p>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <p class="p-3 text-center"
-                            style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                        <p class="p-3 text-center" style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
                             Rinde 85 bebidas de 480 ml.
                         </p>
                     </div>
@@ -170,14 +184,12 @@
                             <div class="card">
                                 <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
                                     <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                        title="Comprar en e-commerce el producto {{insumo.name}}"
-                                        style="color: white;" target="_blank"><i
-                                            class="fas fa-shopping-cart"></i></a>
+                                        title="Comprar en e-commerce el producto {{insumo.name}}" style="color: white;"
+                                        target="_blank"><i class="fas fa-shopping-cart"></i></a>
                                 </div>
 
                                 <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo" alt="{{insumo.name}}"
-                                    title="{{insumo.name}}">
+                                    alt="Imagen del insumo" alt="{{insumo.name}}" title="{{insumo.name}}">
                                 <div class="card-body">
                                     <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
                                     <p>
@@ -196,10 +208,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="height: 2cm;"></div>
         </div>
 
         <!-- Cards para Tapioca ChillOut-->
-        <div class="container my-5" id="tapiocaChillOut">
+        <div class="container my-5" id="tapiocaChillOut" *ngIf="hidesChillOutTapioca">
             <div class="container d-flex flex-wrap justify-content-around align-items-right my-4">
                 <div class="col-lg-3 contenedor-logos" style=" background-color: #F29CB9;">
                     <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-02.png">
@@ -260,10 +273,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="height: 2cm;"></div>
         </div>
 
         <!--Cards para Tea Zone Perlas-->
-        <div class="container my-5" id="perlasTeaZone">
+        <div class="container my-5" id="perlasTeaZone" *ngIf="hidesTeaZonePerlas">
             <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
                 <div class="col-lg-3 contenedor-logos">
                     <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp">
@@ -322,11 +336,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="height: 2cm;"></div>
         </div>
 
-       
         <!--Cards para Jalea/Jelly TeaZone-->
-        <div class="container my-5" id="perlasTeaZone">
+        <div class="container my-5" id="perlasTeaZone" *ngIf="hidesTeaZoneJelly">
             <div class="container d-flex flex-wrap justify-content-around align-items-right my-4">
                 <div class="col-lg-3 contenedor-logos">
                     <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp">
@@ -386,10 +400,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="height: 2cm;"></div>
         </div><br>
 
         <!--Cards para Tea Zone Tapioca-->
-        <div class="container my-5" id="perlasTeaZone">
+        <div class="container my-5" id="perlasTeaZone" *ngIf="hidesTeaZoneTapioca">
             <div class="row my-5">
                 <div class="container d-flex flex-wrap justify-content-around align-items-right my-4">
                     <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp">
@@ -424,7 +439,7 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="height: 2cm;"></div>
         </div>
-
     </main>
 </div>

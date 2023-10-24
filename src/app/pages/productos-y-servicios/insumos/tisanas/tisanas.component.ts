@@ -21,6 +21,10 @@ export class TisanasComponent {
   tisanasFrutalesCafeEtrusca: any[] = [];
   tisanasFrutalesEuroTe: any[] = [];
 
+  //Menu
+  hidesTisanasCafeEtrusca: boolean = true;
+  hidesTisanasEuroTe: boolean = true;
+  
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;

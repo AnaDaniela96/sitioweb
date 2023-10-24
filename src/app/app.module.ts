@@ -42,8 +42,6 @@ import { LayoutProductoComponent } from './pages/productos-y-servicios/insumos/l
 import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licuadoras/licuadoras.component';
 import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafeteras/cafeteras.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +79,7 @@ import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafet
     MolinosComponent,
     LayoutProductoComponent,
     LicuadorasComponent,
-    CafeterasComponent
+    CafeterasComponent,
   ],
   imports: [
     BrowserModule,
