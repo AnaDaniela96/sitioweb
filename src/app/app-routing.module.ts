@@ -39,6 +39,8 @@ import { CafeVerdeComponent } from './pages/productos-y-servicios/cafe/cafe-verd
 import { BaristaChampComponent } from './pages/productos-y-servicios/cafe/barista-champ/barista-champ.component';
 import { ProductosPedecederosComponent } from './pages/politicas-de-navegacion/productos-pedecederos/productos-pedecederos.component';
 import { PedidosForaneosExpoCafeComponent } from './pages/politicas-de-navegacion/pedidos-foraneos-expo-cafe/pedidos-foraneos-expo-cafe.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { RecetarioComponent } from './pages/recetario/recetario.component';
 
 
 const routes: Routes = [
@@ -102,6 +104,8 @@ const routes: Routes = [
   },
   { path: 'donde-encontranos', component: DondeEncontrarnosComponent },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'recetario', component: RecetarioComponent },
 
   //Rutas dinámicas:
   { path: ':keySap', component: LayoutProductoComponent },
