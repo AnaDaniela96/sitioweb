@@ -37,6 +37,8 @@ import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafet
 import { CafePremiumComponent } from './pages/productos-y-servicios/cafe/cafe-premium/cafe-premium.component';
 import { CafeVerdeComponent } from './pages/productos-y-servicios/cafe/cafe-verde/cafe-verde.component';
 import { BaristaChampComponent } from './pages/productos-y-servicios/cafe/barista-champ/barista-champ.component';
+import { ProductosPedecederosComponent } from './pages/politicas-de-navegacion/productos-pedecederos/productos-pedecederos.component';
+import { PedidosForaneosExpoCafeComponent } from './pages/politicas-de-navegacion/pedidos-foraneos-expo-cafe/pedidos-foraneos-expo-cafe.component';
 
 
 const routes: Routes = [
@@ -48,6 +50,8 @@ const routes: Routes = [
       { path: 'aviso-de-privacidad', component: AvisoDePrivacidadComponent },
       { path: 'politicas-externas-cursos-talleres', component: PoliticasCursosTalleresComponent },
       { path: 'terminos-y-condiciones', component: TerminosYCondicionesComponent },
+      { path: 'politicas-productos-pedecederos', component: ProductosPedecederosComponent},
+      { path: 'entrega-pedidos-expo-cafe', component: PedidosForaneosExpoCafeComponent},
     ]
   },
   { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent },

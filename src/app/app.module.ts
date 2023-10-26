@@ -41,6 +41,8 @@ import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos
 import { LayoutProductoComponent } from './pages/productos-y-servicios/insumos/layout-producto/layout-producto.component';
 import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licuadoras/licuadoras.component';
 import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafeteras/cafeteras.component';
+import { ProductosPedecederosComponent } from './pages/politicas-de-navegacion/productos-pedecederos/productos-pedecederos.component';
+import { PedidosForaneosExpoCafeComponent } from './pages/politicas-de-navegacion/pedidos-foraneos-expo-cafe/pedidos-foraneos-expo-cafe.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +82,8 @@ import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafet
     LayoutProductoComponent,
     LicuadorasComponent,
     CafeterasComponent,
+    ProductosPedecederosComponent,
+    PedidosForaneosExpoCafeComponent,
   ],
   imports: [
     BrowserModule,
