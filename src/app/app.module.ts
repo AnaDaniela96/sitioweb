@@ -19,6 +19,7 @@ import { AccesoriosComponent } from './pages/productos-y-servicios/accesorios/ac
 import { MaquinasComponent } from './pages/productos-y-servicios/maquinas/maquinas.component';
 import { ArteLatteComponent } from './pages/capacitacion/arte-latte/arte-latte.component';
 import { DataService } from './utils/data.service';
+//mport { recetas } from './utils/recetas.service';
 import { FormacionEmprendedoresComponent } from './pages/capacitacion/formacion-emprendedores/formacion-emprendedores.component';
 import { ExperienciaSensorialComponent } from './pages/capacitacion/experiencia-sensorial/experiencia-sensorial.component';
 import { MixologiaMocteleriaComponent } from './pages/capacitacion/mixologia-mocteleria/mixologia-mocteleria.component';

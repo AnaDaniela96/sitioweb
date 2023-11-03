@@ -33,6 +33,14 @@ html{
     --card-2-secondary-color: rgb(67,53,27);
     --card-3-secondary-color: rgb(178,180,179);
     --card-4-secondary-color: rgb(96,109,117);
+
+    /*Textos*/
+    --font-title-size: 3em;
+    --font-title-weight: 800;
+    --font-subtitle-size: 2em;
+    --font-subtitle-weight: 100;
+    --font-header-size: 2em;
+    --font-header-weight: 700;
 }
 
 .title {

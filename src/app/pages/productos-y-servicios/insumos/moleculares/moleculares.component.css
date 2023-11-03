@@ -1,3 +1,14 @@
+/*Typography*/
+.title{
+    font-size: var(--font-title-size);
+    font-weight: var(--font-title-weight);
+}
+
+.subtitle{
+    font-size: var(--font-subtitle-size);
+    font-weight: var(--font-subtitle-weight);
+}
+
 /* Nombre de la marca y presentación de la marca*/
 .contenedor-logos {
     width: 300px;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './utils/data.service';
+import { recetasAPI } from './utils/recetas.service';
 import { Observable } from 'rxjs';
 
 @Component({
