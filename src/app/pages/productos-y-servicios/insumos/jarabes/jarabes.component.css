@@ -122,7 +122,7 @@ body::-webkit-scrollbar-thumb {
 .card-image img {
     transform-origin: bottom;
     transform: translateY(7.5%);
-    transition: transform 0.3s ease-in-out
+    transition: transform 0.3s ease-in-out;
 }
 
 .card-image img:hover {

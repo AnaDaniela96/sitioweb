@@ -86,7 +86,8 @@
                             </div>
 
                             <div class="card-footer justify-content-right">
-                                <a class="go-sucursal" routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                <a class="go-sucursal" routerLink="/donde-encontranos" style="color: black;"> Encuentra
+                                    tu
                                     sucursal
                                     <i class="fas fa-arrow-right" style="color: black;"></i>
                                 </a><br>
@@ -101,9 +102,9 @@
         </div>
 
         <!--Línea Torani-->
-        <div class="my-4" *ngIf="hidesJarabesChillOut">
+        <div class="container my-4" *ngIf="hidesJarabesChillOut">
             <!--Icono y presentación marca torani-->
-            <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <!-- <div class="container d-flex flex-wrap justify-content-between align-items-center">
                 <div class="contenedor-logos my-3">
                     <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logo de Torani">
                     <h2 class="d-none">Jarabes Torani</h2>
@@ -118,14 +119,16 @@
                             style="font-weight: bold;">4 líneas diferentes.</span>
                     </p>
                 </div>
-            </div>
+            </div> -->
 
+            <h3 class="header">Torani Clásico</h3>
+            <p>Endulzado con azúcar de caña.</p>
             <!--Cards para Jarabes Torani Clásico -->
             <div class="container" id="jarabesToraniClasico">
-                <div class="d-flex flex-column justify-content-center my-4">
+                <!-- <div class="d-flex flex-column justify-content-center my-4">
                     <h2 style="font-size: 1.575rem; font-weight: 700;">Clásico</h2>
                     <p>Endulzado con azúcar de caña.</p>
-                </div>
+                </div> -->
 
                 <div class="container my-2">
                     <div class="row">
@@ -151,47 +154,46 @@
                 </div>
 
 
-                <div style="height: 700px;">
-                    <div class="scroll-horizontal-container my-5">
-                        <div class="row">
-                            <div *ngFor="let insumo of jarabesToraniClasico"
-                                style="height: 650px !important; width: 250px !important;">
-                                <div class="card">
-                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
-                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                            style="color: white;" target="_blank"
-                                            title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                class="fas fa-shopping-cart"></i></a>
-                                    </div>
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of jarabesToraniClasico" class="container-cards">
+                            <div class="card">
+                                <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                    <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce" style="color: white;"
+                                        target="_blank" title="Comprar en e-commerce el producto {{insumo.name}}"><i
+                                            class="fas fa-shopping-cart"></i></a>
+                                </div>
 
+                                <div class="card-image">
                                     <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                        alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas">
-                                    <div class="card-body">
-                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                        <p>
-                                        <p class="card-text"> {{ insumo.name }}</p>
-                                        <p class="d-none card-text">{{ insumo.description }}</p>
-                                        <p></p>
-                                    </div>
-                                    <div class="card-footer justify-content-right">
-                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
-                                            sucursal
-                                            <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        </a><br>
-                                    </div>
+                                    alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas">
+                                </div>
+
+                                <div class="card-body">
+                                    <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                    <p>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                    <p></p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a class="go-sucursal" routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                        sucursal
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a><br>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row" style="height: 1cm;"></div>
             </div>
 
-            <div class="row" style="height: 1cm;"></div>
 
             <!--Cards para Torani Puremade-->
             <div class="container" id="jarabesToraniPuremade">
                 <div class="d-flex flex-column justify-content-center">
-                    <h2 style="font-size: 1.575rem; font-weight: 700;">Puremade</h2>
+                    <h3 class="header">Torani Puremade</h3>
                     <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente
                         Modificados (OMG).</p>
                 </div>
@@ -253,16 +255,14 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row" style="height: 1cm;"></div>
             </div>
 
-            <div class="row" style="height: 1cm;"></div>
 
             <!--Cards para Torani Zugar free-->
             <div class="container" id="jarabesToraniZugarFree>">
                 <div class="d-flex flex-column justify-content-center">
-                    <h2 style="font-size: 1.575rem; font-weight: 700;">Puremade Zero Sugar</h2>
+                    <h3 class="header">Puremade Zero Sugar</h3>
                     <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente
                         Modificados (OMG).</p>
                 </div>
@@ -331,7 +331,7 @@
             <!--Cards para Torani Sugar Free-->
             <div class="container" id="jarabesToraniZugarFree>">
                 <div class="d-flex flex-column justify-content-center">
-                    <h2 style="font-size: 1.575rem; font-weight: 700;">Puremade Sugar Free</h2>
+                    <h3 class="header">Puremade Sugar Free</h3>
                     <p>Endulzado con splenda.</p>
                 </div>
 

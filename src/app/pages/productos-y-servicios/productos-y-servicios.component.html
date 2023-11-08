@@ -1,4 +1,4 @@
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" [class.d-none]="!isMenuProductosServicios">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" [class.d-none]="!isMenuProductosServicios">
     <div class="container-fluid">
         <button class="navbar-toggler text-center" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
-            <div class="d-flex flex-wrap justify-content-center">
+            <div class="d-flex flex-wrap justify-content-center align-items-center|">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/productos-y-servicios/insumos-para-cafeterias">Insumos</a>
@@ -72,13 +72,13 @@
     </div>
     
     <div class="container my-5 text-center">
-        <h1 style="font-size: 2.5rem; font-weight: bold;">Descubre Nuestra Gama de Servicios</h1>
-        <p style="font-size: 1.25rem; margin-top: 20px;">En Café Etrusca, nos enorgullece ofrecerte un abanico de
+        <h1 class="title">Descubre Nuestra Gama de Servicios</h1>
+        <p class="text-center">En Café Etrusca, nos enorgullece ofrecerte un abanico de
             soluciones excepcionales para tu cafetería. Estamos comprometidos en brindarte la mejor asesoría,
             capacitación y productos para que tu cafetería sea un éxito rotundo.</p>
         <div class="row justify-content-center my-4">
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card" style="background-color: #E78352;" (click)="onClickCafeCard()">
+                <div class="card" (click)="onClickCafeCard()">
                     <div class="card-body">
                         <h3 class="card-title">Café </h3>
                         <p class="d-none card-text" style="text-align: justify;">Procesamos los mejores granos de café de diversas
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4" id="insumosCard" (click)="onClickInsumosCard()">
-                <div class="card" style="background-color: #FF4694;">
+                <div class="card">
                     <div class="card-body p-3">
                         <h3 class="card-title">Insumos</h3>
                         <p class="d-none card-text" style="text-align: justify;">Ofrecemos todos los insumos necesarios para
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card" style="background-color: #24D3FE;" (click)="onClickMaquinasCard()">
+                <div class="card" (click)="onClickMaquinasCard()">
                     <div class="card-body">
                         <h3 class="card-title">Maquinaria</h3>
                         <p class="d-none card-text" style="text-align: justify;">Contamos con las marcas de maquinaria más
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card" style="background-color: #D7762F;" (click)="onClickAccesoriosCard()">
+                <div class="card" (click)="onClickAccesoriosCard()">
                     <div class="card-body p-3">
                         <h3 class="card-title">Accesorios</h3>
                         <p class="d-none card-text" style="text-align: justify;">El café no se disfruta solo en la taza; el sabor
@@ -122,5 +122,5 @@
         </div>
     </div>
 </div>
--->
+
 <router-outlet></router-outlet> 
