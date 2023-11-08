@@ -22,6 +22,26 @@ import { BrewBarComponent } from './pages/capacitacion/brew-bar-coldBrew/brew-ba
 import { DondeEncontrarnosComponent } from './pages/donde-encontrarnos/donde-encontrarnos.component';
 import { PoliticasCursosTalleresComponent } from './pages/politicas-de-navegacion/politicas-cursos-talleres/politicas-cursos-talleres.component';
 import { TerminosYCondicionesComponent } from './pages/politicas-de-navegacion/terminos-y-condiciones/terminos-y-condiciones.component';
+import { JarabesComponent } from './pages/productos-y-servicios/insumos/jarabes/jarabes.component';
+import { SalsasComponent } from './pages/productos-y-servicios/insumos/salsas/salsas.component';
+import { PuresYConcentradosComponent } from './pages/productos-y-servicios/insumos/pures-y-concentrados/pures-y-concentrados.component';
+import { MolecularesComponent } from './pages/productos-y-servicios/insumos/moleculares/moleculares.component';
+import { TesComponent } from './pages/productos-y-servicios/insumos/tes/tes.component';
+import { TisanasComponent } from './pages/productos-y-servicios/insumos/tisanas/tisanas.component';
+import { PolvosComponent } from './pages/productos-y-servicios/insumos/polvos/polvos.component';
+import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
+import { MolinosComponent } from './pages/productos-y-servicios/maquinas/molinos/molinos.component';
+import { LayoutProductoComponent } from './pages/productos-y-servicios/insumos/layout-producto/layout-producto.component';
+import { LicuadorasComponent } from './pages/productos-y-servicios/maquinas/licuadoras/licuadoras.component';
+import { CafeterasComponent } from './pages/productos-y-servicios/maquinas/cafeteras/cafeteras.component';
+import { CafePremiumComponent } from './pages/productos-y-servicios/cafe/cafe-premium/cafe-premium.component';
+import { CafeVerdeComponent } from './pages/productos-y-servicios/cafe/cafe-verde/cafe-verde.component';
+import { BaristaChampComponent } from './pages/productos-y-servicios/cafe/barista-champ/barista-champ.component';
+import { ProductosPedecederosComponent } from './pages/politicas-de-navegacion/productos-pedecederos/productos-pedecederos.component';
+import { PedidosForaneosExpoCafeComponent } from './pages/politicas-de-navegacion/pedidos-foraneos-expo-cafe/pedidos-foraneos-expo-cafe.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { RecetarioComponent } from './pages/recetario/recetario.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,13 +50,15 @@ const routes: Routes = [
     path: 'politicas-de-navegacion', component: PoliticasDeNavegacionComponent,
     children: [
       { path: 'aviso-de-privacidad', component: AvisoDePrivacidadComponent },
-      { path: 'politicas-externas-cursos-talleres', component: PoliticasCursosTalleresComponent},
-      { path: 'terminos-y-condiciones', component: TerminosYCondicionesComponent},
+      { path: 'politicas-externas-cursos-talleres', component: PoliticasCursosTalleresComponent },
+      { path: 'terminos-y-condiciones', component: TerminosYCondicionesComponent },
+      { path: 'politicas-productos-pedecederos', component: ProductosPedecederosComponent},
+      { path: 'entrega-pedidos-expo-cafe', component: PedidosForaneosExpoCafeComponent},
     ]
   },
-  { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent},
-  { path: 'taller-de-arte-latte-nivel-basico', component: ArteLatteComponent}, 
-  { path: 'emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria', component: FormacionEmprendedoresComponent }, 
+  { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent },
+  { path: 'taller-de-arte-latte-nivel-basico', component: ArteLatteComponent },
+  { path: 'emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria', component: FormacionEmprendedoresComponent },
   { path: 'taller-experiencia-sensorial', component: ExperienciaSensorialComponent },
   { path: 'taller-de-mixologia-con-cafe-sin-alcohol', component: MixologiaMocteleriaComponent },
   { path: 'taller-basico-de-tostado-de-cafe', component: TostadoComponent },
@@ -46,13 +68,47 @@ const routes: Routes = [
   {
     path: 'productos-y-servicios', component: ProductosYServiciosComponent,
     children: [
-      { path: 'cafe-de-especialidad', component: CafeComponent },
-      { path: 'insumos-para-cafeterias', component: InsumosComponent },
+      { path: 'cafe-de-especialidad', component: CafeComponent, 
+        
+        children: [
+          {path: 'cafe-premium', component: CafePremiumComponent},
+          {path: 'cafe-verde', component: CafeVerdeComponent},
+          {path: 'barista-champ', component: BaristaChampComponent}
+        ]
+      },
+      {
+        path: 'insumos-para-cafeterias', component: InsumosComponent,
+
+        children: [
+          { path: 'jarabes', component: JarabesComponent },
+          { path: 'salsas', component: SalsasComponent },
+          { path: 'pures-y-concentrados', component: PuresYConcentradosComponent },
+          { path: 'moleculares', component: MolecularesComponent },
+          { path: 'tes', component: TesComponent },
+          { path: 'tisanas', component: TisanasComponent },
+          { path: 'tisanas', component: TisanasComponent },
+          { path: 'polvos', component: PolvosComponent },
+        ]
+      },
       { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
-      { path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent },
+      {
+        path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent,
+
+        children: [
+          { path: 'molinos', component: MolinosComponent },
+          { path: 'licuadoras', component: LicuadorasComponent },
+          { path: 'maquinas-cafe', component: CafeterasComponent },
+        ]
+      },
     ]
   },
-  { path: 'donde-encontranos', component: DondeEncontrarnosComponent},
+  { path: 'donde-encontranos', component: DondeEncontrarnosComponent },
+  { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'recetario', component: RecetarioComponent },
+
+  //Rutas dinámicas:
+  { path: ':keySap', component: LayoutProductoComponent },
 ];
 
 @NgModule({

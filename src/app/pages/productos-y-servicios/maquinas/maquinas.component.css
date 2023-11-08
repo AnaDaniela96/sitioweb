@@ -1,0 +1,22 @@
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.bd-navbar {
+    max-width: 100%; /* Ajusta el ancho máximo al 100% del contenedor padre (el aside) */
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    padding: 10px; /* Agrega un espacio de relleno al navbar si es necesario */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal si el contenido es demasiado ancho */
+}
+
+@media(max-width: 768px) {
+    .navbar-nav > li:hover {
+        background-color: aquamarine;
+    }
+}
+

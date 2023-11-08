@@ -1,0 +1,181 @@
+<div class="row">
+    <aside class="col-lg-2 align-self-stretch">
+        <br>
+        <h5 class="text-center mb-3">Filtrar por Línea</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="tisanasCafeEtruscaCheckbox"
+                    [(ngModel)]="hidesTisanasCafeEtrusca">
+                    <label class="form-check-label" for="tisanasCafeEtruscaCheckbox"> Tisanas Café Etrusca </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="tisanasEuroTeCheckbox"
+                    [(ngModel)]="tisanasFrutalesEuroTe">
+                    <label class="form-check-label" for="tisanasEuroTeCheckbox"> Euro Te </label>
+                </div>
+            </li>
+        </ul>
+        <br>
+    </aside>
+
+    <main class="col-lg-9 p-3 align-items-center">
+
+        <!--Categoría Tisanas-->
+        <div class="container" id="todas-las-tisanas" >
+            <div id="tesYTisanas-presentacion" class="container">
+                <div class="d-flex align-items-center">
+                    <img src="../../../../assets/icons/Tisanas.webp" style="max-width: 4rem; max-height: 6rem;"
+                        alt="Icono de Tisanas">
+                    <h2 class="text-center mb-0 mr-3" style="font-size: 4vw; font-weight: 700;">Tisanas
+                    </h2>
+                </div>
+
+                <p style="text-align: justify;">Las tisanas frutales tienen una base de manzana y jamaica, que se
+                    combina con diferentes frutos como moras, plátano, arándano, maracuyá, limón, entre otros. Las
+                    tisanas herbales en esencia, son hierbas y/o flores.
+                </p>
+            </div><br>
+
+            <!-- Cards para tisanas Café Etrusca-->
+            <div class="container" id="tisanasCafeEtrusca" *ngIf="hidesTisanasCafeEtrusca">
+                <div class="d-flex flex-column justify-content-center">
+                    <h2 style="font-size: 1.575rem; font-weight: 700;">Tisanas Café Etrusca</h2>
+                    <p>Las tisanas herbales en esencia son flores y / o hierbas. </p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                <span style="font-weight: bold;">2 sabores disponibles.</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                <span style="font-weight: bold;">Bolsa de 250 gr.</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                Rinde aprox. 50 tazas de 100 ml.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="height: 700px;">
+                    <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of tisanasFrutalesCafeEtrusca"
+                                style="height: 650px !important; width: 250px !important;">
+                                <div class="card">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                            title="Comprar en e-commerce el producto {{insumo.name}}"
+                                            style="color: white;" target="_blank"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                    </div>
+
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="Imagen del insumo" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                    <div class="card-body">
+                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                        <p>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                            sucursal
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        </a><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cards para tisanas EuroTe-->
+            <div class="container" id="tisanasEurote" *ngIf="tisanasFrutalesEuroTe">
+                <div class="container d-flex flex-wrap justify-content-around align-items-center">
+                    <div class="contenedor-logos my-3">
+                        <img src="../../../../assets/icons/euro-te.svg" alt="Logo de Torani">
+                    </div>
+
+                    <p class="p-3"
+                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
+                        <span style="font-weight: bold;">Tisanas herbales y frutales.</span>
+                    </p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                <span style="font-weight: bold;">Más de 10 sabores disponibles</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                <span style="font-weight: bold;">Bolsa de 250 gr. y 1 kg.</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
+                                Rinde aprox. 50 tazas de 100 ml.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="height: 700px;">
+                    <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of tisanasFrutalesEuroTe"
+                                style="height: 650px !important; width: 250px !important;">
+                                <div class="card">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                            title="Comprar en e-commerce el producto {{insumo.name}}"
+                                            style="color: white;" target="_blank"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                    </div>
+
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="Imagen del insumo" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                    <div class="card-body">
+                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                        <p>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                            sucursal
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        </a><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="../../../../../assets/icons/Molinos.png" style="width: 20%;">
+                    <h1 class="title my-4" style="text-align: center; width: 50%;">Molinos</h1>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <p class="p-3" style="text-align: justify;">¡Descubre la mágia de los <strong>molinos</strong> para
+                    <strong>cafetería</strong>! En el
+                    mundo del café,
+                    sabemos que la diferencia entre una bebida común y una extraordinaria radica en la calidad de los
+                    granos y el proceso de molienda. En nuestra plataforma, Te invitamos a explorar una amplia variedad
+                    de molinos que se ajustan a tu nivel de experiencia en la preparación de café.</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="col-lg-12 p-3 align-self-start">
+        <div class="container">
+            <div class="scroll-horizontal-container my-5">
+                <div class="row">
+                    <div *ngFor="let maquina of molinos" style="height: 420px !important; width: 250px !important;"
+                        class="container d-flex flex-wrap justify-content-around">
+                        <div class="card">
+                            <div class="card-header d flex align-self-end" style="background-color: #039be5;">
+                                <a *ngIf="maquina.urlECommerce" [href]="maquina.urlECommerce" style="color: white;"
+                                    target="_blank" title="Comprar en e-commerce el producto {{maquina.name}}"><i
+                                        class="fas fa-shopping-cart"></i></a>
+                            </div>
+
+                            <div class="card-img justify-centers">
+                                <img class="card-img-top img-molino" [src]="sanitizeUrl(maquina.urlArticleFirst)"
+                                    alt="{{maquina.name}}" title="{{maquina.name}}">
+                            </div>
+                            <div class="card-body">
+                                <p class="card-title" id="font-keySap"> {{ maquina.keySap }}
+                                <p>
+                                <h3 class="card-text" style="font-size: 13px;"> {{ maquina.name }}</h3>
+                                <p class="d-none card-text">{{ maquina.description }}</p>
+                                <p></p>
+                            </div>
+                            <div class="card-footer justify-content-right">
+                                <a routerLink="/donde-encontranos" style="color: black; font-size: 12px;"> Encuentra tu
+                                    sucursal
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                </a><br>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="row" style="height: 2cm;"></div>

@@ -1,0 +1,400 @@
+<div class="row">
+    <!-- <aside class="col-lg-2 align-self-stretch">
+        <br>
+        <h5 class="text-center mb-3">Líneas</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="jarabesChillOutCheckbox"
+                        [(ngModel)]="hidesJarabesTorani">
+                    <label class="form-check-label" for="jarabesChillOutCheckbox"> Jarabes ChillOut </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="jarabesToraniCheckbox"
+                        [(ngModel)]="hidesJarabesChillOut">
+                    <label class="form-check-label" for="jarabesToraniCheckbox"> Jarabes Torani </label>
+                </div>
+            </li>
+        </ul>
+        <br>
+    </aside> -->
+
+
+    <!-- Categoría Jarabes-->
+    <main class="col-lg-12 align-self-start">
+        <div class="container my-4">
+            <div id="jarabes-presentacion" class="container">
+                <div class="d-flex align-items-center justify-content-center">
+                    <h1 class="text-center mb-0 mr-3 title">Jarabes
+                    </h1>
+                </div>
+            </div><br>
+
+            <div class="container my-2">
+                <p class="text-center subtitle">Explora las diferentes líneas de Jarabes que tenemos para ti:</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center">
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="card-logo d-flex align-items-center justify-content-center my-4">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_jarabes.svg"
+                            alt="Logo de ChillOut Jarabe" title="Logo de ChillOut Jarabe"
+                            [(ngModel)]="hidesJarabesTorani">
+                    </div>
+                    <p class="brand-name">ChillOut Jarabe</p>
+                </div>
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="card-logo d-flex align-items-center justify-content-center my-4">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logo de Torani"
+                            [(ngModel)]="hidesJarabesTorani">
+                    </div>
+                    <p class="brand-name">Torani Clásico</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Cards para ChillOut Jarabes-->
+        <div class="container my-4" *ngIf="hidesJarabesTorani">
+            <h3 class="header"> Jarabes ChillOut</h3>
+            <p class="text-justify">Los Jarabes <span>ChillOut</span>son la combinación perfecta para tus bebidas</p>
+
+
+            <div class="scroll-horizontal-container my-5">
+                <div class="row">
+                    <div *ngFor="let insumo of jarabesChillOut" class="container-cards">
+                        <div class="card">
+                            <div class="card-header d-flex align-self-end" style="background-color: #E91D74;">
+                                <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce" style="color: white;"
+                                    target="_blank" title="Comprar en e-commerce el producto {{insumo.name}}"><i
+                                        class="fas fa-shopping-cart"></i></a>
+                            </div>
+
+                            <div class="card-image">
+                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas">
+                            </div>
+
+                            <div class="card-body">
+                                <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                <p>
+                                <p class="card-text"> {{ insumo.name }}</p>
+                                <p class="d-none card-text">{{ insumo.description }}</p>
+                            </div>
+
+                            <div class="card-footer justify-content-right">
+                                <a class="go-sucursal" routerLink="/donde-encontranos" style="color: black;"> Encuentra
+                                    tu
+                                    sucursal
+                                    <i class="fas fa-arrow-right" style="color: black;"></i>
+                                </a><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" style="height: 1cm;"></div>
+        </div>
+
+        <!--Línea Torani-->
+        <div class="container my-4" *ngIf="hidesJarabesChillOut">
+            <!--Icono y presentación marca torani-->
+            <!-- <div class="container d-flex flex-wrap justify-content-between align-items-center">
+                <div class="contenedor-logos my-3">
+                    <img src="../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logo de Torani">
+                    <h2 class="d-none">Jarabes Torani</h2>
+                </div>
+
+                <div class="container"
+                    style="background-color: #fee6e6; border-left: 4px solid #f9a8ae; border-radius: 5px; width: 600px; height: 120px;">
+                    <p style="text-align: justify;" class="p-2">
+                        <span style="font-weight: bold;">Diversidad</span> en líneas de producto para cumplir las
+                        necesidades de los clientes, es la <span style="font-weight: bold;">marca líder</span> en
+                        jarabes <span style="font-weight: bold;">en el mundo</span>, cuenta con <span
+                            style="font-weight: bold;">4 líneas diferentes.</span>
+                    </p>
+                </div>
+            </div> -->
+
+            <h3 class="header">Torani Clásico</h3>
+            <p>Endulzado con azúcar de caña.</p>
+            <!--Cards para Jarabes Torani Clásico -->
+            <div class="container" id="jarabesToraniClasico">
+                <!-- <div class="d-flex flex-column justify-content-center my-4">
+                    <h2 style="font-size: 1.575rem; font-weight: 700;">Clásico</h2>
+                    <p>Endulzado con azúcar de caña.</p>
+                </div> -->
+
+                <div class="container my-2">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
+                                <span style="font-weight: bold;">67 sabores disponibles</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
+                                <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
+                                Rinde aprox. 25 bebidas de 480 ml.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="scroll-horizontal-container my-5">
+                    <div class="row">
+                        <div *ngFor="let insumo of jarabesToraniClasico" class="container-cards">
+                            <div class="card">
+                                <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                    <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce" style="color: white;"
+                                        target="_blank" title="Comprar en e-commerce el producto {{insumo.name}}"><i
+                                            class="fas fa-shopping-cart"></i></a>
+                                </div>
+
+                                <div class="card-image">
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas">
+                                </div>
+
+                                <div class="card-body">
+                                    <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                    <p>
+                                    <p class="card-text"> {{ insumo.name }}</p>
+                                    <p class="d-none card-text">{{ insumo.description }}</p>
+                                    <p></p>
+                                </div>
+                                <div class="card-footer justify-content-right">
+                                    <a class="go-sucursal" routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                        sucursal
+                                        <i class="fas fa-arrow-right" style="color: black;"></i>
+                                    </a><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height: 1cm;"></div>
+            </div>
+
+
+            <!--Cards para Torani Puremade-->
+            <div class="container" id="jarabesToraniPuremade">
+                <div class="d-flex flex-column justify-content-center">
+                    <h3 class="header">Torani Puremade</h3>
+                    <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente
+                        Modificados (OMG).</p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                <span style="font-weight: bold;">3 sabores disponibles</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                Rinde aprox. 25 bebidas de 480 ml.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="height: 700px;">
+                    <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of jarabesPuremadeTorani"
+                                style="height: 650px !important; width: 250px !important;">
+                                <div class="card">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                            title="Comprar en e-commerce el producto {{insumo.name}}"
+                                            style="color: white;" target="_blank"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                    </div>
+
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="Imagen del insumo" id="botellas" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                    <div class="card-body">
+                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                        <p>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                            sucursal
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        </a><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height: 1cm;"></div>
+            </div>
+
+
+            <!--Cards para Torani Zugar free-->
+            <div class="container" id="jarabesToraniZugarFree>">
+                <div class="d-flex flex-column justify-content-center">
+                    <h3 class="header">Puremade Zero Sugar</h3>
+                    <p>Sin conservadores, colorantes ni sabores artificiales y libre de Organismos Genéticamente
+                        Modificados (OMG).</p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
+                                <span style="font-weight: bold;">32 sabores disponibles</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
+                                <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
+                                Rinde aprox. 25 bebidas de 480 ml.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="height: 700px;">
+                    <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of jarabesZeroSugar"
+                                style="height: 650px !important; width: 250px !important;">
+                                <div class="card">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                            title="Comprar en e-commerce el producto {{insumo.name}}"
+                                            style="color: white;" target="_blank"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                    </div>
+
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="Imagen del insumo" id="botellas" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                    <div class="card-body">
+                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                        <p>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                            sucursal
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        </a><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="height: 1cm;"></div>
+
+            <!--Cards para Torani Sugar Free-->
+            <div class="container" id="jarabesToraniZugarFree>">
+                <div class="d-flex flex-column justify-content-center">
+                    <h3 class="header">Puremade Sugar Free</h3>
+                    <p>Endulzado con splenda.</p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                <span style="font-weight: bold;">32 sabores disponibles</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <p class="p-3 text-center"
+                                style="background-color: #FAE9F9; border-left: 4px solid #EBD2E8;">
+                                Rinde aprox. 25 bebidas de 480 ml.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="height: 700px;">
+                    <div class="scroll-horizontal-container my-5">
+                        <div class="row">
+                            <div *ngFor="let insumo of jarabesSugarFree"
+                                style="height: 650px !important; width: 250px !important;">
+                                <div class="card">
+                                    <div class="card-header d flex align-self-end" style="background-color: #E91D74;">
+                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
+                                            title="Comprar en e-commerce el producto {{insumo.name}}"
+                                            style="color: white;" target="_blank"><i
+                                                class="fas fa-shopping-cart"></i></a>
+                                    </div>
+
+                                    <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="Imagen del insumo" id="botellas" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                    <div class="card-body">
+                                        <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
+                                        <p>
+                                        <p class="card-text"> {{ insumo.name }}</p>
+                                        <p class="d-none card-text">{{ insumo.description }}</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="card-footer justify-content-right">
+                                        <a routerLink="/donde-encontranos" style="color: black;"> Encuentra tu
+                                            sucursal
+                                            <i class="fas fa-arrow-right" style="color: black;"></i>
+                                        </a><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</div>

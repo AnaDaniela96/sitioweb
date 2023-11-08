@@ -1,0 +1,16 @@
+#principal{
+    background-image: url(../../../../../assets/cafe-barista-champ/CafeVerde.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 450px;
+}
+
+#contenedor-tostador{
+    background-color: var(--yellow-etrusca);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 500px;
+}

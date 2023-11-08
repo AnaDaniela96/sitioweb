@@ -1,7 +1,24 @@
     /* Ajustar el espacio entre los elementos */
     .navbar-nav .nav-item {
-        margin-right: 15px; /* Puedes ajustar el valor según tus preferencias */
+        margin-right: 15px;
+        /* Puedes ajustar el valor según tus preferencias */
     }
+
+    .navbar-toggler {
+        border: none;
+    }
+    
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    
+    @media(max-width: 768px) {
+        .navbar-nav > li:hover {
+            background-color: none;
+        }
+    }
+    
 
     /* Alinear el contenido al centro del navbar */
     .navbar-nav {
@@ -11,14 +28,18 @@
 
     /* Alinear el logo verticalmente */
     #logo {
-        margin-right: 15px; /* Añadir un margen derecho para separar el logo de los elementos del menú */
+        margin-right: 15px;
+        /* Añadir un margen derecho para separar el logo de los elementos del menú */
         width: 10.1875rem;
         height: 10.1875rem;
     }
 
     /* Cambiar el color de fondo al hacer hover en las opciones */
     .nav-link:hover {
-        background-color: #f8f9fa; /* Cambiar el color según tus preferencias */
+        background-color: #f8f9fa;
+        border-radius: 16px;
+        padding: 10px;
+        /* Cambiar el color según tus preferencias */
     }
 
     /* Quitar el margen superior del select */
@@ -26,29 +47,29 @@
         margin-top: 0;
     }
 
-    a{
+    a {
         font-weight: bold;
     }
 
 
-    .calabaza  {
+    .calabaza {
         background-color: #f87705 !important;
-        transition: background-color 500ms,color 500ms;
+        transition: background-color 500ms, color 500ms;
     }
 
     /* Estilos para el menú fijo */
-.fixed-menu {
-    position: fixed;
-    height: 137px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Ajusta según sea necesario */
-     /* Establece scroll-behavior para suavizar el desplazamiento */
-    scroll-behavior: smooth;
-    /* Añade una transición para un efecto de suavidad al cambio */
-    transition: background-color 0.3s ease; /* Puedes ajustar la duración y la propiedad según tus preferencias */
+    .fixed-menu {
+        position: fixed;
+        height: 137px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        /* Ajusta según sea necesario */
+        /* Establece scroll-behavior para suavizar el desplazamiento */
+        scroll-behavior: smooth;
+        /* Añade una transición para un efecto de suavidad al cambio */
+        transition: background-color 0.3s ease;
+        /* Puedes ajustar la duración y la propiedad según tus preferencias */
 
-  }
-  
- 
+    }

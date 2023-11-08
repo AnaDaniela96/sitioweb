@@ -8,62 +8,42 @@ html{
     overflow-x: hidden;
     width: 100vw;
 }
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
 :root {
     --yellow-etrusca: #fcb700;
     --fontsize-text: 1.5rem;
-    
+    --heading-color: hsl(0, 0%, 7%);
+    --date-text-color: hsl(0, 0%, 51%);
+    --previous-price-text-color: hsl(0, 98%, 44%);
+    --current-price-text-color: hsla(0, 0%, 0%, 0.822);
+    --liked-heart-icon-color: hsl(0, 98%, 44%);
+    --heart-icon-color: whitesmoke;
+    --pricing-font-weight: 800;
+    --title-font-weight: 800;
+    --date-font-weight: 550;
+
+    /* Cards colors */
+    --card-main-color : whitesmoke;
+    --card-1-secondary-color: rgb(192, 82, 82);
+    --card-2-secondary-color: rgb(67,53,27);
+    --card-3-secondary-color: rgb(178,180,179);
+    --card-4-secondary-color: rgb(96,109,117);
+
+    /*Textos*/
+    --font-title-size: 3em;
+    --font-title-weight: 800;
+    --font-subtitle-size: 2em;
+    --font-subtitle-weight: 100;
+    --font-header-size: 2em;
+    --font-header-weight: 700;
 }
 
-/* Botones e inputs 
-button {
-    border-radius: 40px;
-    width: 190px;
-    height: 42px;
-    background:var(--yellow-etrusca);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border: none;
-    color: #000;
-    font-family: Poppins;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-*/
-
-/* Tipografía 
-h4 {
-    color: #000;
-    font-family: Poppins;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.title {
+    font-weight: 800;
 }
 
-h5 {
-    color: #000;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-h6 {
-    color: #000;
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-}
-
-p, a, label, li, ul {
-    color: #000;
-    font-family: Poppins;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-} */

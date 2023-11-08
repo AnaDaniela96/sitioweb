@@ -1,186 +1,110 @@
 <div class="row">
-    <aside class="col-lg-2 p-4 align-self-stretch">
-        <h4 class="text-center mb-3">Filtrar por Categoría</h4>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="MetodoGoteoCheckbox"
-                        [(ngModel)]="categorias.metodoGoteo">
-                    <label class="form-check-label" for="jarabesCheckbox">Método de Goteo</label>
-                </div>
-                <!-- Submenú para Método de Goteo -->
-                <ul class="submenu" *ngIf="categorias.metodoGoteo">
-                    <li>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="filtrosCheckbox"
-                                [(ngModel)]="subcategorias.metodoGoteo.filtros">
-                            <label class="form-check-label" for="filtrosCheckbox">Filtros de papel para drippers</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="drippersCheckbox"
-                                [(ngModel)]="subcategorias.metodoGoteo.drippers">
-                            <label class="form-check-label" for="drippersCheckbox">Drippers</label>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="prensaFrancesaCheckbox"
-                        [(ngModel)]="categorias.prensaFrancesa">
-                    <label class="form-check-label" for="prensaFrancesaCheckbox">Prensas francesas</label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="jarrasEspumadorasCheckbox"
-                        [(ngModel)]="categorias.jarrasEspumadoras">
-                    <label class="form-check-label" for="jarrasEspumadorasCheckbox">Jarras Espumadoras</label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="tampersCheckbox"
-                        [(ngModel)]="categorias.tampers">
-                    <label class="form-check-label" for="tampersCheckbox">Tampers</label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="molinosCheckbox"
-                        [(ngModel)]="categorias.molinos">
-                    <label class="form-check-label" for="molinosCheckbox">Molinos</label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="catacionCheckbox"
-                        [(ngModel)]="categorias.molinos">
-                    <label class="form-check-label" for="catacionCheckbox">Material de catación</label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="vasosCheckbox" [(ngModel)]="categorias.vasos">
-                    <label class="form-check-label" for="vasosCheckbox">Vasos</label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="cafeteríaCheckbox"
-                        [(ngModel)]="categorias.cafeteria">
-                    <label class="form-check-label" for="cafeteríaCheckbox">Cafetería</label>
-                </div>
-                <!-- Submenú para Cafetería -->
-                <ul class="submenu" *ngIf="categorias.cafeteria">
-                    <li>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="especierosCheckbox"
-                                [(ngModel)]="subcategorias.cafeteria.especieros">
-                            <label class="form-check-label" for="especierosCheckbox">Especieros</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="tazasVidrioCheckbox"
-                                [(ngModel)]="subcategorias.cafeteria.tazasVidrio">
-                            <label class="form-check-label" for="tazasVidrioCheckbox">Tazas de Vidrio</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="bagacerasCheckbox"
-                                [(ngModel)]="subcategorias.cafeteria.bagaceras">
-                            <label class="form-check-label" for="bagacerasCheckbox">Bagaceras</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="sifonesCheckbox"
-                                [(ngModel)]="subcategorias.cafeteria.sifones">
-                            <label class="form-check-label" for="sifonesCheckbox">Sífones</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="elementosAuxiliaresCheckbox"
-                                [(ngModel)]="subcategorias.cafeteria.elementosAuxiliares">
-                            <label class="form-check-label" for="elementosAuxiliaresCheckbox">Elementos
-                                Auxiliares</label>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="metodosExtraccionCheckbox"
-                        [(ngModel)]="categorias.metodosExtraccion">
-                    <label class="form-check-label" for="metodosExtraccionCheckbox">Métodos de extracción</label>
-                </div>
-                <!-- Submenú para Métodos de Extracción -->
-                <ul class="submenu" *ngIf="categorias.metodosExtraccion">
-                    <li>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="metodosExtraccionCheckbox"
-                                [(ngModel)]="subcategorias.metodosExtraccion.filtros">
-                            <label class="form-check-label" for="metodosExtraccionCheckbox">Filtros para Métodos</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="complementosMetodosExtraccionCheckbox"
-                                [(ngModel)]="subcategorias.metodosExtraccion.complementosMetodos">
-                            <label class="form-check-label" for="complementosMetodosExtraccionCheckbox">Complementos
-                                para Métodos</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"
-                                id="jarrasServidorasMetodosExtraccionCheckbox"
-                                [(ngModel)]="subcategorias.metodosExtraccion.jarrasServidoras">
-                            <label class="form-check-label" for="jarrasServidorasMetodosExtraccionCheckbox">Jarras
-                                Servidoras</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="limpiezaMetodosCheckbox"
-                                [(ngModel)]="subcategorias.metodosExtraccion.limpieza">
-                            <label class="form-check-label" for="limpiezaMetodosCheckbox">Limpieza para Métodos</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="kitsParaPruebasCheckbox"
-                                [(ngModel)]="subcategorias.metodosExtraccion.kitsParaPruebas">
-                            <label class="form-check-label" for="kitsParaPruebasCheckbox">Kits para pruebas</label>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="tesYteterasCheckbox"
-                        [(ngModel)]="categorias.tesYteteras">
-                    <label class="form-check-label" for="tesYteterasCheckbox">Tés y teteras</label>
-                </div>
-            </li>
-        </ul>
+    <aside class="bd-sidebar"> <!--menu accesorios-->
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a routerLink="" class="d-none navbar-brand fw-bold"><strong>Filtros</strong></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+                    <span style="font-weight: bold;">Filtros</span>
+                </button>
+                <!-- OffCanvas main container start -->
+                <section class="offcanvas offcanvas-start" id="menuLateral" tabindex="-1">
+                    <div class="offcanvas-header" data-bs-theme="">
+                        <h5 class="offcanvas-title" style="font-weight: bold;">accesorios</h5>
+                        <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+                        <ul class="navbar-nav fs-5 justify-content-evenly">
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/accesorios-para-cafeterias/jarabes"
+                                    class="nav-link">Métodos de Extracción</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/accesorios-para-cafeterias/pures-y-concentrados"
+                                    class="nav-link">Accesorios Para Cafetería</a></li>
+                            <li class="nav-item p-3 py-md-1"><a
+                                    routerLink="/productos-y-servicios/accesorios-para-cafeterias/moleculares"
+                                    class="nav-link">Utensilios para Café</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- OffCanvas main container end -->
+            </div>
+        </nav>
     </aside>
 
-    <main class="col-lg-10 p-3 align-self-start">
-        <!--Cards para todos los accesorios-->
+    <router-outlet></router-outlet>
 
-        <!--Cards para Accesorios-->
-        <div id="todos-los-drippers">
-            <div class="scroll-horizontal-container my-5">
+    <main class="col-lg-12 p-3 align-self-start" id="divTodosLosAccesorios">
+        <div class="container">
+
+            <div class="container text-center">
+                <!-- Paginación con botones Anterior y Siguiente -->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-between">
+                        <li class="page-item">
+                            <button class="page-link btn btn-outline-warning" (click)="paginaAnterior()">Anterior</button>
+                        </li>
+                        <li class="page-item">
+                            <button class="page-link btn btn-outline-warning" (click)="paginaSiguiente()">Siguiente</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- <div class="row" *ngIf="showTodosLosaccesorios"> -->
                 <div class="row">
-                    <div *ngFor="let accesorio of drippers" style="height: 500px !important; width: 250px !important;">
+                    <!-- Vista de lista -->
+                    <div *ngFor="let accesorio of elementosPagina"
+                        style="height: 420px !important; width: 250px !important;"
+                        class="container d-flex flex-wrap justify-content-around">
                         <div class="card">
-                            <img class="card-img-top" [src]="sanitizeUrl(accesorio.urlArticleFirst)"
-                                alt="Imagen del insumo" id="botellas">
+                            <div class="card-header d flex align-self-end" style="background-color: #E78352;">
+                                <a *ngIf="accesorio.urlECommerce" [href]="accesorio.urlECommerce" style="color: white;"
+                                    target="_blank" title="Comprar en e-commerce el producto {{accesorio.name}}"><i
+                                        class="fas fa-shopping-cart"></i></a>
+                            </div>
+
+                            <img class="card-img-top" [src]="sanitizeUrl(accesorio.urlArticleFirst)" alt="{{accesorio.name}}"
+                                title="{{accesorio.name}}" [ngClass]="{
+                                    'botellas-torani': accesorio.keySap && accesorio.keySap.startsWith('IJA'),
+                                    'botella-salsa': accesorio.category && accesorio.keySap.startsWith('PUR'),
+                                  }">
                             <div class="card-body">
-                                <h5 class="card-title my-2" style="font-weight: 700;">{{ accesorio.keySap }}</h5>
-                                <p class="card-text"> {{ accesorio.name }}</p>
+                                <p class="card-title" id="font-keySap"> {{ accesorio.keySap }}
+                                <p>
+                                <h3 class="card-text" style="font-size: 13px;"> {{ accesorio.name }}</h3>
                                 <p class="d-none card-text">{{ accesorio.description }}</p>
+                                <p></p>
                             </div>
                             <div class="card-footer justify-content-right">
-                                <a routerLink="#" style="color: black;"> Ver más
+                                <a routerLink="/donde-encontranos" style="color: black; font-size: 12px;"> Encuentra tu
+                                    sucursal
                                     <i class="fas fa-arrow-right" style="color: black;"></i>
-                                    <!-- Icono de flecha hacia la derecha -->
                                 </a>
+                                <!-- <a [routerLink]="['/', accesorio.keySap]">Ver más</a><br> -->
                             </div>
+
                         </div>
                     </div>
+
+                    <div class="container text-center">
+                        <p>Total de elementos: {{ elementosVisibles }} de {{ accesoriosArray.length }}</p>
+                    </div>
+
                 </div>
+
+                <!-- Paginación con botones Anterior y Siguiente -->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-between">
+                        <li class="page-item">
+                            <button class="page-link btn btn-outline-warning" (click)="paginaAnterior()">Anterior</button>
+                        </li>
+                        <li class="page-item">
+                            <button class="page-link btn btn-outline-warning" (click)="paginaSiguiente()">Siguiente</button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-
     </main>
 
 </div>
