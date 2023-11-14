@@ -16,16 +16,8 @@ html{
 
 :root {
     --yellow-etrusca: #fcb700;
-    --fontsize-text: 1.5rem;
-    --heading-color: hsl(0, 0%, 7%);
-    --date-text-color: hsl(0, 0%, 51%);
-    --previous-price-text-color: hsl(0, 98%, 44%);
-    --current-price-text-color: hsla(0, 0%, 0%, 0.822);
-    --liked-heart-icon-color: hsl(0, 98%, 44%);
-    --heart-icon-color: whitesmoke;
-    --pricing-font-weight: 800;
-    --title-font-weight: 800;
-    --date-font-weight: 550;
+    --blue-background: #03edf0; 
+    --grey-background: #f3f3f3;
 
     /* Cards colors */
     --card-main-color : whitesmoke;
@@ -41,6 +33,10 @@ html{
     --font-subtitle-weight: 100;
     --font-header-size: 2em;
     --font-header-weight: 700;
+
+    /*Padding*/
+    --bs-navbar-nav-link-padding-x: 15px;
+    --bs-navbar-nav-link-padding-x: 27px;
 }
 
 .title {

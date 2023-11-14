@@ -1,9 +1,22 @@
     /* Ajustar el espacio entre los elementos */
     .navbar-nav .nav-item {
         margin-right: 15px;
+        height: 85px !important;
         /* Puedes ajustar el valor según tus preferencias */
     }
 
+    a.nav-link, a.nav-link:hover {
+        padding-top: 28px;
+    }
+
+     /* Cambiar el color de fondo al hacer hover en las opciones */
+    .nav-link:hover {
+        background-color: #f8f9fa;
+        border-radius: 16px;
+        padding: 10px;
+        /* Cambiar el color según tus preferencias */
+    }
+  
     .navbar-toggler {
         border: none;
     }
@@ -30,16 +43,8 @@
     #logo {
         margin-right: 15px;
         /* Añadir un margen derecho para separar el logo de los elementos del menú */
-        width: 10.1875rem;
-        height: 10.1875rem;
-    }
-
-    /* Cambiar el color de fondo al hacer hover en las opciones */
-    .nav-link:hover {
-        background-color: #f8f9fa;
-        border-radius: 16px;
-        padding: 10px;
-        /* Cambiar el color según tus preferencias */
+        width: 6rem;
+        height: 6rem;
     }
 
     /* Quitar el margen superior del select */
@@ -52,9 +57,12 @@
     }
 
 
-    .calabaza {
-        background-color: #f87705 !important;
+    .temporada {
+        background-color: #005d2d !important;
         transition: background-color 500ms, color 500ms;
+    }
+    .navbar-nav > .nav-item > .nav-link > {
+        color: white;
     }
 
     /* Estilos para el menú fijo */
