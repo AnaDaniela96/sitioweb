@@ -16,7 +16,8 @@ html{
 
 :root {
     --yellow-etrusca: #fcb700;
-    --blue-background: #03edf0; 
+    --blue-background: #89CFF0; 
+    --strongBlue-background: #33658A;
     --grey-background: #f3f3f3;
 
     /* Cards colors */
@@ -31,8 +32,8 @@ html{
     --font-title-weight: 800;
     --font-subtitle-size: 2em;
     --font-subtitle-weight: 100;
-    --font-header-size: 2em;
-    --font-header-weight: 700;
+    --font-text-size: 1em;
+    --font-text-weight: 200;
 
     /*Padding*/
     --bs-navbar-nav-link-padding-x: 15px;

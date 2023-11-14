@@ -1,6 +1,7 @@
 .carrusel {
   height: 90vh;
   overflow: hidden;
+  background-color: var(--blue-background);
 }
 section h1 {
   font-size: 16vw !important;
@@ -27,10 +28,78 @@ section h1 {
 .text{
   text-align: justify;
 }
+.line{
+  width: 40%;
+  background-color: #fbb700;
+  height: 0.4vw;
+  border: 0;
+  margin: 0 auto;
+}
+
 .content-grey {
   background-color: var(--grey-background);
   text-align: center;
   padding: 2vw 10vw;
   font-weight: var(--font-title-weight);
   font-size: var(--font-subtitle-size);
+}
+.paragrap {
+  font-weight: 100;
+  font-size: 17px
+}
+
+.container-valores{
+  border-left: 0.5vw solid #e7e7e7;
+}
+
+.container-mision {
+  border-left: 0.5vw solid var(--yellow-etrusca);
+  font-size: 17px;
+}
+
+.labels{
+  font-weight: var(--font-title-weight);
+  font-size: var(--font-subtitle-size);
+  color: #3f3f3f;
+}
+.icon{
+  width: 100px;
+  height: 100px;
+}
+
+.space {
+  height: 1cm;
+}
+
+.icon-brand{
+  height: auto;
+  width: 200px;
+}
+
+.container-brands {
+  background-color: var(--grey-background);
+}
+
+.flecha-container {
+  position: relative;
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+.flecha-container::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: -20px; /* Ajusta la posición lateral del pico de la flecha */
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent; /* Tamaño del pico */
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #ffffff; /* Color del fondo blanco */
+}
+
+/* Media query para pantallas más pequeñas de 750px */
+@media (max-width: 750px) {
+   .flecha-container::before {
+    display: none; /* Oculta la flecha en pantallas más pequeñas */
+  }
 }
