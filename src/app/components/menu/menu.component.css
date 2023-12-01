@@ -53,7 +53,8 @@
     }
 
     a {
-        font-weight: bold;
+        font-weight: 200;
+        font-size: 15px;
     }
 
 
@@ -81,3 +82,23 @@
         /* Puedes ajustar la duración y la propiedad según tus preferencias */
 
     }
+
+    /* Agrega este estilo para personalizar el dropdown */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    border: none;
+}
+
+/* Estilos para el enlace del botón principal */
+.nav-item.dropdown a.nav-link {
+    color: #333; /* Cambia el color del texto */
+}
+
+/* Estilos para los enlaces del menú desplegable */
+.nav-item.dropdown .dropdown-menu a.dropdown-item {
+    color: #555; /* Cambia el color del texto */
+}
+
+.nav-item.dropdown .dropdown-menu a.dropdown-item:hover {
+    background-color: #f8f9fa; /* Cambia el color de fondo al pasar el mouse */
+}

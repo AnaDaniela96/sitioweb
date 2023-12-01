@@ -102,7 +102,7 @@ const routes: Routes = [
       },
     ]
   },
-  { path: 'donde-encontranos', component: DondeEncontrarnosComponent },
+  { path: 'donde-encontrarnos', component: DondeEncontrarnosComponent },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'recetario', component: RecetarioComponent },

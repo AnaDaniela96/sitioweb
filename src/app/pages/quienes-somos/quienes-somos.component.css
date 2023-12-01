@@ -1,10 +1,9 @@
 .carousel {
-  max-height: 600px;
+  max-height: 700px;
   min-height: 200px;
 }
 .carrusel {
   background-color: var(--blue-background);
-  
 }
 section h1 {
   font-size: 12vw !important;
