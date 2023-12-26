@@ -6,7 +6,6 @@ import { PoliticasDeNavegacionComponent } from './pages/politicas-de-navegacion/
 import { AvisoDePrivacidadComponent } from './pages/politicas-de-navegacion/aviso-de-privacidad/aviso-de-privacidad.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { CapacitacionComponent } from './pages/capacitacion/capacitacion.component';
-import { ProductosYServiciosComponent } from './pages/productos-y-servicios/productos-y-servicios.component';
 import { CafeComponent } from './pages/productos-y-servicios/cafe/cafe.component';
 import { InsumosComponent } from './pages/productos-y-servicios/insumos/insumos.component';
 import { AccesoriosComponent } from './pages/productos-y-servicios/accesorios/accesorios.component';
@@ -65,19 +64,17 @@ const routes: Routes = [
   { path: 'taller-basico-para-baristas', component: FormacionParaBaristasComponent },
   { path: 'taller-de-bubble-tea-&-iced-coffee', component: BubleTeaIcedCoffeeComponent },
   { path: 'taller-de-brew-bar', component: BrewBarComponent },
-  {
-    path: 'productos-y-servicios', component: ProductosYServiciosComponent,
-    children: [
-      { path: 'cafe-de-especialidad', component: CafeComponent, 
-        
+
+  { path: 'cafe-de-especialidad', component: CafeComponent, 
+  
         children: [
           {path: 'cafe-premium', component: CafePremiumComponent},
           {path: 'cafe-verde', component: CafeVerdeComponent},
           {path: 'barista-champ', component: BaristaChampComponent}
         ]
-      },
-      {
-        path: 'insumos-para-cafeterias', component: InsumosComponent,
+  },
+
+  { path: 'insumos-para-cafeterias', component: InsumosComponent,
 
         children: [
           { path: 'jarabes', component: JarabesComponent },
@@ -86,11 +83,11 @@ const routes: Routes = [
           { path: 'moleculares', component: MolecularesComponent },
           { path: 'tes', component: TesComponent },
           { path: 'tisanas', component: TisanasComponent },
-          { path: 'tisanas', component: TisanasComponent },
           { path: 'polvos', component: PolvosComponent },
         ]
-      },
-      { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
+  },
+    
+  { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
       {
         path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent,
 
@@ -100,8 +97,7 @@ const routes: Routes = [
           { path: 'maquinas-cafe', component: CafeterasComponent },
         ]
       },
-    ]
-  },
+
   { path: 'donde-encontrarnos', component: DondeEncontrarnosComponent },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
   { path: 'blog', component: BlogComponent },

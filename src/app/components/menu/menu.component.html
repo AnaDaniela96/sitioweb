@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary " [ngClass]="{'fixed-menu': isMenuFixed, 'hide-menu': !isMenuFixed, 'temporada': isHome}">
     <div class="container-fluid">
-        <img id="logo" src="https://i.postimg.cc/y8j19qhw/logo.png" alt="Café Etrusca" title="Café Etrusca" routerLink="/">
+        <img id="logo" src="../../../assets/CafeEtrusca_LOGO.png" alt="Café Etrusca" title="Café Etrusca" routerLink="/">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -13,14 +13,26 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" routerLink="/productos-y-servicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         PRODUCTOS Y SERVICIOS
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" routerLink="/productos-y-servicios/insumos-para-cafeterias">INSUMOS</a></li>
-                        <li><a class="dropdown-item" routerLink="/productos-y-servicios/maquinaria-y-equipo-para-cafeterias">MÁQUINAS</a></li>
-                        <li><a class="dropdown-item" routerLink="/productos-y-servicios/cafe-de-especialidad">CAFÉ</a></li>
-                        <li><a class="dropdown-item" routerLink="/productos-y-servicios/accesorios-para-poner-una-cafeteria">ACCESORIOS</a></li>
+                        <!-- Elemento de Insumos con botón desplegable -->
+                        <li class="dropdown-item">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Insumos
+                            </button>
+                            
+                        </li>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">JARABES</a></li>
+                            <li><a class="dropdown-item" href="#">SALSAS</a></li>
+                            <li><a class="dropdown-item" href="#">PURES Y CONCENTRADOS</a></li>
+                        </ul>
+                        <!-- Resto de las opciones -->
+                        <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias">MÁQUINAS</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">CAFÉ</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria">ACCESORIOS</a></ul>
                     </ul>
                 </li>
                 

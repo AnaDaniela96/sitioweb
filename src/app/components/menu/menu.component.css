@@ -59,8 +59,8 @@
 
 
     .temporada {
-        background-color: #005d2d !important;
-        transition: background-color 500ms, color 500ms;
+        /* background-color: #005d2d !important;
+        transition: background-color 500ms, color 500ms; */
     }
     .navbar-nav > .nav-item > .nav-link > {
         color: white;

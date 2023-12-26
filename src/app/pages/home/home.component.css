@@ -1,31 +1,10 @@
-.container-imagen-text {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.left-side {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.right-side {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Inicia código para la presentación nuestras marcas */
 .image {
   max-width: 100%;
   max-height: 100%;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .circle {
   width: 14.5625rem;
   height: 14.125rem;
@@ -33,258 +12,14 @@
   border-radius: 50%;
   margin-bottom: 10px;
   background-size: cover;
-  /* Asegura que la imagen cubra todo el círculo */
   background-position: center;
-  /* Centra la imagen en el círculo */
 }
-
-/* Pumpkin Button with Vendor Prefixes */
-/* -----------------*/
-
-/* Container for Pumpkin Button */
-.pumpkin-btn {
-  cursor: pointer;
-  text-align: center;
-  margin: 40px auto 20px auto;
-  width: 267px;
-  max-width: 285px;
-  transition: all 0.3s ease-in-out;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
-}
-
-/* Button raise up on hover */
-/*   .pumpkin-btn:hover {
-   -webkit-transform: translateY(-4px);
-   -ms-transform: translateY(-4px);
-   transform: translateY(-4px);
-  } */
-
-/* Pumpkin Front Shape */
-.pumpkin-shape {
-  width: 90px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #ff8f00;
-  position: relative;
-  border: 1px solid rgba(147, 55, 0, 0.2);
-}
-
-/* Pumpkin Back Shape */
-.pumpkin-shape::before {
-  content: "";
-  display: block;
-  width: 120px;
-  height: 100px;
-  border-radius: 50%;
-  position: relative;
-  z-index: -2;
-  left: -16px;
-  background: linear-gradient(90deg, rgba(255, 155, 50, 1) 0%,
-      rgba(255, 155, 50, 1) 40%,
-      rgba(240, 100, 0, 1) 60%,
-      rgba(240, 100, 0, 1) 100%);
-}
-
-/* Pumpkin Stem */
-.pumpkin-shape::after {
-  content: "";
-  border-left: 45px solid #0AA510;
-  border-top: 45px solid transparent;
-  position: absolute;
-  top: -16px;
-  left: 34px;
-  -webkit-transform: rotate(22deg);
-  -ms-transform: rotate(22deg);
-  transform: rotate(22deg);
-  z-index: -3;
-}
-
-/* Button Bar with Text */
-.pumpkin-bar {
-  width: 214px;
-  height: auto;
-  border-radius: 0 10px 10px 0;
-  background-color: purple;
-  position: absolute;
-  bottom: 15px;
-  left: 80px;
-  z-index: -4;
-  padding: 15px 0 20px 15px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* Pumpkin Face */
-.pumpkin-face {
-  background-image: url('https://raw.githubusercontent.com/JordanKDesigns/pumpkin-button/main/pumpkin-face.png');
-  background-repeat: no-repeat;
-  width: 90px;
-  height: 100px;
-  position: absolute;
-  top: 52%;
-  left: 52%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-transition-property: -webkit-filter;
-  transition-property: -webkit-filter;
-  -o-transition-property: filter;
-  transition-property: filter;
-  transition-property: filter, -webkit-filter;
-  transition-duration: 0.3s;
-}
-
-/* Pumpkin Face Light on Hover */
-.pumpkin-btn:hover .pumpkin-face {
-  -webkit-filter: brightness(12);
-  filter: brightness(12);
-}
-
-.pumpkin-a {
-  position: absolute;
-  margin-left: 78vw;
-  margin-top: 30vh;
-  cursor: pointer;
-  text-align: center;
-  width: 267px;
-  max-width: 285px;
-  z-index: 999;
-}
-
-
-img#logo {
+img #logo {
   width: 50px !important;
 }
+/* Termina código para la presentación nuestras marcas  */
 
-
-
-
-
-
-
-
-
-
-@-moz-keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  40% {
-    -moz-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-
-  60% {
-    -moz-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-
-@-webkit-keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  40% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-
-  60% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  40% {
-    -moz-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-
-  60% {
-    -moz-transform: translateY(-15px);
-    -ms-transform: translateY(-15px);
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-
-
-
-
-
-
-
-
-
-.arrow {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  margin-left: -20px;
-  width: 40px;
-  height: 60px;
-  /*change with size of arrow to make sit on bottom */
-  /*   background-image: url(); */
-  /*   background-size: contain; */
-}
-
-.bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
-}
-
-a.smoothScroll {
-  color: #f87705;
-}
-
-
-
-/*Zoom en imagenes*/
-.image-container {
-  overflow: hidden;
-  position: relative;
-}
-
-.zoomable {
-  transition: transform 0.3s ease-in-out;
-}
-
-.zoomable:hover {
-  transform: scale(1.1);
-  /* Puedes ajustar el valor para cambiar la intensidad del zoom */
-}
-
+/* Inicia código para cards call to action: Capacitación, Dudas, E-commerce */
 .card {
   background-color: #f1f1f1;
   border-radius: 20px;
@@ -307,51 +42,13 @@ a.smoothScroll {
   background-color: transparent;
   border-top: none !important;
 }
+/* Termina  Inicia código para cards call to action: Capacitación, Dudas, E-commerce */
 
-/* Carrusel de productos de temporada */
-.container-product {
-  display: flex;
-  flex-direction: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.product-img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: rgba(10, 22, 31, .26) 4px 4px 5px 0;
-  border-radius: 50px;
-  background-image: linear-gradient(-20deg, #d9215b 50%, #fc2e6f 50%);
-  width: 40%;
-  height: 100%;
-  margin: 0 auto; /* Centrar el contenedor */
-}
-
-.product-img-item img {
-  width: 100%; /* Ajustar al 100% del ancho del contenedor */
-  height: 100%; /* Ajustar al 100% de la altura del contenedor */
-  object-fit: cover;
-}
-
-.product {
-  background-color: #0392e5 !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1em;
-  width: 60%;
-}
-
-/* Cards para revistas */
+/* Inicia cards para revistas */
 #carousel {
   position: relative;
   height: 400px;
   top: 50%;
-  transform: translateY(-50%);
   overflow: hidden;
 }
 
@@ -431,8 +128,41 @@ a.smoothScroll {
 }
 
 .buttons {
-
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
 }
+/* Termina Contenedor Cards para revistas*/
+
+/*Inicia estilo para carrusel de productos*/
+.container-product {
+  height: 500px;
+  width: 30%;
+  overflow: hidden;
+  background-image: linear-gradient(-20deg, #d9215b 50%, #fc2e6f 50%);
+  box-shadow: rgba(10, 22, 31, .26) 4px 4px 5px 0;
+  border-radius: 40px;
+}
+
+.container-product-details {
+  height: 400px;
+  width: 70%;
+  overflow: hidden;
+  background-color: #039be5 !important;
+  box-shadow: rgba(10, 22, 31, .26) 4px 4px 5px 0;
+  border-radius: 40px;
+}
+
+.button-shop {
+  position: absolute;
+  right: 10%;
+  bottom: 12%;
+}
+
+.text-of-product {
+  color: white;
+  font-weight: 100;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+/*Termina estilo para carrusel de productos*/
