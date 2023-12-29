@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary " [ngClass]="{'fixed-menu': isMenuFixed, 'hide-menu': !isMenuFixed, 'temporada': isHome}">
+<nav class="navbar navbar-expand-lg bg-body-tertiary "
+    [ngClass]="{'fixed-menu': isMenuFixed, 'hide-menu': !isMenuFixed, 'temporada': isHome}">
     <div class="container-fluid">
-        <img id="logo" src="../../../assets/CafeEtrusca_LOGO.png" alt="Café Etrusca" title="Café Etrusca" routerLink="/">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <img id="logo" src="../../../assets/CafeEtrusca_LOGO.png" alt="Café Etrusca" title="Café Etrusca"
+            routerLink="/">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -13,29 +14,19 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         PRODUCTOS Y SERVICIOS
                     </a>
                     <ul class="dropdown-menu">
-                        <!-- Elemento de Insumos con botón desplegable -->
-                        <li class="dropdown-item">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Insumos
-                            </button>
-                            
-                        </li>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">JARABES</a></li>
-                            <li><a class="dropdown-item" href="#">SALSAS</a></li>
-                            <li><a class="dropdown-item" href="#">PURES Y CONCENTRADOS</a></li>
-                        </ul>
-                        <!-- Resto de las opciones -->
+                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias/jarabes">INSUMOS</a></ul>
                         <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias">MÁQUINAS</a></ul>
                         <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">CAFÉ</a></ul>
-                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria">ACCESORIOS</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria">ACCESORIOS</a>
+                        </ul>
                     </ul>
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/recetario">RECETARIO</a>
                 </li>
@@ -43,18 +34,24 @@
                     <a class="nav-link" routerLink="/blog">BLOG</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" routerLink="cursos-para-baristas-y-talleres-para-cafeterias" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" routerLink="cursos-para-baristas-y-talleres-para-cafeterias"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         CURSOS Y TALLERES
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" routerLink="/emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria">FORMACIÓN DE EMPRENDEDORES</a></li>
+                        <li><a class="dropdown-item"
+                                routerLink="/emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria">FORMACIÓN DE
+                                EMPRENDEDORES</a></li>
                         <li><a class="dropdown-item" routerLink="/taller-de-arte-latte-nivel-basico">ARTE LATTE</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-experiencia-sensorial">CATACIÓN DE LA SEMILLA A LO SENSORIAL</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-de-mixologia-con-cafe-sin-alcohol">MIXOLOGÍA Y MOCTELERÍA</a></li>
+                        <li><a class="dropdown-item" routerLink="/taller-experiencia-sensorial">CATACIÓN DE LA SEMILLA A
+                                LO SENSORIAL</a></li>
+                        <li><a class="dropdown-item" routerLink="/taller-de-mixologia-con-cafe-sin-alcohol">MIXOLOGÍA Y
+                                MOCTELERÍA</a></li>
                         <li><a class="dropdown-item" routerLink="/taller-basico-de-tostado-de-cafe">TOSTADO</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-basico-para-baristas">FORMACIÓN PARA UN BARISTA</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-de-bubble-tea-&-iced-coffee">BUBLE TEA & ICED COFFE</a></li>
+                        <li><a class="dropdown-item" routerLink="/taller-basico-para-baristas">FORMACIÓN PARA UN
+                                BARISTA</a></li>
+                        <li><a class="dropdown-item" routerLink="/taller-de-bubble-tea-&-iced-coffee">BUBLE TEA & ICED
+                                COFFE</a></li>
                         <li><a class="dropdown-item" routerLink="/taller-de-brew-bar">BREW BAR & COLD BREW</a></li>
                     </ul>
                 </li>

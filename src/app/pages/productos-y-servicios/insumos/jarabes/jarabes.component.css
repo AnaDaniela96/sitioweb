@@ -97,12 +97,12 @@ body::-webkit-scrollbar-thumb {
 /*Contenedor de cards*/
 .container-cards {
  height:600px !important; 
- width: 250px !important;
+ width: 350px !important;
 }
 
 /* Cards donde se muestran los productos */
 .card {
-    width: 250px !important;
+    width: 300px !important;
     height: 550px;
     /* Deja que la altura se ajuste al contenido */
     display: flex;
@@ -112,6 +112,7 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     /* Centra verticalmente el contenido en la tarjeta */
     transition: transform 0.2s ease-in-out;
+    border: none;
 }
 
 .card-image{
@@ -137,7 +138,7 @@ body::-webkit-scrollbar-thumb {
     white-space: normal;
     /* Permite el salto de línea del texto */
     position: absolute;
-    top: 370px;
+    top: 450px;
 }
 
 #font-keySap {
@@ -171,7 +172,12 @@ body::-webkit-scrollbar-thumb {
 }
 /* Características de imagen en producto */
 #botellas {
-    max-height: 360px !important;
+    max-height: 400px !important;
+    max-width: 105px !important;
+}
+
+#botellas-chillout {
+    max-height: 600px !important;
     max-width: 105px !important;
 }
 
