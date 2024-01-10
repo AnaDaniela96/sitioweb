@@ -27,9 +27,9 @@ export class PuresYConcentradosComponent {
   //manipulación del menú
   hideschillOutFruit: boolean = true;
   hideschillOutJam: boolean = true;
-  hidesToraniRealSmoothieMix: boolean = false;
-  hidesToraniPureeBlend: boolean = false;
-  hidesTeaZone: boolean = false;
+  hidesToraniRealSmoothieMix: boolean = true;
+  hidesToraniPureeBlend: boolean = true;
+  hidesTeaZone: boolean = true;
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
