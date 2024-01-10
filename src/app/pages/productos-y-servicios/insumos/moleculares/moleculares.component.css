@@ -9,6 +9,60 @@
     font-weight: var(--font-subtitle-weight);
 }
 
+.header{
+    font-size: var(--font-header-size);
+    font-weight: var(--font-header-weight);
+}
+
+/*Container of brands*/
+.card-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-logo img {
+    max-width: 100%;
+    /* Para que la imagen no exceda el tamaño del div */
+    max-height: 100%;
+    /* Para que la imagen no exceda el tamaño del div */
+}
+
+/* Nombre de la marca y presentación de la marca*/
+.contenedor-logos {
+    width: 400px;
+    height: auto;
+}
+
+.contenedor-logos img {
+    max-width: 100%;
+    /* Para que la imagen no exceda el tamaño del div */
+    max-height: 100%;
+    /* Para que la imagen no exceda el tamaño del div */
+}
+
+.brand-name {
+    font-weight: 100;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Nombre de la marca y presentación de la marca*/
 .contenedor-logos {
     width: 300px;

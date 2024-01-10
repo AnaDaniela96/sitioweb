@@ -79,7 +79,7 @@ export class DataService {
         //ingredients: item.ingredients
       }));
 
-      //console.log('Insumos como array de objetos:', this.insumosArray);
+      console.log('Insumos como array de objetos:', this.insumosArray);
 
       //console.log('Data obtenida:', this.data);
       console.log(`
