@@ -27,11 +27,11 @@ export class MolecularesComponent {
 
   //Menu
 hideChillOutPearls: boolean = true;
-hidesTeaZonePerlas: boolean = false;
+hidesTeaZonePerlas: boolean = true;
 hidesChillOutJelly: boolean = true;
-hidesTeaZoneJelly: boolean = false;
+hidesTeaZoneJelly: boolean = true;
 hidesChillOutTapioca: boolean = true;
-hidesTeaZoneTapioca: boolean = false;
+hidesTeaZoneTapioca: boolean = true;
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
