@@ -1,649 +1,1015 @@
-<div class="row">
-    <aside class="col-lg-2 align-self-stretch">
-        <br>
-        <h5 class="text-center mb-3">Filtrar por Línea</h5>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosChillOtMixCheckbox"
-                    [(ngModel)]="hidesChillOutMix">
-                    <label class="form-check-label" for="polvosChillOtMixCheckbox"> ChillOut Mix </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosChillOutJustFruitCheckbox"
-                    [(ngModel)]="hidesChillOutJustFruit">
-                    <label class="form-check-label" for="polvosChillOutJustFruitCheckbox"> ChillOut JustFruit </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosChillOutActiveCheckbox"
-                    [(ngModel)]="hidesChillOutActive">
-                    <label class="form-check-label" for="polvosChillOutActiveCheckbox"> ChillOut Active </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosDavidRioCheckbox"
-                    [(ngModel)]="hidesDavidRio">
-                    <label class="form-check-label" for="polvosDavidRioCheckbox"> David Río </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosSuperBlendsCheckbox"
-                    [(ngModel)]="hidesSuperBlends">
-                    <label class="form-check-label" for="polvoSuperBlendsCheckbox"> Super Blend </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosAiyaCheckbox"
-                    [(ngModel)]="hidesAiya">
-                    <label class="form-check-label" for="polvosAiyaCheckbox"> Aiya </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosDonGustavoCheckbox"
-                    [(ngModel)]="hidesDonGustavo">
-                    <label class="form-check-label" for="polvosDonGustavoCheckbox"> Don Gustavo </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosMocafeCheckbox"
-                    [(ngModel)]="hidesMocafe">
-                    <label class="form-check-label" for="polvosMocafeCheckbox"> Mocafe </label>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="polvosCoolCapCheckbox"
-                    [(ngModel)]="hidesCoolCap">
-                    <label class="form-check-label" for="polvosCoolCapCheckbox"> Cool Caps </label>
-                </div>
-            </li>
-        </ul>
-        <br>
-    </aside>
+<div class="container">
+    <div class="row">
+        <aside class="col-lg-2 col-md-2" id="tisanas-presentation">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 father-logo">
+                            <div class="icon-section">
+                                <img src="../../../../assets/icons/polvos.webp" alt="Icono de Polvos" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h1 class="text-center p-3 poppins-bold">Polvos</h1>
+                        </div>
 
-    <main class="col-lg-9 p-3 align-self-start">
+                        <div class="col-md-12">
+                            <h3 class="text-center p-3 poppins-light">Filtrar por Línea</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="tisanasCafeEtruscaCheckbox"
+                                            [(ngModel)]="hidesChillOutMix">
+                                        <label class="form-check-label poppins-extralight"
+                                            for="tisanasCafeEtruscaCheckbox"> ChillOut Mix
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosChillOutJustFruitCheckbox"
+                                            [(ngModel)]="hidesChillOutJustFruit">
+                                        <label class="form-check-label poppins-extralight" for="polvosChillOutJustFruitCheckbox">
+                                            ChillOut Just Fruit </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosTeaZoneCheckbox"
+                                        [(ngModel)]="hidesTeaZone">
+                                        <label class="form-check-label poppins-extralight" for="polvosTeaZoneCheckbox">
+                                            Tea Zone </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosAiyaCheckbox"
+                                        [(ngModel)]="hidesAiya">
+                                        <label class="form-check-label poppins-extralight" for="polvosAiyaCheckbox">
+                                            Aiya </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosDonGustavoCheckbox"
+                                        [(ngModel)]="hidesDonGustavo">
+                                        <label class="form-check-label poppins-extralight" for="polvosDonGustavoCheckbox">
+                                            Don Gustavo </label>
+                                    </div>
+                                </li>
+    
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosDavidRioCheckbox"
+                                        [(ngModel)]="hidesDavidRio">
+                                        <label class="form-check-label poppins-extralight" for="polvosDavidRioCheckbox">
+                                            David Río </label>
+                                    </div>
+                                </li>
+                                <!-- <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvoSuperBlendsCheckbox"
+                                        [(ngModel)]="hidesSuperBlends">
+                                        <label class="form-check-label poppins-extralight" for="polvoSuperBlendsCheckbox">
+                                            Super Blend </label>
+                                    </div>
+                                </li> -->
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosMocafeCheckbox"
+                                        [(ngModel)]="hidesMocafe">
+                                        <label class="form-check-label poppins-extralight" for="polvosMocafeCheckbox">
+                                            MoCafé </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosCoolCapCheckbox"
+                                        [(ngModel)]="hidesCoolCap">
+                                        <label class="form-check-label poppins-extralight" for="polvosCoolCapCheckbox">
+                                            Cool Capp </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosCappuchineCheckbox"
+                                        [(ngModel)]="hidesCappuccinee">
+                                        <label class="form-check-label poppins-extralight" for="polvosCappuchineCheckbox">
+                                            Cappuchine </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="polvosHollanderCheckbox"
+                                        [(ngModel)]="hidesHollander">
+                                        <label class="form-check-label poppins-extralight" for="polvosHollanderCheckbox">
+                                            Hollander </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-12">
+                            <hr>
+                            <p class="p-3 poppins-light">
+                                Saborizados que ofrecen un buen rendimiento, todos con una amplia variedad de sabores
+                                y presentaciones; útiles para la sencilla preparación de bebidas frías (frappés,
+                                smoothies)
+                                y calientes (lattes y cappuchinos).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
 
         <!--Categoría Polvos-->
-        <div class="container">
-            <div id="polvos-presentacion" class="container">
-                <div class="d-flex align-items-center">
-                    <img src="../../../../assets/icons/polvos.webp" style="max-width: 4rem; max-height: 6rem;"
-                        alt="Icono de Jarabes">
-                    <h2 class="text-center mb-0 mr-3" style="font-size: 4vw; font-weight: 700;">Polvos
-                    </h2>
+        <main class="col-lg-10 my-2" id="todas-las-tisanas">
+             <!--Cards para ChillOut Mix-->
+             <div class="row my-4" id="chillOutMix" *ngIf="hidesChillOutMix">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container" style="background-color: #F184C8;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logo-mix.png" alt="Logo ChillOut Mix"
+                            title="Logo ChillOut Mix" class="img-fluid">
+                    </div>
                 </div>
 
-                <p style="text-align: justify;">Saborizados que<span style="font-weight: bold;"> ofrecen un buen
-                        rendimiento,</span>
-                    todas con una amplia variedad de sabores y presentaciones; útiles para la sencilla preparación de
-                    <span style="font-weight: bold;">bebidas frías y calientes</span>(frappés, smoothies, lattes y
-                    capuccinos).
-                </p>
-            </div><br>
-
-            <!--Cards para ChillOut Mix-->
-            <div class="container my-5" id="mixChillOut" *ngIf="hidesChillOutMix">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos" style="background-color: #F184C8;">
-                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logo-mix.png">
-                    </div>
-
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        <span style="font-weight: bold;">Línea de polvos saborizada,
-                            desarrollada en México y producida bajo procesos de altos estándares de calidad controlada.
-                            Ofrece </span> diferentes sabores. Decoración para bebidas
-                        como sodas, frappés, smoothies y postres. <span style="font-weight: bold;">gran variedad de
-                            sabores </span>que brindan la posibilidad de experimentar y crear tus propias recetas.
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">ChillOut Mix</h2>
+                    <p class="px-3 poppins-light">
+                        Línea de polvos saborizada, desarrollada en México y producida bajo procesos de altos estándares de calidad
+                        controlada. Ofrece gran variedad de sabores que brindan la posibilidad de experimentar y crear tus propias recetas.
                     </p>
+                    <span class="px-3 poppins-extralight">25 sabores disponibles.</span>  
                 </div>
 
-                <div class="container">
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">25 sabores</span>
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 2 kg Rendimiento aprox. <br>40 bebidas de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 800 gr. Rinde aprox. 16 bebidas de 480 ml.
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Base cristal 2.5 kg Rendimiento aprox. <br>50 bebidas de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Bote de 2 kg rinde aprox. 40 bebidas de 480 ml.
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Base neutra sin azúcar 1.6 kg Rendimiento aprox. <br>53 bebidas de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Base cristal y sabor limón se venden en 1 kg y 2.5 kg.
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 800 g Rendimiento aprox. <br>16 bebidas de 480 ml (50 g c/u)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Base cristal 1 kg Rendimiento aprox. <br>20 bebidas de 480 ml (50 g c/u)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Curcuma latte 250 g Rendimiento aprox. <br>50 bebidas de 480 ml (5 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosChillOutMix"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorChillOutMix()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaChillOutMix">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-chilloutMIX"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteChillOutMix()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+             </div>
 
-            <!--Chill Out Just Fruit-->
-            <div class="container my-5" id="chillOutJustFruit" *ngIf="hidesChillOutJustFruit">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos" style="background-color: #A941A0;">
-                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png">
+             <!--Cards para Chill Out Just Fruit-->
+             <div class="row my-4" id="chillOutJustFruit" *ngIf="hidesChillOutJustFruit">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container" style="background-color: #A941A0;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logo-mix.png" alt="Logo Just Fruit"
+                            title="Logo Just Fruit" class="img-fluid">
                     </div>
+                </div>
 
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        <span style="font-weight: bold;">Es la mezcla</span>que combina una base en polvo con <span
-                            style="font-weight: bold;">trozos de fruta </span>deshidratada o granos de café.
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">ChillOut Just Fruit</h2>
+                    <p class="px-3 poppins-light">
+                        Es la mezcla que combina una base en polvo con trozos de fruta deshidratada o granos de café.
                     </p>
+                    <span class="px-3 poppins-extralight">4 sabores disponibles.</span>  
                 </div>
 
-                <div class="container">
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">4 sabores</span>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 2 kg</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 2 kg.
-                            </p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 800 gr.
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Rendimiento aproximado <br>40 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosChillOutJustFruit"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorChillOutJustFruit()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaChillOutJustFruit">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-CHILLOUT-JUSTFRUIT"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteChillOutJustFruit()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+             </div>
 
-            <!--Cards para Chill Out Active-->
-            <div class="container my-5" id="chillOutActive" *ngIf="hidesChillOutActive">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos" style="background-color: #BBC244;">
-                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-active.png">
+             <!--Cards para Tea Zone -->
+             <div class="row my-4" id="TeaZone" *ngIf="hidesTeaZone">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp" alt="Logo Tea Zone"
+                            title="Logo Tea Zone" class="img-fluid">
                     </div>
+                </div>
 
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        Polvos para <span style="font-weight: bold;">preparar bebidas,</span> las cuales están
-                        compuestas por fruta deshidratada y especias,<span style="font-weight: bold;">sin azúcar.</span>
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Tea Zone power mix</h2>
+                    <p class="px-3 poppins-light">
+                        Premezcla para preparar bebidas sabor taro.
                     </p>
+                    <!-- <span class="px-3 poppins-extralight">4 sabores disponibles.</span>   -->
                 </div>
 
-                <div class="container">
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">5 sabores</span>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1 kg</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Con cualidades que pueden favorecer la salud.
-                            </p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Bote de 500 gr. rinde aprox. 27 bebidas de 300 ml.
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Rendimiento aproximado <br>20 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosChillOutActive"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorTeaZone()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaTeaZone">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-tea-zone"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteTeaZone()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+             </div>
 
-            <!--Cards para David Río-->
-            <div class="container my-5" id="davidRio" *ngIf="hidesDavidRio">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos">
-                        <img src="../../../../assets/LogosMarcas/Insumos/david-rio.png">
+             <!--Cards para AIYA--->
+             <div class="row my-4" id="AIYA" *ngIf="hidesAiya">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/AIYA.png" alt="Logo AIYA"
+                            title="Logo AIYA" class="img-fluid">
                     </div>
-
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        Chai, David Río elaborado con<span style="font-weight: bold;">té, hierbas y especias</span> de
-                        diferentes variedades. Tiene como objetivo el apoyar organizaciones que procuran el bienstar de
-                        <span style="font-weight: bold;">animales en peligro de extinsión</span>
-                    </p>
                 </div>
 
-                <div class="container">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">AIYA</h2>
+                    <!-- <p class="px-3 poppins-light">
+                        Es la mezcla que combina una base en polvo con trozos de fruta deshidratada o granos de café.
+                    </p> -->
+                    <span class="px-3 poppins-extralight">2 sabores disponibles.</span>  
+                </div>
+
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">10 sabores</span>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1 kg</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 1.814 kg, 1520 kg, 398 g, 456 g y 337 g
-                            </p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Marca líder mundial en Chai.
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Rendimiento aproximado <br>33 bebidas frías y calientes de 480 ml (30 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosDavidRio"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorAiya()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaAiya">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-AIYA"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteAiya()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+             </div>
 
-            <!--Cards para SuperBlends-->
-            <div class="container my-5" id="superBlends" *ngIf="hidesSuperBlends">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos">
-                        <img src="../../../../assets/LogosMarcas/Insumos/david-rio.png">
+             <!--Cards para Don Gustavo --->
+             <div class="row my-4" id="don-Gustavo" *ngIf="hidesDonGustavo">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/don-Gustavo.png" alt="Logo Don Gustavo"
+                            title="Logo Don Gustavo" class="img-fluid">
                     </div>
+                </div>
 
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        Chai, David Río elaborado con<span style="font-weight: bold;">té, hierbas y especias</span> de
-                        diferentes variedades. Tiene como objetivo el apoyar organizaciones que procuran el bienstar de
-                        <span style="font-weight: bold;">animales en peligro de extinsión</span>
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Don Gustavo</h2>
+                    <p class="px-3 poppins-light">
+                        Chocolate granulado para mesa gourmet.
                     </p>
+                    <!-- <span class="px-3 poppins-extralight">2 sabores disponibles.</span>   -->
                 </div>
 
-                <div class="container">
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">10 sabores</span>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 2.025 kg</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 1.814 kg, 1520 kg, 398 g, 456 g y 337 g
-                            </p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Marca líder mundial en Chai.
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Rendimiento aproximado <br>40 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosSuperBlends"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorDonGustavo()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaDonGustavo">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-donGustavo"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteDonGustavo()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+             </div>
 
-             <!--Cards para Aiya-->
-             <div class="container my-5" id="aiya" *ngIf="hidesAiya">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos">
-                        <img src="">
+             <!--Cards para David Río --->
+             <div class="row my-4" id="david-rio" *ngIf="hidesDavidRio">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/david-rio.png" alt="Logo David Río"
+                            title="Logo David Río" class="img-fluid">
                     </div>
+                </div>
 
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        Chai, David Río elaborado con<span style="font-weight: bold;">té, hierbas y especias</span> de
-                        diferentes variedades. Tiene como objetivo el apoyar organizaciones que procuran el bienstar de
-                        <span style="font-weight: bold;">animales en peligro de extinsión</span>
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">David Río</h2>
+                    <p class="px-3 poppins-light">
+                        Marca chai premium mundial, David Río elaborado con té, hierbas y especias de diversas variedades. Ofrecen un servicio al cliente 
+                        significativo y socialmente responsable, contribuyendo a la conservación de especies en peligro de extinción.
                     </p>
+                    <span class="px-3 poppins-extralight">10 sabores disponibles.</span>  
                 </div>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">10 sabores</span>
+                <div class="col-md-12">
+                    <div class="row text-center">
+                        <div class="col-md-2 my-3">
+                            <!-- <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.814 kg Rinde aprox. <br>36 bebidas frías y calientes de 480 ml (50 g c/u)</span>
+                            </p> -->
+                        </div>
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.814 kg Rinde aprox. <br>36 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 1.814 kg, 1520 kg, 398 g, 456 g y 337 g
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.520 kg Rinde aprox. <br>30 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Marca líder mundial en Chai.
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 398 g Rinde aprox. <br>8 bebidas frías y calientes de 480 ml (50 g c/u)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 456 g Rinde aprox. <br>9 bebidas frías y calientes de 480 ml (50 g c/u)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-2 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 337 g Rinde aprox. <br>6 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosAiya"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorDavidRio()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaDavidRio">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-david-rio"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteDavidRio()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+             </div>
 
-            <!--Cards para Don Gustavo -->
-            <div class="container my-5" id="donGustavo" *ngIf="hidesDonGustavo">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos">
-                        <img src="">
+              <!--Cards para Mocafe --->
+              <div class="row my-4" id="Mocafe" *ngIf="hidesMocafe">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/MoCafe.png" alt="Logo Mocafe"
+                            title="Logo Mocafe" class="img-fluid">
                     </div>
+                </div>
 
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        Chai, David Río elaborado con<span style="font-weight: bold;">té, hierbas y especias</span> de
-                        diferentes variedades. Tiene como objetivo el apoyar organizaciones que procuran el bienstar de
-                        <span style="font-weight: bold;">animales en peligro de extinsión</span>
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Mocafe</h2>
+                    <p class="px-3 poppins-light">
+                        Las bases en polvo de Mocafé están diseñadas para simplificar la preparación de una variedad de bebidas frías y calientes.
                     </p>
+                    <span class="px-3 poppins-extralight">24 sabores disponibles.</span>  
                 </div>
 
-                <div class="container">
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">10 sabores</span>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.360 kg</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 1.814 kg, 1520 kg, 398 g, 456 g y 337 g
-                            </p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Marca líder mundial en Chai.
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Rendimiento aproximado <br>27 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosDonGustavo"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorMocafe()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaMocafe">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-mocafe"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteMocafe()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+             </div>
 
-              <!--Cards para Mocafe-->
-              <div class="container my-5" id="mocafe" *ngIf="hidesMocafe">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos">
-                        <img src="">
+              <!--Cards para Cool Capp --->
+              <div class="row my-4" id="coolcapp" *ngIf="hidesCoolCap">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Cool-Capp.webp" alt="Logo Cool Capp"
+                            title="Logo Cool Capp" class="img-fluid">
                     </div>
+                </div>
 
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        Chai, David Río elaborado con<span style="font-weight: bold;">té, hierbas y especias</span> de
-                        diferentes variedades. Tiene como objetivo el apoyar organizaciones que procuran el bienstar de
-                        <span style="font-weight: bold;">animales en peligro de extinsión</span>
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold"> Cool Capp</h2>
+                    <p class="px-3 poppins-light">
+                        Marca especializada en ofrecer una variedad de bases en polvo para hacer deliciosas bebidas de café helado y frío de forma rápida
+                        y sencilla.
                     </p>
+                    <span class="px-3 poppins-extralight">13 sabores disponibles.</span>  
                 </div>
 
-                <div class="container">
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">10 sabores</span>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.580 kg</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 1.814 kg, 1520 kg, 398 g, 456 g y 337 g
-                            </p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Marca líder mundial en Chai.
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Rendimiento aproximado <br>31 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosMocafe"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorCoolCapp()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaCoolCapp">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-cool-capp"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteCoolCapp()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+             </div>
 
-            <!--Cards para CoolCap-->
-            <div class="container my-5" id="coolcap" *ngIf="hidesCoolCap">
-                <div class="container d-flex flex-wrap justify-content-around align-items-center my-4">
-                    <div class="col-lg-3 contenedor-logos">
-                        <img src="">
+             <!--Cards para Cappuccine --->
+             <div class="row my-4" id="Cappuccine" *ngIf="hidesCappuccinee">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/cappuchine-logo.jpg" alt="Logo Cappuccine"
+                            title="Logo Cappuccine" class="img-fluid">
                     </div>
+                </div>
 
-                    <p class="p-3"
-                        style="text-align: justify; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; width: 600px; height: auto;">
-                        Chai, David Río elaborado con<span style="font-weight: bold;">té, hierbas y especias</span> de
-                        diferentes variedades. Tiene como objetivo el apoyar organizaciones que procuran el bienstar de
-                        <span style="font-weight: bold;">animales en peligro de extinsión</span>
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Cappuccine</h2>
+                    <p class="px-3 poppins-light">
+                        Premezcla para bebidas de rápida preparación.
                     </p>
+                    <span class="px-3 poppins-extralight">16 sabores disponibles.</span>  
                 </div>
 
-                <div class="container">
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                <span style="font-weight: bold;">10 sabores</span>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.360 kg</span>
                             </p>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Presentación de 1.814 kg, 1520 kg, 398 g, 456 g y 337 g
-                            </p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <p class="p-3 text-center"
-                                style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px;">
-                                Marca líder mundial en Chai.
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Rendimiento aproximado <br>27 bebidas frías y calientes de 480 ml (50 g c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-horizontal-container my-5">
-                    <div class="row">
-                        <div *ngFor="let insumo of polvosCoolCap"
-                            style="height: 500px !important; width: 250px !important;">
-                            <div class="card">
-                                <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                    alt="Imagen del insumo">
-                                <div class="card-body">
-                                    <h5 class="card-title my-2" style="font-weight: 700;">{{ insumo.keySap }}</h5>
-                                    <p class="card-text"> {{ insumo.name }}</p>
-                                    <p class="d-none card-text">{{ insumo.description }}</p>
-                                </div>
-                                <div class="card-footer justify-content-right">
-                                    <a routerLink="#" style="color: black;"> Ver más
-                                        <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        <!-- Icono de flecha hacia la derecha -->
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorCappuccinee()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaCappuccinee">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
                                     </a>
                                 </div>
+                                <div class="card-top">
+                                    <div class="circle-cappuccine"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteCappuccinee()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
+                    </div>
+                </div>
+             </div>
+
+             <!--Cards para Hollander --->
+             <div class="row my-4" id="Hollander" *ngIf="hidesHollander">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/hollander-brand.png" alt="Logo Hollander"
+                            title="Logo Hollander" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Hollander</h2>
+                    <p class="px-3 poppins-light">
+                        Chocolate en polvo elaborado con cacaos holandeses, reconocios pioneros en el sector y con una tradición e innovación indiscutibles.
+                        Fabricado en Estados Unidos para el barista y el café moderno, este producto permite preparar bebidass con un sabor inigualable a chocolate.
+                    </p>
+                    <span class="px-3 poppins-extralight">3 sabores disponibles.</span>  
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.13 kg Rendimiento aproximado <br>22 bebidas frías y calientes de 480 ml (50 g c/u)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 0.68 kg Rendimiento aproximado  <br>13 bebidas frías y calientes de 480 ml (50 g c/u)</span>
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </main>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorHollander()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaHollander">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-hollander"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteHollander()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
+                    </div>
+                </div>
+             </div>
+        </main>
+        
+    </div>
+</div>
 
