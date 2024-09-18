@@ -1,631 +1,631 @@
-<div class="row">
-    <!-- Categoría Moleculares -->
-    <aside class="col-lg-12 align-self-start">
-        <div class="container my-4">
-            <div id="jarabes-presentacion" class="container">
-                <div class="d-flex align-items-center justify-content-center">
-                    <h1 class="text-center mb-0 mr-3 display-4">Moleculares
-                    </h1>
-                </div>
-            </div><br>
-
-            <div class="container my-2">
-                <p class="text-center subtitle">Explora las diferentes líneas de Moleculares que tenemos para ti:</p>
-            </div>
-        </div>
-
-        <div class="container d-flex flex-wrap justify-content-center">
-            <nav aria-label="...">
-                <ul class="pagination pagination-lg">
-                    <li class="page-item active" aria-current="page">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="card-logo d-flex align-items-center justify-content-center my-4"
-                                style="background-color: #70BDDD;">
-                                <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_logos-pearls.png"
-                                    alt="ChillOut Pearls">
-                            </div>
-                            <p class="brand-name">ChillOut Pearls</p>
-                        </div>
-                    </li>
-                    <!-- Repite el bloque anterior para cada elemento de la paginación -->
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="card-logo d-flex align-items-center justify-content-center my-4"
-                                    style="background-color: #F29CB9;">
-                                    <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_logos-JELLY.png"
-                                        alt="Logo de ChillOut Jelly" title="Logo de ChillOut Jarabe">
-                                </div>
-                                <p class="brand-name">ChillOut Jelly</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="card-logo d-flex align-items-center justify-content-center my-4"
-                                    style="background-color: #e63398;">
-                                    <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_logos-02.png"
-                                        alt="Logo de ChillOut Tapioca" title="Logo de ChillOut Tapioca">
-                                </div>
-                                <p class="brand-name">ChillOut Tapioca</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                    <img src="../../../../../assets/LogosMarcas/Insumos/TeaZone.webp"
-                                        alt="Logo de Tea Zone Perlas" title="Logo de Tea Zone Perlas">
-                                </div>
-                                <p class="brand-name">Tea Zone Perlas</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                    <img src="../../../../../assets/LogosMarcas/Insumos/TeaZone.webp"
-                                        alt="Logo de Tea Zone Jelly" title="Logo de Tea Zone Jelly">
-                                </div>
-                                <p class="brand-name">Tea Zone Jelly</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                    <img src="../../../../../assets/LogosMarcas/Insumos/TeaZone.webp"
-                                        alt="Logo de Tea Zone Tapioca" title="Logo de Tea Tapioca">
-                                </div>
-                                <p class="brand-name">Tea Zone Tapioca</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </aside>
-
-    <main class="col-lg-12 align-self-start">
-        <!-- Cards para ChillOut Pearls -->
-        <div class="container my-4" *ngIf="hideChillOutPearls">
-            <!-- Contenido de la primera mitad -->
+<div class="container">
+    <div class="row">
+        <aside class="col-lg-2 col-md-2">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of chillOutPearls" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
+                <div class="col-md-12" id="tesYTisanas-presentacion">
+                    <div class="row">
+                        <div class="col-md-12 father-logo">
+                            <div class="icon-section">
+                                <img src="../../../../assets/icons/moleculares.webp" alt="Icono de Bubble Tea"
+                                    title="Icono de Bubble Tea" class="img-fluid">
                             </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h1 class="text-center p-3 poppins-bold">Bubble Tea</h1>
+
                         </div>
                     </div>
-                    <!-- Resto del contenido -->
+                </div>
+                <div class="col-md-12">
+                    <h3 class="text-center p-3 poppins-light">Filtrar por Línea</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="chillOutPearlsCheckbox"
+                                    [(ngModel)]="hideChillOutPearls">
+                                <label class="form-check-label poppins-extralight" for="chillOutPearlsCheckbox">
+                                    ChillOut Pearls
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="teaZonePerlasCheckbox"
+                                    [(ngModel)]="hidesTeaZonePerlas">
+                                <label class="form-check-label poppins-extralight" for="teaZonePerlasCheckbox"> Tea Zone
+                                    Perlas </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="chilloutJellyCheckbox"
+                                    [(ngModel)]="hidesChillOutJelly">
+                                <label class="form-check-label poppins-extralight" for="chilloutJellyCheckbox"> ChillOut
+                                    Jelly </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="teaZoneJaleaCheckbox"
+                                    [(ngModel)]="hidesTeaZoneJelly">
+                                <label class="form-check-label poppins-extralight" for="teaZoneJaleaCheckbox"> Tea Zone
+                                    Jalea </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="chillOutTapiocaCheckbox"
+                                    [(ngModel)]="hidesChillOutTapioca">
+                                <label class="form-check-label poppins-extralight" for="chillOutTapiocaCheckbox">
+                                    ChillOut Tapioca </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="teaZoneTapiocaCheckbox"
+                                [(ngModel)]="hidesTeaZoneTapioca">
+                                <label class="form-check-label poppins-extralight" for="teaZoneTapiocaCheckbox">Tea Zone
+                                    Tapioca </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="chillOutCrystalBobaCheckbox">
+                                <label class="form-check-label poppins-extralight" for="chillOutCrystalBobaCheckbox">
+                                    ChillOut Crystal Boba </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="chillOutToppingsCheckbox">
+                                <label class="form-check-label poppins-extralight" for="chillOutToppingsCheckbox">
+                                    ChillOut Toppings </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                    <p class="p-3 poppins-light">
+                        Ofrece a tus clientes una experiencia innovadora al complementar tus bebidas con texturas,
+                        sabores, y presentaciones
+                        fuera de lo común. Combina elementos líquidos y sólidos, utilizándolos tanto como base o como
+                        topping. Disponemos
+                        de diversas opciones con distintos sabores y colores, permitiéndote crear combinaciones que no
+                        solo realzan el sabor,
+                        sino que también aportan un toque visual distintivo.
+                    </p>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Categoría Bubble tea -->
+        <main class="col-lg-10 my-2">
+            <!--Cards para ChillOut Pearls-->
+            <div class="row my-4" *ngIf="hideChillOutPearls">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container" style="background-color: #70BDDD;">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_logos-pearls.png"
+                            alt="ChillOut Pearls" title="ChillOut Pearls" title="Tisanas Café Etrusca"
+                            class="img-fluid">
+                    </div>
                 </div>
 
-                <!-- ChillOut Pearls -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3">ChillOut Pearls</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">ChillOut Pearls</h2>
+                    <p class="px-3 poppins-light">Perlas con cubierta gelatinosa y relleno líquido de diferentes
+                        sabores. Decoración para bebidas como sodas, frappés, smoothies y postres para agregar
+                        textura y color.
+                    </p>
+                    <span class="px-3 poppins-extralight">16 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right"><span>Perlas con
-                                        una cubierta gelatinosa y relleno líquido</span> diferentes sabores. Decoración
-                                    para
-                                    bebidas
-                                    como sodas, frappés, smoothies y postres.</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 3.4 kg.</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>113 bebidas frías 480 ml
+                                    (10 g c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorChillOutPearls()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        13 sabores disponibles</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaChillOutPearls">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-chillout-perls"></div>
+                                    <img class="img my-2" id="chillout-perls"
+                                        [src]="sanitizeUrl(insumo.urlArticleFirst + '?v=1.001')" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Bolsa</span> de 3.4 kg
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 113 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteChillOutPearls()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Cards para Jelly Chillout -->
-        <div class="container my-4" *ngIf="hidesChillOutJelly">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of chillOutJelly" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!--Cards para Tea Zone Perlas-->
+            <div class="row my-4" *ngIf="hidesTeaZonePerlas">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/TeaZone.webp" alt="Tea Zone Pearls"
+                            title="Tea Zone Pearls" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Jelly Chillout -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Jelly Chillout</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Tea Zone perlas explosivas</h2>
+                    <p class="px-3 poppins-light">
+                        Están rellenas de un líquido sabor a frutas. Son ideales para acompañar a una gran variedad
+                        de bebidas tipo frappé, smoothie y sodas italianas, además se pueden utilizar para preparar
+                        postres.
+                    </p>
+                    <span class="px-3 poppins-extralight">7 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right"> Los jellies más saludables del mercado, están <span
-                                        style="font-weight: bold;">compuestos
-                                        en un 70% de 4 pulpa de coco.</span> Garantizan sabor constante en cada
-                                    cucharada, además
-                                    tiene
-                                    precio competitivo comparado con su rendimiento.</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 3.2 kg.</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>106 bebidas frías 480 ml
+                                    (30 g c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorTeaZonePerlas()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        10 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaTeaZonePerlas">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-teaZone-perlas"></div>
+                                    <img class="img my-2" id="teaZone-perls" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 3.4 kg.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 85 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteTeaZonePerlas()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Cards para Tapioca ChillOut -->
-        <div class="container my-4" *ngIf="hidesChillOutTapioca">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of chillOutTapioca" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!--Cards para ChillOut Jelly-->
+            <div class="row my-4" *ngIf="hidesChillOutJelly">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container" style="background-color: #F29CB9;">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_logos-JELLY.png"
+                            alt="ChillOut Jelly" title="ChillOut Jelly" title="Tisanas Café Etrusca" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Tapioca ChillOut -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Tapioca ChillOut</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">ChillOut Jelly</h2>
+                    <p class="px-3 poppins-light">
+                        Son pequeñas gelatinas que están compuetas en un 70% de pulpa de coco. Ideales para agregar un
+                        doble sabor y textura. Las jellys
+                        en forma de corazón y estrella, ambas compuestas de un 43% de pulpa de coco. Su forma distintiva
+                        hace que las bebidas sean innovadoras
+                        y con doble textura.
+                    </p>
+                    <span class="px-3 poppins-extralight">13 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right"><span style="font-weight: bold;">Esferas de fécula de
-                                        tapioca </span>de fácil
-                                    cocción y manejo; una vez cocidas adquieren una textura gelatinosa, se pueden
-                                    saborizar con
-                                    azúcar o jarabes. Empacadas al vació para inhibir el desarrollo de bacterias.
-                                    Un complemento para quienes disfrutan las dobles texturas en las bebidas.</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 3.85 kg. <br> Rendimiento aproximado:
+                                    <br>128 bebidas frías 480 ml (30 g c/u)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Presentación: 1 kg. <br> Rendimiento aproximado: <br>33
+                                    bebidas frías 480 ml (30 g c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorChillOutJelly()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        Presentación de 3kg</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaChillOutJelly">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-chillout-jelly"></div>
+                                    <img class="img my-2" id="chillout-jelly"
+                                        [src]="sanitizeUrl(insumo.urlArticleFirst)" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> de 1 kg.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 150 cucharadas de 20g.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteChillOutJelly()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--Cards para Tea Zone Perlas -->
-        <div class="container my-4" *ngIf="hidesTeaZonePerlas">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of teaZonePerlas" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Cards para Tea Zone Jalea -->
+            <div class="row my-4" *ngIf="hidesTeaZoneJelly">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/TeaZone.webp" alt="Tea Zone Jalea"
+                            title="Tea Zone Jalea" title="Tisanas Café Etrusca" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Tea Zone Perlas -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Tea Zone Perlas </h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Tea Zone trozos de jalea</h2>
+                    <p class="px-3 poppins-light">
+                        Son utilizados como complementos versátiles para una gran variedad de bebidas y postres. Se
+                        utilizan para agregar
+                        textura y un toque de dulzura a bebidas con frappés, tés con leche y cócteles.
+                    </p>
+                    <span class="px-3 poppins-extralight">7 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right"><span style="font-weight: bold;">Esferas con cubierta
-                                        gelatinosa y relleno líquido.</span> Ideales para sodas italianas, frappés y
-                                    smoothies.</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 4 kg.</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>133 bebidas frías 480 ml
+                                    (30 g c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorTeaZoneJelly()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        10 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaTeaZoneJelly">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-chillout-jelly"></div>
+                                    <img class="img my-2" id="TeaZoneJelly" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> bote de 3.2 kg.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 80 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteTeaZoneJelly()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--Cards para Jalea/Jelly TeaZone -->
-        <div class="container my-4" *ngIf="hidesTeaZoneJelly">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of teaZoneJelly" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
+            <!-- Cards para ChillOut Tapioca -->
+            <div class="row my-4" *ngIf="hidesChillOutTapioca">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container" style="background-color: #e63398;">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_logos-02.png"
+                            alt="ChillOut Tapioca" title="ChillOut Tapioca" class="img-fluid">
+                    </div>
+                </div>
 
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">ChillOut Tapioca</h2>
+                    <p class="px-3 poppins-light">
+                        Es uno de los ingredientes favoritos en la preparación de bubble tea. Estas perlas de tapioca
+                        una vez cocidas adquieren una
+                        textura gelatinosa, se pueden saborizar con azúcar o jarabes. Empacadas al vacío para inhibir el
+                        desarrollo de bacterías. Un
+                        complemento en bebidas a base de té, aportando una experiencia única y diferente al consumirlas.
+                    </p>
+                    <span class="px-3 poppins-extralight">3 presentaciones disponibles.</span>
+                </div>
 
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 3 kg.<br>
+                                    Rendimiento aproximado: <br>100 bebidas frías 480 ml (30 g c/u)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 my-3 card-center">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Presentación: 1 kg.<br>
+                                    Rendimiento aproximado: <br>33 bebidas frías 480 ml (30 g c/u)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Presentación: 1 l<br>
+                                    Rendimiento aproximado: 13 bebidas frías 74 ml por 500 ml de agua</span>
+                            </p>
                         </div>
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
-                <!-- Tea Zone Jelly -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Tea Zone Jelly.</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
 
-                            <div class="container">
-                                <p class="text-right"> <b>Esferas de fécula de
-                                        tapioca.</b>
-                                    Deja volar tu imaginación y crea combinaciones con las perlas de tapioca en tus
-                                    bebidas, se
-                                    pueden <b>combinar con sabores frutales
-                                        y también con café y té.
-                                    </b> </p>
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorChillOutTapioca()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        5 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaChillOutTapioca">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-chillout-jelly"></div>
+                                    <img class="img my-2" id="ChillOutTapioca"
+                                        [src]="sanitizeUrl(insumo.urlArticleFirst)" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteChillOutTapioca()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--Cards para Tea Zone Tapioca-->
-        <div class="container my-4" *ngIf="hidesTeaZoneTapioca">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of teaZoneTapioca" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Cards para Tea Zone Tapioca -->
+            <div class="row my-4" *ngIf="hidesTeaZoneTapioca">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/TeaZone.webp" alt="Tea Zone Jalea"
+                            title="Tea Zone Jalea" title="Tisanas Café Etrusca" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Tea Zone Tapioca -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Tea Zone Tapioca</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Tea Zone tapioca</h2>
+                    <p class="px-3 poppins-light">
+                        Esferas de fécula de tapioca. Deja volar tu imaginación y crea combinaciones con las perlas de
+                        tapioca en tus
+                        bebidas, se pueden combinar con sabores y frutales y también con café y té.
+                    </p>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right"> <b>Esferas de fécula de
-                                        tapioca.</b>
-                                    Deja volar tu imaginación y crea combinaciones con las perlas de tapioca en tus
-                                    bebidas, se
-                                    pueden <b>combinar con sabores frutales
-                                        y también con café y té.
-                                    </b> </p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 2.7 kg.</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>90 bebidas frías 480 ml (30
+                                    g c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorTeaZoneTapioca()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        5 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaTeaZoneTapioca">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-teaZone-tapioca"></div>
+                                    <img class="img my-2"
+                                        [src]="sanitizeUrl(insumo.urlArticleFirst)" alt="{{insumo.name}}"
+                                        title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteChillOutTapioca()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
 </div>
