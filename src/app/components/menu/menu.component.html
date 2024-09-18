@@ -1,14 +1,78 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary "
+<nav class="navbar navbar-expand-lg"
     [ngClass]="{'fixed-menu': isMenuFixed, 'hide-menu': !isMenuFixed, 'temporada': isHome}">
     <div class="container-fluid">
-        <img id="logo" src="../../../assets/CafeEtrusca_LOGO.png" alt="Café Etrusca" title="Café Etrusca"
-            routerLink="/">
+        <img id="logo" src="../../../assets/logo_etrusca.webp" alt="Café Etrusca" title="Café Etrusca"
+            href="https://cafeetrusca.com/" target="_blank" >
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" routerLink="/insumos-para-cafeterias" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Insumos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias-polvos">Polvos</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias-jarabes">Jarabes</a></ul>
+                        <ul><a class="dropdown-item" routerLink="insumos-para-cafeterias-salsas">Salsas </a></ul>
+                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias-pures-y-concentrados">Purés y
+                                concentrados</a>
+                        </ul>
+                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias-bubble-tea">Bubble Tea</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias-tes">Tés</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias-tisanas">Tisanas </a></ul>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" routerLink="/maquinaria-y-equipo-para-cafeterias" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Equipos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias/maquinas-cafe">Cafeteras</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias/molinos">Mólinos</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias/licuadoras">Licuadoras</a></ul>
+                        <!-- <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria">Tostadores</a></ul>  -->
+                        
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" routerLink="/cafe-de-especialidad" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Café
+                    </a>
+                    <ul class="dropdown-menu">
+                        <ul><a class="dropdown-item" routerLink="barista-champ">Barista Champ</a></ul>
+                        <ul><a class="dropdown-item" routerLink="cafe-verde">Café verde</a></ul>
+                        <ul><a class="dropdown-item" routerLink="cafe-premium">Café Etrusca</a></ul>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Accesorios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias/jarabes">Drippers</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias">Prensas francesas</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Jarras espumadoras</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria">Tampers</a>
+                        </ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Mólinos</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Catación</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Vasos</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Cafetería</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Métodos de extracción</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Complementos de métodos</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Limpieza</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Sifones</a></ul>
+                    </ul>
+                </li>
+            </ul>
+            <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" routerLink="quienes-somos">¿QUIÉNES SOMOS?
                     </a>
@@ -63,7 +127,7 @@
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?" aria-label="Search">
                 <button class="btn btn-outline-warning" type="submit">BUSCAR</button>
-            </form>
+            </form> -->
         </div>
     </div>
 </nav>
