@@ -79,7 +79,7 @@ export class InsumosComponent implements AfterViewInit {
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
-      //console.log('Información de insumosArray', this.insumosArray);
+      console.log('Información de insumosArray', this.insumosArray);
       // Escuchar eventos de cambio de ruta
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
