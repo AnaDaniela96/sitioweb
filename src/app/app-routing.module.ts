@@ -83,16 +83,11 @@ const routes: Routes = [
   { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
 
   
-  {
-    path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent,
-
-    children: [
-      { path: 'molinos', component: MolinosComponent },
-      { path: 'licuadoras', component: LicuadorasComponent },
-      { path: 'maquinas-cafe', component: CafeterasComponent },
-    ]
-  },
-
+  { path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent },
+  { path: 'maquinaria-y-equipo-para-cafeterias-molinos', component: MolinosComponent },
+  { path: 'maquinaria-y-equipo-para-cafeterias-licuadoras', component: LicuadorasComponent },
+  { path: 'maquinaria-y-equipo-para-cafeterias-maquinas-cafe', component: CafeterasComponent },
+    
   { path: 'donde-encontrarnos', component: DondeEncontrarnosComponent },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
   { path: 'blog', component: BlogComponent },
