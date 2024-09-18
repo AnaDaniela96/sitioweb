@@ -51,10 +51,11 @@ const routes: Routes = [
       { path: 'aviso-de-privacidad', component: AvisoDePrivacidadComponent },
       { path: 'politicas-externas-cursos-talleres', component: PoliticasCursosTalleresComponent },
       { path: 'terminos-y-condiciones', component: TerminosYCondicionesComponent },
-      { path: 'politicas-productos-pedecederos', component: ProductosPedecederosComponent},
-      { path: 'entrega-pedidos-expo-cafe', component: PedidosForaneosExpoCafeComponent},
+      { path: 'politicas-productos-pedecederos', component: ProductosPedecederosComponent },
+      { path: 'entrega-pedidos-expo-cafe', component: PedidosForaneosExpoCafeComponent },
     ]
   },
+
   { path: 'cursos-para-baristas-y-talleres-para-cafeterias', component: CapacitacionComponent },
   { path: 'taller-de-arte-latte-nivel-basico', component: ArteLatteComponent },
   { path: 'emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria', component: FormacionEmprendedoresComponent },
@@ -65,38 +66,32 @@ const routes: Routes = [
   { path: 'taller-de-bubble-tea-&-iced-coffee', component: BubleTeaIcedCoffeeComponent },
   { path: 'taller-de-brew-bar', component: BrewBarComponent },
 
-  { path: 'cafe-de-especialidad', component: CafeComponent, 
-  
-        children: [
-          {path: 'cafe-premium', component: CafePremiumComponent},
-          {path: 'cafe-verde', component: CafeVerdeComponent},
-          {path: 'barista-champ', component: BaristaChampComponent}
-        ]
-  },
+  { path: 'insumos-para-cafeterias', component: InsumosComponent },
+  { path: 'insumos-para-cafeterias-polvos', component: PolvosComponent },
+  { path: 'insumos-para-cafeterias-jarabes', component: JarabesComponent },
+  { path: 'insumos-para-cafeterias-salsas', component: SalsasComponent },
+  { path: 'insumos-para-cafeterias-pures-y-concentrados', component: PuresYConcentradosComponent },
+  { path: 'insumos-para-cafeterias-bubble-tea', component: MolecularesComponent },
+  { path: 'insumos-para-cafeterias-tes', component: TesComponent },
+  { path: 'insumos-para-cafeterias-tisanas', component: TisanasComponent },
 
-  { path: 'insumos-para-cafeterias', component: InsumosComponent,
-
-        children: [
-          { path: 'jarabes', component: JarabesComponent },
-          { path: 'salsas', component: SalsasComponent },
-          { path: 'pures-y-concentrados', component: PuresYConcentradosComponent },
-          { path: 'moleculares', component: MolecularesComponent },
-          { path: 'tes', component: TesComponent },
-          { path: 'tisanas', component: TisanasComponent },
-          { path: 'polvos', component: PolvosComponent },
-        ]
-  },
+  { path: 'cafe-de-especialidad', component: CafeComponent },
+  { path: 'cafe-premium', component: CafePremiumComponent },
+  { path: 'cafe-verde', component: CafeVerdeComponent },
+  { path: 'barista-champ', component: BaristaChampComponent },
     
   { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
-      {
-        path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent,
 
-        children: [
-          { path: 'molinos', component: MolinosComponent },
-          { path: 'licuadoras', component: LicuadorasComponent },
-          { path: 'maquinas-cafe', component: CafeterasComponent },
-        ]
-      },
+  
+  {
+    path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent,
+
+    children: [
+      { path: 'molinos', component: MolinosComponent },
+      { path: 'licuadoras', component: LicuadorasComponent },
+      { path: 'maquinas-cafe', component: CafeterasComponent },
+    ]
+  },
 
   { path: 'donde-encontrarnos', component: DondeEncontrarnosComponent },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
