@@ -1,527 +1,525 @@
-<div class="row">
-    <!--Categoría Pures y concentrados -->
-    <aside class="col-lg-12 align-self-start">
-        <div class="container my-4">
-            <div id="jarabes-presentacion" class="container">
-                <div class="d-flex align-items-center justify-content-center">
-                    <h1 class="text-center mb-0 mr-3 display-4">Púres y Concentrados
-                    </h1>
-                </div>
-            </div><br>
-
-            <div class="container my-2">
-                <p class="text-center subtitle">Explora las diferentes mezclas de frutas y preparaciones con alta
-                    concentración en sabor:</p>
-            </div>
-        </div>
-
-        <div class="container d-flex flex-wrap justify-content-center">
-            <nav aria-label="...">
-                <ul class="pagination pagination-lg">
-                    <li class="page-item active" aria-current="page">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="card-logo d-flex align-items-center justify-content-center my-4"
-                                style=" background-color: #F3625E;">
-                                <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png"
-                                    alt="Logo de ChillOut Fruit" title="Logo de ChillOut Fruit">
-                            </div>
-                            <p class="brand-name">ChillOut Fruit</p>
-                        </div>
-                    </li>
-                    <!-- Repite el bloque anterior para cada elemento de la paginación -->
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="card-logo d-flex align-items-center justify-content-center my-4"
-                                    style=" background-color: #8D84BE;">
-                                    <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-JAM.png"
-                                        alt="Logo de ChillOut Jam" title="Logo de ChillOut Jam">
-                                </div>
-                                <p class="brand-name">ChillOut Jam</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp"
-                                    alt="Logo de Torani" title="Logo de Torani">
-                            </div>
-                            <p class="brand-name">Real Smoothie Mix</p>
-                        </div>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp"
-                                    alt="Logo de Torani" title="Logo de Torani">
-                            </div>
-                            <p class="brand-name">Pureé Blend</p>
-                        </div>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp" alt="Logo de TeaZone"
-                                    title="Logo de TeaZone">
-                            </div>
-                            <p class="brand-name">Tea Zone</p>
-                        </div>
-                    </li>
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </aside>
-
-    <main class="col-lg-12 align-self-start" id="todos-los-pures-y-concentrados">
-        <!--Cards para ChillOut Fruit-->
-        <div class="container my-4" *ngIf="hideschillOutFruit">
-            <!-- Contenido de la primera mitad -->
+<div class="container">
+    <div class="row">
+        <aside class="col-lg-2 col-md-2" id="pures-concentrados-presentation">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of chillOutJamConcentrados" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 father-logo">
+                            <div class="icon-section">
+                                <img src="../../../../assets/icons/puresyConcentrados.webp"
+                                    alt="Icono de Pures y Concentrados" title="Icono de Pures y Concentrados"
+                                    class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h1 class="text-center p-3 poppins-bold">Purés y concentrados</h1>
+                        </div>
 
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
+                        <div class="col-md-12">
+                            <h3 class="text-center p-3 poppins-light">Filtrar por Línea</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="puresChillOutFruitCheckbox"
+                                            [(ngModel)]="hideschillOutFruit">
+                                        <label class="form-check-label poppins-extralight"
+                                            for="puresChillOutFruitCheckbox"> ChillOut Fruit
+                                        </label>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="puresChillOutJamCheckbox"
+                                            [(ngModel)]="hideschillOutJam">
+                                        <label class="form-check-label poppins-extralight"
+                                            for="puresChillOutJamCheckbox"> ChillOut Jam </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox"
+                                            id="pureToraniRealSmoothieMixCheckbox"
+                                            [(ngModel)]="hidesToraniRealSmoothieMix">
+                                        <label class="form-check-label poppins-extralight"
+                                            for="pureToraniRealSmoothieMixCheckbox"> Torani Real Smoothie Mix</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox"
+                                            id="pureToraniPureBlendCheckbox"
+                                            [(ngModel)]="hidesToraniPureeBlend">
+                                        <label class="form-check-label poppins-extralight"
+                                            for="pureToraniPureBlendCheckbox"> Torani Pureé Blend</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="pureTeaZoneCheckbox"
+                                        [(ngModel)]="hidesTeaZone">
+                                        <label class="form-check-label poppins-extralight" for="pureTeaZoneCheckbox">
+                                            Tea Zone Concentrado</label>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                    <!-- Resto del contenido -->
-                </div>
 
-                <!-- ChillOut Fruit -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> ChillOut Fruit</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
-
-                            <div class="container">
-                                <p class="text-justify">Disfruta de nuestra <span style="font-weight: bold;">amplia
-                                        variedad de
-                                        jarabes concentrados</span> diseñados para bebidas frías, frappés, smoothies y,
-                                    en
-                                    algunos casos, bebidas calientes.
-                                    Ofrecemos sabores que van desde los clásicos hasta opciones innovadoras para
-                                    sorprender a
-                                    tus clientes en tu cafetería. </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        Única presentación</span>
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Botella</span> 1 litro
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
+                        <div class="col-md-12">
+                            <hr>
+                            <p class="p-3 poppins-light">
+                                Son productos elaborados para intensificar el sabor frutal en todas tus bebidas o
+                                cócteles.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </aside>
 
-        <!-- Cards para ChillOut Jam-->
-        <div class="container my-4" *ngIf="hideschillOutJam">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of chillOutJamConcentrados" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!--Categoría Pures y concentrados -->
+        <main class="col-lg-10 my-2" id="todas-los-pures">
+            <!-- Categoría ChillOut Fruit-->
+            <div class="row my-4" *ngIf="hideschillOutFruit">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container" style="background-color: #F3625E;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-fruit.png" alt="ChillOut Fruit"
+                            title="ChillOut Fruit" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- ChillOut Jam -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3">ChillOut Jam</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">ChillOut Fruit</h2>
+                    <p class="px-3 poppins-light">Son mezclas líquidas altamente concentradas que contienen saborizantes
+                        y endulzantes.
+                        Se utilizan para dar sabor a una gran variedad de bebidas como frappés y smoothies. Ofrecen una
+                        forma rápida y eficiente de preparar
+                        bebidas personalizadas con sabores intensos y definidos
+                    </p>
+                    <span class="px-3 poppins-extralight">21 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right"><span>Combinación entre la fruta y su
-                                        jugo,</span> ya que en conjunto proporcionan una <span
-                                        style="font-weight: bold;">textura
-                                        parecida a la mermelada.</span>Además incluye trozos de fruta que aportan doble
-                                    sensación en
-                                    el paladar y sabor más
-                                    intenso. Ideal para frappés, postres, smoothies, licuados o como decoración.</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.81 l
+                                    Rendimiento aproximado: <br>60 bebidas de 480 ml (30 ml c/u)
+                                </span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Fruit Chamoy presentación 1 l
+                                    Rendimiento aproximado: <br>33 bebidas de 480 ml (30 ml c/u)
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorChillOutFruit()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        5 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaChillOutFruitConcentrados">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-chillOut-fruit"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteChillOutFruit()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Cards para Torani Real Smothie Mix-->
-        <div class="container my-4" *ngIf="hidesToraniRealSmoothieMix">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of pureToraniRealSmoothieMix" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Cards para ChillOut Jam-->
+            <div class="row my-4" *ngIf="hideschillOutJam">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container" style=" background-color: #8D84BE;">
+                        <img src="../../../../assets/LogosMarcas/Insumos/Chillout_logos-JAM.png"
+                            alt="Logo de ChillOut Jam" title="Logo de ChillOut Jam" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Torani Real Soothie Mix -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Torani Real Smoothie Mix</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">ChillOut Jam</h2>
+                    <p class="px-3 poppins-light">
+                        Combinación entre la fruta y/o su jugo, ya que en conjunto proporcionan una textura parecida a
+                        la
+                        mermelada. Además incluy trozos de fruta que aportan doble sensación en el paladar y sabor más
+                        inteno.
+                        Ideal para frappés, postres, smoothies, licuados o como decoración.
+                    </p>
+                    <span class="px-3 poppins-extralight">6 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Preparado de frutas con una consistencia parecida a la mermelada,
-                                    sin concervadores, colorantes ni sabores artificiales.</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 4.2 kg
+                                    Rendimiento aproximado: <br>93 bebidas de 480 ml (45 g c/u)
+                                </span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Presentación: 4 kg
+                                    Rendimiento aproximado: <br>89 bebidas de 480 ml (45 g c/u)
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorchillOutJam()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        5 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaChillOutJam">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-chillOut-jam "></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguientechillOutJam()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Cards para Torani Purée Blend-->
-        <div class="container my-4">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of pureToraniPureeBlend" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Cards para Torani Real Smothie Mix-->
+            <div class="row my-4" *ngIf="hidesToraniRealSmoothieMix">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logo de Torani"
+                            title="Logo de Torani" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Torani Purée Blend -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3">Torani Purée Blend</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Torani Real Smoothie Mix</h2>
+                    <p class="px-3 poppins-light">
+                        Preparado de frutas con una consistencia parecida a la mermelada, sin conservadores, colorantes, ni sabores artificiales.
+                    </p>
+                    <span class="px-3 poppins-extralight">5 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right"><span>Mezcla de fruta fresca cocida al vapor y colada.</span>
-                                    Con textura espesa y homogéna, perfecto para frappés, coctéles o bebidas con café.
-                                </p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.89 l</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">
+                                    Rendimiento aproximado: <br>63 bebidas de 480 ml (30 ml c/u)
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorToraniRealSmoothie()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        5 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaToraniRealSmoothie">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-torani-smoothie "></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteToraniRealSmoothie()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Cards para TEA ZONE concentrados-->
-        <div class="container my-4">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of concentradoTeaZone" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Cards para Torani Torani Pureé Blend -->
+            <div class="row my-4" *ngIf="hidesToraniPureeBlend">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Logo de Torani"
+                            title="Logo de Torani" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Torani Purée Blend -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3">Tea Zone Concentrados</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Torani Pureé Blend</h2>
+                    <p class="px-3 poppins-light">
+                        Mezcla de fruta fresca cocida al vapor y colada. Con textura espesa y homogénea, perfecto para frappés, coctéles
+                        o bebidas con café
+                    </p>
+                    <span class="px-3 poppins-extralight">5 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Con ingredientes de fruta natural, ideal para preparar smoothies,
-                                    jugos, tes saborizados, yogur
-                                    congelado, raspados, coctéles y repostería.
-                                </p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1 l</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">
+                                    Rendimiento aproximado: <br>33 bebidas de 480 ml (30 ml c/u)
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorToraniPureeBlend()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        15 sabores disponibles</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaToraniPureeBlend">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-torani-pureblend"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}" id="botella-pure-blend">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 1.92 litros.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde 64 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteToraniPureeBlend()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <div class="row" style="height: 4cm"></div>
+
+              <!-- Cards para Tea Zone Concentrados -->
+              <div class="row my-4" *ngIf="hidesTeaZone">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/LogosMarcas/Insumos/TeaZone.webp" alt="Logo de TeaZone"
+                            title="Logo de TeaZone" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Tea Zone Concentrados</h2>
+                    <p class="px-3 poppins-light">
+                        Concentrados que contienen ingredientes naturales, son perfectos para elaborar smoothies, jugos, tés saborizados,
+                        yogurt congelado, raspados, cocteles y repostería.
+                    </p>
+                    <span class="px-3 poppins-extralight">13 sabores disponibles.</span>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.9 l</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">
+                                    Rendimiento aproximado: <br>63 bebidas de 480 ml (30 ml c/u)
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorTeaZoneConcentrado()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaTeaZoneConcentrado">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-tea-zone-concentrado"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteTeaZoneConcentrado()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </div>
