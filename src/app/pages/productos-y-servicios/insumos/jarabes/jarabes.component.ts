@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { DataService } from '../../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -18,16 +18,179 @@ export class JarabesComponent {
   insumosArray: any[] = [];
   extractedUrls: any;
 
-  //Jarabes
-  jarabesChillOut: any[] = [];
-  jarabesToraniClasico: any[] = [];
-  jarabesPuremadeTorani: any[] = [];
-  jarabesZeroSugar: any[] = [];
-  jarabesSugarFree: any[] = [];
-
   //Menu
   hidesJarabesChillOut: boolean = true;
-  hidesJarabesTorani: boolean = true;
+  hidesJarabesClasicoTorani: boolean = true;
+  hidesJarabePuremade: boolean = true;
+  hidesJarabeSugarFree: boolean = true;
+  hidesNdulce: boolean = true;
+
+  mostrarCuadricula: boolean = false;
+  elementosVisibles: number = 0;
+
+  //Datos para Jarabes ChillOut
+  jarabesChillOut: any[] = [];
+  paginaActualJarabesChillOut: number = 1;
+  tamañoPaginaJarabesChillOut: number = 5;
+
+  //Datos para Jarabes ToraniClasico
+  jarabesToraniClasico: any[] = [];
+  paginaActualToraniClasico: number = 1;
+  tamañoPaginaToraniClasico: number = 5;
+
+  //Datos para Jarabes PuremadeTorani
+  jarabesPuremadeTorani: any[] = [];
+  paginaActualPuremadeTorani: number = 1;
+  tamañoPaginaPuremadeTorani: number = 5;
+
+  //Datos para Jarabes SugarFree
+  jarabesSugarFree: any[] = [];
+  paginaActualSugarFree: number = 1;
+  tamañoPaginaSugarFree: number = 5;
+
+  //Datos para Jarabes N'dulce
+  jarabesNdulce: any[] = [];
+  paginaActualjarabesNdulce: number = 1;
+  tamañoPaginajarabesNdulce: number = 5;
+
+  jarabesZeroSugar: any[] = [];
+
+  @ViewChildren('tarjeta')
+  tarjetas!: QueryList<any>;
+
+  ngAfterViewInit() {
+    this.elementosVisibles = this.tarjetas.length;
+  }
+
+  // Obtener los elementos de la página actual para Jarabes N'dulce
+  get elementosPaginaJarabesNdulce() {
+    const inicio = (this.paginaActualjarabesNdulce - 1) * this.tamañoPaginajarabesNdulce;
+    const fin = inicio + this.tamañoPaginajarabesNdulce;
+    return this.jarabesNdulce.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Jarabes N'dulce
+  get paginasJarabesNdulce() {
+    const totalPaginas = Math.ceil(this.jarabesNdulce.length / this.tamañoPaginajarabesNdulce);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Jarabes N'dulce
+  paginaAnteriorJarabesNdulce() {
+    if (this.paginaActualjarabesNdulce > 1) {
+      this.paginaActualjarabesNdulce--;
+    }
+  }
+
+  paginaSiguienteJarabesNdulce() {
+    if (this.paginaActualjarabesNdulce < this.paginasJarabesNdulce.length) {
+      this.paginaActualjarabesNdulce++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para Torani SugarFree
+  get elementosPaginaSugarFreeTorani() {
+    const inicio = (this.paginaActualSugarFree - 1) * this.tamañoPaginaSugarFree;
+    const fin = inicio + this.tamañoPaginaSugarFree;
+    return this.jarabesSugarFree.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Torani SugarFree
+  get paginasToraniSugarFreeTorani() {
+    const totalPaginas = Math.ceil(this.jarabesSugarFree.length / this.tamañoPaginaSugarFree);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Torani SugarFree
+  paginaAnteriorSugarFreeTorani() {
+    if (this.paginaActualSugarFree > 1) {
+      this.paginaActualSugarFree--;
+    }
+  }
+
+  paginaSiguienteSugarFreeTorani() {
+    if (this.paginaActualSugarFree < this.paginasToraniSugarFreeTorani.length) {
+      this.paginaActualSugarFree++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para Torani Puremade
+  get elementosPaginaPuremadeTorani() {
+    const inicio = (this.paginaActualPuremadeTorani - 1) * this.tamañoPaginaPuremadeTorani;
+    const fin = inicio + this.tamañoPaginaToraniClasico;
+    return this.jarabesPuremadeTorani.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Torani Puremade
+  get paginasToraniPuremadeTorani() {
+    const totalPaginas = Math.ceil(this.jarabesPuremadeTorani.length / this.tamañoPaginaPuremadeTorani);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Torani Puremade
+  paginaAnteriorPuremadeTorani() {
+    if (this.paginaActualPuremadeTorani > 1) {
+      this.paginaActualPuremadeTorani--;
+    }
+  }
+
+  paginaSiguientePuremadeTorani() {
+    if (this.paginaActualPuremadeTorani < this.paginasToraniPuremadeTorani.length) {
+      this.paginaActualPuremadeTorani++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para Torani Clasico
+  get elementosPaginaToraniClasico() {
+    const inicio = (this.paginaActualToraniClasico - 1) * this.tamañoPaginaToraniClasico;
+    const fin = inicio + this.tamañoPaginaToraniClasico;
+    return this.jarabesToraniClasico.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Torani Clasico
+  get paginasToraniClasico() {
+    const totalPaginas = Math.ceil(this.jarabesToraniClasico.length / this.tamañoPaginaToraniClasico);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Torani Clasico
+  paginaAnteriorToraniClasico() {
+    if (this.paginaActualToraniClasico > 1) {
+      this.paginaActualToraniClasico--;
+    }
+  }
+
+  paginaSiguienteToraniClasico() {
+    if (this.paginaActualToraniClasico < this.paginasToraniClasico.length) {
+      this.paginaActualToraniClasico++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para ChillOut Jarabes
+  get elementosPaginaJarabesChillOut() {
+    const inicio = (this.paginaActualJarabesChillOut - 1) * this.tamañoPaginaJarabesChillOut;
+    const fin = inicio + this.tamañoPaginaJarabesChillOut;
+    return this.jarabesChillOut.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para ChillOut Jarabes
+  get paginasJarabesChillOut() {
+    const totalPaginas = Math.ceil(this.jarabesChillOut.length / this.tamañoPaginaJarabesChillOut);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para ChillOut Jarabes
+  paginaAnteriorJarabesChillOut() {
+    if (this.paginaActualJarabesChillOut > 1) {
+      this.paginaActualJarabesChillOut--;
+    }
+  }
+
+  paginaSiguienteJarabesChillOut() {
+    if (this.paginaActualJarabesChillOut < this.paginasJarabesChillOut.length) {
+      this.paginaActualJarabesChillOut++;
+    }
+  }
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
@@ -60,6 +223,12 @@ export class JarabesComponent {
       //Filtra los Jarabes Zero Sugar y crea un nuevo array.
       this.jarabesSugarFree = this.insumosArray.filter(insumo =>
         this.contienePalabrasToraniSugarFree(insumo.name) &&
+        insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      //Filtra los Jarabes jarabesNdulce y crea un nuevo array.
+      this.jarabesNdulce = this.insumosArray.filter(insumo =>
+        this.contienePalabrasNdulce(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
     }).catch((error: any) => {
@@ -146,4 +315,16 @@ export class JarabesComponent {
     return cumpleCondicion;
   }
 
+  contienePalabrasNdulce(nombre: string): boolean {
+    const palabrasClave = ['DULCE', 'JARABE'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
 }

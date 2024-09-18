@@ -1,481 +1,505 @@
-<div class="row">
-    <!-- Categoría Jarabes-->
-    <aside class="col-lg-12 align-self-start">
-        <div class="container my-4">
-            <div id="jarabes-presentacion" class="container">
-                <div class="d-flex align-items-center justify-content-center">
-                    <h1 class="text-center mb-0 mr-3 display-4">Jarabes
-                    </h1>
-                </div>
-            </div><br>
-
-            <div class="container my-2">
-                <p class="text-center subtitle">Explora las diferentes líneas de Jarabes que tenemos para ti:</p>
-            </div>
-        </div>
-
-        <div class="container d-flex flex-wrap justify-content-center">
-            <nav aria-label="...">
-                <ul class="pagination pagination-lg">
-                    <li class="page-item active" aria-current="page">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp"
-                                    alt="Logo de Torani" title="Logo de Torani" [(ngModel)]="hidesJarabesTorani">
-                            </div>
-                            <p class="brand-name">Torani Clásico</p>
-                        </div>
-                    </li>
-                    <!-- Repite el bloque anterior para cada elemento de la paginación -->
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                    <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_jarabes.svg"
-                                        alt="Logo de ChillOut Jarabe" title="Logo de ChillOut Jarabe"
-                                        [(ngModel)]="hidesJarabesTorani">
-                                </div>
-                                <p class="brand-name">ChillOut Jarabe</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </aside>
-
-    <main class="col-lg-12 align-self-start">
-        <!--Cards para ChillOut Jarabes-->
-        <div class="container my-4" *ngIf="hidesJarabesTorani">
-            <!-- Contenido de la primera mitad -->
+<div class="container">
+    <div class="row">
+        <aside class="col-lg-2 col-md-2" id="tisanas-presentation">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of jarabesChillOut" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 father-logo">
+                            <div class="icon-section">
+                                <img src="../../../../assets/icons/Jarabes.webp" alt="Icono de Jarabes"
+                                    class="img-fluid">
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <h1 class="text-center p-3 poppins-bold">Jarabes</h1>
+                        </div>
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Jarabes ChillOut -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Jarabes ChillOut</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-12">
+                    <h3 class="text-center p-3 poppins-light">Filtrar por Línea</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="chillOutJarabesCheckbox"
+                                [(ngModel)]="hidesJarabesChillOut">
+                                <label class="form-check-label poppins-extralight" for="chillOutJarabesCheckbox">
+                                    ChillOut Jarabes
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="toraniClasicoCheckbox"
+                                [(ngModel)]="hidesJarabesClasicoTorani">
+                                <label class="form-check-label poppins-extralight" for="toraniClasicoCheckbox"> Torani
+                                    Clásico </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="toraniPuremaCheckbox"
+                                [(ngModel)]="hidesJarabePuremade">
+                                <label class="form-check-label poppins-extralight" for="toraniPuremaCheckbox"> Torani
+                                    Puremade </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="toraniSugarfreeCheckbox"
+                                [(ngModel)]="hidesJarabeSugarFree">
+                                <label class="form-check-label poppins-extralight" for="toraniSugarfreeCheckbox"> Torani
+                                    Sugar Free </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="nDulceCheckbox"
+                                [(ngModel)]="hidesNdulce">
+                                <label class="form-check-label poppins-extralight" for="nDulceCheckbox"> n'dulce
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Los Jarabes <span>ChillOut</span> son líquidos concentrados de
-                                    azúcar y otros
-                                    elementos (como zumos, licores, o extractivas), las cuales
-                                    cambian la consistencia, sabor y aroma de la bebida a la que se le agregan. En la
-                                    rama coctelera el uso
-                                    de los jarabes se ha popularizado a tal punto que la mixología
-                                    los considera un elemento imprescindible para sus creaciones. </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        5 sabores</span>
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
-                    </div>
+                <div class="col-md-12">
+                    <hr>
+                    <p class="p-3 poppins-light">
+                        Son líquidos con mezclas concentradas de azúcar y otros elementos, algunos de ellos son con
+                        extractos
+                        de agave azul los cuales cambian la consistencia, sabor y aroma de la bebida a la que se le
+                        agregan.
+                    </p>
                 </div>
             </div>
-        </div>
+        </aside>
 
-        <!--Línea Torani-->
-        <div class="container my-4" *ngIf="hidesJarabesChillOut">
-            <!-- Contenido de Torani Clásico -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of jarabesToraniClasico" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Categoría Jarabes-->
+        <main class="col-lg-10 my-2" id="todas-los-jarabes">
+            <!--Cards para jarbes chillout -->
+            <div class="row my-4" id="jarabes-chillout" *ngIf="hidesJarabesChillOut">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_jarabes.svg" alt="Jarabes ChillOut"
+                            title="Jarabes ChillOut" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Torani Clásico -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Torani Clásico</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Jarabes ChillOut</h2>
+                    <p class="px-3 poppins-light">Debido a la naturalidad del agave, este tiene un índice glucémico menor
+                        en comparación con el azúcar, lo que significa que no causa picos tan drásticos en los niveles de azúcar en la sangre.
+                    </p>
+                    <span class="px-3 poppins-extralight">14 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Endulzado con azúcar de caña </p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1 litro</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>33 bebidas frías y
+                                    calientes de 480 ml (30 ml c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorJarabesChillOut()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        67 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaJarabesChillOut">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-jarabes-chillOut"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteJarabesChillOut()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
 
-            <!-- Torani Puremade -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of jarabesPuremadeTorani" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+             <!--Cards para jarbes torani clasico -->
+             <div class="row my-4" id="jarabes-chillout" *ngIf="hidesJarabesClasicoTorani">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Torani clásico"
+                            title="Torani clásico" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Torani Puremade -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Torani Puremade</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Torani clásico</h2>
+                    <p class="px-3 poppins-light">Jarabes con una amplia variedad de sabores utilizados tanto en el hogar como por profesionales de la industria
+                        restaurantera y la coctelería para agregar sabor a cafés, cocteles, postres y más.
+                    </p>
+                    <span class="px-3 poppins-extralight">102 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Sin conservadores, colorantes ni sabores artificiales y libre de
-                                    Organismos Genéticamente Modificados (OMG).</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 750 ml</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>25 bebidas frías y
+                                    calientes de 480 ml (30 ml c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorToraniClasico()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        67 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaToraniClasico">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-jarabes-torani-clasico"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteToraniClasico()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
 
-            <!-- Torani Zero Sugar -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of jarabesZeroSugar" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!--Cards para jarbes torani Puremade -->
+            <div class="row my-4" id="torani Puremade" *ngIf="hidesJarabePuremade">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Torani Puremade"
+                            title="Torani Puremade" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Torani Zero Sugar -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Torani Puremade Zero Sugar</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Torani puremade</h2>
+                    <p class="px-3 poppins-light">Jarabes con una amplia variedad de sabores utilizados tanto en el hogar como por profesionales de la industria
+                        restaurantera y la coctelería para agregar sabor a cafés, cocteles, postres y más.
+                    </p>
+                    <span class="px-3 poppins-extralight">4 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Sin conservadores, colorantes ni sabores artificiales y libre de
-                                    Organismos Genéticamente
-                                    Modificados (OMG).</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 750 ml</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>25 bebidas frías y
+                                    calientes de 480 ml (30 ml c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorPuremadeTorani()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        32 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaPuremadeTorani">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-jarabes-puremade"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguientePuremadeTorani()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
 
-            <!-- Torani Sugar Free-->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of jarabesSugarFree" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+             <!--Cards para jarbes torani sugar free -->
+             <div class="row my-4" id="torani sugar free" *ngIf="hidesJarabeSugarFree">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Torani sugar free"
+                            title="Torani sugar free" class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- Torani Zero Sugar -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> Torani Puremade Zero Sugar</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Torani sugar free</h2>
+                    <p class="px-3 poppins-light">Los jarabes sin azúcar de Torani ofrecen una manera de endulzar tus bebidas sin añadir calorías.
+                        Elaborados con edulcolorantes, estos jarabes proporcionan el mismo sabor que los jarabes tradicionales de Torani, pero sin el azúcar.
+                    </p>
+                    <span class="px-3 poppins-extralight">17 sabores disponibles.</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Sin conservadores, colorantes ni sabores artificiales y libre de
-                                    Organismos Genéticamente
-                                    Modificados (OMG).</p>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 750 ml</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>25 bebidas frías y
+                                    calientes de 480 ml (30 ml c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorSugarFreeTorani()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        32 sabores</span>
-                                </p>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaSugarFreeTorani">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-jarabes-sugarfree"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
                             </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 750 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 25 bebidas de 480 ml.
-                                </p>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteSugarFreeTorani()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
-                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
 
+            <!--Cards para jarbes n'dulce -->
+            <div class="row my-4" id="n'dulce" *ngIf="hidesNdulce">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/n'dulce.png" alt="n'dulce"
+                            title="n'dulce" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">n'dulce</h2>
+                    <p class="px-3 poppins-light">Jarbe con sabor a dulce de leche para endulzar y/o decorar tus bebidas.
+                    </p>
+                    <!-- <span class="px-3 poppins-extralight">17 sabores disponibles.</span> -->
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 1.10 kg</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>36 bebidas frías y
+                                    calientes de 480 ml (30 ml c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorJarabesNdulce()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaJarabesNdulce">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-jarabes-ndulce"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteJarabesNdulce()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </div>
