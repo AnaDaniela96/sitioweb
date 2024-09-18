@@ -1,62 +1,195 @@
-<div class="row">
-
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="d-flex align-items-center justify-content-center">
-                    <img src="../../../../../assets/icons/Maquinas-de-cafe.png" style="width: 20%;">
-                    <h1 class="title my-4" style="text-align: center; width: 50%;">Máquinas de Café</h1>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <p class="p-3" style="text-align: justify;"> Te invitamos a explorar una amplia gama de máquinas de café
-                    que se adaptan a tu nivel de experiencia y a tus preferencias en la preparación de esta deliciosa
-                    bebida. <br>
-
-                    Cada máquina que ofrecemos está diseñada para brindarte la mejor experiencia de café. Desde las
-                    clásicas cafeteras de goteo hasta las avanzadas máquinas espresso, encontrarás la solución ideal
-                    para disfrutar de aromas y sabores inigualables.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <main class="col-lg-12 p-3 align-self-start">
-        <div class="container">
-            <div class="scroll-horizontal-container my-5">
-                <div class="row">
-                    <div *ngFor="let cafetera of cafeteras" style="height: 420px !important; width: 250px !important;"
-                        class="container d-flex flex-wrap justify-content-around">
-                        <div class="card">
-                            <div class="card-header d flex align-self-end" style="background-color: #039be5;">
-                                <a *ngIf="cafetera.urlECommerce" [href]="cafetera.urlECommerce" style="color: white;"
-                                    target="_blank" title="Comprar en e-commerce el producto {{cafetera.name}}"><i
-                                        class="fas fa-shopping-cart"></i></a>
+<div class="container">
+    <div class="row">
+        <aside class="col-lg-2 col-md-2" id="tisanas-presentation">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 father-logo">
+                            <div class="icon-section">
+                                <img src="../../../../../assets/icons/Maquinas-de-cafe.png"
+                                    alt="Icono de Máquinas de café" class="img-fluid">
                             </div>
-
-                            <div class="card-img justify-centers">
-                                <img class="card-img-top img-molino" [src]="sanitizeUrl(cafetera.urlArticleFirst)"
-                                    alt="{{cafetera.name}}" title="{{cafetera.name}}">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-title" id="font-keySap"> {{ cafetera.keySap }}
-                                <p>
-                                <h3 class="card-text" style="font-size: 13px;"> {{ cafetera.name }}</h3>
-                                <p class="d-none card-text">{{ cafetera.description }}</p>
-                                <p></p>
-                            </div>
-                            <div class="card-footer justify-content-right">
-                                <a routerLink="/donde-encontranos" style="color: black; font-size: 12px;"> Encuentra tu
-                                    sucursal
-                                    <i class="fas fa-arrow-right" style="color: black;"></i>
-                                </a><br>
-                            </div>
-
+                        </div>
+                        <div class="col-md-12">
+                            <h1 class="text-center p-3 poppins-bold">Máquinas de café</h1>
                         </div>
                     </div>
+                </div>
 
+                <div class="col-md-12">
+                    <h3 class="text-center p-3 poppins-light">Filtrar por Línea</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="RenekaCheckbox"
+                                [(ngModel)]="hidesReneka">
+                                <label class="form-check-label poppins-extralight" for="RenekaCheckbox"> Reneka
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="MelittaCheckbox"
+                                [(ngModel)]="hidesMelitta">
+                                <label class="form-check-label poppins-extralight" for="MelittaCheckbox"> Melitta </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12">
+                    <hr>
+                    <p class="p-3 poppins-light">
+                        Cada máquina que ofrecemos está diseñada para brindarte la mejor experiencia de café.
+                        Encontrarás la
+                        solución ideal
+                        para disfrutar de aromas y sabores inigualables.
+                    </p>
                 </div>
             </div>
-        </div>
-    </main>
+        </aside>
+
+        <!--Categoría Máquinas de Café -->
+        <main class="col-lg-10 my-2" id="todas-las-maquinas">
+            <!-- Cards para Reneka -->
+            <div class="row my-4" id="Reneka" *ngIf="hidesReneka">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Maquinas/RENEKA-LOGO.svg" alt="logo de Reneka"
+                            title="logo de Reneka" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Reneka</h2>
+                    <p class="px-3 poppins-light">Seleccionamos una amplia variedad de máquinas y equipos, cada una
+                        elegida por su calidad,
+                        desempeño, y durabillidad, además nuestros expertos te ofrecen asesoría para determinar la que
+                        mejor se adapte a tus necesidades.
+                    </p>
+                    <span class="px-3 poppins-extralight">Diferentes colores.</span>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorReneka()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-5" *ngFor="let insumo of elementosPaginaReneka">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-reneka"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteReneka()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                        <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                            tisanasFrutalesCafeEtrusca.length }}</p>
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards para Melitta-->
+            <div class="row my-4" id="Melitta" *ngIf="hidesMelitta">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Maquinas/MELLITA.svg" alt="logo de Melitta"
+                            title="logo de Melitta" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Melitta</h2>
+                    <p class="px-3 poppins-light">Seleccionamos una amplia variedad de máquinas y equipos, cada una
+                        elegida por su calidad,
+                        desempeño, y durabillidad, además nuestros expertos te ofrecen asesoría para determinar la que
+                        mejor se adapte a tus necesidades.
+                    </p>
+                    <span class="px-3 poppins-extralight">Diferentes colores.</span>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorMelitta()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-5" *ngFor="let insumo of elementosPaginaMelitta">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-Melitta"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteMelitta()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                        <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                            tisanasFrutalesCafeEtrusca.length }}</p>
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </div>
+
+
