@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { DataService } from '../../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -17,14 +17,82 @@ export class SalsasComponent {
   insumosArray: any[] = [];
   extractedUrls: any;
 
-  //Salsas
-  salsasTorani: any[] = [];
-  salsasChillOut: any[] = [];
+  mostrarCuadricula: boolean = false;
+  elementosVisibles: number = 0;
 
   //Menu
-  hidesSalsasChillOut: boolean = true;
   hidesSalsasTorani: boolean = true;
-  
+  hidesSalsasHollander: boolean = true;
+
+  //Salsas Torani
+  salsasTorani: any[] = [];
+  paginaActualTorani: number = 1;
+  tamañoPaginaTorani: number = 5;
+
+  //Salsas Hollander
+  salsasHollander: any[] = [];
+  paginaActualHollander: number = 1;
+  tamañoPaginaHollander: number = 5;
+
+  @ViewChildren('tarjeta')
+  tarjetas!: QueryList<any>;
+
+  ngAfterViewInit() {
+    this.elementosVisibles = this.tarjetas.length;
+  }
+
+  // Obtener los elementos de la página actual para Torani
+  get elementosPaginaTorani() {
+    const inicio = (this.paginaActualTorani - 1) * this.tamañoPaginaTorani;
+    const fin = inicio + this.tamañoPaginaTorani;
+    return this.salsasTorani.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Torani
+  get paginasTorani() {
+    const totalPaginas = Math.ceil(this.salsasTorani.length / this.tamañoPaginaTorani);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Torani
+  paginaAnteriorTorani() {
+    if (this.paginaActualTorani > 1) {
+      this.paginaActualTorani--;
+    }
+  }
+
+  paginaSiguienteTorani() {
+    if (this.paginaActualTorani < this.paginasTorani.length) {
+      this.paginaActualTorani++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para Hollander
+  get elementosPaginaHollander() {
+    const inicio = (this.paginaActualHollander - 1) * this.tamañoPaginaHollander;
+    const fin = inicio + this.tamañoPaginaTorani;
+    return this.salsasHollander.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Hollander
+  get paginasHollander() {
+    const totalPaginas = Math.ceil(this.salsasHollander.length / this.tamañoPaginaHollander);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Torani
+  paginaAnteriorHollander() {
+    if (this.paginaActualHollander > 1) {
+      this.paginaActualHollander--;
+    }
+  }
+
+  paginaSiguienteHollander() {
+    if (this.paginaActualHollander < this.paginasHollander.length) {
+      this.paginaActualHollander++;
+    }
+  }
+
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
@@ -36,18 +104,20 @@ export class SalsasComponent {
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
-      //Filtra las salsas ChillOut y crea un nuevo array.
-      this.salsasChillOut = this.insumosArray.filter(insumo =>
-        this.contienePalabrasChillOutSalsa(insumo.name) &&
+      //Filtra las salsas Hollander y crea un nuevo array.
+      this.salsasHollander = this.insumosArray.filter(insumo =>
+        this.contienePalabrasSalsaHollander(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
+
+
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
     })
   }
 
-   //Limpia las url de las imagenes del insumo
-   extractUrlsFromString(input: string): void {
+  //Limpia las url de las imagenes del insumo
+  extractUrlsFromString(input: string): void {
     const cleanedInput = input
       .replace(/\[|\]|'/g, ''); // Elimina '[' ']' y comillas simples
 
@@ -82,8 +152,8 @@ export class SalsasComponent {
     return cumpleCondicion;
   }
 
-  contienePalabrasChillOutSalsa(nombre: string): boolean {
-    const palabrasClave = ['CHILLOUT', 'CHAMOY'];
+  contienePalabrasSalsaHollander(nombre: string): boolean {
+    const palabrasClave = ['HOLLANDER', 'SALSA'];
 
     // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
     const nombreEnMayusculas = nombre.toUpperCase();
