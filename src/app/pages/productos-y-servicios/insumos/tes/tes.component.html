@@ -1,231 +1,219 @@
-<div class="row">
-    <!-- Categoría Tes-->
-    <aside class="col-lg-12 align-self-start">
-        <div class="container my-4">
-            <div id="jarabes-presentacion" class="container">
-                <div class="d-flex align-items-center justify-content-center">
-                    <h1 class="text-center mb-0 mr-3 display-4">Tes
-                    </h1>
-                </div>
-            </div><br>
-
-            <div class="container my-2">
-                <p class="text-center subtitle">Explora las diferentes líneas de Tes que tenemos para ti:</p>
-            </div>
-        </div>
-
-        <div class="container d-flex flex-wrap justify-content-center">
-            <nav aria-label="...">
-                <ul class="pagination pagination-lg">
-                    <li class="page-item active" aria-current="page">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                <img src="../../../../assets/icons/euro-te.svg" alt="Logo de Te Eurote"
-                                    title="Logo de Te Eurote" [(ngModel)]="hidesTeEurote">
-                            </div>
-                            <p class="brand-name">Te Eurote</p>
-                        </div>
-                    </li>
-                    <!-- Repite el bloque anterior para cada elemento de la paginación -->
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="card-logo d-flex align-items-center justify-content-center my-4">
-                                    <img src="../../../../assets/icons/stash.svg" alt="Logo de Te Stash"
-                                        title="Logo de Te Stash" [(ngModel)]="hidesTeStash">
-                                </div>
-                                <p class="brand-name">Te Stash</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="page-item">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </aside>
-
-    <main class="col-lg-12 align-self-start">
-        <!--Cards euroTe-->
-        <div class="container my-4" *ngIf="hidesTeEurote">
-            <!-- Contenido de la primera mitad -->
+<div class="container">
+    <div class="row">
+        <aside class="col-lg-2 col-md-2">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of teEurote" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                        style="background-color: #E91D74;">
-                                        <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                            style="color: white;" target="_blank"
-                                            title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                class="fas fa-shopping-cart"></i></a>
-                                    </div> -->
-
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                        <a class="go-sucursal" routerLink="/donde-encontranos"
-                                            style="color: black;">
-                                            Encuentra
-                                            tu
-                                            sucursal
-                                            <i class="fas fa-arrow-right" style="color: black;"></i>
-                                        </a><br>
-                                    </div> -->
-                                    </div>
-                                </div>
+                <div class="col-md-12" id="tesYTisanas-presentacion">
+                    <div class="row">
+                        <div class="col-md-12 father-logo">
+                            <div class="icon-section">
+                                <img src="../../../../assets/icons/te.webp" alt="Icono de Tisanas" class="img-fluid">
                             </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h1 class="text-center p-3 poppins-bold">Tés</h1>
+
                         </div>
                     </div>
-                    <!-- Resto del contenido -->
+                </div>
+                <div class="col-md-12">
+                    <h3 class="text-center p-3 poppins-light">Filtrar por Línea</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="tisanasEuroTeCheckbox"
+                                    [(ngModel)]="hidesTeEurote">
+                                <label class="form-check-label poppins-extralight" for="tisanasEuroTeCheckbox"> EUROTE
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tisanasCafeEtruscaCheckbox"
+                                    [(ngModel)]="hidesTeStash">
+                                <label class="form-check-label poppins-extralight"
+                                    for="tisanasCafeEtruscaCheckbox">Stash</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                    <p class="p-3 poppins-light">
+                        El té, está elaborado a partir de la hoja de la planta conocida como camelia sineisis. Estas
+                        hojas se les
+                        pasan por diferentes procesos que se dan como resultado de tés de diferentes colores, así como
+                        distintas intensidades.
+                    </p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Categoría Tes-->
+        <main class="col-lg-10 my-2">
+            <!--Cards euroTe-->
+            <div class="row my-4" *ngIf="hidesTeEurote">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/icons/euro-te.svg" alt="Tes Euroté" title="Tes Euroté"
+                            class="img-fluid">
+                    </div>
                 </div>
 
-                <!-- euroTe -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3"> EURO TE</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Euroté</h2>
+                    <p class="px-3 poppins-light">Euro Té ha inovado en la creación de nuevas mezclas y sabores,
+                        buscando siempre ofrecer algo nuevo
+                        y diferente. Esto incluye la incorporación de sabores únicos y combinaciones que destacan por su
+                        originalidad.</p>
+                    <span class="px-3 poppins-extralight">Más de 10 sabores disponibles</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Colaboración que hicimos con la empresa mexicana especializada
-                                    en <span style="font-weight: bold;">tés,
-                                        infusiones y tisanas provenientes de China, Japón, India y Alemania. </span>Nos
-                                    encargamos de
-                                    llevar hasta
-                                    tus manos la mejor calidad de tés e infusiones con un empaque práctico.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        3 sabores</span>
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> botella de 250 ml.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 30 bebidas de 480 ml.
-                                </p>
-                            </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación de 250 g. <br> Rinde aprox. 25 bebidas
+                                    frías y calientes de 300 ml (10 g c/u)</span>
+                            </p>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-left">
+                                <span class="poppins-extralight">Presentación de 1 kg.<br>Rinde aprox. 100 bebidas frías
+                                    y calientes de 300 ml (10 g c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link btn btn-outline-warning"
+                                                (click)="paginaAnteriorEuroTe()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaTeEuroTe">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-euroTe"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link btn btn-outline-warning"
+                                                (click)="paginaSiguienteEuroTe()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--Cards Stash-->
-        <div class="container my-4" *ngIf="hidesTeStash">
-            <!-- Contenido de la primera mitad -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <div class="scroll-horizontal-container my-5" style="width: 300px !important;">
-                            <div class="row">
-                                <div *ngFor="let insumo of teStash" class="container-cards">
-                                    <div class="card">
-                                        <!-- <div class="card-header d-flex align-self-end"
-                                            style="background-color: #E91D74;">
-                                            <a *ngIf="insumo.urlECommerce" [href]="insumo.urlECommerce"
-                                                style="color: white;" target="_blank"
-                                                title="Comprar en e-commerce el producto {{insumo.name}}"><i
-                                                    class="fas fa-shopping-cart"></i></a>
-                                        </div> -->
 
-                                        <div class="card-image">
-                                            <img class="card-img-top" [src]="sanitizeUrl(insumo.urlArticleFirst)"
-                                                alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <p class="card-title" id="font-keySap"> {{ insumo.keySap }}
-                                            <p>
-                                            <p class="card-text"> {{ insumo.name }}</p>
-                                            <p class="d-none card-text">{{ insumo.description }}</p>
-                                        </div>
-
-                                        <!-- <div class="card-footer justify-content-right">
-                                            <a class="go-sucursal" routerLink="/donde-encontranos"
-                                                style="color: black;">
-                                                Encuentra
-                                                tu
-                                                sucursal
-                                                <i class="fas fa-arrow-right" style="color: black;"></i>
-                                            </a><br>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!--Cards Stash-->
+            <div class="row" *ngIf="hidesTeStash">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../assets/icons/stash.svg" alt="Tes Stash" title="Tes STASH"
+                            class="img-fluid">
                     </div>
-                    <!-- Resto del contenido -->
                 </div>
 
-                <!-- TE Stash -->
-                <div class="col-md-6">
-                    <div class="container my-2">
-                        <h3 class="p-3">Te Stash</h3>
-                        <div class="d-flex flex-column align-items-right justify-content-right">
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Stash</h2>
+                    <p class="px-3 poppins-light">
+                        Stash Té ofrece una amplia gama de tés, que incluyen tés negros, verdes, blancos, así como
+                        hierbas e infusiones.
+                    </p>
+                    <span class="px-3 poppins-extralight">Más de 10 sabores disponibles</span>
+                </div>
 
-                            <div class="container">
-                                <p class="text-right">Stash ofrece las propiedades <span
-                                        style="font-weight: bold;">naturales de las plantas</span>
-                                    y está pensada para diferentes tipos de consumidores</p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">
-                                        34 sabores</span>
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    <span style="font-weight: bold;">Presentación</span> caja con 18 y 20 bolsas.
-                                </p>
-                            </div>
-                            <div class="">
-                                <p class="p-3 text-center"
-                                    style="background-color: #FFEEEE; border-left: 4px solid #CCA7F4;">
-                                    Rinde aprox. 18 bebidas de 240 ml.
-                                </p>
-                            </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación de 18 sobres <br> Rinde aprox. 18 bebidas
+                                    frías y calientes de 250 ml (1 sobre por taza)</span>
+                            </p>
                         </div>
-                        <div class="container d-flex flex-wrap justify-content-around">
-                            <button class="my-4 mr-2">Comprar ahora</button>
-                            <button class="my-4">Conoce las sucursales</button>
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-left">
+                                <span class="poppins-extralight">Presentación de 20 sobres<br>Rinde aprox. 20 bebidas
+                                    frías y calientes de 250 ml (1 sobre por taza)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorStash()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaStash">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-tisanaStash"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-3 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link "
+                                                (click)="paginaSiguienteStash()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
 </div>
-

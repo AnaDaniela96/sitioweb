@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { DataService } from '../../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -17,13 +17,87 @@ export class TesComponent {
   insumosArray: any[] = [];
   extractedUrls: any;
 
-  //Tes 
-  teEurote: any[] = [];
-  teStash: any[] = [];
-
   //Menu
   hidesTeEurote: boolean = true;
   hidesTeStash: boolean = true;
+
+  //Tes 
+  // teEurote: any[] = [];
+  // teStash: any[] = [];
+
+  mostrarCuadricula: boolean = false;
+  elementosVisibles: number = 0;
+
+   // Datos para Eurote
+  teEurote: any[] = [];
+  paginaActualEuroTe: number = 1;
+  tamañoPaginaEuroTe: number = 5;
+
+  // Datos para STASH
+  teStash: any[] = [];
+  paginaActualStash: number = 1;
+  tamañoPaginaStash: number = 5;
+
+  @ViewChildren('tarjeta')
+  tarjetas!: QueryList<any>;
+
+  ngAfterViewInit() {
+    this.elementosVisibles = this.tarjetas.length;
+  }
+
+    // Obtener los elementos de la página actual para EuroTe
+  get elementosPaginaTeEuroTe() {
+    const inicio = (this.paginaActualEuroTe - 1) * this.tamañoPaginaEuroTe;
+    const fin = inicio + this.tamañoPaginaEuroTe;
+    return this.teEurote.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Café Etrusca
+  get paginasEuroTe() {
+    const totalPaginas = Math.ceil(this.teEurote.length / this.tamañoPaginaEuroTe);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para para EuroTe
+  paginaAnteriorEuroTe() {
+    if (this.paginaActualEuroTe > 1) {
+      this.paginaActualEuroTe--;
+    }
+  }
+
+  paginaSiguienteEuroTe() {
+    if (this.paginaActualEuroTe < this.paginasEuroTe.length) {
+      this.paginaActualEuroTe++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para STASH
+  get elementosPaginaStash() {
+    const inicio = (this.paginaActualStash - 1) * this.tamañoPaginaStash;
+    const fin = inicio + this.tamañoPaginaStash;
+    return this.teStash.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para EuroTe
+  get paginasStash() {
+    const totalPaginas = Math.ceil(this.teStash.length / this.tamañoPaginaStash);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para EuroTe
+  paginaAnteriorStash() {
+    if (this.paginaActualStash > 1) {
+      this.paginaActualStash--;
+    }
+  }
+
+  paginaSiguienteStash() {
+    if (this.paginaActualStash < this.paginasStash.length) {
+      this.paginaActualStash++;
+    }
+  }
+
+
 
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
