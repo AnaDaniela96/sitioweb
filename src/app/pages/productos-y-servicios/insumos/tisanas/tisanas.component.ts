@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { DataService } from '../../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -17,18 +17,87 @@ export class TisanasComponent {
   insumosArray: any[] = [];
   extractedUrls: any;
 
-  // //Tes y Tisanas
-  tisanasFrutalesCafeEtrusca: any[] = [];
-  tisanasFrutalesEuroTe: any[] = [];
-
   //Menu
   hidesTisanasCafeEtrusca: boolean = true;
   hidesTisanasEuroTe: boolean = true;
+
+  mostrarCuadricula: boolean = false;
+  elementosVisibles: number = 0;
+
+   // Datos para Café Etrusca
+  tisanasFrutalesCafeEtrusca: any[] = [];
+  paginaActualCafeEtrusca: number = 1;
+  tamañoPaginaCafeEtrusca: number = 5;
+
+  // Datos para EuroTe
+  tisanasFrutalesEuroTe: any[] = [];
+  paginaActualEuroTe: number = 1;
+  tamañoPaginaEuroTe: number = 5;
+
+
+  @ViewChildren('tarjeta')
+  tarjetas!: QueryList<any>;
+
+  ngAfterViewInit() {
+    this.elementosVisibles = this.tarjetas.length;
+  }
+
+  // Obtener los elementos de la página actual para Café Etrusca
+  get elementosPaginaCafeEtrusca() {
+    const inicio = (this.paginaActualCafeEtrusca - 1) * this.tamañoPaginaCafeEtrusca;
+    const fin = inicio + this.tamañoPaginaCafeEtrusca;
+    return this.tisanasFrutalesCafeEtrusca.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Café Etrusca
+  get paginasCafeEtrusca() {
+    const totalPaginas = Math.ceil(this.tisanasFrutalesCafeEtrusca.length / this.tamañoPaginaCafeEtrusca);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Café Etrusca
+  paginaAnteriorCafeEtrusca() {
+    if (this.paginaActualCafeEtrusca > 1) {
+      this.paginaActualCafeEtrusca--;
+    }
+  }
+
+  paginaSiguienteCafeEtrusca() {
+    if (this.paginaActualCafeEtrusca < this.paginasCafeEtrusca.length) {
+      this.paginaActualCafeEtrusca++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para EuroTe
+  get elementosPaginaEuroTe() {
+    const inicio = (this.paginaActualEuroTe - 1) * this.tamañoPaginaEuroTe;
+    const fin = inicio + this.tamañoPaginaEuroTe;
+    return this.tisanasFrutalesEuroTe.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para EuroTe
+  get paginasEuroTe() {
+    const totalPaginas = Math.ceil(this.tisanasFrutalesEuroTe.length / this.tamañoPaginaEuroTe);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para EuroTe
+  paginaAnteriorEuroTe() {
+    if (this.paginaActualEuroTe > 1) {
+      this.paginaActualEuroTe--;
+    }
+  }
+
+  paginaSiguienteEuroTe() {
+    if (this.paginaActualEuroTe < this.paginasEuroTe.length) {
+      this.paginaActualEuroTe++;
+    }
+  }
   
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
-      console.log('Información de insumosArray', this.insumosArray);
+      //console.log('Información de insumosArray', this.insumosArray);
 
       // Filtra las Tisanas Café Etrusca y crea un nuevo array
       this.tisanasFrutalesCafeEtrusca = this.insumosArray.filter(insumo =>
