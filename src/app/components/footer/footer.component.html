@@ -1,81 +1,61 @@
-<div class="container">
+<footer class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 col-md-12">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 mb-3">
-                    <h4>Nosotros</h4>
-                    <a routerLink="/quienes-somos">¿Quiénes somos?</a><br>
-                    <a routerLink="/donde-encontranos">¿Dónde encontrarnos?</a><br>
-                    <a routerLink="/sostenibilidad">Sostenibilidad</a><br>
-                    <br>
-                    <a routerLink="/blog">Blog</a><br>
-                    <a routerLink="/preguntas-frecuentes">Preguntas frecuentes</a><br>
-                </div>
-                <div class="col-md-6 col-sm-6 mb-3">
-                    <h4>Para tu negocio</h4>
-                    <a routerLink="/productos-y-servicios/maquinaria-y-equipo-para-cafeterias">Maquinaria</a><br>
-                    <a routerLink="/productos-y-servicios/insumos-para-cafeterias">Insumos</a><br>
-                    <a routerLink="/productos-y-servicios/accesorios-para-poner-una-cafeteria">Accesorios</a><br>
-                    <br>
-                    <a routerLink="#">Nuestras marcas</a><br>
-                    <a routerLink="#">Recetas</a><br>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <h4>Nuestros cursos</h4>
-                    <a routerLink="#">¿Qué puedes aprender?</a><br>
-                    <a routerLink="#">Calendarios</a><br>
-                    <!-- <button type="button" class="btn btn-warning">Auto facturación</button> -->
+        <div class="col-md-4 my-4">
+            <img src="https://cafeetrusca.com/img/MEM.svg" class="img-fluid my-4">
+            <div class="col-md-12">
+                <h2 class="text-center">¡Síguenos en redes sociales!</h2>
+                <div class="my-3 d-flex flex-wrap justify-content-around">
+                    <a href="#" class="mb-3"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#" class="mb-3"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="#" class="mb-3"><i class='bx bxl-youtube'></i></a>
+                    <a href="#" class="mb-3"><i class='bx bxl-instagram'></i></a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-12 mt-lg-0 mt-3">
-            <h4>Notas y actualizaciones</h4>
-            <p>Regístrate para recibir información de promociones, nuevos productos y otras noticias.</p>
+        <div class="col-md-4 my-4">
             <div class="row">
-                <div class="col-md-8 col-sm-12 mb-2">
-                    <input class="form-control" type="text" placeholder="Introduce tu dirección de correo">
+                <div class="col-md-6 text-start">
+                    <h2 class="p-4">Mapa de sitio</h2>
+                    <ul class="list-unstyled p-4">
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Bebidas frías</a></li>
+                        <li><a href="#">Bebidas calientes</a></li>
+                        <li><a href="#">Bebidas frappés</a></li>
+                        <li><a href="#">Bebidas Bobbá</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-4 col-sm-12 mb-2">
-                    <button class="btn btn-warning btn-block" type="button">Registrarse</button>
+                <div class="col-md-6 text-start">
+                    <h2 class="p-4">Cónocenos</h2>
+                    <ul class="list-unstyled p-4">
+                        <li><a href="#">Etrusca Comercial</a></li>
+                        <li><a href="#">¿Dónde nos encontramos?</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Servicio y refacción de máquinas</a></li>
+                        <li><a href="#">Tienda</a></li>
+                    </ul>
                 </div>
+                <div class="col-md-12 text-center pt-4">Todos los derechos reservados © 2024 Copyright Café Etrusca</div>
+                <div class="col-md-12 text-center"><a href="">Aviso de privacidad y términos y condiciones</a></div>
             </div>
+        </div>
+        <div class="col-md-4 my-4">
+            <h2 class="p-4">Suscríbete a nuestro newsletter</h2>
+            <form class="py-4">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre de contacto</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">No compartiremos tu correo con nadie más</div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto el aviso de privacidad</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
         </div>
     </div>
-    <div class="row mt-3">
-        <div class="col-md-12 text-center">
-            <ul class="wrapper">
-                <li class="icon facebook">
-                    <span class="tooltip">Facebook</span>
-                    <a href="https://www.facebook.com/cafeetrusca/?locale=es_LA" target="_blank">
-                        <span><i class="fab fa-facebook-f"></i></span>
-                    </a>
-                </li>
-                <li class="icon instagram">
-                    <span class="tooltip">Instagram</span>
-                    <a href="https://www.instagram.com/cafe.etrusca/" target="_blank">
-                        <span><i class="fab fa-instagram"></i></span>
-                    </a>
-                </li>
-                <li class="icon youtube">
-                    <span class="tooltip">Youtube</span>
-                    <a href="https://youtube.com/@CafeEtruscaOficial?si=MfvmVFXsJEjS0rmn" target="_blank">
-                        <span><i class="fab fa-youtube"></i></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-12 text-center">
-            <h5><a style="text-decoration: none;" routerLink="/politicas-de-navegacion/aviso-de-privacidad">Aviso de
-                    privacidad</a></h5>
-        </div>
-        <div class="col-md-12 text-center">
-            <h5><a style="text-decoration: none;" routerLink="/politicas-de-navegacion/terminos-y-condiciones">Términos
-                    y condiciones</a></h5>
-        </div>
-        <div class="col-md-12 text-center">
-            <h6><strong>Todos los derechos reservados 2023 Copyright Café Etrusca</strong></h6>
-        </div>
-    </div>
-</div>
+</footer>
