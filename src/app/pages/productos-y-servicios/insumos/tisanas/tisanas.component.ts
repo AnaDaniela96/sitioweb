@@ -17,7 +17,7 @@ export class TisanasComponent {
   insumosArray: any[] = [];
   extractedUrls: any;
 
-  //Menu
+  // Menu
   hidesTisanasCafeEtrusca: boolean = true;
   hidesTisanasEuroTe: boolean = true;
 
