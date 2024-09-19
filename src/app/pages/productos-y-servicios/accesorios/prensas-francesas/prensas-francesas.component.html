@@ -1,0 +1,195 @@
+<div class="container">
+    <div class="row">
+        <aside class="col-lg-2 col-md-2" id="drippers-presentation">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 father-logo">
+                            <div class="icon-section">
+                                <img src="../../../../assets/icons/Accesorios.webp" alt="Icono de Accesorios"
+                                    class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h1 class="text-center p-3 poppins-bold">Prensas Francesas</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <h3 class="text-center p-3 poppins-light">Filtrar por Línea</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="LaFeniceCheckbox"
+                                [(ngModel)]="hidesLaFenice">
+                                <label class="form-check-label poppins-extralight" for="LaFeniceCheckbox"> La Fenice
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="HarioCheckbox"
+                                [(ngModel)]="hidesHario">
+                                <label class="form-check-label poppins-extralight" for="HarioCheckbox"> Hario </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12">
+                    <hr>
+                    <p class="p-3 poppins-light">
+                        Contamos con una solución para tu barra de especialidad, desde equipamiento de alta gama para
+                        barras de especialidad hasta herramientas
+                        esenciales para la preparación de cafés filtrados y tés. Explora nuestra gama completay descubre
+                        cómo podemos ayudarte a elevar tu negocio.
+                    </p>
+                </div>
+            </div>
+        </aside>
+
+        <!--Categoría Drippers -->
+        <main class="col-lg-10 my-2" id="todas-las-prensas-francesas">
+            <!-- Cards para prensas francesas -->
+            <div class="row my-4" id="prensas-francesas-la-fenice" *ngIf="hidesLaFenice">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Accesorios/fenice.webp" alt="Logo La Fenice"
+                            title="Logo La Fenice" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">La Fenice</h2>
+                    <p class="px-3 poppins-light">Es una marca que se ha destacado en la fabricación de productos
+                        relacionados con el café, especialmente en el ámbito de molinos y accesorios</p>
+                    <!-- <span class="px-3 poppins-extralight">Método de goteo</span> -->
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorLaFenice()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaLaFenice">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-la-fenice"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteLaFenice()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cards para Drippers Hario -->
+            <div class="row my-4" id="prensas-francesas-Hario" *ngIf="hidesHario">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Accesorios/hario.png" alt="Logo Hario"
+                            title="Logo Hario" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Hario</h2>
+                    <p class="px-3 poppins-light">Es una marca japonesa reconocida por su amplia gama de productos de alta calidad
+                        para la preparación de café y té. Fundada en 1921, y es conocida por su innovación en el diseño y la funcionalida
+                        de sus utensilios.
+                    </p>
+                    <!-- <span class="px-3 poppins-extralight">Método de goteo: plástico, cerámica y porcelana.</span> -->
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaAnteriorHario()"><i class="fa fa-chevron-left"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaHario">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-hario"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link"
+                                                (click)="paginaSiguienteHario()"><i class="fa fa-chevron-right"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
