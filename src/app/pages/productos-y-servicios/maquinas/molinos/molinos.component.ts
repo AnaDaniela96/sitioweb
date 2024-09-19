@@ -1,5 +1,5 @@
-import { Component, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
-import { DataService } from 'src/app/utils/data.service';
+import { Component, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
+import { DataService } from '../../../../utils/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -18,65 +18,143 @@ export class MolinosComponent {
   maquinasArray: any[] = [];
   extractedUrls: any;
 
-  molinos: any [] = [];
+  // Menu
+  hidesFiorenzato: boolean = true;
+  hidesCeado: boolean = true;
+  hidesEureka: boolean = true;
+  hidesAnfim: boolean = true;
+  hidesBaratza: boolean = true;
 
   mostrarCuadricula: boolean = false;
   elementosVisibles: number = 0;
-  paginaActual: number = 1; // Página actual
-  tamañoPagina: number = 5; // Tamaño de página
 
-   // Obtener las tarjetas (cards) de la vista
-   @ViewChildren('tarjeta')
-   tarjetas!: QueryList<any>;
- 
-   ngAfterViewInit() {
-     // Contar elementos visibles
-     this.elementosVisibles = this.tarjetas.length;
-   }
- 
-   // Obtener los elementos a mostrar en la página actual
-   get elementosPagina() {
-     const inicio = (this.paginaActual - 1) * this.tamañoPagina;
-     const fin = inicio + this.tamañoPagina;
-     return this.molinos.slice(inicio, fin);
-   }
- 
-   // Obtener un arreglo de números que representan las páginas disponibles
-   get paginas() {
-     const totalPaginas = Math.ceil(this.molinos.length / this.tamañoPagina);
-     return Array(totalPaginas).fill(0).map((_, index) => index + 1);
-   }
-   // Cambia a la página anterior
-   paginaAnterior() {
-     if (this.paginaActual > 1) {
-       this.paginaActual--;
-     }
-   }
- 
-   // Cambia a la página siguiente
-   paginaSiguiente() {
-     if (this.paginaActual < this.paginas.length) {
-       this.paginaActual++;
-     }
-   }
- 
-   // Cambia a una página específica
-   cambiarPagina(pagina: number) {
-     this.paginaActual = pagina;
-   }
- 
+  // Datos para molinos Fiorenzato
+  molinosFiorenzato: any[] = [];
+  paginaActualFiorenzato: number = 1;
+  tamañoPaginaFiorenzato: number = 5;
+
+  // Datos para molinos Ceado
+  molinosCeado: any[] = [];
+  paginaActualCeado: number = 1;
+  tamañoPaginaCeado: number = 5;
+
+  // Datos para molinos Eureka
+  molinosEureka: any[] = [];
+  paginaActualEureka: number = 1;
+  tamañoPaginaEureka: number = 5;
+
+  @ViewChildren('tarjeta')
+  tarjetas!: QueryList<any>;
+
+  ngAfterViewInit() {
+    // Contar elementos visibles
+    this.elementosVisibles = this.tarjetas.length;
+  }
+
+  // Obtener los elementos de la página actual para Fiorenzato
+  get elementosPaginaFiorenzato() {
+    const inicio = (this.paginaActualFiorenzato - 1) * this.tamañoPaginaFiorenzato;
+    const fin = inicio + this.tamañoPaginaFiorenzato;
+    return this.molinosFiorenzato.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Fiorenzato
+  get paginasFiorenzato() {
+    const totalPaginas = Math.ceil(this.molinosFiorenzato.length / this.tamañoPaginaFiorenzato);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Fiorenzato
+  paginaAnteriorFiorenzato() {
+    if (this.paginaActualFiorenzato > 1) {
+      this.paginaActualFiorenzato--;
+    }
+  }
+
+  paginaSiguienteFiorenzato() {
+    if (this.paginaActualFiorenzato < this.paginasFiorenzato.length) {
+      this.paginaActualFiorenzato++;
+    }
+  }
+
+   // Obtener los elementos de la página actual para Ceado
+   get elementosPaginaCeado() {
+    const inicio = (this.paginaActualCeado - 1) * this.tamañoPaginaCeado;
+    const fin = inicio + this.tamañoPaginaCeado;
+    return this.molinosCeado.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Ceado
+  get paginasCeado() {
+    const totalPaginas = Math.ceil(this.molinosCeado.length / this.tamañoPaginaCeado);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Ceado
+  paginaAnteriorCeado() {
+    if (this.paginaActualCeado > 1) {
+      this.paginaActualCeado--;
+    }
+  }
+
+  paginaSiguienteCeado() {
+    if (this.paginaActualCeado < this.paginasCeado.length) {
+      this.paginaActualCeado++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para Eureka
+  get elementosPaginaEureka() {
+    const inicio = (this.paginaActualEureka - 1) * this.tamañoPaginaEureka;
+    const fin = inicio + this.tamañoPaginaEureka;
+    return this.molinosEureka.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para Eureka
+  get paginasEureka() {
+    const totalPaginas = Math.ceil(this.molinosEureka.length / this.tamañoPaginaEureka);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para Eureka
+  paginaAnteriorEureka() {
+    if (this.paginaActualEureka > 1) {
+      this.paginaActualEureka--;
+    }
+  }
+
+  paginaSiguienteEureka() {
+    if (this.paginaActualEureka < this.paginasEureka.length) {
+      this.paginaActualEureka++;
+    }
+  }
+
 
   ngOnInit(): void {
     this.dataService.getMaquinaria().then((maquinasArray: any[]) => {
       this.maquinasArray = maquinasArray;
       //console.log(this.maquinasArray);
 
-      //Filtrar los molinos
-      this.molinos = this.maquinasArray.filter(maquina =>
-        this.contienePalabraMolino(maquina.name) &&
+      //Filtrar los molinos Fiorenzato
+      this.molinosFiorenzato = this.maquinasArray.filter(maquina =>
+        this.contienePalabraMolinoFiorenzato(maquina.name) &&
         maquina.urlArticleFirst && maquina.urlArticleFirst.trim() !== ''
       );
 
+      //Filtrar los molinos Ceado
+      this.molinosCeado = this.maquinasArray.filter(maquina =>
+        this.contienePalabraMolinoCeado(maquina.name) 
+        //&&
+        // maquina.urlArticleFirst && maquina.urlArticleFirst.trim() !== ''
+      );
+
+      //Filtrar los molinos EUREKA
+      this.molinosEureka = this.maquinasArray.filter(maquina =>
+        this.contienePalabraMolinoEUREKA(maquina.name) &&
+        maquina.urlArticleFirst && maquina.urlArticleFirst.trim() !== ''
+      );
+      
+      //console.log(this.molinosCeado);
     }).catch((error: any) => {
       console.error('Error al obtener datos de insumo', error);
     })
@@ -105,8 +183,22 @@ export class MolinosComponent {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
-  contienePalabraMolino(nombre: string): boolean {
-    const palabrasClave = ['MOLINO'];
+  contienePalabraMolinoFiorenzato(nombre: string): boolean {
+    const palabrasClave = ['MOLINO', 'FIORENZATO'];
+    const cumpleCondicion = palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
+    console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabraMolinoCeado(nombre: string): boolean {
+    const palabrasClave = ['MOLINO', 'CEADO'];
+    const cumpleCondicion = palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
+    console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabraMolinoEUREKA(nombre: string): boolean {
+    const palabrasClave = ['MOLINO', 'EUREKA'];
     const cumpleCondicion = palabrasClave.every(palabra => nombre.toUpperCase().includes(palabra));
     console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
