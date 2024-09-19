@@ -40,7 +40,13 @@ import { ProductosPedecederosComponent } from './pages/politicas-de-navegacion/p
 import { PedidosForaneosExpoCafeComponent } from './pages/politicas-de-navegacion/pedidos-foraneos-expo-cafe/pedidos-foraneos-expo-cafe.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { RecetarioComponent } from './pages/recetario/recetario.component';
-
+import { DrippersComponent } from './pages/productos-y-servicios/accesorios/drippers/drippers.component';
+import { PrensasFrancesasComponent } from './pages/productos-y-servicios/accesorios/prensas-francesas/prensas-francesas.component';
+import { JarrasEspumadorasComponent } from './pages/productos-y-servicios/accesorios/jarras-espumadoras/jarras-espumadoras.component';
+import { TampersComponent } from './pages/productos-y-servicios/accesorios/tampers/tampers.component';
+import { AccesorioMolinosComponent } from './pages/productos-y-servicios/accesorios/accesorio-molinos/accesorio-molinos.component';
+import { CatacionComponent } from './pages/productos-y-servicios/accesorios/catacion/catacion.component';
+import { VasosComponent } from './pages/productos-y-servicios/accesorios/vasos/vasos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -81,6 +87,13 @@ const routes: Routes = [
   { path: 'barista-champ', component: BaristaChampComponent },
     
   { path: 'accesorios-para-poner-una-cafeteria', component: AccesoriosComponent },
+  { path: 'accesorios-para-poner-una-cafeteria/drippers', component: DrippersComponent},
+  { path: 'accesorios-para-poner-una-cafeteria/prensas-francesas', component: PrensasFrancesasComponent},
+  { path: 'accesorios-para-poner-una-cafeteria/jarras-espumadoras', component: JarrasEspumadorasComponent},
+  { path: 'accesorios-para-poner-una-cafeteria/tampers', component: TampersComponent},
+  { path: 'accesorios-para-poner-una-cafeteria/molinos', component: AccesorioMolinosComponent},
+  { path: 'accesorios-para-poner-una-cafeteria/catacion', component: CatacionComponent},
+  { path: 'accesorios-para-poner-una-cafeteria/vasos', component: VasosComponent},
 
   
   { path: 'maquinaria-y-equipo-para-cafeterias', component: MaquinasComponent },
