@@ -1,5 +1,4 @@
-<nav class="navbar navbar-expand-lg"
-    [ngClass]="{'fixed-menu': isMenuFixed, 'hide-menu': !isMenuFixed, 'temporada': isHome}">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <img id="logo" src="../../../assets/logo_etrusca.webp" alt="Café Etrusca" title="Café Etrusca"
             href="https://cafeetrusca.com/" target="_blank" >
@@ -36,10 +35,10 @@
                         <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias-molinos">Mólinos</a></ul>
                         <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias-licuadoras">Licuadoras</a></ul>
                         <!-- <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria">Tostadores</a></ul>  -->
-                        
+
                     </ul>
                 </li>
-                <!-- <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" routerLink="/cafe-de-especialidad" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Café
@@ -49,7 +48,7 @@
                         <ul><a class="dropdown-item" routerLink="cafe-verde">Café verde</a></ul>
                         <ul><a class="dropdown-item" routerLink="cafe-premium">Café Etrusca</a></ul>
                     </ul>
-                </li> -->
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" routerLink="accesorios-para-poner-una-cafeteria" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -59,74 +58,20 @@
                         <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/drippers">Drippers</a></ul>
                         <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/prensas-francesas">Prensas francesas</a></ul>
                         <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/jarras-espumadoras">Jarras espumadoras</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/jarras-servidoras">Jarras de servicio</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/sifon">Sifones</a></ul>
                         <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/tampers">Tampers</a></ul>
                         <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/molinos">Mólinos</a></ul>
                         <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/catacion">Catación</a></ul>
                         <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/vasos">Vasos</a></ul>
                         <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Cafetería</a></ul>
-                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Métodos de extracción</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/metodos-extraccion">Métodos de extracción</a></ul>
                         <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Complementos de métodos</a></ul>
-                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Limpieza</a></ul>
-                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">Sifones</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/limpieza">Limpieza</a></ul>
+                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria/filtros-cafe">Filtros</a></ul>
                     </ul>
                 </li>
             </ul>
-            <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="quienes-somos">¿QUIÉNES SOMOS?
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        PRODUCTOS Y SERVICIOS
-                    </a>
-                    <ul class="dropdown-menu">
-                        <ul><a class="dropdown-item" routerLink="/insumos-para-cafeterias/jarabes">INSUMOS</a></ul>
-                        <ul><a class="dropdown-item" routerLink="/maquinaria-y-equipo-para-cafeterias">MÁQUINAS</a></ul>
-                        <ul><a class="dropdown-item" routerLink="/cafe-de-especialidad">CAFÉ</a></ul>
-                        <ul><a class="dropdown-item" routerLink="/accesorios-para-poner-una-cafeteria">ACCESORIOS</a>
-                        </ul>
-                    </ul>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/recetario">RECETARIO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/blog">BLOG</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" routerLink="cursos-para-baristas-y-talleres-para-cafeterias"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        CURSOS Y TALLERES
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item"
-                                routerLink="/emprendiendo-mi-negocio-de-barra-de-cafe-y-cafeteria">FORMACIÓN DE
-                                EMPRENDEDORES</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-de-arte-latte-nivel-basico">ARTE LATTE</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-experiencia-sensorial">CATACIÓN DE LA SEMILLA A
-                                LO SENSORIAL</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-de-mixologia-con-cafe-sin-alcohol">MIXOLOGÍA Y
-                                MOCTELERÍA</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-basico-de-tostado-de-cafe">TOSTADO</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-basico-para-baristas">FORMACIÓN PARA UN
-                                BARISTA</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-de-bubble-tea-&-iced-coffee">BUBLE TEA & ICED
-                                COFFE</a></li>
-                        <li><a class="dropdown-item" routerLink="/taller-de-brew-bar">BREW BAR & COLD BREW</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/donde-encontrarnos">¿DÓNDE ENCONTRARNOS?
-                    </a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="¿Qué estás buscando?" aria-label="Search">
-                <button class="btn btn-outline-warning" type="submit">BUSCAR</button>
-            </form> -->
         </div>
     </div>
 </nav>
