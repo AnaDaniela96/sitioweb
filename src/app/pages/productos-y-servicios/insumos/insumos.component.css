@@ -1,84 +1,166 @@
-/* Menú */
-nav, .offcanvas {
-    color: black;
-}
-.navbar-toggler {
-    border: none;
+h1 {
+    font-size: 2rem;
 }
 
-.navbar-toggler:focus {
-    outline: none;
-    box-shadow: none;
+a {
+    text-decoration: none;
 }
 
-.bd-navbar {
-    max-width: 100%; /* Ajusta el ancho máximo al 100% del contenedor padre (el aside) */
-    height: auto; /* Ajusta la altura automáticamente según el contenido */
-    padding: 10px; /* Agrega un espacio de relleno al navbar si es necesario */
-    overflow-x: hidden; /* Oculta el desbordamiento horizontal si el contenido es demasiado ancho */
+#container-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-check-input:checked {
-    background-color: #E91D74;
-    border-color: #e13f84;
-}
-
-@media(max-width: 768px) {
-    .navbar-nav > li:hover {
-        background-color: #e13f84; 
-    }
-}
-
-/* Cards donde se muestran los productos */
 .card {
-    width: 400px !important;
-    height: 400px; /* Deja que la altura se ajuste al contenido */
-    display: flex; /* Establece la tarjeta como un contenedor flexible */
-    flex-direction: column; /* Establece la dirección de flexión como columna */
-    align-items: center; /* Centra verticalmente el contenido en la tarjeta */
-    transition: transform 0.2s ease-in-out;
+    border-radius: 16px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 48vh;
 }
 
-.card img{
-    transform-origin: bottom;
-    transform: translateY(7.5%);
-    transition: transform 0.3s ease-in-out
+#card-image-jarabes {
+    border-radius: 50%;
+    max-height: 200px;
+    max-width: 200px;
+    border: 5px solid var(--primary-200);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
 }
 
-.card img:hover{
-    transform: translate(0, -10px);
+#card-image-jarabes:hover {
+    background-color: var(--primary-200);
 }
 
-.card-body {
-    max-height: 150px; /* Establece una altura máxima para el cuerpo de la tarjeta */
-    overflow: hidden; /* Oculta el contenido que se desborda */
-    white-space: normal; /* Permite el salto de línea del texto */
+#card-image-polvos {
+    border-radius: 50%;
+    max-height: 200px;
+    max-width: 200px;
+    border: 5px solid var(--primary-300);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
 }
 
- #font-keySap{
-        font-size: 0.8rem;
-        font-weight: var(--card-4-secondary-color);
-        color: var(--card-4-secondary-color);
-        text-align: left;
+#card-image-polvos:hover {
+    background-color: var(--primary-300);
+}
+
+#card-image-salsas {
+    border-radius: 50%;
+    max-height: 200px;
+    max-width: 200px;
+    border: 5px solid var(--accent-200);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
+}
+
+#card-image-salsas:hover {
+    background-color: var(--accent-200);
+}
+
+#card-image-pures-concentrados {
+    border-radius: 50%;
+    max-height: 200px;
+    max-width: 200px;
+    border: 5px solid var(--accent-300);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
+}
+
+#card-image-pures-concentrados:hover {
+    background-color: var(--accent-300);
+}
+
+#card-image-bubble-tea {
+    border-radius: 50%;
+    max-height: 200px;
+    max-width: 200px;
+    border: 5px solid var(--accent-400);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
+}
+
+#card-image-bubble-tea:hover {
+    background-color: var(--accent-400);
+}
+
+#card-image-te {
+    border-radius: 50%;
+    max-height: 200px;
+    max-width: 200px;
+    border: 5px solid var(--primary-200);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
+}
+
+#card-image-te:hover {
+    background-color: var(--primary-200);
+}
+
+#card-image-tisanas {
+    border-radius: 50%;
+    max-height: 200px;
+    max-width: 200px;
+    border: 5px solid var(--primary-300);
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
+}
+
+#card-image-tisanas:hover {
+    background-color: var(--primary-300);
+}
+
+/********** Large devices only **********/
+@media (min-width: 1600px) {
+    .card {
+        height: 40vh;
+    }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .card {
+        height: 40vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    h1 {
+        font-size: 1.5rem;
     }
 
-.card-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limita el texto a dos líneas */
-    -webkit-box-orient: vertical;
-    overflow: hidden; /* Oculta el contenido que se desborda */
-    text-align: left;
-    font-weight: var(--title-font-weight);
-    color: var(--heading-color);
+    .card {
+        height: 20vh;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
 }
 
-.card-footer{
-    background-color: white;
-    border: none;
-}
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
 
-/* Características de imagen en producto */
-.botellas-torani, .botella-salsa{
-    max-height: 250px !important;
-    max-width: 70px !important;
+    .col-xs-6 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        float: left;
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .card {
+        height: 27vh;
+    }
+
+    .image-container {
+        height: 150px;
+        width: 150px;
+    }
 }

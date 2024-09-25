@@ -1,50 +1,105 @@
-<div class="row">
-    <aside class="bd-sidebar"> <!--menu Insumos-->
-        <nav class="navbar navbar-expand-lg ">
-            <div class="container-fluid">
-                <a routerLink="" class="d-none navbar-brand fw-bold"><strong>Filtros</strong></a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center poppins-extralight my-4">Cónoce el amplio catálogo de insumos que tenemos en Etrusca
+                para ti.</h1>
+            <hr>
+        </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
-                    <span style="font-weight: bold;">Filtros</span>
-                </button>
-                <!-- OffCanvas main container start -->
-                <section class="offcanvas offcanvas-start" id="menuLateral" tabindex="-1">
-                    <div class="offcanvas-header" data-bs-theme="">
-                        <h5 class="offcanvas-title" style="font-weight: bold;">Insumos</h5>
-                        <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
-                    </div>
-                    <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
-                        <ul class="navbar-nav fs-5 justify-content-evenly">
-                            <li class="nav-item p-3 py-md-1"><a
-                                    routerLink="/insumos-para-cafeterias/jarabes"
-                                    class="nav-link">Jarabes</a></li>
-                            <li class="nav-item p-3 py-md-1"><a
-                                    routerLink="/insumos-para-cafeterias/salsas"
-                                    class="nav-link">Salsas</a></li>
-                            <li class="nav-item p-3 py-md-1"><a
-                                    routerLink="/insumos-para-cafeterias/pures-y-concentrados"
-                                    class="nav-link">Purés y Concentrados</a></li>
-                            <li class="nav-item p-3 py-md-1"><a
-                                    routerLink="/insumos-para-cafeterias/moleculares"
-                                    class="nav-link">Moleculares</a></li>
-                            <li class="nav-item p-3 py-md-1"><a
-                                    routerLink="/insumos-para-cafeterias/tes"
-                                    class="nav-link">Tes</a></li>
-                            <li class="nav-item p-3 py-md-1"><a
-                                    routerLink="/insumos-para-cafeterias/tisanas"
-                                    class="nav-link">Tisanas</a></li>
-                            <li class="nav-item p-3 py-md-1"><a
-                                    routerLink="/insumos-para-cafeterias/polvos"
-                                    class="nav-link">Polvos</a></li>
-                        </ul>
-                    </div>
-                </section>
-                <!-- OffCanvas main container end -->
+        <div class="col-md-12">
+            <div class="row" id="container-cards">
+                <div class="col-md-2 col-sm-6 col-xs-6 my-2">
+                    <a routerLink="/insumos-para-cafeterias-jarabes">
+                        <div class="card" id="card-jarabes">
+                            <div class="my-2 image-container" id="card-image-jarabes">
+                                <img src="../../../../assets/icons/Jarabes.webp" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="p-2 text-center poppins-extralight">Jarabes</h2>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-6 my-2">
+                    <a routerLink="/insumos-para-cafeterias-polvos">
+                        <div class="card" id="card-polvos">
+                            <div class="my-2 image-container" id="card-image-polvos">
+                                <img src="../../../../assets/icons/polvos.webp" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="p-2 text-center poppins-extralight">Polvos</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-6 my-2 col-xs-6">
+                    <a routerLink="/insumos-para-cafeterias-salsas">
+                        <div class="card" id="card-salsas">
+                            <div class="my-2 image-container" id="card-image-salsas">
+                                <img src="../../../../assets/icons/salsas.webp" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="p-2 text-center poppins-extralight">Salsas</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-6 my-2 col-xs-6">
+                    <a routerLink="/insumos-para-cafeterias-pures-y-concentrados">
+                        <div class="card" id="card-pures-concentrados">
+                            <div class="my-2 image-container" id="card-image-pures-concentrados">
+                                <img src="../../../../assets/icons/puresyConcentrados.webp" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="p-2 text-center poppins-extralight">Púres y concentrados</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </nav>
-    </aside>
+        </div>
 
-    <router-outlet></router-outlet>
 
-    <div class="row" style="height: 1cm;"></div>
+        <div class="col-md-12">
+            <div class="row"  id="container-cards">
+                <div class="col-md-2 col-sm-6 my-2 col-xs-6">
+                    <a routerLink="/insumos-para-cafeterias-bubble-tea">
+                        <div class="card" id="card-bubble-tea">
+                            <div class="my-2 image-container" id="card-image-bubble-tea">
+                                <img src="../../../../assets/icons/moleculares.webp" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="p-2 text-center poppins-extralight">Bubble Tea</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-6 my-2 col-xs-6">
+                    <a routerLink="/insumos-para-cafeterias-tes">
+                        <div class="card" id="card-tes">
+                            <div class="my-2 image-container" id="card-image-te">
+                                <img src="../../../../assets/icons/te.webp" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="p-2 text-center poppins-extralight">Tés</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-6 my-2 col-xs-6">
+                    <a routerLink="/insumos-para-cafeterias-tisanas">
+                        <div class="card" id="card-tisanas">
+                            <div class="my-2 image-container" id="card-image-tisanas">
+                                <img src="../../../../assets/icons/Tisanas.webp" class="img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="p-2 text-center poppins-extralight">Tisanas</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
