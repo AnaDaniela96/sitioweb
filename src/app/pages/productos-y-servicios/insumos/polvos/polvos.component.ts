@@ -381,11 +381,8 @@ export class PolvosComponent {
       this.polvosDavidRio = this.insumosArray.filter(insumo =>
         this.contienePalabrasDavidRio(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
-      );
-
-      // Filtra los Super Blends crea un nuevo array
-      this.polvosSuperBlends = this.insumosArray.filter(insumo =>
-        this.contienePalabrasSuperBlends(insumo.name) &&
+        ||
+         this.contienePalabrasSuperBlends(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
