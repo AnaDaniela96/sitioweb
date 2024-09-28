@@ -1,5 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Aside */
+.icon-section {
+    border: 5px solid var(--primary-300);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.space {
+    height: 1cm;
+}
+
+/*main */
+.brand-chillout {
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
+    background-color: var(--primary-300);
+}
+
 .circle-euroTe {
-    background-color: var(--accent-200);
+    background-color: var(--primary-300);
     height: 150px; /* Ajuste para que no sea tan alto */
     width: 150px;
     position: absolute; /* Cambiado a absolute */
