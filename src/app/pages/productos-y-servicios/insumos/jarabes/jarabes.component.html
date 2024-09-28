@@ -1,17 +1,17 @@
 <div class="container">
     <div class="row">
-        <aside class="col-lg-2 col-md-2" id="tisanas-presentation">
+        <aside class="col-md-2 m-2" id="jarabes-menu">
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-12 father-logo">
+                        <div class="col-md-12 father-logo p-3">
                             <div class="icon-section">
                                 <img src="../../../../assets/icons/Jarabes.webp" alt="Icono de Jarabes"
-                                    class="img-fluid">
+                                    title="Icono de Jarabes" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <h1 class="text-center p-3 poppins-bold">Jarabes</h1>
+                            <h1 class="text-center p-2 poppins-bold">Jarabes</h1>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <li class="list-group-item">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="chillOutJarabesCheckbox"
-                                [(ngModel)]="hidesJarabesChillOut">
+                                    [(ngModel)]="hidesJarabesChillOut">
                                 <label class="form-check-label poppins-extralight" for="chillOutJarabesCheckbox">
                                     ChillOut Jarabes
                                 </label>
@@ -31,7 +31,7 @@
                         <li class="list-group-item">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="toraniClasicoCheckbox"
-                                [(ngModel)]="hidesJarabesClasicoTorani">
+                                    [(ngModel)]="hidesJarabesClasicoTorani">
                                 <label class="form-check-label poppins-extralight" for="toraniClasicoCheckbox"> Torani
                                     Clásico </label>
                             </div>
@@ -39,7 +39,7 @@
                         <li class="list-group-item">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="toraniPuremaCheckbox"
-                                [(ngModel)]="hidesJarabePuremade">
+                                    [(ngModel)]="hidesJarabePuremade">
                                 <label class="form-check-label poppins-extralight" for="toraniPuremaCheckbox"> Torani
                                     Puremade </label>
                             </div>
@@ -47,15 +47,23 @@
                         <li class="list-group-item">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="toraniSugarfreeCheckbox"
-                                [(ngModel)]="hidesJarabeSugarFree">
+                                    [(ngModel)]="hidesJarabeSugarFree">
                                 <label class="form-check-label poppins-extralight" for="toraniSugarfreeCheckbox"> Torani
                                     Sugar Free </label>
                             </div>
                         </li>
                         <li class="list-group-item">
                             <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="ZeroSugarToraniCheckbox"
+                                    [(ngModel)]="hidesZeroSugarTorani">
+                                <label class="form-check-label poppins-extralight" for="ZeroSugarToraniCheckbox"> Torani
+                                    Zero Sugar</label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="nDulceCheckbox"
-                                [(ngModel)]="hidesNdulce">
+                                    [(ngModel)]="hidesNdulce">
                                 <label class="form-check-label poppins-extralight" for="nDulceCheckbox"> n'dulce
                                 </label>
                             </div>
@@ -65,22 +73,24 @@
 
                 <div class="col-md-12">
                     <hr>
-                    <p class="p-3 poppins-light">
-                        Son líquidos con mezclas concentradas de azúcar y otros elementos, algunos de ellos son con
+                    <p class="p-2 poppins-light text-start">
+                        Son <span class="poppins-bold">líquidos con mezclas</span> concentradas de azúcar y otros
+                        elementos, algunos de ellos son con
                         extractos
-                        de agave azul los cuales cambian la consistencia, sabor y aroma de la bebida a la que se le
+                        de agave azul los cuales <span class="poppins-bold">cambian la consistencia, sabor y aroma
+                        </span>de la bebida a la que se le
                         agregan.
                     </p>
                 </div>
             </div>
         </aside>
 
-        <!-- Categoría Jarabes-->
-        <main class="col-lg-10 my-2" id="todas-los-jarabes">
-            <!--Cards para jarbes chillout -->
-            <div class="row my-4" id="jarabes-chillout" *ngIf="hidesJarabesChillOut">
+        <!-- Category Jarabes-->
+        <main class="col-md-9 m-4" id="all-jarabes">
+            <!--Cards of Jarabes ChillOut -->
+            <div class="row m-2" id="jarabes-chillout" *ngIf="hidesJarabesChillOut">
                 <div class="col-md-4 father-logo">
-                    <div class="brand-container">
+                    <div class="brand-container brand-chillout">
                         <img src="../../../../../assets/LogosMarcas/Insumos/Chillout_jarabes.svg" alt="Jarabes ChillOut"
                             title="Jarabes ChillOut" class="img-fluid">
                     </div>
@@ -88,10 +98,14 @@
 
                 <div class="col-md-8">
                     <h2 class="px-3 poppins-bold">Jarabes ChillOut</h2>
-                    <p class="px-3 poppins-light">Debido a la naturalidad del agave, este tiene un índice glucémico menor
-                        en comparación con el azúcar, lo que significa que no causa picos tan drásticos en los niveles de azúcar en la sangre.
-                    </p>
                     <span class="px-3 poppins-extralight">14 sabores disponibles.</span>
+
+                    <p class="p-3 poppins-light text-justify">Debido a la naturalidad del agave, este tiene un índice
+                        glucémico
+                        menor
+                        en comparación con el azúcar, lo que significa que no causa picos tan drásticos en los niveles
+                        de azúcar en la sangre.
+                    </p>
                 </div>
 
                 <div class="col-md-12">
@@ -103,12 +117,13 @@
                         </div>
                         <div class="col-md-6 my-3 card-left">
                             <p class="p-3 text-center">
-                                <span class="poppins-extralight">Rendimiento aproximado: <br>33 bebidas frías y
-                                    calientes de 480 ml (30 ml c/u)</span>
+                                <span class="poppins-extralight">Rendimiento aproximado: 33 bebidas
+                                    frías y calientes de 480 ml (30 ml c/u)</span>
                             </p>
                         </div>
                     </div>
                 </div>
+
 
                 <div class="col-md-12 my-3">
                     <div class="container">
@@ -117,9 +132,8 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
-                                            <button class="page-link"
-                                                (click)="paginaAnteriorJarabesChillOut()"><i class="fa fa-chevron-left"
-                                                    aria-hidden="true"></i></button>
+                                            <button class="page-link" (click)="paginaAnteriorJarabesChillOut()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -131,12 +145,12 @@
                                     </a>
                                 </div>
                                 <div class="card-top">
-                                    <div class="circle-jarabes-chillOut"></div>
+                                    <div class="circle-jarabes-torani-clasico"></div>
                                     <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
                                         alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
                                     <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
                                     <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
                                 </div>
@@ -145,25 +159,29 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
-                                            <button class="page-link"
-                                                (click)="paginaSiguienteJarabesChillOut()"><i class="fa fa-chevron-right"
-                                                    aria-hidden="true"></i></button>
+                                            <button class="page-link" (click)="paginaSiguienteJarabesChillOut()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
+                            <div class="col-md-12">
+                                <!-- <div class="container text-center p-2 total-pages">
+                                    <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                    tisanasFrutalesCafeEtrusca.length }}</p>
+                                </div> -->
+                            </div>
                         </div>
-
-                        <!-- <div class="container text-center p-2 total-pages">
-                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
-                                tisanasFrutalesCafeEtrusca.length }}</p>
-                        </div> -->
                     </div>
+                </div>
+
+                <div class="col-md-12 m-4" id="space">
+
                 </div>
             </div>
 
-             <!--Cards para jarbes torani clasico -->
-             <div class="row my-4" id="jarabes-chillout" *ngIf="hidesJarabesClasicoTorani">
+            <!--Cards para jarbes torani clasico -->
+            <div class="row m-4" id="jarabes-chillout" *ngIf="hidesJarabesClasicoTorani">
                 <div class="col-md-4 father-logo">
                     <div class="brand-container">
                         <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Torani clásico"
@@ -173,7 +191,9 @@
 
                 <div class="col-md-8">
                     <h2 class="px-3 poppins-bold">Torani clásico</h2>
-                    <p class="px-3 poppins-light">Jarabes con una amplia variedad de sabores utilizados tanto en el hogar como por profesionales de la industria
+                    <p class="px-3 poppins-light text-justify">Jarabes con una amplia variedad de sabores utilizados
+                        tanto en el
+                        hogar como por profesionales de la industria
                         restaurantera y la coctelería para agregar sabor a cafés, cocteles, postres y más.
                     </p>
                     <span class="px-3 poppins-extralight">102 sabores disponibles.</span>
@@ -202,9 +222,8 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
-                                            <button class="page-link"
-                                                (click)="paginaAnteriorToraniClasico()"><i class="fa fa-chevron-left"
-                                                    aria-hidden="true"></i></button>
+                                            <button class="page-link" (click)="paginaAnteriorToraniClasico()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -221,7 +240,7 @@
                                         alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
                                     <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
                                     <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
                                 </div>
@@ -230,9 +249,8 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
-                                            <button class="page-link"
-                                                (click)="paginaSiguienteToraniClasico()"><i class="fa fa-chevron-right"
-                                                    aria-hidden="true"></i></button>
+                                            <button class="page-link" (click)="paginaSiguienteToraniClasico()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -245,6 +263,8 @@
                         </div> -->
                     </div>
                 </div>
+
+                <div class="col-md-12 m-4" id="space"></div>
             </div>
 
             <!--Cards para jarbes torani Puremade -->
@@ -258,7 +278,8 @@
 
                 <div class="col-md-8">
                     <h2 class="px-3 poppins-bold">Torani puremade</h2>
-                    <p class="px-3 poppins-light">Jarabes con una amplia variedad de sabores utilizados tanto en el hogar como por profesionales de la industria
+                    <p class="px-3 poppins-light">Jarabes con una amplia variedad de sabores utilizados tanto en el
+                        hogar como por profesionales de la industria
                         restaurantera y la coctelería para agregar sabor a cafés, cocteles, postres y más.
                     </p>
                     <span class="px-3 poppins-extralight">4 sabores disponibles.</span>
@@ -287,9 +308,8 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
-                                            <button class="page-link"
-                                                (click)="paginaAnteriorPuremadeTorani()"><i class="fa fa-chevron-left"
-                                                    aria-hidden="true"></i></button>
+                                            <button class="page-link" (click)="paginaAnteriorPuremadeTorani()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -306,7 +326,7 @@
                                         alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
                                     <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
                                     <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
                                 </div>
@@ -315,9 +335,95 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
-                                            <button class="page-link"
-                                                (click)="paginaSiguientePuremadeTorani()"><i class="fa fa-chevron-right"
-                                                    aria-hidden="true"></i></button>
+                                            <button class="page-link" (click)="paginaSiguientePuremadeTorani()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- <div class="container text-center p-2 total-pages">
+                            <p>Total de elementos visibles: {{ elementosVisibles }} de {{
+                                tisanasFrutalesCafeEtrusca.length }}</p>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-12 m-4" id="space"></div>
+
+            </div>
+
+            <!--Cards para jarbes torani sugar free -->
+            <div class="row my-4" id="torani sugar free" *ngIf="hidesJarabeSugarFree">
+                <div class="col-md-4 father-logo">
+                    <div class="brand-container">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Torani sugar free"
+                            title="Torani sugar free" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="px-3 poppins-bold">Torani sugar free</h2>
+                    <p class="px-3 poppins-light">Los jarabes sin azúcar de Torani ofrecen una manera de endulzar tus
+                        bebidas sin añadir calorías.
+                        Elaborados con edulcolorantes, estos jarabes proporcionan el mismo sabor que los jarabes
+                        tradicionales de Torani, pero sin el azúcar.
+                    </p>
+                    <span class="px-3 poppins-extralight">17 sabores disponibles.</span>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <p class="p-3 text-center card-right">
+                                <span class="poppins-extralight">Presentación: 750 ml</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6 my-3 card-left">
+                            <p class="p-3 text-center">
+                                <span class="poppins-extralight">Rendimiento aproximado: <br>25 bebidas frías y
+                                    calientes de 480 ml (30 ml c/u)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaAnteriorSugarFreeTorani()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaSugarFreeTorani">
+                                <div class="share-icon">
+                                    <a routerLink="/donde-encontranos">
+                                        <i class="fa fa-share-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="card-top">
+                                    <div class="circle-jarabes-sugarfree"></div>
+                                    <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                        alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                    <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
+                                    <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-between">
+                                        <li class="page-item">
+                                            <button class="page-link" (click)="paginaSiguienteSugarFreeTorani()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -330,10 +436,11 @@
                         </div> -->
                     </div>
                 </div>
+                <div class="col-md-12 m-4" id="space"></div>
             </div>
 
-             <!--Cards para jarbes torani sugar free -->
-             <div class="row my-4" id="torani sugar free" *ngIf="hidesJarabeSugarFree">
+            <!--Cards para jarbes torani ZeroSugarTorani -->
+            <div class="row my-4" id="torani sugar free" *ngIf="hidesZeroSugarTorani">
                 <div class="col-md-4 father-logo">
                     <div class="brand-container">
                         <img src="../../../../../assets/LogosMarcas/Insumos/Torani-Logo.webp" alt="Torani sugar free"
@@ -343,8 +450,10 @@
 
                 <div class="col-md-8">
                     <h2 class="px-3 poppins-bold">Torani sugar free</h2>
-                    <p class="px-3 poppins-light">Los jarabes sin azúcar de Torani ofrecen una manera de endulzar tus bebidas sin añadir calorías.
-                        Elaborados con edulcolorantes, estos jarabes proporcionan el mismo sabor que los jarabes tradicionales de Torani, pero sin el azúcar.
+                    <p class="px-3 poppins-light">Los jarabes sin azúcar de Torani ofrecen una manera de endulzar tus
+                        bebidas sin añadir calorías.
+                        Elaborados con edulcolorantes, estos jarabes proporcionan el mismo sabor que los jarabes
+                        tradicionales de Torani, pero sin el azúcar.
                     </p>
                     <span class="px-3 poppins-extralight">17 sabores disponibles.</span>
                 </div>
@@ -373,13 +482,13 @@
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
                                             <button class="page-link"
-                                                (click)="paginaAnteriorSugarFreeTorani()"><i class="fa fa-chevron-left"
-                                                    aria-hidden="true"></i></button>
+                                                (click)="paginaAnteriorJarabesZeroSugarTorani()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaSugarFreeTorani">
+                            <div class="col-md-2" *ngFor="let insumo of elementosPaginaJarabesZeroSugarTorani">
                                 <div class="share-icon">
                                     <a routerLink="/donde-encontranos">
                                         <i class="fa fa-share-alt"></i>
@@ -391,7 +500,7 @@
                                         alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
                                     <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
                                     <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
                                 </div>
@@ -401,8 +510,8 @@
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
                                             <button class="page-link"
-                                                (click)="paginaSiguienteSugarFreeTorani()"><i class="fa fa-chevron-right"
-                                                    aria-hidden="true"></i></button>
+                                                (click)="paginaSiguienteJarabesZeroSugarTorani()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -415,20 +524,23 @@
                         </div> -->
                     </div>
                 </div>
+
+                <div class="col-md-12 m-4" id="space"></div>
             </div>
 
             <!--Cards para jarbes n'dulce -->
             <div class="row my-4" id="n'dulce" *ngIf="hidesNdulce">
                 <div class="col-md-4 father-logo">
                     <div class="brand-container">
-                        <img src="../../../../../assets/LogosMarcas/Insumos/n'dulce.png" alt="n'dulce"
-                            title="n'dulce" class="img-fluid">
+                        <img src="../../../../../assets/LogosMarcas/Insumos/n'dulce.png" alt="n'dulce" title="n'dulce"
+                            class="img-fluid">
                     </div>
                 </div>
 
                 <div class="col-md-8">
                     <h2 class="px-3 poppins-bold">n'dulce</h2>
-                    <p class="px-3 poppins-light">Jarbe con sabor a dulce de leche para endulzar y/o decorar tus bebidas.
+                    <p class="px-3 poppins-light">Jarbe con sabor a dulce de leche para endulzar y/o decorar tus
+                        bebidas.
                     </p>
                     <!-- <span class="px-3 poppins-extralight">17 sabores disponibles.</span> -->
                 </div>
@@ -456,9 +568,8 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
-                                            <button class="page-link"
-                                                (click)="paginaAnteriorJarabesNdulce()"><i class="fa fa-chevron-left"
-                                                    aria-hidden="true"></i></button>
+                                            <button class="page-link" (click)="paginaAnteriorJarabesNdulce()"><i
+                                                    class="fa fa-chevron-left" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -475,7 +586,7 @@
                                         alt="{{insumo.name}}" title="{{insumo.name}}" id="botellas-chillout">
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="p-2 poppins-bold" >{{ insumo.keySap }}</h6>
+                                    <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
                                     <h4 class="p-2 name poppins-extralight">{{ insumo.name }}</h4>
                                     <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
                                 </div>
@@ -484,9 +595,8 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-between">
                                         <li class="page-item">
-                                            <button class="page-link"
-                                                (click)="paginaSiguienteJarabesNdulce()"><i class="fa fa-chevron-right"
-                                                    aria-hidden="true"></i></button>
+                                            <button class="page-link" (click)="paginaSiguienteJarabesNdulce()"><i
+                                                    class="fa fa-chevron-right" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -499,6 +609,8 @@
                         </div> -->
                     </div>
                 </div>
+
+                <div class="col-md-12 m-4" id="space"></div>
             </div>
         </main>
     </div>

@@ -21,9 +21,10 @@ export class JarabesComponent {
   //Menu
   hidesJarabesChillOut: boolean = true;
   hidesJarabesClasicoTorani: boolean = true;
-  hidesJarabePuremade: boolean = true;
-  hidesJarabeSugarFree: boolean = true;
+  hidesJarabePuremade: boolean = false;
+  hidesJarabeSugarFree: boolean = false;
   hidesNdulce: boolean = true;
+  hidesZeroSugarTorani: boolean = false;
 
   mostrarCuadricula: boolean = false;
   elementosVisibles: number = 0;
@@ -48,12 +49,16 @@ export class JarabesComponent {
   paginaActualSugarFree: number = 1;
   tamañoPaginaSugarFree: number = 5;
 
+   //Datos para Jarabes ZeroSugar
+   jarabesZeroSugar: any[] = [];
+   paginaActualZeroSugar: number = 1;
+   tamañoPaginaZeroSugar: number = 5;
+
   //Datos para Jarabes N'dulce
   jarabesNdulce: any[] = [];
   paginaActualjarabesNdulce: number = 1;
   tamañoPaginajarabesNdulce: number = 5;
 
-  jarabesZeroSugar: any[] = [];
 
   @ViewChildren('tarjeta')
   tarjetas!: QueryList<any>;
@@ -85,6 +90,32 @@ export class JarabesComponent {
   paginaSiguienteJarabesNdulce() {
     if (this.paginaActualjarabesNdulce < this.paginasJarabesNdulce.length) {
       this.paginaActualjarabesNdulce++;
+    }
+  }
+
+  // Obtener los elementos de la página actual para Jarabes Torani ZeroSugar
+  get elementosPaginaJarabesZeroSugarTorani() {
+    const inicio = (this.paginaActualZeroSugar - 1) * this.tamañoPaginaZeroSugar;
+    const fin = inicio + this.tamañoPaginajarabesNdulce;
+    return this.jarabesZeroSugar.slice(inicio, fin);
+  }
+
+  // Obtener las páginas para JarabesZeroSugarTorani
+  get paginasJarabesZeroSugarTorani() {
+    const totalPaginas = Math.ceil(this.jarabesZeroSugar.length / this.tamañoPaginaZeroSugar);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para JarabesZeroSugarTorani
+  paginaAnteriorJarabesZeroSugarTorani() {
+    if (this.paginaActualZeroSugar > 1) {
+      this.paginaActualZeroSugar--;
+    }
+  }
+
+  paginaSiguienteJarabesZeroSugarTorani() {
+    if (this.paginaActualZeroSugar < this.paginasJarabesZeroSugarTorani.length) {
+      this.paginaActualZeroSugar++;
     }
   }
 
@@ -327,4 +358,5 @@ export class JarabesComponent {
     //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
     return cumpleCondicion;
   }
+  
 }
