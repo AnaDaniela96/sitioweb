@@ -214,6 +214,98 @@
                     </div>
                 </div>
             </div>
+
+            <div class="d-none col-md-12 my-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-between">
+                                    <li class="page-item">
+                                        <button class="page-link"
+                                            (click)="paginaAnteriorChillout()"><i class="fa fa-chevron-left"
+                                                aria-hidden="true"></i></button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-2" *ngFor="let insumo of elementosPaginaTeChillout">
+                            <div class="share-icon">
+                                <a routerLink="/donde-encontranos">
+                                    <i class="fa fa-share-alt"></i>
+                                </a>
+                            </div>
+                            <div class="card-top">
+                                <div class="circle-tisanaStash"></div>
+                                <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="{{insumo.name}}" title="{{insumo.name}}">
+                            </div>
+                            <div class="card-body">
+                                <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                <h4 class="p-3 name poppins-extralight">{{ insumo.name }}</h4>
+                                <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-between">
+                                    <li class="page-item">
+                                        <button class="page-link "
+                                            (click)="paginaSiguienteChillout()"><i class="fa fa-chevron-right"
+                                                aria-hidden="true"></i></button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-none col-md-12 my-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-between">
+                                    <li class="page-item">
+                                        <button class="page-link"
+                                            (click)="paginaAnteriorPranaChai()"><i class="fa fa-chevron-left"
+                                                aria-hidden="true"></i></button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-2" *ngFor="let insumo of elementosPaginaTePranaChai">
+                            <div class="share-icon">
+                                <a routerLink="/donde-encontranos">
+                                    <i class="fa fa-share-alt"></i>
+                                </a>
+                            </div>
+                            <div class="card-top">
+                                <div class="circle-tisanaStash"></div>
+                                <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
+                                    alt="{{insumo.name}}" title="{{insumo.name}}">
+                            </div>
+                            <div class="card-body">
+                                <h6 class="p-2 poppins-bold">{{ insumo.keySap }}</h6>
+                                <h4 class="p-3 name poppins-extralight">{{ insumo.name }}</h4>
+                                <!-- <h5 class="p-2 description">{{ insumo.description }}</h5> -->
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-between">
+                                    <li class="page-item">
+                                        <button class="page-link "
+                                            (click)="paginaSiguientePranaChai()"><i class="fa fa-chevron-right"
+                                                aria-hidden="true"></i></button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </div>
