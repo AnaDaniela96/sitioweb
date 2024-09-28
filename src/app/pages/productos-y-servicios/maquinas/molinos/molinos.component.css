@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Aside */
+.icon-section {
+    border: 5px solid var(--accent-200);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.space {
+    height: 1cm;
+}
+
+/*main */
+.circle-fiorenzato,
+.circle-Eureka {
+    background-color: var(--accent-200);
+    height: 150px; /* Ajuste para que no sea tan alto */
+    width: 150px;
+    position: absolute; /* Cambiado a absolute */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Asegura que el círculo esté centrado */
+    color: var(--accent-400);
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px;
+    z-index: 1; /* Asegura que esté detrás de la imagen */
+}

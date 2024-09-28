@@ -43,7 +43,7 @@
                                     </label>
                                 </div>
                             </li>
-                            <li class="list-group-item">
+                            <!-- <li class="list-group-item">
                                 <div class="form-check">
                                     <input class="form-check-input " type="checkbox" id="anfimCheckbox"
                                         [(ngModel)]="hidesAnfim">
@@ -58,7 +58,7 @@
                                     <label class="form-check-label poppins-extralight" for="baratzaCheckbox"> Baratza
                                     </label>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
 
@@ -115,7 +115,7 @@
                                     </a>
                                 </div>
                                 <div class="card-top">
-                                    <div class="circle-fiorezato"></div>
+                                    <div class="circle-fiorenzato"></div>
                                     <img class="img my-2" [src]="sanitizeUrl(insumo.urlArticleFirst)"
                                         alt="{{insumo.name}}" title="{{insumo.name}}">
                                 </div>
@@ -146,7 +146,7 @@
             </div>
 
             <!-- Cards para Ceado -->
-            <div class="row my-4" id="Ceado" *ngIf="hidesCeado">
+            <div class="d-none row my-4" id="Ceado" *ngIf="hidesCeado">
                 <div class="col-md-4 father-logo">
                     <div class="brand-container" style="background-color: black;">
                         <img src="../../../../../assets/LogosMarcas/Maquinas/ceado.svg" alt="logo de Ceado"
