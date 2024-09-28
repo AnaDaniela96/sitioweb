@@ -24,6 +24,8 @@ export class MolecularesComponent {
   hidesTeaZoneJelly: boolean = true;
   hidesChillOutTapioca: boolean = true;
   hidesTeaZoneTapioca: boolean = true;
+  hideChillOutCrystalBoba: boolean = true;
+  hideChillOutToppings: boolean = true;
 
   mostrarCuadricula: boolean = false;
   elementosVisibles: number = 0;
@@ -57,6 +59,17 @@ export class MolecularesComponent {
   teaZoneTapioca: any[] = [];
   paginaActualTeaZoneTapioca: number = 1;
   tamañoPaginaTeaZoneTapioca: number = 5;
+
+  //chillOut CrystalBobba
+  chillOutCrystalBobba: any[] = [];
+  paginaActualCrystalBobba: number = 1;
+  tamañoPaginaCrystalBobba: number = 5;
+
+  //chillOut Toppings
+  chillOutToppings: any[] = [];
+  paginaActualToppings: number = 1;
+  tamañoPaginaToppings: number = 5;
+
 
   @ViewChildren('tarjeta')
   tarjetas!: QueryList<any>;
@@ -221,6 +234,58 @@ export class MolecularesComponent {
     }
   }
 
+  // Obtener los elementos de la página actual para ChillOut CrystalBobba
+  get elementosPaginaChillOutCrystalBobba() {
+    const inicio = (this.paginaActualCrystalBobba - 1) * this.tamañoPaginaCrystalBobba;
+    const fin = inicio + this.tamañoPaginaCrystalBobba;
+    return this.chillOutCrystalBobba.slice(inicio, fin);
+  }
+
+  // Obtener las páginas ChillOut CrystalBobba
+  get paginasChillOutCrystalBobba() {
+    const totalPaginas = Math.ceil(this.chillOutCrystalBobba.length / this.tamañoPaginaCrystalBobba);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para ChillOut CrystalBobba
+  paginaAnteriorChillOutCrystalBobba() {
+    if (this.paginaActualCrystalBobba > 1) {
+      this.paginaActualCrystalBobba--;
+    }
+  }
+
+  paginaSiguienteChillOutCrystalBobba() {
+    if (this.paginaActualCrystalBobba < this.paginasChillOutCrystalBobba.length) {
+      this.paginaActualCrystalBobba++;
+    }
+  }
+
+   // Obtener los elementos de la página actual para ChillOut Toppings
+   get elementosPaginaChillOutToppings() {
+    const inicio = (this.paginaActualToppings - 1) * this.tamañoPaginaToppings;
+    const fin = inicio + this.tamañoPaginaToppings;
+    return this.chillOutToppings.slice(inicio, fin);
+  }
+
+  // Obtener las páginas ChillOut Toppings
+  get paginasChillOutToppings() {
+    const totalPaginas = Math.ceil(this.chillOutToppings.length / this.tamañoPaginaToppings);
+    return Array(totalPaginas).fill(0).map((_, index) => index + 1);
+  }
+
+  // Cambiar página para ChillOut Toppings
+  paginaAnteriorChillOutToppings() {
+    if (this.paginaActualToppings > 1) {
+      this.paginaActualToppings--;
+    }
+  }
+
+  paginaSiguienteChillOutToppings() {
+    if (this.paginaActualToppings < this.paginasChillOutToppings.length) {
+      this.paginaActualToppings++;
+    }
+  }
+
   ngOnInit(): void {
     this.dataService.getInsumos().then((insumosArray: any[]) => {
       this.insumosArray = insumosArray;
@@ -260,6 +325,32 @@ export class MolecularesComponent {
       this.teaZoneTapioca = this.insumosArray.filter(insumo =>
         this.contienePalabrasTeaZoneTapioca(insumo.name) &&
         insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra las Tapiocas Chillout y crea un nuevo array
+      this.chillOutCrystalBobba = this.insumosArray.filter(insumo =>
+        this.contienePalabrasChillOutCrystalBoba(insumo.name) 
+        // &&
+        // insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+      );
+
+      // Filtra las Tapiocas Chillout y crea un nuevo array
+      this.chillOutToppings = this.insumosArray.filter(insumo =>
+        this.contienePalabrasChillOutCaramelos(insumo.name) 
+        // &&
+        // insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+        ||
+        this.contienePalabrasChillOutMochis(insumo.name) 
+        // &&
+        // insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+        ||
+        this.contienePalabrasChillOutCremas(insumo.name) 
+        // &&
+        // insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
+        ||
+        this.contienePalabrasChillOutCremaPolvo(insumo.name) 
+        // &&
+        // insumo.urlArticleFirst && insumo.urlArticleFirst.trim() !== ''
       );
 
 
@@ -381,6 +472,91 @@ export class MolecularesComponent {
 
     // Palabras a excluir
     const palabrasExcluidas = ['CHILOUT', 'CHILLOUT',];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasChillOutCrystalBoba(nombre: string): boolean {
+    const palabrasClave = ['CRYSTAL', 'BOBA', 'CHILLOUT',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['TEA', 'ZONE',];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasChillOutCaramelos(nombre: string): boolean {
+    const palabrasClave = ['MINI', 'CHILLOUT',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['TEA', 'ZONE',];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasChillOutMochis(nombre: string): boolean {
+    const palabrasClave = ['MINI', 'MOCHIS',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['TEA', 'ZONE',];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasChillOutCremas(nombre: string): boolean {
+    const palabrasClave = ['CREMA', 'CHILLOUT',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['TEA', 'ZONE', 'JARABE'];
+
+    // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
+    const nombreEnMayusculas = nombre.toUpperCase();
+
+    // Verifica que todas las palabras clave estén presentes y que ninguna palabra excluida esté presente
+    const cumpleCondicion = palabrasClave.every(palabra => nombreEnMayusculas.includes(palabra))
+      && !palabrasExcluidas.some(excluida => nombreEnMayusculas.includes(excluida));
+
+    //console.log(nombre, cumpleCondicion); // Verifica los resultados en la consola
+    return cumpleCondicion;
+  }
+
+  contienePalabrasChillOutCremaPolvo(nombre: string): boolean {
+    const palabrasClave = ['BASE', 'CREME', 'CHILLOUT',];
+
+    // Palabras a excluir
+    const palabrasExcluidas = ['TEA', 'ZONE', 'JARABE'];
 
     // Convierte el nombre a mayúsculas para hacer la coincidencia sin distinción de mayúsculas y minúsculas
     const nombreEnMayusculas = nombre.toUpperCase();
